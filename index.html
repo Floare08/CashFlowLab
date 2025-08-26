@@ -1,4 +1,3 @@
-<!doctype html>
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -18,64 +17,93 @@
       --bg-navy:#0c1631;
       --text:#e6f0ff;
       --muted:#93a4c7;
-      --card:#0c1224cc;
-      --stroke:#1f2b52;
+      --card:#0c1224a6;  /* glass */
       --radius:18px;
     }
+    /* Base + DeX fixes */
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;background:linear-gradient(180deg,var(--bg-navy),var(--bg-deep));color:var(--text)}
-    .container{width:min(1200px,92%);margin:auto;padding:40px 0}
-    h1,h2{letter-spacing:.3px}
-    h2{margin-bottom:10px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--accent);color:#000;font-weight:700;text-decoration:none;border:0;cursor:pointer}
+    html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:linear-gradient(180deg,var(--bg-navy),var(--bg-deep));color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;padding-bottom:calc(env(safe-area-inset-bottom,0px)+8px)}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+
+    .container{width:min(1100px,94%);margin:auto;padding:40px 0}
+    .section{padding:56px 0;border-bottom:1px solid #1a2648}
+
+    /* Headings & text */
+    h1{font-size:clamp(28px,4vw,40px);margin:0 0 6px}
+    h2{font-size:clamp(22px,3.2vw,28px);margin:0 0 10px}
+    p{color:var(--muted);line-height:1.6;margin:0 0 10px}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 20px;border-radius:12px;background:var(--accent);color:#000;font-weight:800;border:0;cursor:pointer;line-height:1}
     .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-    .section{padding:60px 0;border-bottom:1px solid #1a2648}
-    .card{background:var(--card);padding:20px;border-radius:var(--radius);margin-bottom:20px;border:1px solid #17244a}
+
+    /* Cards (glass) */
+    .card{background:var(--card);backdrop-filter:blur(12px) saturate(140%);padding:20px;border-radius:var(--radius);margin-bottom:20px;border:none;box-shadow:0 8px 30px rgba(0,0,0,.45)}
+
+    /* Grids */
     .grid{display:grid;gap:20px}
-    .three{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .two{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+    /* Media */
     iframe{max-width:100%;border-radius:12px}
-    .video-wrap{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden}
+    .video-wrap{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#02040a}
     .video-wrap iframe,.video-wrap video{position:absolute;inset:0;width:100%;height:100%}
+
+    /* Countdown */
     .countdown{font-size:28px;font-weight:800;color:var(--accent-2)}
     .countdown small{color:var(--muted);font-weight:600}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
     .gallery img{width:100%;border-radius:10px;cursor:pointer}
-    form input,form textarea{width:100%;padding:12px;border-radius:10px;margin-bottom:12px;border:1px solid #1b2b59;background:#0a1020;color:var(--text)}
+
+    /* Forms */
+    form input,form textarea{width:100%;padding:12px 14px;border-radius:10px;margin-bottom:12px;border:1px solid #1b2b59;background:#0a1020;color:var(--text)}
     form button{padding:12px 20px;border-radius:10px;background:var(--accent);border:none;font-weight:700}
     .hint{color:var(--muted);font-size:14px}
+
     /* Lightbox */
     .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.7);z-index:50}
     .modal.open{display:grid}
     .modal img{max-width:90vw;max-height:85vh;border-radius:12px}
-    .modal .close{position:absolute;top:16px;right:16px}
-    @media (prefers-reduced-motion:no-preference){
-      .btn{transition:.25s ease transform}
-      .btn:hover{transform:translateY(-1px)}
-    }
+    .modal .close{position:absolute;top:16px;right:16px;z-index:60}
+
+    /* Gumroad embed fix - elimină chenare duble */
+    .gumroad-product-embed{border:none !important;box-shadow:none !important;background:transparent !important}
+
+    /* Responsive (Samsung DeX friendly) */
+    @media (max-width:1200px){.container{padding:28px 0}.two{grid-template-columns:1fr}.three{grid-template-columns:1fr 1fr}}
+    @media (max-width:800px){.three{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.btn{width:100%;justify-content:center}}
   </style>
 </head>
 <body>
+  <!-- HEADER -->
   <header class="section container">
     <h1>CashFlowLab 🚀</h1>
     <p>Landing premium futurist — albastru marin & negru Jarvis.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+      <a class="btn" href="#gumroad">Cumpără acum</a>
+      <a class="btn ghost" href="#video">Vezi video</a>
+    </div>
   </header>
 
-  <!-- GUMROAD INTEGRARE (Embed + Overlay) -->
+  <!-- GUMROAD INTEGRARE (Overlay + Embed) -->
   <section class="section container" id="gumroad">
     <h2>Cumpără direct de pe Gumroad</h2>
     <div class="grid two">
       <div class="card">
         <h3>Buton Overlay</h3>
         <a class="btn" href="https://florinwave0.gumroad.com/l/yspwee" data-gumroad-overlay-checkout>🛒 Cumpără acum</a>
-        <p class="hint">Se deschide ca overlay. Necesită scriptul Gumroad (deja inclus).</p>
+        <p class="hint">Se deschide ca overlay. Scripturile Gumroad sunt deja incluse.</p>
       </div>
       <div class="card">
         <h3>Embed în pagină</h3>
         <div class="gumroad-product-embed" data-gumroad-product-id="yspwee" data-outbound-embed="true">
           <a href="https://florinwave0.gumroad.com/l/yspwee">Cumpără CashFlowLab Pro</a>
         </div>
-        <p class="hint">Produs conectat: CashFlowLab Pro</p>
       </div>
     </div>
   </section>
@@ -87,6 +115,7 @@
       <div class="card">
         <h3>Demo YouTube</h3>
         <div class="video-wrap">
+          <!-- Schimbă ID-ul dacă ai alt clip -->
           <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video demo CashFlowLab" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
@@ -98,7 +127,7 @@
             Browserul tău nu suportă video HTML5.
           </video>
         </div>
-        <p class="hint">Dacă nu ai YouTube, folosește fișierul <code>video.mp4</code> local.</p>
+        <p class="hint">Dacă nu folosești YouTube, încarcă <code>video.mp4</code> în același folder.</p>
       </div>
     </div>
   </section>
@@ -122,6 +151,7 @@
   <section class="section container" id="galerie">
     <h2>Galerie</h2>
     <div class="gallery" id="gallery">
+      <!-- Înlocuiește cu imaginile tale -->
       <img src="https://placehold.co/800x600?text=Imagine+1" alt="Imagine 1" data-full="https://placehold.co/1600x1200?text=Imagine+1" />
       <img src="https://placehold.co/800x600?text=Imagine+2" alt="Imagine 2" data-full="https://placehold.co/1600x1200?text=Imagine+2" />
       <img src="https://placehold.co/800x600?text=Imagine+3" alt="Imagine 3" data-full="https://placehold.co/1600x1200?text=Imagine+3" />
@@ -133,7 +163,7 @@
     </div>
   </section>
 
-  <!-- CONTACT (mailto + JS) -->
+  <!-- CONTACT (mailto) -->
   <section class="section container" id="contact">
     <h2>Contact</h2>
     <div class="card">
@@ -147,11 +177,13 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="section container">
-    <p>© <span id="y"></span> CashFlowLab. Toate drepturile rezervate.</p>
+    <p>© <span id="y"></span> CashFlowLab. Toate drepturile rezervate. · <a class="btn ghost" href="#gumroad">Cumpără</a></p>
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
     // Countdown
@@ -169,7 +201,7 @@
     modal.addEventListener('click',(e)=>{if(e.target===modal)modal.classList.remove('open');});
     document.addEventListener('keydown',(e)=>{if(e.key==='Escape')modal.classList.remove('open');});
 
-    // Contact form -> mailto
+    // Contact -> mailto
     document.getElementById('contactForm').addEventListener('submit',(e)=>{
       e.preventDefault();
       const nume=document.getElementById('nume').value.trim();
