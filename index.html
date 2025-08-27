@@ -108,7 +108,7 @@
             <span class="chip">📈 Ready: Analytics & A/B</span>
           </div>
           <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">Futurist, clar, <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-neon-500">pregătit să vândă</span>.</h1>
-          <p class="text-lg text-[rgba(11,16,32,.75)] max-w-xl">Site light‑mode premium cu butoane care captează privirea, video real, funnel email și checkout integrat. Zero bloat, maximă viteză.</p>
+          <p class="text-lg text-[rgba(11,16,32,.75)] max-w-xl">CashFlowLab este <strong>kitul futurist 2025</strong>: landing premium light‑mode, CTA‑uri magnetice, video demo, <strong>funnel MailerLite</strong> și <strong>checkout Gumroad în 2‑click</strong>. Îl deschizi, pui produsul, <strong>pornești vânzările azi</strong>.</p>
           <div class="flex flex-wrap gap-3">
             <a href="#cta" class="btn btn-primary">Începe gratuit</a>
             <a href="#showreel" class="btn btn-outline">Vezi demo video</a>
@@ -134,7 +134,22 @@
       <h2 class="headline text-3xl sm:text-4xl font-extrabold">Tot ce îți trebuie, fără zgomot</h2>
       <p class="mt-3 text-[rgba(11,16,32,.7)]">Arhitectură modernă, conversii reale, experiență fluidă.</p>
     </div>
+
+    <!-- DESCRIERE BOMBĂ -->
     <div class="grid lg:grid-cols-3 gap-6 mt-10">
+      <div class="card p-6 lg:col-span-3">
+        <h3 class="font-semibold text-xl mb-2">Descriere pe scurt (bomba 💥)</h3>
+        <p class="text-[rgba(11,16,32,.75)]">CashFlowLab este un <strong>kit all‑in‑one de lansare</strong> care îți dă pe tavă: un <strong>site premium 2025</strong>, <strong>funnel de email</strong> conectabil în 1 minut, <strong>checkout</strong> cu Gumroad și <strong>GDPR + Analytics</strong> corect configurate. <em>Zero bătăi de cap</em>, doar publici și vinzi.</p>
+        <ul class="mt-4 grid md:grid-cols-4 gap-2 text-[rgba(11,16,32,.8)]">
+          <li>• Single‑file HTML — pornit în 60s</li>
+          <li>• Ghid de setare în 10 minute</li>
+          <li>• Template email (captare + deliver)</li>
+          <li>• Hook‑uri GA4 / Meta / TikTok</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mt-6">
       <div class="card p-6">
         <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">⚙️</div>
         <h3 class="font-semibold mb-1">Performanță & SEO</h3>
@@ -148,7 +163,7 @@
       <div class="card p-6">
         <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">🧩</div>
         <h3 class="font-semibold mb-1">Integrare completă</h3>
-        <p class="text-[rgba(11,16,32,.7)]">MailerLite, Gumroad, GA4 + Pixels, consent manager—totul pregătit.</p>
+        <p class="text-[rgba(11,16,32,.7)]">MailerLite, Gumroad, GA4 + Pixels, consent manager — totul pregătit.</p>
       </div>
     </div>
   </section>
@@ -306,8 +321,8 @@
     const gumURL = CFL.GUMROAD_PRODUCT_URL || 'https://florinwave0.gumroad.com/l/yspwee';
     const buyTop=document.getElementById('buyTop');
     const buyMid=document.getElementById('buyMid');
-    if(buyTop) buyTop.href=gumURL;
-    if(buyMid) buyMid.href=gumURL;
+    if(buyTop){ buyTop.href=gumURL; buyTop.target='_blank'; buyTop.rel='noopener'; }
+    if(buyMid){ buyMid.href=gumURL; buyMid.target='_blank'; buyMid.rel='noopener'; }
 
     // Cookie bar visibility
     window.addEventListener('DOMContentLoaded',()=>{
