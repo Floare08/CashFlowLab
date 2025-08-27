@@ -3,3 +3,6 @@ http://cashflowlabai.com/*   https://cashflowlabai.com/:splat   301!
 
 # Redirect tot traficul www spre non-www
 https://www.cashflowlabai.com/*   https://cashflowlabai.com/:splat   301!
+
+# Fallback: orice pagină greșită → homepage
+/*    /    301!
