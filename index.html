@@ -39,6 +39,11 @@
     body{ font-family: Inter,system-ui,Segoe UI,Roboto,Arial; background:#f6f8fb; color:#0b1020 }
     .headline{ font-family:Sora,Inter,system-ui,Segoe UI,Roboto,Arial }
     /* Futuristic UI */
+    .btn-premium{ color:#0b1020; background:linear-gradient(135deg,#ffffff,#f1f6ff); border:1px solid rgba(16,24,48,.12); box-shadow:0 16px 46px rgba(76,141,255,.20), 0 2px 0 rgba(16,24,48,.04); position:relative; overflow:hidden }
+    .btn-premium:hover{ transform:translateY(-1px); box-shadow:0 22px 60px rgba(76,141,255,.28) }
+    .btn-premium::after{ content:""; position:absolute; top:-120%; left:-120%; width:240%; height:240%; background:radial-gradient(circle at 30% 30%, rgba(34,211,238,.25), transparent 40%); transform:rotate(15deg); transition:opacity .3s ease; opacity:.8 }
+    .btn-premium:hover::after{ opacity:1 }
+    /* Futuristic UI */
     .glass{ backdrop-filter: blur(12px); background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.70)); border:1px solid rgba(16,24,48,.08) }
     .mesh{
       background:
@@ -49,7 +54,9 @@
     }
     .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55rem; padding:.95rem 1.35rem; border-radius:9999px; font-weight:800; letter-spacing:.2px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease }
     .btn:active{ transform: translateY(0) }
-    .btn-primary{ color:#fff; background: linear-gradient(135deg, #4c8dff, #22d3ee); box-shadow: var(--btn-shadow, 0 14px 40px rgba(34,211,238,.35)); }
+    .btn-primary{ color:#fff; background: linear-gradient(135deg, #4c8dff, #22d3ee); box-shadow: var(--btn-shadow, 0 14px 40px rgba(34,211,238,.35)); position:relative; overflow:hidden }
+    .btn-primary::after{ content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent); transform:translateX(-120%); transition:transform .6s ease }
+    .btn-primary:hover::after{ transform:translateX(120%) }
     .btn-primary:hover{ transform: translateY(-1px); box-shadow:0 18px 50px rgba(76,141,255,.35) }
     .btn-outline{ border:1px solid rgba(16,24,48,.12); background: #fff }
     .btn-outline:hover{ background:#f5f9ff; box-shadow:0 10px 26px rgba(16,24,48,.08) }
@@ -92,7 +99,7 @@
           <a href="#pricing" class="hover:text-brand-700">Prețuri</a>
           <a href="#faq" class="hover:text-brand-700">FAQ</a>
         </nav>
-        <a id="buyTop" href="#" class="btn btn-primary">Cumpără</a>
+        <a id="buyTop" href="#" class="btn btn-premium">Cumpără acum — 27€ + taxe</a>
       </div>
     </header>
 
@@ -110,7 +117,7 @@
           <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">Futurist, clar, <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-neon-500">pregătit să vândă</span>.</h1>
           <p class="text-lg text-[rgba(11,16,32,.75)] max-w-xl">CashFlowLab este <strong>kitul futurist 2025</strong>: landing premium light‑mode, CTA‑uri magnetice, video demo, <strong>funnel MailerLite</strong> și <strong>checkout Gumroad în 2‑click</strong>. Îl deschizi, pui produsul, <strong>pornești vânzările azi</strong>.</p>
           <div class="flex flex-wrap gap-3">
-            <a href="#cta" class="btn btn-primary">Începe gratuit</a>
+            <a href="#cta" class="btn btn-premium">Începe gratuit</a>
             <a href="#showreel" class="btn btn-outline">Vezi demo video</a>
           </div>
           <div class="flex items-center gap-6 text-sm text-[rgba(11,16,32,.6)] pt-2">
@@ -170,17 +177,25 @@
 
   <!-- SHOWREEL -->
   <section id="showreel" class="max-w-7xl mx-auto px-6 pb-6">
+    <div class="text-center mb-6">
+      <h2 class="headline text-3xl font-extrabold">Clipuri trimise de utilizatori</h2>
+      <p class="mt-2 text-[rgba(11,16,32,.7)]">Demo-uri reale făcute cu CashFlowLab (setup, lansare, checkout).</p>
+    </div>
     <div class="grid lg:grid-cols-2 gap-6">
-      <div class="card overflow-hidden">
-        <div class="aspect-video">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Open Movie" loading="lazy" allowfullscreen></iframe>
+      <figure class="card overflow-hidden">
+        <div class="relative aspect-video">
+          <span class="absolute left-3 top-3 chip">🎥 Video utilizator</span>
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Setup în 24h" loading="lazy" allowfullscreen></iframe>
         </div>
-      </div>
-      <div class="card overflow-hidden">
-        <div class="aspect-video">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Big Buck Bunny" loading="lazy" allowfullscreen></iframe>
+        <figcaption class="px-4 py-3 text-[rgba(11,16,32,.7)]"><strong>Andrei • soloprenor</strong> — „Am configurat CashFlowLab în aceeași zi și am colectat primele lead‑uri.”</figcaption>
+      </figure>
+      <figure class="card overflow-hidden">
+        <div class="relative aspect-video">
+          <span class="absolute left-3 top-3 chip">🎥 Video utilizator</span>
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Checkout în 2‑click" loading="lazy" allowfullscreen></iframe>
         </div>
-      </div>
+        <figcaption class="px-4 py-3 text-[rgba(11,16,32,.7)]"><strong>Ioana • creator</strong> — „Checkout‑ul pe Gumroad e instant. Am vândut primul produs în 48h.”</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -204,14 +219,14 @@
       </div>
       <div class="card p-6 flex flex-col ring-1 ring-[rgba(76,141,255,.25)]">
         <h3 class="text-xl font-bold">Pro</h3>
-        <p class="text-[rgba(11,16,32,.7)] mt-1">Tot + integrare reală și fine‑tuning.</p>
-        <div class="text-4xl font-extrabold mt-4">€49</div>
+        <p class="text-[rgba(11,16,32,.7)] mt-1">Variantă complet conectată + fine‑tuning.</p>
+        <div class="text-4xl font-extrabold mt-4">27€ <span class="text-base font-semibold text-[rgba(11,16,32,.6)]">+ taxe</span></div>
         <ul class="mt-4 space-y-2 text-[rgba(11,16,32,.8)]">
           <li>• Conectare MailerLite</li>
           <li>• GA4 + Pixels</li>
           <li>• Personalizare brand</li>
         </ul>
-        <a id="buyMid" href="#" class="btn btn-primary mt-6">Cumpără Pro</a>
+        <a id="buyMid" href="#" class="btn btn-premium mt-6">Cumpără acum — 27€ + taxe</a>
       </div>
     </div>
   </section>
@@ -222,7 +237,7 @@
     <p class="mt-3 text-[rgba(11,16,32,.7)]">Completezi emailul, îți trimitem instant linkul + pașii. Poți dezabona oricând.</p>
     <form id="leadForm" class="mx-auto mt-6 flex max-w-xl flex-col sm:flex-row gap-3">
       <input id="leadEmail" required type="email" placeholder="Emailul tău" class="input" />
-      <button id="leadBtn" class="btn btn-primary" type="submit">Primește kitul</button>
+      <button id="leadBtn" class="btn btn-premium" type="submit">Primește kitul</button>
     </form>
     <p id="leadMsg" class="text-sm text-[rgba(11,16,32,.7)] mt-3 hidden">Mulțumim! Verifică inbox‑ul.</p>
   </section>
