@@ -22,13 +22,15 @@
   </script>
   <style>
     :root{--ring:rgba(184,137,255,.35)}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:#faf8ff;color:#1b1f2a}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background: url('./CashFlowLab.png') no-repeat center center fixed;
+background-size: cover;
     .headline{font-family:Sora,Inter,system-ui,Segoe UI,Roboto,Arial}
-    .mesh{background:
-      radial-gradient(70rem 35rem at 10% -5%, #fff2d6 0, transparent 55%),
-      radial-gradient(60rem 30rem at 85% -10%, #efe7ff 0, transparent 55%),
-      radial-gradient(40rem 25rem at 40% -15%, #ffe7f3 0, transparent 55%),
-      #faf8ff}
+    ..mesh {
+  background: linear-gradient(
+    rgba(255,255,255,0.85),
+    rgba(250,248,255,0.92)
+  );
+}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.35rem;border-radius:9999px;font-weight:800;letter-spacing:.2px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
     .btn:active{transform:translateY(0)}
     .btn-primary{color:#0f0a1f;background:linear-gradient(135deg,#ffd999,#b889ff);box-shadow:0 12px 32px rgba(244,185,66,.32)}
