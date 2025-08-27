@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="ro">
 <head>
   <meta charset="utf-8" />
@@ -18,7 +18,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      theme: { extend: { colors: { base: { 900:'#0b0c10', 800:'#0f1117'}, brand: { 500:'#5ec3ff', 600:'#3aa9ef', 700:'#1f7cc0'} }, boxShadow: { soft: '0 12px 40px rgba(0,0,0,.35)' }, borderRadius:{'3xl':'1.75rem'} } }
+      theme: { extend: { colors: { base: { 900:'#0b0c10', 800:'#0f1117'}, brand: { 50:'#ebf7ff', 500:'#5ec3ff', 600:'#3aa9ef', 700:'#1f7cc0'}, accent:{500:'#a78bfa'} }, boxShadow: { soft: '0 16px 50px rgba(0,0,0,.45)' }, borderRadius:{'3xl':'1.75rem'} } }
     }
   </script>
   <!-- Fonts -->
@@ -29,7 +29,16 @@
     html,body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial}
     .bg-noise{background:radial-gradient(1200px 600px at 10% -10%,rgba(94,195,255,.10),transparent 60%),radial-gradient(1200px 600px at 90% -20%,rgba(94,195,255,.06),transparent 60%),#0b0c10}
     .card{transition:transform .18s ease, box-shadow .18s ease}
-    .card:hover{transform:translateY(-2px); box-shadow:0 16px 50px rgba(0,0,0,.45)}
+    .card:hover{transform:translateY(-2px); box-shadow:0 18px 60px rgba(0,0,0,.50)}
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;border-radius:9999px;padding:.75rem 1.25rem;transition:all .18s ease}
+    .btn-primary{background:linear-gradient(135deg,#ffffff,#e7f3ff);color:#0b0c10;box-shadow:0 10px 30px rgba(255,255,255,.12)}
+    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(255,255,255,.18)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+    .btn-ghost:hover{background:rgba(255,255,255,.08)}
+    .btn-brand{background:linear-gradient(135deg,#3aa9ef,#1f7cc0);color:white;box-shadow:0 10px 30px rgba(63,140,220,.35)}
+    .btn-brand:hover{filter:brightness(1.07);transform:translateY(-1px)}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:.35rem .6rem;border-radius:9999px;font-size:.7rem}
   </style>
 
   <!-- ===== CONFIG (completează valorile) ===== -->
@@ -57,7 +66,7 @@
         <a href="#privacy" class="hover:text-white">GDPR</a>
         <a href="#cta" class="hover:text-white">Începe</a>
       </nav>
-      <a id="gumroadTop" href="#cta" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-black hover:opacity-90 transition">Cumpără</a>
+      <a id="gumroadTop" href="#cta" class="btn btn-primary">Cumpără</a>
     </div>
   </header>
 
@@ -65,12 +74,12 @@
   <section id="home" class="relative overflow-hidden">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
       <div class="space-y-6">
-        <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">Ultra‑premium • curat • rapid</p>
+        <p class="badge">Ultra‑premium • curat • rapid</p>
         <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Site impecabil. <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-brand-500">Curat. Rapid.</span> Construit să vândă.</h1>
         <p class="text-lg text-white/80 max-w-xl">Design fără balast, video real, performanță obsesiv optimizată. Mesaje tăioase, flow clar, conversii pe pilot automat.</p>
         <div class="flex flex-wrap gap-3">
-          <a id="ctaPrimary" href="#cta" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 font-semibold shadow-soft hover:bg-brand-700 transition"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Începe acum</a>
-          <a href="#showreel" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 hover:bg-white/5 transition">Vezi video</a>
+          <a id="ctaPrimary" href="#cta" class="btn btn-brand">Începe acum</a>
+          <a href="#showreel" class="btn btn-ghost">Vezi video</a>
         </div>
         <div class="flex items-center gap-6 text-sm text-white/60"><span>Zero placeholder</span><span>100% responsive</span><span>GDPR & OG corecte</span></div>
       </div>
@@ -130,11 +139,11 @@
 
       <form id="leadForm" class="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row" method="post">
         <input id="leadEmail" required type="email" placeholder="Emailul tău" class="w-full rounded-full border border-white/10 bg-white/10 px-5 py-3 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-brand-600" />
-        <button id="leadBtn" class="rounded-full bg-white px-6 py-3 font-semibold text-black hover:opacity-90" type="submit">Primește kitul</button>
+        <button id="leadBtn" class="btn btn-primary" type="submit">Primește kitul</button>
       </form>
 
       <div class="mt-6">
-        <a id="gumroadBtn" href="#" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 font-semibold shadow-soft hover:bg-brand-700 transition">Cumpără pe Gumroad</a>
+        <a id="gumroadBtn" href="#" class="btn btn-brand">Cumpără pe Gumroad</a>
       </div>
 
       <p class="mt-2 text-xs text-white/50">GDPR friendly • Consimțământ cerut pentru tracking. </p>
@@ -160,18 +169,21 @@
       <p class="text-sm text-white/60">© <span id="year"></span> CashFlowLab</p>
       <div class="text-sm text-white/60 flex gap-6">
         <a href="#privacy" class="hover:text-white">Confidențialitate</a>
-        <button id="openConsent" class="hover:text-white">Preferințe cookie</button>
+        <button id="openConsent" class="hover:text-white" type="button">Preferințe cookie</button>
       </div>
     </div>
   </footer>
 
+  <!-- TOAST small -->
+  <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-50 hidden rounded-full bg-white text-black px-4 py-2 text-sm font-semibold shadow-soft">Preferințe salvate</div>
+
   <!-- COOKIE/CONSENT MANAGER -->
-  <div id="cookieBar" class="fixed inset-x-4 bottom-4 z-50 hidden items-center justify-between gap-4 rounded-2xl border border-white/10 bg-base-800/95 p-4 shadow-soft md:flex">
+  <div id="cookieBar" class="fixed inset-x-4 bottom-4 z-40 hidden items-center justify-between gap-4 rounded-2xl border border-white/10 bg-base-800/95 p-4 shadow-soft md:flex">
     <p class="text-sm text-white/80">Folosim cookie-uri pentru funcționare. Analytics & marketing doar cu acordul tău.</p>
     <div class="flex items-center gap-2">
-      <button id="denyAll" class="rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-white/5">Respinge</button>
-      <button id="customize" class="rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-white/5">Personalizează</button>
-      <button id="allowAll" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:opacity-90">Acceptă tot</button>
+      <button id="denyAll" class="btn btn-ghost" type="button">Respinge</button>
+      <button id="customize" class="btn btn-ghost" type="button">Personalizează</button>
+      <button id="allowAll" class="btn btn-primary" type="button">Acceptă tot</button>
     </div>
   </div>
 
@@ -195,8 +207,8 @@
         </label>
       </div>
       <div class="mt-6 flex justify-end gap-2">
-        <button id="saveConsent" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black hover:opacity-90">Salvează</button>
-        <button id="closeConsent" class="rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-white/5">Închide</button>
+        <button id="saveConsent" class="btn btn-primary" type="button">Salvează</button>
+        <button id="closeConsent" class="btn btn-ghost" type="button">Închide</button>
       </div>
     </div>
   </dialog>
@@ -205,9 +217,13 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Toast helper
+    const toast = document.getElementById('toast');
+    const showToast = (msg)=>{ toast.textContent = msg; toast.classList.remove('hidden'); setTimeout(()=>toast.classList.add('hidden'), 1600); };
+
     // ----- Consent state -----
     const CONSENT_KEY = 'cfl_consent_v1';
-    const getConsent = () => JSON.parse(localStorage.getItem(CONSENT_KEY) || '{}');
+    const getConsent = () => { try { return JSON.parse(localStorage.getItem(CONSENT_KEY) || '{}'); } catch { return {}; } };
     const setConsent = (obj) => localStorage.setItem(CONSENT_KEY, JSON.stringify(obj));
 
     const cookieBar = document.getElementById('cookieBar');
@@ -221,23 +237,26 @@
       if (!('analytics' in c) && !('marketing' in c)) cookieBar.classList.remove('hidden');
     };
 
+    // Safe addEventListener
+    const on = (el, ev, fn)=> el && el.addEventListener(ev, fn);
+
     // Open modal
-    document.getElementById('customize').addEventListener('click', () => { cookieBar.classList.add('hidden'); consentModal.showModal(); });
-    openConsent.addEventListener('click', () => { const c = getConsent(); toggleAnalytics.checked = !!c.analytics; toggleMarketing.checked = !!c.marketing; consentModal.showModal(); });
+    on(document.getElementById('customize'),'click', () => { cookieBar.classList.add('hidden'); consentModal.showModal(); });
+    on(openConsent,'click', () => { const c = getConsent(); toggleAnalytics.checked = !!c.analytics; toggleMarketing.checked = !!c.marketing; consentModal.showModal(); });
 
     // Quick buttons
-    document.getElementById('allowAll').addEventListener('click', () => { setConsent({analytics:true, marketing:true}); cookieBar.classList.add('hidden'); initIntegrations(); });
-    document.getElementById('denyAll').addEventListener('click', () => { setConsent({analytics:false, marketing:false}); cookieBar.classList.add('hidden'); });
+    on(document.getElementById('allowAll'),'click', () => { setConsent({analytics:true, marketing:true}); cookieBar.classList.add('hidden'); initIntegrations(); showToast('Acceptat — tracking activ'); });
+    on(document.getElementById('denyAll'),'click', () => { setConsent({analytics:false, marketing:false}); cookieBar.classList.add('hidden'); showToast('Respins — doar necesare'); });
 
     // Modal buttons
-    document.getElementById('saveConsent').addEventListener('click', () => { setConsent({analytics: toggleAnalytics.checked, marketing: toggleMarketing.checked}); consentModal.close(); initIntegrations(); });
-    document.getElementById('closeConsent').addEventListener('click', () => consentModal.close());
+    on(document.getElementById('saveConsent'),'click', () => { setConsent({analytics: toggleAnalytics.checked, marketing: toggleMarketing.checked}); consentModal.close(); initIntegrations(); showToast('Preferințe salvate'); });
+    on(document.getElementById('closeConsent'),'click', () => consentModal.close());
 
     // ----- Integrations loader -----
-    function loadScript(src, attrs = {}){ return new Promise((resolve,reject)=>{ const s=document.createElement('script'); s.src=src; s.async=true; Object.entries(attrs).forEach(([k,v])=>s.setAttribute(k,v)); s.onload=resolve; s.onerror=reject; document.head.appendChild(s); }); }
+    function loadScript(src, attrs = {}){ return new Promise((resolve,reject)=>{ const s=document.createElement('script'); s.src=src; s.async=true; Object.entries(attrs).forEach(([k,v])=>{ if(v==="") s.setAttribute(k,""); else s.setAttribute(k,v); }); s.onload=resolve; s.onerror=reject; document.head.appendChild(s); }); }
 
     function initGA4(id){ if(!id) return; window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} window.gtag=gtag; gtag('js', new Date()); gtag('config', id, { anonymize_ip: true }); loadScript(`https://www.googletagmanager.com/gtag/js?id=${id}`); }
-    function initPlausible(domain){ if(!domain) return; loadScript('https://plausible.io/js/script.js', {defer:'', 'data-domain': domain}); }
+    function initPlausible(domain){ if(!domain) return; loadScript('https://plausible.io/js/script.js', {defer:'' ,'data-domain': domain}); }
     function initMetaPixel(id){ if(!id) return; !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', id); fbq('track', 'PageView'); }
     function initTikTok(id){ if(!id) return; !function (w, d, t) { w.TiktokAnalyticsObject=t; var ttq=w[t]=w[t]||[]; ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'], ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}; for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]); ttq.instance=function(t){ var e=ttq._i[t] || []; return function(){ ttq.push([t].concat(Array.prototype.slice.call(arguments,0))); }}; ttq.load=function(e,n){ var i='https://analytics.tiktok.com/i18n/pixel/events.js'; ttq._i=ttq._i||{}; ttq._i[e]=[]; ttq._i[e]._u=i; ttq._t=ttq._t||{}; ttq._t[e]=+new Date; ttq._o=ttq._o||{}; ttq._o[e]=n||{}; var o=document.createElement('script'); o.type='text/javascript'; o.async=true; o.src=i+'?sdkid='+e+'&lib='+t; var a=document.getElementsByTagName('script')[0]; a.parentNode.insertBefore(o,a); }; }(window, document, 'ttq'); ttq.load(id); ttq.page(); }
 
@@ -251,17 +270,18 @@
       const gumTop = document.getElementById('gumroadTop');
       const gumBtn = document.getElementById('gumroadBtn');
       const url = CFL.GUMROAD_PRODUCT_URL || '';
-      if(url){ gumTop.href = url; gumBtn.href = url; } else { gumTop.href = '#cta'; gumBtn.addEventListener('click', (e)=>{ e.preventDefault(); alert('Adaugă GUMROAD_PRODUCT_URL în secțiunea CONFIG.'); }); }
+      if(url){ if(gumTop) gumTop.href = url; if(gumBtn) gumBtn.href = url; } else { if(gumTop) gumTop.href = '#cta'; gumBtn && gumBtn.addEventListener('click', (e)=>{ e.preventDefault(); alert('Adaugă GUMROAD_PRODUCT_URL în CONFIG.'); }); }
     }
 
     // ----- MailerLite submit -----
     const leadForm = document.getElementById('leadForm');
-    leadForm.addEventListener('submit', async (e)=>{
+    leadForm && leadForm.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      const email = document.getElementById('leadEmail').value.trim();
+      const emailEl = document.getElementById('leadEmail');
+      const email = (emailEl?.value || '').trim();
       if(!email) return;
       const action = CFL.MAILERLITE_FORM_ACTION;
-      if(!action){ alert('Setează MAILERLITE_FORM_ACTION în secțiunea CONFIG. Email-ul tău nu a fost trimis.'); return; }
+      if(!action){ alert('Setează MAILERLITE_FORM_ACTION în CONFIG. Email-ul tău nu a fost trimis.'); return; }
       try{
         const resp = await fetch(action, { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: new URLSearchParams({fields: JSON.stringify({ email }) })});
         if(resp.ok){ alert('Mulțumim! Verifică inbox-ul.'); leadForm.reset(); if(window.gtag) gtag('event','generate_lead'); if(window.fbq) fbq('track','Lead'); if(window.ttq) ttq.track('CompleteRegistration'); }
