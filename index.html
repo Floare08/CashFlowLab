@@ -70,7 +70,7 @@
         <a href="#privacy" class="hover:text-white">GDPR</a>
         <a href="#cta" class="hover:text-white">Începe</a>
       </nav>
-      <a id="gumroadTop" href="#cta" class="btn btn-luxe">Cumpără</a>
+      <a id="gumroadTop" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" class="btn btn-luxe">Cumpără</a>
     </div>
   </header>
 
@@ -147,7 +147,7 @@
       </form>
 
       <div class="mt-6">
-        <a id="gumroadBtn" href="#" class="btn btn-brand">Cumpără pe Gumroad</a>
+        <a id="gumroadBtn" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" class="btn btn-brand">Cumpără pe Gumroad</a>
       </div>
 
       <p class="mt-2 text-xs text-white/50">GDPR friendly • Consimțământ cerut pentru tracking. </p>
@@ -187,7 +187,7 @@
     <div class="flex items-center gap-2">
       <button id="denyAll" class="btn btn-ghost" type="button" aria-label="Respinge cookie-urile">Respinge</button>
       <button id="customize" class="btn btn-ghost" type="button" aria-haspopup="dialog">Personalizează</button>
-      <button id="allowAll" class="btn btn-primary" type="button" aria-label="Acceptă toate cookie-urile">Acceptă tot</button>
+      <button id="allowAll" class="btn btn-primary" type="button" aria-label="Acceptă toate cookie-urile" onclick="(function(){try{localStorage.setItem('cfl_consent_v1', JSON.stringify({analytics:true, marketing:true}));}catch(e){}; document.getElementById('cookieBar').classList.add('hidden'); if(window.initIntegrations) initIntegrations(); const t=document.getElementById('toast'); if(t){ t.textContent='Acceptat — tracking activ'; t.classList.remove('hidden'); setTimeout(()=>t.classList.add('hidden'),1600);} })()">Acceptă tot</button>
     </div>
   </div>
 
