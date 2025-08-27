@@ -1,389 +1,455 @@
-<!doctype html>
-<html lang="ro" class="scroll-smooth">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CashFlowLab — Ultra‑Premium 2025</title>
-  <meta name="description" content="CashFlowLab 2025: site futurist, ultra‑premium, pe fundal deschis. Funnel, checkout, analytics și GDPR — totul gata de lansare." />
-  <meta name="theme-color" content="#f6f8fb" />
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="CashFlowLab — Ultra‑Premium 2025" />
-  <meta property="og:description" content="Landing futurist, ultra‑premium: video, funnel email, checkout integrat, analytics & GDPR." />
-  <meta property="og:image" content="./CashFlowLab.png" />
-
-  <!-- Fonts & Tailwind -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: {
-        colors: {
-          base:{50:'#f6f8fb',100:'#eef2f7',200:'#e4eaf3',900:'#0b1020'},
-          brand:{50:'#eef4ff',100:'#dbe7ff',400:'#7aa7ff',500:'#4c8dff',600:'#2b6bff',700:'#1d46f0'},
-          neon:{500:'#22d3ee',600:'#06b6d4'},
-        },
-        boxShadow: {
-          soft:'0 14px 40px rgba(16,24,48,.12)',
-          glow:'0 0 0 1px rgba(76,141,255,.35), 0 12px 30px rgba(34,211,238,.25)'
-        },
-        borderRadius:{ 'pill':'9999px', '3xl':'1.75rem' }
-      } }
-    }
-  </script>
-  <style>
-    :root{ --ring: rgba(76,141,255,.35); }
-    body{ font-family: Inter,system-ui,Segoe UI,Roboto,Arial; background:#f6f8fb; color:#0b1020 }
-    .headline{ font-family:Sora,Inter,system-ui,Segoe UI,Roboto,Arial }
-    /* Futuristic UI */
-    .btn-premium{ color:#0b1020; background:linear-gradient(135deg,#ffffff,#f1f6ff); border:1px solid rgba(16,24,48,.12); box-shadow:0 16px 46px rgba(76,141,255,.20), 0 2px 0 rgba(16,24,48,.04); position:relative; overflow:hidden }
-    .btn-premium:hover{ transform:translateY(-1px); box-shadow:0 22px 60px rgba(76,141,255,.28) }
-    .btn-premium::after{ content:""; position:absolute; top:-120%; left:-120%; width:240%; height:240%; background:radial-gradient(circle at 30% 30%, rgba(34,211,238,.25), transparent 40%); transform:rotate(15deg); transition:opacity .3s ease; opacity:.8 }
-    .btn-premium:hover::after{ opacity:1 }
-    /* Futuristic UI */
-    .glass{ backdrop-filter: blur(12px); background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.70)); border:1px solid rgba(16,24,48,.08) }
-    .mesh{
-      background:
-        radial-gradient(80rem 40rem at 10% -10%, #d7e5ff 0, transparent 60%),
-        radial-gradient(60rem 30rem at 90% -10%, #c7fff8 0, transparent 55%),
-        radial-gradient(50rem 25rem at 50% -20%, #ffe6f1 0, transparent 55%),
-        #f6f8fb;
-    }
-    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55rem; padding:.95rem 1.35rem; border-radius:9999px; font-weight:800; letter-spacing:.2px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease }
-    .btn:active{ transform: translateY(0) }
-    .btn-primary{ color:#fff; background: linear-gradient(135deg, #4c8dff, #22d3ee); box-shadow: var(--btn-shadow, 0 14px 40px rgba(34,211,238,.35)); position:relative; overflow:hidden }
-    .btn-primary::after{ content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent); transform:translateX(-120%); transition:transform .6s ease }
-    .btn-primary:hover::after{ transform:translateX(120%) }
-    .btn-primary:hover{ transform: translateY(-1px); box-shadow:0 18px 50px rgba(76,141,255,.35) }
-    .btn-outline{ border:1px solid rgba(16,24,48,.12); background: #fff }
-    .btn-outline:hover{ background:#f5f9ff; box-shadow:0 10px 26px rgba(16,24,48,.08) }
-    .btn-ghost{ border:1px solid rgba(16,24,48,.10); background: linear-gradient(180deg,#ffffff,#f8fbff) }
-    .input{ border:1px solid rgba(16,24,48,.12); background:#fff; padding:1rem 1.2rem; border-radius:9999px; outline:none; width:100%; box-shadow:0 2px 0 rgba(16,24,48,.02) }
-    .input:focus{ box-shadow:0 0 0 4px var(--ring) }
-    .card{ background:#ffffff; border:1px solid rgba(16,24,48,.08); border-radius:1.25rem; box-shadow:0 10px 30px rgba(16,24,48,.06) }
-    .chip{ display:inline-flex;align-items:center;gap:.5rem; padding:.45rem .7rem; border-radius:9999px; background:#fff; border:1px solid rgba(16,24,48,.10) }
-    .orbit{ position:absolute; inset:0; pointer-events:none; }
-    .accent{ position:absolute; filter:blur(40px); opacity:.7 }
-  </style>
-
-  <!-- CONFIG -->
-  <script>
-    window.CFL = {
-      MAILERLITE_FORM_ACTION: '', // ex: 'https://assets.mailerlite.com/jsonp/xxxxx/forms/xxxx/subscribe'
-      GUMROAD_PRODUCT_URL: 'https://florinwave0.gumroad.com/l/yspwee',
-      GA4_MEASUREMENT_ID: '',
-      META_PIXEL_ID: '',
-      TIKTOK_PIXEL_ID: ''
-    };
-  </script>
-</head>
-<body class="antialiased">
-  <!-- TOP BAR -->
-  <div class="mesh relative">
-    <header class="sticky top-0 z-40 border-b border-[rgba(16,24,48,.08)] bg-white/70 backdrop-blur">
-      <div class="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <svg width="36" height="36" viewBox="0 0 48 48" class="drop-shadow" aria-hidden="true">
-            <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#4c8dff"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
-            <rect rx="12" width="48" height="48" fill="url(#g)"/>
-            <text x="24" y="31" text-anchor="middle" font-size="18" font-family="Sora,Inter" fill="#fff">CFL</text>
-          </svg>
-          <span class="text-xl font-extrabold tracking-tight">CashFlowLab</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm text-[rgba(11,16,32,.7)]">
-          <a href="#features" class="hover:text-brand-700">Funcționalități</a>
-          <a href="#showreel" class="hover:text-brand-700">Showreel</a>
-          <a href="#pricing" class="hover:text-brand-700">Prețuri</a>
-          <a href="#faq" class="hover:text-brand-700">FAQ</a>
-        </nav>
-        <a id="buyTop" href="#" class="btn btn-premium">Cumpără acum — 27€ + taxe</a>
-      </div>
-    </header>
-
-    <!-- HERO -->
-    <section id="home" class="relative">
-      <div class="absolute -top-24 left-6 accent w-64 h-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(76,141,255,.35),transparent_60%)]"></div>
-      <div class="absolute -top-10 right-16 accent w-80 h-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(34,211,238,.35),transparent_60%)]"></div>
-      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-6 py-16 lg:py-24 items-center">
-        <div class="space-y-6">
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">⚡ Ultra‑premium 2025</span>
-            <span class="chip">🔒 GDPR</span>
-            <span class="chip">📈 Ready: Analytics & A/B</span>
-          </div>
-          <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">Futurist, clar, <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-neon-500">pregătit să vândă</span>.</h1>
-          <p class="text-lg text-[rgba(11,16,32,.75)] max-w-xl">CashFlowLab este <strong>kitul futurist 2025</strong>: landing premium light‑mode, CTA‑uri magnetice, video demo, <strong>funnel MailerLite</strong> și <strong>checkout Gumroad în 2‑click</strong>. Îl deschizi, pui produsul, <strong>pornești vânzările azi</strong>.</p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#cta" class="btn btn-premium">Începe gratuit</a>
-            <a href="#showreel" class="btn btn-outline">Vezi demo video</a>
-          </div>
-          <div class="flex items-center gap-6 text-sm text-[rgba(11,16,32,.6)] pt-2">
-            <span>Responsive 100%</span><span>SEO corect</span><span>Checkout 2‑click</span>
-          </div>
-        </div>
-        <div class="glass rounded-3xl p-2 shadow-soft">
-          <div class="relative overflow-hidden rounded-[calc(theme(borderRadius.3xl)-.5rem)]">
-            <video class="w-full h-full" playsinline muted loop autoplay preload="metadata" poster="https://images.unsplash.com/photo-1520975693416-35e88239e98e?q=80&w=1200&auto=format&fit=crop">
-              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- FEATURES -->
-  <section id="features" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center max-w-3xl mx-auto">
-      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Tot ce îți trebuie, fără zgomot</h2>
-      <p class="mt-3 text-[rgba(11,16,32,.7)]">Arhitectură modernă, conversii reale, experiență fluidă.</p>
-    </div>
-
-    <!-- DESCRIERE BOMBĂ -->
-    <div class="grid lg:grid-cols-3 gap-6 mt-10">
-      <div class="card p-6 lg:col-span-3">
-        <h3 class="font-semibold text-xl mb-2">Descriere pe scurt (bomba 💥)</h3>
-        <p class="text-[rgba(11,16,32,.75)]">CashFlowLab este un <strong>kit all‑in‑one de lansare</strong> care îți dă pe tavă: un <strong>site premium 2025</strong>, <strong>funnel de email</strong> conectabil în 1 minut, <strong>checkout</strong> cu Gumroad și <strong>GDPR + Analytics</strong> corect configurate. <em>Zero bătăi de cap</em>, doar publici și vinzi.</p>
-        <ul class="mt-4 grid md:grid-cols-4 gap-2 text-[rgba(11,16,32,.8)]">
-          <li>• Single‑file HTML — pornit în 60s</li>
-          <li>• Ghid de setare în 10 minute</li>
-          <li>• Template email (captare + deliver)</li>
-          <li>• Hook‑uri GA4 / Meta / TikTok</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-6 mt-6">
-      <div class="card p-6">
-        <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">⚙️</div>
-        <h3 class="font-semibold mb-1">Performanță & SEO</h3>
-        <p class="text-[rgba(11,16,32,.7)]">Cod curat, lazy‑loading, meta/OG corecte, scoruri Lighthouse solide.</p>
-      </div>
-      <div class="card p-6">
-        <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">🎯</div>
-        <h3 class="font-semibold mb-1">CTA‑uri magnetice</h3>
-        <p class="text-[rgba(11,16,32,.7)]">Butoane cu gradient dinamic și micro‑interacțiuni care convertesc.</p>
-      </div>
-      <div class="card p-6">
-        <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">🧩</div>
-        <h3 class="font-semibold mb-1">Integrare completă</h3>
-        <p class="text-[rgba(11,16,32,.7)]">MailerLite, Gumroad, GA4 + Pixels, consent manager — totul pregătit.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SHOWREEL -->
-  <section id="showreel" class="max-w-7xl mx-auto px-6 pb-6">
-    <div class="text-center mb-6">
-      <h2 class="headline text-3xl font-extrabold">Clipuri trimise de utilizatori</h2>
-      <p class="mt-2 text-[rgba(11,16,32,.7)]">Demo-uri reale făcute cu CashFlowLab (setup, lansare, checkout).</p>
-    </div>
-    <div class="grid lg:grid-cols-2 gap-6">
-      <figure class="card overflow-hidden">
-        <div class="relative aspect-video">
-          <span class="absolute left-3 top-3 chip">🎥 Video utilizator</span>
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Setup în 24h" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <figcaption class="px-4 py-3 text-[rgba(11,16,32,.7)]"><strong>Andrei • soloprenor</strong> — „Am configurat CashFlowLab în aceeași zi și am colectat primele lead‑uri.”</figcaption>
-      </figure>
-      <figure class="card overflow-hidden">
-        <div class="relative aspect-video">
-          <span class="absolute left-3 top-3 chip">🎥 Video utilizator</span>
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Checkout în 2‑click" loading="lazy" allowfullscreen></iframe>
-        </div>
-        <figcaption class="px-4 py-3 text-[rgba(11,16,32,.7)]"><strong>Ioana • creator</strong> — „Checkout‑ul pe Gumroad e instant. Am vândut primul produs în 48h.”</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center mb-10">
-      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Planuri simple</h2>
-      <p class="mt-2 text-[rgba(11,16,32,.7)]">Începe gratuit, upgrade când ești gata.</p>
-    </div>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="card p-6 flex flex-col">
-        <h3 class="text-xl font-bold">Starter</h3>
-        <p class="text-[rgba(11,16,32,.7)] mt-1">Site + funnel + ghid.</p>
-        <div class="text-4xl font-extrabold mt-4">Gratuit</div>
-        <ul class="mt-4 space-y-2 text-[rgba(11,16,32,.8)]">
-          <li>• Single‑file HTML premium</li>
-          <li>• Copy & CTA‑uri optimizate</li>
-          <li>• Ghid integrare</li>
-        </ul>
-        <a href="#cta" class="btn btn-outline mt-6">Începe</a>
-      </div>
-      <div class="card p-6 flex flex-col ring-1 ring-[rgba(76,141,255,.25)]">
-        <h3 class="text-xl font-bold">Pro</h3>
-        <p class="text-[rgba(11,16,32,.7)] mt-1">Variantă complet conectată + fine‑tuning.</p>
-        <div class="text-4xl font-extrabold mt-4">27€ <span class="text-base font-semibold text-[rgba(11,16,32,.6)]">+ taxe</span></div>
-        <ul class="mt-4 space-y-2 text-[rgba(11,16,32,.8)]">
-          <li>• Conectare MailerLite</li>
-          <li>• GA4 + Pixels</li>
-          <li>• Personalizare brand</li>
-        </ul>
-        <a id="buyMid" href="#" class="btn btn-premium mt-6">Cumpără acum — 27€ + taxe</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section id="cta" class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <h2 class="headline text-3xl sm:text-4xl font-extrabold">Primește kitul gratuit</h2>
-    <p class="mt-3 text-[rgba(11,16,32,.7)]">Completezi emailul, îți trimitem instant linkul + pașii. Poți dezabona oricând.</p>
-    <form id="leadForm" class="mx-auto mt-6 flex max-w-xl flex-col sm:flex-row gap-3">
-      <input id="leadEmail" required type="email" placeholder="Emailul tău" class="input" />
-      <button id="leadBtn" class="btn btn-premium" type="submit">Primește kitul</button>
-    </form>
-    <p id="leadMsg" class="text-sm text-[rgba(11,16,32,.7)] mt-3 hidden">Mulțumim! Verifică inbox‑ul.</p>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="max-w-6xl mx-auto px-6 pb-20">
-    <div class="grid md:grid-cols-2 gap-4">
-      <details class="card p-5">
-        <summary class="cursor-pointer font-semibold">Funcționează fără builder?</summary>
-        <p class="mt-3 text-[rgba(11,16,32,.75)]">Da, este un singur fișier HTML. Îl pui pe Netlify/Vercel sau deschizi local.</p>
-      </details>
-      <details class="card p-5">
-        <summary class="cursor-pointer font-semibold">Pot schimba culorile?</summary>
-        <p class="mt-3 text-[rgba(11,16,32,.75)]">Da. Culorile sunt în config Tailwind (brand & neon). </p>
-      </details>
-      <details class="card p-5">
-        <summary class="cursor-pointer font-semibold">Ce se întâmplă dacă nu setez MailerLite/Gumroad?</summary>
-        <p class="mt-3 text-[rgba(11,16,32,.75)]">Formularul afișează un mesaj, iar butoanele Gumroad merg pe linkul implicit — nu se „rup”.</p>
-      </details>
-      <details class="card p-5">
-        <summary class="cursor-pointer font-semibold">Este conform GDPR?</summary>
-        <p class="mt-3 text-[rgba(11,16,32,.75)]">Da. Banner de consimțământ, preferințe pentru Analytics/Marketing și text de confidențialitate.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-[rgba(16,24,48,.08)] bg-white/70 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-[rgba(11,16,32,.65)]">© <span id="year"></span> CashFlowLab</p>
-      <div class="text-sm flex gap-6 text-[rgba(11,16,32,.65)]">
-        <a href="#" class="hover:text-brand-700">Termeni</a>
-        <a href="#" class="hover:text-brand-700">Confidențialitate</a>
-        <button id="openConsent" class="hover:text-brand-700">Preferințe cookie</button>
-      </div>
-    </div>
-  </footer>
-
-  <!-- COOKIE BAR -->
-  <div id="cookieBar" class="fixed inset-x-4 bottom-4 z-50 hidden items-center justify-between gap-3 glass p-4 rounded-3xl shadow-soft">
-    <p class="text-sm text-[rgba(11,16,32,.75)]">Folosim cookie‑uri necesare. Analytics/Marketing doar cu acord.</p>
-    <div class="flex items-center gap-2">
-      <button id="denyAll" class="btn btn-ghost" type="button">Respinge</button>
-      <button id="customize" class="btn btn-outline" type="button">Personalizează</button>
-      <button id="allowAll" class="btn btn-primary" type="button">Acceptă tot</button>
-    </div>
-  </div>
-
-  <!-- CONSENT MODAL -->
-  <dialog id="consentModal" class="backdrop:bg-[rgba(0,0,0,.35)] p-0 w-[min(520px,92vw)] rounded-3xl">
-    <div class="glass p-6 rounded-3xl">
-      <h3 class="headline text-xl font-bold">Preferințe cookie</h3>
-      <p class="mt-2 text-sm text-[rgba(11,16,32,.7)]">Alege ce tipuri permiți. Poți reveni oricând.</p>
-      <div class="mt-4 space-y-3">
-        <label class="flex items-center justify-between card p-3">
-          <span>Necesare</span>
-          <input type="checkbox" checked disabled>
-        </label>
-        <label class="flex items-center justify-between card p-3">
-          <span>Analytics (GA4/Plausible)</span>
-          <input id="toggleAnalytics" type="checkbox">
-        </label>
-        <label class="flex items-center justify-between card p-3">
-          <span>Marketing (Meta/TikTok)</span>
-          <input id="toggleMarketing" type="checkbox">
-        </label>
-      </div>
-      <div class="mt-6 flex justify-end gap-2">
-        <button id="saveConsent" class="btn btn-primary" type="button">Salvează</button>
-        <button id="closeConsent" class="btn btn-outline" type="button">Închide</button>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- TOAST -->
-  <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[60] hidden rounded-full bg-white text-brand-700 px-4 py-2 text-sm font-semibold shadow-glow">Preferințe salvate</div>
-
-  <!-- SCRIPTS -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Consent state
-    const CONSENT_KEY='cfl_consent_v2';
-    const getConsent=()=>{ try{return JSON.parse(localStorage.getItem(CONSENT_KEY)||'{}');}catch{return{}} };
-    const setConsent=(obj)=> localStorage.setItem(CONSENT_KEY, JSON.stringify(obj));
-
-    const cookieBar=document.getElementById('cookieBar');
-    const consentModal=document.getElementById('consentModal');
-    const openConsent=document.getElementById('openConsent');
-    const toggleAnalytics=document.getElementById('toggleAnalytics');
-    const toggleMarketing=document.getElementById('toggleMarketing');
-    const toast=document.getElementById('toast');
-    const showToast=(m)=>{ toast.textContent=m; toast.classList.remove('hidden'); setTimeout(()=>toast.classList.add('hidden'),1500); };
-
-    // Gumroad links
-    const gumURL = CFL.GUMROAD_PRODUCT_URL || 'https://florinwave0.gumroad.com/l/yspwee';
-    const buyTop=document.getElementById('buyTop');
-    const buyMid=document.getElementById('buyMid');
-    if(buyTop){ buyTop.href=gumURL; buyTop.target='_blank'; buyTop.rel='noopener'; }
-    if(buyMid){ buyMid.href=gumURL; buyMid.target='_blank'; buyMid.rel='noopener'; }
-
-    // Cookie bar visibility
-    window.addEventListener('DOMContentLoaded',()=>{
-      const c=getConsent();
-      if(!('analytics' in c) && !('marketing' in c)) cookieBar.classList.remove('hidden');
-    });
-
-    // Helpers
-    const on=(el,ev,fn)=> el && el.addEventListener(ev,fn);
-
-    on(document.getElementById('customize'),'click',()=>{ cookieBar.classList.add('hidden'); consentModal.showModal(); });
-    on(openConsent,'click',()=>{ const c=getConsent(); toggleAnalytics.checked=!!c.analytics; toggleMarketing.checked=!!c.marketing; consentModal.showModal(); });
-    on(document.getElementById('allowAll'),'click',()=>{ setConsent({analytics:true,marketing:true}); cookieBar.classList.add('hidden'); initIntegrations(); showToast('Acceptat — tracking activ');});
-    on(document.getElementById('denyAll'),'click',()=>{ setConsent({analytics:false,marketing:false}); cookieBar.classList.add('hidden'); showToast('Respins — doar necesare');});
-    on(document.getElementById('saveConsent'),'click',()=>{ setConsent({analytics:toggleAnalytics.checked, marketing:toggleMarketing.checked}); consentModal.close(); initIntegrations(); showToast('Preferințe salvate'); });
-    on(document.getElementById('closeConsent'),'click',()=> consentModal.close());
-
-    // Lead form
-    const leadForm=document.getElementById('leadForm');
-    on(leadForm,'submit', async (e)=>{
-      e.preventDefault();
-      const email=document.getElementById('leadEmail').value.trim();
-      if(!email) return;
-      if(!CFL.MAILERLITE_FORM_ACTION){
-        document.getElementById('leadMsg').classList.remove('hidden');
-        leadForm.reset();
-        return; // safe demo
-      }
-      try{
-        const resp=await fetch(CFL.MAILERLITE_FORM_ACTION,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({fields: JSON.stringify({ email }) })});
-        if(resp.ok){ document.getElementById('leadMsg').classList.remove('hidden'); leadForm.reset(); if(window.gtag) gtag('event','generate_lead'); if(window.fbq) fbq('track','Lead'); if(window.ttq) ttq.track('CompleteRegistration'); }
-        else{ alert('Nu am reușit să trimitem. Verifică MAILERLITE_FORM_ACTION.'); }
-      }catch(err){ alert('Eroare de rețea. Încearcă din nou.'); }
-    });
-
-    // Integrations
-    function loadScript(src, attrs={}){ return new Promise((res,rej)=>{ const s=document.createElement('script'); s.src=src; s.async=true; Object.entries(attrs).forEach(([k,v])=>{ if(v==="") s.setAttribute(k,""); else s.setAttribute(k,v); }); s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
-    function initGA4(id){ if(!id) return; window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag; gtag('js', new Date()); gtag('config', id, { anonymize_ip:true }); loadScript(`https://www.googletagmanager.com/gtag/js?id=${id}`); }
-    function initMetaPixel(id){ if(!id) return; !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', id); fbq('track','PageView'); }
-    function initTikTok(id){ if(!id) return; !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript';o.async=true;o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a);};}(window,document,'ttq');ttq.load(id);ttq.page(); }
-
-    function initIntegrations(){
-      const c=getConsent();
-      if(c.analytics) initGA4(CFL.GA4_MEASUREMENT_ID);
-      if(c.marketing){ initMetaPixel(CFL.META_PIXEL_ID); initTikTok(CFL.TIKTOK_PIXEL_ID); }
-    }
-  </script>
-</body>
-</html>
+diff --git a/index.html b/index.html
+index 4acd5edec539aacf7b18fdfbb860637ffa67babd..d1ee2ad5b8fca3e79f8de2c6b3f101117ef2a710 100644
+--- a/index.html
++++ b/index.html
+@@ -1,166 +1,168 @@
+ <!doctype html>
+ <html lang="ro" class="scroll-smooth">
+ <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>CashFlowLab — Ultra‑Premium 2025</title>
+   <meta name="description" content="CashFlowLab 2025: site futurist, ultra‑premium, pe fundal deschis. Funnel, checkout, analytics și GDPR — totul gata de lansare." />
+-  <meta name="theme-color" content="#f6f8fb" />
++  <meta name="theme-color" content="#fffdf5" />
+   
+   <!-- Open Graph -->
+   <meta property="og:type" content="website" />
+   <meta property="og:title" content="CashFlowLab — Ultra‑Premium 2025" />
+   <meta property="og:description" content="Landing futurist, ultra‑premium: video, funnel email, checkout integrat, analytics & GDPR." />
+   <meta property="og:image" content="./CashFlowLab.png" />
+ 
+   <!-- Fonts & Tailwind -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+     tailwind.config = {
+       theme: { extend: {
+         colors: {
+-          base:{50:'#f6f8fb',100:'#eef2f7',200:'#e4eaf3',900:'#0b1020'},
+-          brand:{50:'#eef4ff',100:'#dbe7ff',400:'#7aa7ff',500:'#4c8dff',600:'#2b6bff',700:'#1d46f0'},
+-          neon:{500:'#22d3ee',600:'#06b6d4'},
++          base:{50:'#fffdf5',100:'#fff7e6',200:'#ffeecd',900:'#0b1020'},
++          brand:{50:'#fff9e6',100:'#ffeab3',400:'#ffd666',500:'#ffcc33',600:'#e6b800',700:'#b38f00'},
++          neon:{500:'#ffd700',600:'#e6ac00'},
+         },
+         boxShadow: {
+           soft:'0 14px 40px rgba(16,24,48,.12)',
+-          glow:'0 0 0 1px rgba(76,141,255,.35), 0 12px 30px rgba(34,211,238,.25)'
++          glow:'0 0 0 1px rgba(212,175,55,.35), 0 12px 30px rgba(255,215,0,.25)'
+         },
+         borderRadius:{ 'pill':'9999px', '3xl':'1.75rem' }
+       } }
+     }
+   </script>
+   <style>
+-    :root{ --ring: rgba(76,141,255,.35); }
+-    body{ font-family: Inter,system-ui,Segoe UI,Roboto,Arial; background:#f6f8fb; color:#0b1020 }
+-    .headline{ font-family:Sora,Inter,system-ui,Segoe UI,Roboto,Arial }
++    :root{ --ring: rgba(212,175,55,.35); }
++    body{ font-family: Inter,-apple-system,system-ui,Segoe UI,Roboto,Arial; background:#fffdf5; color:#0b1020 }
++    .headline{ font-family:Sora,Inter,-apple-system,system-ui,Segoe UI,Roboto,Arial }
+     /* Futuristic UI */
+-    .btn-premium{ color:#0b1020; background:linear-gradient(135deg,#ffffff,#f1f6ff); border:1px solid rgba(16,24,48,.12); box-shadow:0 16px 46px rgba(76,141,255,.20), 0 2px 0 rgba(16,24,48,.04); position:relative; overflow:hidden }
+-    .btn-premium:hover{ transform:translateY(-1px); box-shadow:0 22px 60px rgba(76,141,255,.28) }
+-    .btn-premium::after{ content:""; position:absolute; top:-120%; left:-120%; width:240%; height:240%; background:radial-gradient(circle at 30% 30%, rgba(34,211,238,.25), transparent 40%); transform:rotate(15deg); transition:opacity .3s ease; opacity:.8 }
++    .btn-premium{ color:#0b1020; background:linear-gradient(135deg,#ffffff,#fff6d1); border:1px solid rgba(212,175,55,.3); box-shadow:0 16px 46px rgba(212,175,55,.20), 0 2px 0 rgba(16,24,48,.04); position:relative; overflow:hidden }
++    .btn-premium:hover{ transform:translateY(-1px); box-shadow:0 22px 60px rgba(212,175,55,.28) }
++    .btn-premium::after{ content:""; position:absolute; top:-120%; left:-120%; width:240%; height:240%; background:radial-gradient(circle at 30% 30%, rgba(255,215,0,.25), transparent 40%); transform:rotate(15deg); transition:opacity .3s ease; opacity:.8 }
+     .btn-premium:hover::after{ opacity:1 }
+     /* Futuristic UI */
+     .glass{ backdrop-filter: blur(12px); background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.70)); border:1px solid rgba(16,24,48,.08) }
+     .mesh{
+       background:
+-        radial-gradient(80rem 40rem at 10% -10%, #d7e5ff 0, transparent 60%),
+-        radial-gradient(60rem 30rem at 90% -10%, #c7fff8 0, transparent 55%),
+-        radial-gradient(50rem 25rem at 50% -20%, #ffe6f1 0, transparent 55%),
+-        #f6f8fb;
++        radial-gradient(80rem 40rem at 10% -10%, #ffe6a3 0, transparent 60%),
++        radial-gradient(60rem 30rem at 90% -10%, #ffe0cc 0, transparent 55%),
++        radial-gradient(50rem 25rem at 50% -20%, #fff2de 0, transparent 55%),
++        #fffdf5;
+     }
+     .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55rem; padding:.95rem 1.35rem; border-radius:9999px; font-weight:800; letter-spacing:.2px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease }
+     .btn:active{ transform: translateY(0) }
+-    .btn-primary{ color:#fff; background: linear-gradient(135deg, #4c8dff, #22d3ee); box-shadow: var(--btn-shadow, 0 14px 40px rgba(34,211,238,.35)); position:relative; overflow:hidden }
++    .btn-primary{ color:#fff; background: linear-gradient(135deg, #e6b800, #ffd700); box-shadow: var(--btn-shadow, 0 14px 40px rgba(212,175,55,.35)); position:relative; overflow:hidden }
+     .btn-primary::after{ content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent); transform:translateX(-120%); transition:transform .6s ease }
+     .btn-primary:hover::after{ transform:translateX(120%) }
+-    .btn-primary:hover{ transform: translateY(-1px); box-shadow:0 18px 50px rgba(76,141,255,.35) }
+-    .btn-outline{ border:1px solid rgba(16,24,48,.12); background: #fff }
+-    .btn-outline:hover{ background:#f5f9ff; box-shadow:0 10px 26px rgba(16,24,48,.08) }
+-    .btn-ghost{ border:1px solid rgba(16,24,48,.10); background: linear-gradient(180deg,#ffffff,#f8fbff) }
+-    .input{ border:1px solid rgba(16,24,48,.12); background:#fff; padding:1rem 1.2rem; border-radius:9999px; outline:none; width:100%; box-shadow:0 2px 0 rgba(16,24,48,.02) }
++    .btn-primary:hover{ transform: translateY(-1px); box-shadow:0 18px 50px rgba(212,175,55,.35) }
++    .btn-outline{ border:1px solid rgba(212,175,55,.3); background: #fff }
++    .btn-outline:hover{ background:#fff6d8; box-shadow:0 10px 26px rgba(212,175,55,.1) }
++    .btn-ghost{ border:1px solid rgba(212,175,55,.25); background: linear-gradient(180deg,#ffffff,#fff8dc) }
++    .input{ border:1px solid rgba(212,175,55,.3); background:#fff; padding:1rem 1.2rem; border-radius:9999px; outline:none; width:100%; box-shadow:0 2px 0 rgba(16,24,48,.02) }
+     .input:focus{ box-shadow:0 0 0 4px var(--ring) }
+-    .card{ background:#ffffff; border:1px solid rgba(16,24,48,.08); border-radius:1.25rem; box-shadow:0 10px 30px rgba(16,24,48,.06) }
+-    .chip{ display:inline-flex;align-items:center;gap:.5rem; padding:.45rem .7rem; border-radius:9999px; background:#fff; border:1px solid rgba(16,24,48,.10) }
++    .card{ background:#ffffff; border:1px solid rgba(212,175,55,.1); border-radius:1.25rem; box-shadow:0 10px 30px rgba(16,24,48,.06) }
++    .chip{ display:inline-flex;align-items:center;gap:.5rem; padding:.45rem .7rem; border-radius:9999px; background:#fff; border:1px solid rgba(212,175,55,.25) }
+     .orbit{ position:absolute; inset:0; pointer-events:none; }
+     .accent{ position:absolute; filter:blur(40px); opacity:.7 }
+   </style>
+ 
+   <!-- CONFIG -->
+   <script>
+     window.CFL = {
+       MAILERLITE_FORM_ACTION: '', // ex: 'https://assets.mailerlite.com/jsonp/xxxxx/forms/xxxx/subscribe'
+       GUMROAD_PRODUCT_URL: 'https://florinwave0.gumroad.com/l/yspwee',
+       GA4_MEASUREMENT_ID: '',
+       META_PIXEL_ID: '',
+       TIKTOK_PIXEL_ID: ''
+     };
+   </script>
+ </head>
+ <body class="antialiased">
+   <!-- TOP BAR -->
+   <div class="mesh relative">
+     <header class="sticky top-0 z-40 border-b border-[rgba(16,24,48,.08)] bg-white/70 backdrop-blur">
+       <div class="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
+         <a href="#home" class="flex items-center gap-3">
+           <svg width="36" height="36" viewBox="0 0 48 48" class="drop-shadow" aria-hidden="true">
+-            <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#4c8dff"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
++            <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#e6b800"/><stop offset="100%" stop-color="#ffd700"/></linearGradient></defs>
+             <rect rx="12" width="48" height="48" fill="url(#g)"/>
+             <text x="24" y="31" text-anchor="middle" font-size="18" font-family="Sora,Inter" fill="#fff">CFL</text>
+           </svg>
+           <span class="text-xl font-extrabold tracking-tight">CashFlowLab</span>
+         </a>
+         <nav class="hidden md:flex items-center gap-8 text-sm text-[rgba(11,16,32,.7)]">
+           <a href="#features" class="hover:text-brand-700">Funcționalități</a>
+           <a href="#showreel" class="hover:text-brand-700">Showreel</a>
++          <a href="#testimonials" class="hover:text-brand-700">Testimoniale</a>
+           <a href="#pricing" class="hover:text-brand-700">Prețuri</a>
++          <a href="#blog" class="hover:text-brand-700">Blog</a>
+           <a href="#faq" class="hover:text-brand-700">FAQ</a>
+         </nav>
+-        <a id="buyTop" href="#" class="btn btn-premium">Cumpără acum — 27€ + taxe</a>
++        <a id="buyTop" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" class="btn btn-premium">Cumpără acum — 27€ + taxe</a>
+       </div>
+     </header>
+ 
+     <!-- HERO -->
+     <section id="home" class="relative">
+-      <div class="absolute -top-24 left-6 accent w-64 h-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(76,141,255,.35),transparent_60%)]"></div>
+-      <div class="absolute -top-10 right-16 accent w-80 h-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(34,211,238,.35),transparent_60%)]"></div>
++      <div class="absolute -top-24 left-6 accent w-64 h-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,215,0,.35),transparent_60%)]"></div>
++      <div class="absolute -top-10 right-16 accent w-80 h-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(230,184,0,.35),transparent_60%)]"></div>
+       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-6 py-16 lg:py-24 items-center">
+         <div class="space-y-6">
+           <div class="flex flex-wrap gap-2">
+             <span class="chip">⚡ Ultra‑premium 2025</span>
+             <span class="chip">🔒 GDPR</span>
+             <span class="chip">📈 Ready: Analytics & A/B</span>
+           </div>
+-          <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">Futurist, clar, <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-neon-500">pregătit să vândă</span>.</h1>
+-          <p class="text-lg text-[rgba(11,16,32,.75)] max-w-xl">CashFlowLab este <strong>kitul futurist 2025</strong>: landing premium light‑mode, CTA‑uri magnetice, video demo, <strong>funnel MailerLite</strong> și <strong>checkout Gumroad în 2‑click</strong>. Îl deschizi, pui produsul, <strong>pornești vânzările azi</strong>.</p>
++          <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">Luxos, futurist și <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-neon-500">gândit să-ți dubleze vânzările</span>.</h1>
++          <p class="text-lg text-[rgba(11,16,32,.75)] max-w-xl">CashFlowLab este <strong>kitul premium de lansare</strong>: site light‑mode de lux, CTA‑uri magnetice, video demo, <strong>funnel MailerLite</strong> și <strong>checkout Gumroad în 2‑click</strong>. Îl deschizi, adaugi produsul și <strong>începi să încasezi azi</strong>.</p>
+           <div class="flex flex-wrap gap-3">
+             <a href="#cta" class="btn btn-premium">Începe gratuit</a>
+             <a href="#showreel" class="btn btn-outline">Vezi demo video</a>
+           </div>
+           <div class="flex items-center gap-6 text-sm text-[rgba(11,16,32,.6)] pt-2">
+             <span>Responsive 100%</span><span>SEO corect</span><span>Checkout 2‑click</span>
+           </div>
+         </div>
+         <div class="glass rounded-3xl p-2 shadow-soft">
+           <div class="relative overflow-hidden rounded-[calc(theme(borderRadius.3xl)-.5rem)]">
+             <video class="w-full h-full" playsinline muted loop autoplay preload="metadata" poster="https://images.unsplash.com/photo-1520975693416-35e88239e98e?q=80&w=1200&auto=format&fit=crop">
+               <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+             </video>
+           </div>
+         </div>
+       </div>
+     </section>
+   </div>
+ 
+   <!-- FEATURES -->
+   <section id="features" class="max-w-7xl mx-auto px-6 py-16">
+     <div class="text-center max-w-3xl mx-auto">
+-      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Tot ce îți trebuie, fără zgomot</h2>
++      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Tot ce ai nevoie pentru lansări profitabile</h2>
+       <p class="mt-3 text-[rgba(11,16,32,.7)]">Arhitectură modernă, conversii reale, experiență fluidă.</p>
+     </div>
+ 
+     <!-- DESCRIERE BOMBĂ -->
+     <div class="grid lg:grid-cols-3 gap-6 mt-10">
+       <div class="card p-6 lg:col-span-3">
+         <h3 class="font-semibold text-xl mb-2">Descriere pe scurt (bomba 💥)</h3>
+         <p class="text-[rgba(11,16,32,.75)]">CashFlowLab este un <strong>kit all‑in‑one de lansare</strong> care îți dă pe tavă: un <strong>site premium 2025</strong>, <strong>funnel de email</strong> conectabil în 1 minut, <strong>checkout</strong> cu Gumroad și <strong>GDPR + Analytics</strong> corect configurate. <em>Zero bătăi de cap</em>, doar publici și vinzi.</p>
+         <ul class="mt-4 grid md:grid-cols-4 gap-2 text-[rgba(11,16,32,.8)]">
+           <li>• Single‑file HTML — pornit în 60s</li>
+           <li>• Ghid de setare în 10 minute</li>
+           <li>• Template email (captare + deliver)</li>
+           <li>• Hook‑uri GA4 / Meta / TikTok</li>
+         </ul>
+       </div>
+     </div>
+ 
+     <div class="grid lg:grid-cols-3 gap-6 mt-6">
+       <div class="card p-6">
+         <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">⚙️</div>
+         <h3 class="font-semibold mb-1">Performanță & SEO</h3>
+         <p class="text-[rgba(11,16,32,.7)]">Cod curat, lazy‑loading, meta/OG corecte, scoruri Lighthouse solide.</p>
+       </div>
+       <div class="card p-6">
+         <div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">🎯</div>
+diff --git a/index.html b/index.html
+index 4acd5edec539aacf7b18fdfbb860637ffa67babd..d1ee2ad5b8fca3e79f8de2c6b3f101117ef2a710 100644
+--- a/index.html
++++ b/index.html
+@@ -177,93 +179,145 @@
+ 
+   <!-- SHOWREEL -->
+   <section id="showreel" class="max-w-7xl mx-auto px-6 pb-6">
+     <div class="text-center mb-6">
+       <h2 class="headline text-3xl font-extrabold">Clipuri trimise de utilizatori</h2>
+       <p class="mt-2 text-[rgba(11,16,32,.7)]">Demo-uri reale făcute cu CashFlowLab (setup, lansare, checkout).</p>
+     </div>
+     <div class="grid lg:grid-cols-2 gap-6">
+       <figure class="card overflow-hidden">
+         <div class="relative aspect-video">
+           <span class="absolute left-3 top-3 chip">🎥 Video utilizator</span>
+           <iframe class="w-full h-full" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Setup în 24h" loading="lazy" allowfullscreen></iframe>
+         </div>
+         <figcaption class="px-4 py-3 text-[rgba(11,16,32,.7)]"><strong>Andrei • soloprenor</strong> — „Am configurat CashFlowLab în aceeași zi și am colectat primele lead‑uri.”</figcaption>
+       </figure>
+       <figure class="card overflow-hidden">
+         <div class="relative aspect-video">
+           <span class="absolute left-3 top-3 chip">🎥 Video utilizator</span>
+           <iframe class="w-full h-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Checkout în 2‑click" loading="lazy" allowfullscreen></iframe>
+         </div>
+         <figcaption class="px-4 py-3 text-[rgba(11,16,32,.7)]"><strong>Ioana • creator</strong> — „Checkout‑ul pe Gumroad e instant. Am vândut primul produs în 48h.”</figcaption>
+       </figure>
+     </div>
+   </section>
+ 
++  <!-- TESTIMONIALS -->
++  <section id="testimonials" class="max-w-7xl mx-auto px-6 py-16">
++    <div class="text-center mb-10">
++      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Oameni care au lansat deja</h2>
++      <p class="mt-2 text-[rgba(11,16,32,.7)]">Povești reale de succes cu CashFlowLab.</p>
++    </div>
++    <div class="grid md:grid-cols-3 gap-6">
++      <div class="card p-6 text-center">
++        <p class="text-lg font-semibold mb-2">„Am recuperat investiția în prima zi.”</p>
++        <p class="text-sm text-[rgba(11,16,32,.7)]">Mihai • creator digital</p>
++      </div>
++      <div class="card p-6 text-center">
++        <p class="text-lg font-semibold mb-2">„Designul transmite încredere instant.”</p>
++        <p class="text-sm text-[rgba(11,16,32,.7)]">Ana • marketer</p>
++      </div>
++      <div class="card p-6 text-center">
++        <p class="text-lg font-semibold mb-2">„Vânzările au crescut cu 40% într-o săptămână.”</p>
++        <p class="text-sm text-[rgba(11,16,32,.7)]">Radu • soloprenor</p>
++      </div>
++    </div>
++  </section>
++
++  <!-- COUNTDOWN OFFER -->
++  <section id="offer" class="max-w-7xl mx-auto px-6 py-16 text-center">
++    <h2 class="headline text-3xl sm:text-4xl font-extrabold">Ofertă limitată</h2>
++    <p class="mt-3 text-[rgba(11,16,32,.7)]">Prețul promoțional expiră curând.</p>
++    <div id="countdown" class="text-3xl font-extrabold mt-4"></div>
++    <a id="buyCountdown" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" class="btn btn-premium mt-6">Prinde oferta — 27€</a>
++  </section>
++
+   <!-- PRICING -->
+   <section id="pricing" class="max-w-7xl mx-auto px-6 py-16">
+     <div class="text-center mb-10">
+       <h2 class="headline text-3xl sm:text-4xl font-extrabold">Planuri simple</h2>
+       <p class="mt-2 text-[rgba(11,16,32,.7)]">Începe gratuit, upgrade când ești gata.</p>
+     </div>
+     <div class="grid md:grid-cols-2 gap-6">
+       <div class="card p-6 flex flex-col">
+         <h3 class="text-xl font-bold">Starter</h3>
+         <p class="text-[rgba(11,16,32,.7)] mt-1">Site + funnel + ghid.</p>
+         <div class="text-4xl font-extrabold mt-4">Gratuit</div>
+         <ul class="mt-4 space-y-2 text-[rgba(11,16,32,.8)]">
+           <li>• Single‑file HTML premium</li>
+           <li>• Copy & CTA‑uri optimizate</li>
+           <li>• Ghid integrare</li>
+         </ul>
+         <a href="#cta" class="btn btn-outline mt-6">Începe</a>
+       </div>
+-      <div class="card p-6 flex flex-col ring-1 ring-[rgba(76,141,255,.25)]">
++      <div class="card p-6 flex flex-col ring-1 ring-[rgba(212,175,55,.25)]">
+         <h3 class="text-xl font-bold">Pro</h3>
+         <p class="text-[rgba(11,16,32,.7)] mt-1">Variantă complet conectată + fine‑tuning.</p>
+         <div class="text-4xl font-extrabold mt-4">27€ <span class="text-base font-semibold text-[rgba(11,16,32,.6)]">+ taxe</span></div>
+         <ul class="mt-4 space-y-2 text-[rgba(11,16,32,.8)]">
+           <li>• Conectare MailerLite</li>
+           <li>• GA4 + Pixels</li>
+           <li>• Personalizare brand</li>
+         </ul>
+-        <a id="buyMid" href="#" class="btn btn-premium mt-6">Cumpără acum — 27€ + taxe</a>
++        <a id="buyMid" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" class="btn btn-premium mt-6">Cumpără acum — 27€ + taxe</a>
+       </div>
+     </div>
+   </section>
+ 
+   <!-- CTA -->
+   <section id="cta" class="max-w-4xl mx-auto px-6 py-16 text-center">
+     <h2 class="headline text-3xl sm:text-4xl font-extrabold">Primește kitul gratuit</h2>
+     <p class="mt-3 text-[rgba(11,16,32,.7)]">Completezi emailul, îți trimitem instant linkul + pașii. Poți dezabona oricând.</p>
+     <form id="leadForm" class="mx-auto mt-6 flex max-w-xl flex-col sm:flex-row gap-3">
+       <input id="leadEmail" required type="email" placeholder="Emailul tău" class="input" />
+       <button id="leadBtn" class="btn btn-premium" type="submit">Primește kitul</button>
+     </form>
+     <p id="leadMsg" class="text-sm text-[rgba(11,16,32,.7)] mt-3 hidden">Mulțumim! Verifică inbox‑ul.</p>
+   </section>
+ 
++  <!-- BLOG -->
++  <section id="blog" class="max-w-7xl mx-auto px-6 py-16">
++    <div class="text-center mb-10">
++      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Mini Blog</h2>
++      <p class="mt-2 text-[rgba(11,16,32,.7)]">Idei rapide despre lansări digitale.</p>
++    </div>
++    <div class="grid md:grid-cols-3 gap-6">
++      <article class="card p-6">
++        <h3 class="font-semibold text-xl mb-2"><a href="#">Cum îți validezi rapid ideea</a></h3>
++        <p class="text-[rgba(11,16,32,.7)]">Testează în 24h și vezi dacă merită să scalezi.</p>
++      </article>
++      <article class="card p-6">
++        <h3 class="font-semibold text-xl mb-2"><a href="#">3 formule de headline care convertesc</a></h3>
++        <p class="text-[rgba(11,16,32,.7)]">Inspiră-te din copy care a adus vânzări.</p>
++      </article>
++      <article class="card p-6">
++        <h3 class="font-semibold text-xl mb-2"><a href="#">Checklist pentru lansări fără stres</a></h3>
++        <p class="text-[rgba(11,16,32,.7)]">Pași clari de la idee la primele încasări.</p>
++      </article>
++    </div>
++  </section>
++
+   <!-- FAQ -->
+   <section id="faq" class="max-w-6xl mx-auto px-6 pb-20">
+     <div class="grid md:grid-cols-2 gap-4">
+       <details class="card p-5">
+         <summary class="cursor-pointer font-semibold">Funcționează fără builder?</summary>
+         <p class="mt-3 text-[rgba(11,16,32,.75)]">Da, este un singur fișier HTML. Îl pui pe Netlify/Vercel sau deschizi local.</p>
+       </details>
+       <details class="card p-5">
+         <summary class="cursor-pointer font-semibold">Pot schimba culorile?</summary>
+         <p class="mt-3 text-[rgba(11,16,32,.75)]">Da. Culorile sunt în config Tailwind (brand & neon). </p>
+       </details>
+       <details class="card p-5">
+         <summary class="cursor-pointer font-semibold">Ce se întâmplă dacă nu setez MailerLite/Gumroad?</summary>
+         <p class="mt-3 text-[rgba(11,16,32,.75)]">Formularul afișează un mesaj, iar butoanele Gumroad merg pe linkul implicit — nu se „rup”.</p>
+       </details>
+       <details class="card p-5">
+         <summary class="cursor-pointer font-semibold">Este conform GDPR?</summary>
+         <p class="mt-3 text-[rgba(11,16,32,.75)]">Da. Banner de consimțământ, preferințe pentru Analytics/Marketing și text de confidențialitate.</p>
+       </details>
+     </div>
+   </section>
+ 
+   <!-- FOOTER -->
+   <footer class="border-t border-[rgba(16,24,48,.08)] bg-white/70 backdrop-blur">
+     <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+diff --git a/index.html b/index.html
+index 4acd5edec539aacf7b18fdfbb860637ffa67babd..d1ee2ad5b8fca3e79f8de2c6b3f101117ef2a710 100644
+--- a/index.html
++++ b/index.html
+@@ -314,76 +368,95 @@
+ 
+   <!-- TOAST -->
+   <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[60] hidden rounded-full bg-white text-brand-700 px-4 py-2 text-sm font-semibold shadow-glow">Preferințe salvate</div>
+ 
+   <!-- SCRIPTS -->
+   <script>
+     document.getElementById('year').textContent = new Date().getFullYear();
+ 
+     // Consent state
+     const CONSENT_KEY='cfl_consent_v2';
+     const getConsent=()=>{ try{return JSON.parse(localStorage.getItem(CONSENT_KEY)||'{}');}catch{return{}} };
+     const setConsent=(obj)=> localStorage.setItem(CONSENT_KEY, JSON.stringify(obj));
+ 
+     const cookieBar=document.getElementById('cookieBar');
+     const consentModal=document.getElementById('consentModal');
+     const openConsent=document.getElementById('openConsent');
+     const toggleAnalytics=document.getElementById('toggleAnalytics');
+     const toggleMarketing=document.getElementById('toggleMarketing');
+     const toast=document.getElementById('toast');
+     const showToast=(m)=>{ toast.textContent=m; toast.classList.remove('hidden'); setTimeout(()=>toast.classList.add('hidden'),1500); };
+ 
+     // Gumroad links
+     const gumURL = CFL.GUMROAD_PRODUCT_URL || 'https://florinwave0.gumroad.com/l/yspwee';
+     const buyTop=document.getElementById('buyTop');
+     const buyMid=document.getElementById('buyMid');
++    const buyCountdown=document.getElementById('buyCountdown');
+     if(buyTop){ buyTop.href=gumURL; buyTop.target='_blank'; buyTop.rel='noopener'; }
+     if(buyMid){ buyMid.href=gumURL; buyMid.target='_blank'; buyMid.rel='noopener'; }
++    if(buyCountdown){ buyCountdown.href=gumURL; buyCountdown.target='_blank'; buyCountdown.rel='noopener'; }
+ 
+     // Cookie bar visibility
+     window.addEventListener('DOMContentLoaded',()=>{
+       const c=getConsent();
+       if(!('analytics' in c) && !('marketing' in c)) cookieBar.classList.remove('hidden');
+     });
+ 
+     // Helpers
+     const on=(el,ev,fn)=> el && el.addEventListener(ev,fn);
+ 
+     on(document.getElementById('customize'),'click',()=>{ cookieBar.classList.add('hidden'); consentModal.showModal(); });
+     on(openConsent,'click',()=>{ const c=getConsent(); toggleAnalytics.checked=!!c.analytics; toggleMarketing.checked=!!c.marketing; consentModal.showModal(); });
+     on(document.getElementById('allowAll'),'click',()=>{ setConsent({analytics:true,marketing:true}); cookieBar.classList.add('hidden'); initIntegrations(); showToast('Acceptat — tracking activ');});
+     on(document.getElementById('denyAll'),'click',()=>{ setConsent({analytics:false,marketing:false}); cookieBar.classList.add('hidden'); showToast('Respins — doar necesare');});
+     on(document.getElementById('saveConsent'),'click',()=>{ setConsent({analytics:toggleAnalytics.checked, marketing:toggleMarketing.checked}); consentModal.close(); initIntegrations(); showToast('Preferințe salvate'); });
+     on(document.getElementById('closeConsent'),'click',()=> consentModal.close());
+ 
+     // Lead form
+     const leadForm=document.getElementById('leadForm');
+     on(leadForm,'submit', async (e)=>{
+       e.preventDefault();
+       const email=document.getElementById('leadEmail').value.trim();
+       if(!email) return;
+       if(!CFL.MAILERLITE_FORM_ACTION){
+         document.getElementById('leadMsg').classList.remove('hidden');
+         leadForm.reset();
+         return; // safe demo
+       }
+       try{
+         const resp=await fetch(CFL.MAILERLITE_FORM_ACTION,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({fields: JSON.stringify({ email }) })});
+         if(resp.ok){ document.getElementById('leadMsg').classList.remove('hidden'); leadForm.reset(); if(window.gtag) gtag('event','generate_lead'); if(window.fbq) fbq('track','Lead'); if(window.ttq) ttq.track('CompleteRegistration'); }
+         else{ alert('Nu am reușit să trimitem. Verifică MAILERLITE_FORM_ACTION.'); }
+       }catch(err){ alert('Eroare de rețea. Încearcă din nou.'); }
+     });
+ 
++    // Countdown
++    const countdown=document.getElementById('countdown');
++    if(countdown){
++      const target=new Date(Date.now()+7*24*60*60*1000);
++      const tick=()=>{
++        const diff=target-Date.now();
++        if(diff<=0){ countdown.textContent='Oferta a expirat'; return; }
++        const d=Math.floor(diff/86400000);
++        const h=Math.floor((diff%86400000)/3600000);
++        const m=Math.floor((diff%3600000)/60000);
++        const s=Math.floor((diff%60000)/1000);
++        countdown.textContent=`${d}z ${h}h ${m}m ${s}s`;
++      };
++      tick();
++      setInterval(tick,1000);
++    }
++
+     // Integrations
+     function loadScript(src, attrs={}){ return new Promise((res,rej)=>{ const s=document.createElement('script'); s.src=src; s.async=true; Object.entries(attrs).forEach(([k,v])=>{ if(v==="") s.setAttribute(k,""); else s.setAttribute(k,v); }); s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
+     function initGA4(id){ if(!id) return; window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag; gtag('js', new Date()); gtag('config', id, { anonymize_ip:true }); loadScript(`https://www.googletagmanager.com/gtag/js?id=${id}`); }
+     function initMetaPixel(id){ if(!id) return; !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', id); fbq('track','PageView'); }
+     function initTikTok(id){ if(!id) return; !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript';o.async=true;o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a);};}(window,document,'ttq');ttq.load(id);ttq.page(); }
+ 
+     function initIntegrations(){
+       const c=getConsent();
+       if(c.analytics) initGA4(CFL.GA4_MEASUREMENT_ID);
+       if(c.marketing){ initMetaPixel(CFL.META_PIXEL_ID); initTikTok(CFL.TIKTOK_PIXEL_ID); }
+     }
+   </script>
+ </body>
+ </html>
