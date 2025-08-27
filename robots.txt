@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://cashflowlab57.netlify.app/sitemap.xml
+Sitemap: https://cashflowlabai.com/sitemap.xml
