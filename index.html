@@ -6,62 +6,53 @@
   <title>CashFlowLab — Kit complet de lansare online</title>
   <meta name="description" content="CashFlowLab este kitul complet de lansare online: site premium + funnel de email + checkout integrat. Totul gata pentru a transforma ideile tale în venituri reale, fără să pierzi timp pe tehnicalități." />
   <meta name="theme-color" content="#0a0a0b" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="CashFlowLab — Kit complet de lansare online" />
-  <meta property="og:description" content="Lansează-ți propriul business online cu CashFlowLab: site premium, funnel email și checkout integrat, fără cod sau design." />
-  <meta property="og:image" content="./CashFlowLab.png" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: { extend: { colors: { base: { 900:'#0b0c10', 800:'#0f1117'}, brand: { 500:'#5ec3ff', 600:'#3aa9ef', 700:'#1f7cc0'} }, boxShadow: { soft: '0 16px 50px rgba(0,0,0,.45)' }, borderRadius:{'3xl':'1.75rem'} } }
-    }
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body{font-family:Inter,ui-sans-serif;}
-    .btn{display:inline-flex;align-items:center;justify-content:center;font-weight:700;border-radius:9999px;padding:.85rem 1.5rem;transition:.2s}
-    .btn-brand{background:linear-gradient(135deg,#3aa9ef,#1f7cc0);color:#fff;box-shadow:0 10px 30px rgba(63,140,220,.35)}
-    .btn-brand:hover{transform:translateY(-2px);}
-    .btn-primary{background:#fff;color:#000;}
-    .btn-primary:hover{background:#f3f4f6;}
-    .btn-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;}
-    .btn-ghost:hover{background:rgba(255,255,255,.1)}
-    .input{border-radius:9999px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);padding:.9rem 1.2rem;width:100%}
+    body { font-family: Inter, sans-serif; background:#0b0c10; color:white; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:.9rem 1.4rem; border-radius:9999px; font-weight:700; transition:.2s; }
+    .btn-brand { background:linear-gradient(135deg,#3aa9ef,#1f7cc0); color:#fff; }
+    .btn-brand:hover { transform:translateY(-2px); }
+    .btn-primary { background:#fff; color:#000; }
+    .btn-primary:hover { background:#f3f4f6; }
+    .input { border-radius:9999px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.05); padding:.9rem 1.2rem; width:100%; }
   </style>
 </head>
-<body class="bg-base-900 text-white">
+<body class="antialiased">
   <!-- NAV -->
-  <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-base-900/70">
+  <header class="sticky top-0 bg-black/70 backdrop-blur border-b border-white/10 z-40">
     <div class="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
       <a href="#home" class="flex items-center gap-2">
         <img src="./CashFlowLab.png" alt="CashFlowLab" class="h-9 w-9 rounded" />
         <span class="text-xl font-bold">CashFlowLab</span>
       </a>
       <nav class="hidden md:flex gap-8 text-sm text-white/70">
-        <a href="#showreel" class="hover:text-white">Showreel</a>
         <a href="#features" class="hover:text-white">Beneficii</a>
         <a href="#cta" class="hover:text-white">Începe</a>
       </nav>
-      <a id="gumroadTop" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" class="btn btn-primary">Cumpără</a>
+      <a href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" class="btn btn-primary">Cumpără</a>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="home" class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-6 py-20">
+  <section id="home" class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-6 py-20 items-center">
     <div class="space-y-6">
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Lansează-ți propriul business online în 24h</h1>
-      <p class="text-lg text-white/80">CashFlowLab este un kit complet cu site premium, funnel de email și checkout integrat. Nu ai nevoie de cod, design sau experiență – îți punem totul pe tavă ca să începi să vinzi imediat.</p>
+      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
+        Lansează-ți propriul business online în 24h
+      </h1>
+      <p class="text-lg text-white/80">
+        CashFlowLab este un kit complet cu site premium, funnel de email și checkout integrat.
+        Nu ai nevoie de cod, design sau experiență – îți punem totul pe tavă ca să începi să vinzi imediat.
+      </p>
       <div class="flex flex-wrap gap-4">
         <a href="#cta" class="btn btn-brand">Primește kitul gratuit</a>
         <a href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" class="btn btn-primary">Cumpără varianta completă</a>
       </div>
     </div>
-    <div class="rounded-3xl overflow-hidden border border-white/10 shadow-soft">
-      <video autoplay muted loop class="w-full h-full">
-        <source src="https://www.shutterstock.com/shutterstock/videos/1084547017/preview/stock-footage-animated-cartoon-explainer-video-concept.mp4" type="video/mp4">
-      </video>
+    <div class="rounded-3xl overflow-hidden border border-white/10 shadow-lg">
+      <img src="./CashFlowLab.png" alt="CashFlowLab explainer" class="w-full h-full object-cover" />
     </div>
   </section>
 
@@ -81,18 +72,6 @@
     </div>
   </section>
 
-  <!-- SHOWREEL -->
-  <section id="showreel" class="bg-base-800/40 border-y border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-20 text-center">
-      <h2 class="text-3xl font-extrabold">Cum funcționează</h2>
-      <p class="text-white/70 mt-2">Totul în 3 pași simpli: instalezi, conectezi, vinzi.</p>
-      <div class="grid md:grid-cols-2 gap-6 mt-10">
-        <iframe class="w-full aspect-video rounded-2xl border border-white/10" src="https://www.youtube.com/embed/lhQOXlOZtkI" title="Explainer cartoon" allowfullscreen></iframe>
-        <iframe class="w-full aspect-video rounded-2xl border border-white/10" src="https://www.youtube.com/embed/1F4X8lzQ6D4" title="Business explainer" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section id="cta" class="max-w-3xl mx-auto text-center px-6 py-20">
     <h2 class="text-3xl font-extrabold">Ai nevoie doar de ideea ta. Noi îți dăm restul.</h2>
@@ -109,6 +88,10 @@
   <footer class="border-t border-white/10 py-6 text-center text-sm text-white/60">
     © <span id="year"></span> CashFlowLab — Toate drepturile rezervate.
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
+
