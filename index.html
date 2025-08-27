@@ -1,466 +1,145 @@
 <!doctype html>
-<html lang="ro" class="scroll-smooth" data-theme>
+<html lang="ro">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CashFlowLab — Jarvis HQ 2.0</title>
-  <meta name="description" content="CashFlowLab: site premium a la Jarvis HQ 2.0 — funnel inteligent, design modern, performanță, conversii ridicate." />
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="icon" href="/favicon.ico" />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="CashFlowLab — Jarvis HQ 2.0" />
-  <meta property="og:description" content="Site premium cu design modern și funnel orientat spre conversii." />
-  <meta property="og:image" content="./CashFlowLab.png" />
-  <meta property="og:url" content="https://cashflowlab.local/" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <title>CashFlowLab — Ultra Premium</title>
+  <meta name="description" content="CashFlowLab • Landing ultra-premium, simplu și frumos. Video încărcat, fără câmpuri goale. Optimizat pentru conversii." />
+  <meta name="theme-color" content="#0a0a0b" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%230f172a'/><text x='50' y='58' font-size='44' text-anchor='middle' fill='white' font-family='Arial'>C</text></svg>">
 
-  <!-- Tailwind (CDN) + Config -->
+  <!-- OG -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CashFlowLab — Ultra Premium" />
+  <meta property="og:description" content="Site ultra premium, simplu și frumos. Video real, fără placeholder." />
+  <meta property="og:image" content="./CashFlowLab.png" />
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: ['class', '[data-theme="dark"]'],
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50:'#f0f7ff',100:'#dceeff',200:'#b9dcff',300:'#8cc5ff',400:'#58a6ff',500:'#2f8aff',600:'#166fe6',700:'#0f56b4',800:'#0d4390',900:'#0b376f',950:'#082548'
-            },
-            ink: { DEFAULT:'#0f172a' }
-          },
-          boxShadow: {
-            'xl-soft': '0 10px 30px rgba(2, 6, 23, 0.25)'
-          }
-        }
-      }
+      theme: { extend: { colors: { base: { 900:'#0b0c10', 800:'#0f1117'}, brand: { 500:'#5ec3ff', 600:'#3aa9ef', 700:'#1f7cc0'} }, boxShadow: { soft: '0 12px 40px rgba(0,0,0,.35)' } } }
     }
   </script>
-  <!-- Lucide Icons -->
-  <script defer src="https://unpkg.com/lucide@latest"></script>
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root { --radius: 1.25rem; }
-    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
-    .glass { backdrop-filter: blur(10px); background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06)); border:1px solid rgba(255,255,255,0.18); }
-    .dark .glass { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); border-color: rgba(255,255,255,0.08); }
+    html,body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial}
+    .bg-noise{background:radial-gradient(1200px 600px at 10% -10%,rgba(94,195,255,.10),transparent 60%),radial-gradient(1200px 600px at 90% -20%,rgba(94,195,255,.06),transparent 60%),#0b0c10}
   </style>
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CashFlowLab",
-    "url": "https://cashflowlab.local/",
-    "logo": "./CashFlowLab.png",
-    "sameAs": [
-      "https://instagram.com/yourbrand",
-      "https://x.com/yourbrand"
-    ]
-  }
-  </script>
 </head>
-<body class="bg-slate-950 text-white selection:bg-brand-400/40 selection:text-white">
-  <!-- Top Announcement -->
-  <div class="relative isolate z-40">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between gap-3 py-2 text-xs text-slate-200/90">
-        <p class="hidden sm:block">Jarvis HQ 2.0 release • v1.0 — optimizat pentru performanță și conversii</p>
-        <div class="flex items-center gap-3">
-          <button id="themeToggle" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1 text-xs hover:bg-white/5">🌙/☀️ <span class="hidden sm:inline">Tema</span></button>
-          <a href="#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-3 py-1 text-xs font-semibold hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400">Obține Access</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Nav -->
-  <header class="sticky top-0 z-30 border-b border-white/10 bg-slate-950/70 backdrop-blur">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <img src="./CashFlowLab.png" alt="CashFlowLab" class="h-9 w-9 rounded-full object-cover" loading="eager" />
-          <span class="text-lg font-extrabold tracking-tight">CashFlowLab</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm text-slate-200/90">
-          <a href="#features" class="hover:text-white">Funcționalități</a>
-          <a href="#how" class="hover:text-white">Cum funcționează</a>
-          <a href="#testimonials" class="hover:text-white">Testimoniale</a>
-          <a href="#pricing" class="hover:text-white">Prețuri</a>
-          <a href="#faq" class="hover:text-white">FAQ</a>
-          <a href="#contact" class="hover:text-white">Contact</a>
-        </nav>
-        <div class="flex items-center gap-2">
-          <a href="#demo" class="hidden sm:inline-flex items-center rounded-full border border-white/10 px-4 py-2 text-sm hover:bg-white/5">Demo</a>
-          <a href="#cta" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200">Începe acum</a>
-          <button id="openMobile" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 hover:bg-white/5"><i data-lucide="menu"></i></button>
-        </div>
-      </div>
-    </div>
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-slate-950">
-      <div class="mx-auto max-w-7xl px-4 py-4 flex flex-col gap-3 text-sm">
+<body class="bg-noise text-white antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-base-900/70">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3 group">
+        <img src="./CashFlowLab.png" alt="CashFlowLab" class="h-9 w-9 rounded-lg object-cover" onerror="this.style.display='none'" />
+        <span class="text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-brand-500">CashFlowLab</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+        <a href="#showreel" class="hover:text-white">Showreel</a>
         <a href="#features" class="hover:text-white">Funcționalități</a>
-        <a href="#how" class="hover:text-white">Cum funcționează</a>
-        <a href="#testimonials" class="hover:text-white">Testimoniale</a>
-        <a href="#pricing" class="hover:text-white">Prețuri</a>
-        <a href="#faq" class="hover:text-white">FAQ</a>
-        <a href="#contact" class="hover:text-white">Contact</a>
-      </div>
+        <a href="#cta" class="hover:text-white">Începe</a>
+      </nav>
+      <a href="#cta" class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-semibold text-black hover:opacity-90">Lansează</a>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 -z-10">
-      <div class="absolute inset-0 bg-gradient-to-b from-brand-900/30 via-slate-950 to-slate-950"></div>
-      <img src="./CashFlowLab.png" alt="CashFlowLab Background" class="absolute -right-24 top-10 hidden h-[600px] w-[600px] opacity-[0.07] blur-0 md:block" />
-      <div class="pointer-events-none absolute -top-20 left-1/2 h-96 w-[60rem] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl"></div>
-    </div>
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-      <div class="grid items-center gap-10 lg:grid-cols-2">
-        <div class="space-y-6">
-          <span class="inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 px-3 py-1 text-xs text-brand-200">Jarvis HQ 2.0 • CashFlowLab</span>
-          <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">Construiește un <span class="text-transparent bg-gradient-to-r from-white to-brand-300 bg-clip-text">funnel premium</span> care transformă vizitatorii în clienți.</h1>
-          <p class="max-w-xl text-lg text-slate-300">Design curat, încărcare rapidă, mesaje clare și CTA-uri care convertesc. Pregătit pentru MailerLite, Gumroad și integrare analytics.
-          </p>
-          <div class="flex flex-wrap items-center gap-3">
-            <a id="cta" href="#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 font-semibold shadow-xl-soft hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400"><i data-lucide="rocket"></i> Lansează acum</a>
-            <a href="#demo" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 hover:bg-white/5"><i data-lucide="play"></i> Vezi demo</a>
-          </div>
-          <div class="flex items-center gap-6 pt-4 text-sm text-slate-300/90">
-            <div class="flex items-center gap-2"><i data-lucide="zap" class="h-4 w-4"></i> Încărcare ultra-rapidă</div>
-            <div class="flex items-center gap-2"><i data-lucide="shield" class="h-4 w-4"></i> SSL & GDPR ready</div>
-            <div class="flex items-center gap-2"><i data-lucide="smartphone" class="h-4 w-4"></i> 100% responsive</div>
-          </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">Ultra Premium • Simplu • Rapid</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">Un site <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-brand-500">curat și puternic</span> care vinde fără zgomot.</h1>
+        <p class="text-lg text-white/80 max-w-xl">Design minimal, video real încărcat, performanță solidă. Tot ce ai nevoie pentru a converti — fără elemente inutile.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#cta" class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 font-semibold shadow-soft hover:bg-brand-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Începe acum</a>
+          <a href="#showreel" class="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 hover:bg-white/5">Vezi video</a>
         </div>
-        <div class="relative">
-          <div class="glass rounded-[var(--radius)] p-2 shadow-xl-soft">
-            <img src="./CashFlowLab.png" alt="CashFlowLab mockup" class="w-full rounded-[calc(var(--radius)-0.5rem)] object-cover" loading="lazy" />
-          </div>
-          <div class="absolute -bottom-6 -right-6 hidden rotate-2 rounded-2xl bg-white/5 p-3 shadow-xl-soft ring-1 ring-white/10 md:block">
-            <div class="flex items-center gap-3">
-              <div class="h-10 w-10 rounded-xl bg-brand-500/20"></div>
-              <div>
-                <p class="text-xs text-slate-300">Branding</p>
-                <p class="text-sm font-semibold">CashFlowLab.png</p>
-              </div>
-            </div>
-          </div>
+        <div class="flex items-center gap-6 text-sm text-white/60">
+          <span>Fără placeholder</span>
+          <span>100% responsive</span>
+          <span>SEO & OG setate</span>
+        </div>
+      </div>
+
+      <!-- HERO VIDEO (cu fallback local si remote) -->
+      <div class="relative rounded-3xl border border-white/10 bg-black/30 p-2 shadow-soft">
+        <video id="heroVideo" class="w-full h-full rounded-2xl" playsinline muted loop autoplay preload="metadata" poster="CashFlowLab.png">
+          <!-- Dacă ai fișier local, păstrează-l în /videos/hero.mp4 -->
+          <source src="./videos/hero.mp4" type="video/mp4">
+          <!-- Fallback remote (open source) -->
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+        </video>
+        <div class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWREEL (videoclipuri reale, încărcate) -->
+  <section id="showreel" class="border-y border-white/10 bg-base-800/40">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8 text-center">
+        <h2 class="text-3xl font-extrabold">Showreel</h2>
+        <p class="mt-2 text-white/70">Clipuri reale — fără câmpuri goale.</p>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black shadow-soft">
+          <iframe class="h-full w-full" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Tears of Steel (Open Movie)" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>
+        </div>
+        <div class="aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black shadow-soft">
+          <iframe class="h-full w-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Big Buck Bunny (Open Movie)" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust -->
-  <section class="border-y border-white/10 bg-slate-950/60">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-      <p class="mb-6 text-center text-sm uppercase tracking-widest text-slate-400">Încredere & compatibilitate</p>
-      <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-        <div class="flex items-center justify-center gap-2 rounded-xl border border-white/10 p-3 text-slate-300"><i data-lucide="mail"></i> MailerLite</div>
-        <div class="flex items-center justify-center gap-2 rounded-xl border border-white/10 p-3 text-slate-300"><i data-lucide="shopping-bag"></i> Gumroad</div>
-        <div class="flex items-center justify-center gap-2 rounded-xl border border-white/10 p-3 text-slate-300"><i data-lucide="line-chart"></i> Plausible / GA4</div>
-        <div class="flex items-center justify-center gap-2 rounded-xl border border-white/10 p-3 text-slate-300"><i data-lucide="server"></i> Vercel / Netlify</div>
-        <div class="flex items-center justify-center gap-2 rounded-xl border border-white/10 p-3 text-slate-300"><i data-lucide="shield-check"></i> GDPR</div>
-        <div class="flex items-center justify-center gap-2 rounded-xl border border-white/10 p-3 text-slate-300"><i data-lucide="test-tube"></i> A/B Ready</div>
+  <!-- FEATURES (minimal) -->
+  <section id="features">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid gap-8 lg:grid-cols-3">
+      <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+        <h3 class="text-lg font-semibold mb-2">Design Ultra-Premium</h3>
+        <p class="text-white/70">Contrast bun, tipografie clară, elemente puține dar alese corect.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+        <h3 class="text-lg font-semibold mb-2">Video real încărcat</h3>
+        <p class="text-white/70">Hero video + 2 clipuri YouTube integrate. Fără spații goale.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 p-6 bg-white/5">
+        <h3 class="text-lg font-semibold mb-2">Optimizat</h3>
+        <p class="text-white/70">Lazy-loading, assets minime, meta SEO & OG setate.</p>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="relative">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Tot ce trebuie unui site <span class="text-brand-300">premium</span></h2>
-        <p class="mt-3 text-slate-300">Performanță, claritate, încredere — totul așezat corect, pentru conversie.</p>
-      </div>
-      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- card -->
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl-soft">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/20"><i data-lucide="rocket"></i></div>
-          <h3 class="mb-2 text-lg font-semibold">Încărcare rapidă</h3>
-          <p class="text-slate-300">Cod minimalist, imagini optimizate, fără bloat. Scoruri excelente în Lighthouse.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl-soft">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/20"><i data-lucide="fingerprint"></i></div>
-          <h3 class="mb-2 text-lg font-semibold">Branding coerent</h3>
-          <p class="text-slate-300">Folosește CashFlowLab.png ca pivot vizual — logo, accente, pattern.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl-soft">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/20"><i data-lucide="mouse-pointer-click"></i></div>
-          <h3 class="mb-2 text-lg font-semibold">CTA-uri clare</h3>
-          <p class="text-slate-300">Buton principal + variante secundare, plasate strategic pe pagină.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl-soft">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/20"><i data-lucide="shield"></i></div>
-          <h3 class="mb-2 text-lg font-semibold">GDPR & securitate</h3>
-          <p class="text-slate-300">Cookie banner, politică de confidențialitate, formulare cu consimțământ.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl-soft">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/20"><i data-lucide="cog"></i></div>
-          <h3 class="mb-2 text-lg font-semibold">Ușor de editat</h3>
-          <p class="text-slate-300">Secțiuni modulare, comentarii în cod, fără dependențe grele.</p>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-xl-soft">
-          <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-brand-500/20"><i data-lucide="sparkles"></i></div>
-          <h3 class="mb-2 text-lg font-semibold">A/B testing ready</h3>
-          <p class="text-slate-300">Etichete data-attr pentru variante, ușor de urmărit în analytics.</p>
-        </div>
-      </div>
+  <!-- CTA final -->
+  <section id="cta" class="relative">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Lansează varianta ta CashFlowLab</h2>
+      <p class="mt-3 text-white/80">Pregătit pentru MailerLite/Gumroad. Spune-mi emailul tău și-ți trimit kitul.</p>
+      <form class="mx-auto mt-6 flex max-w-xl flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault(); alert('Mulțumim! Te contactăm în scurt timp.');">
+        <input required type="email" placeholder="Emailul tău" class="w-full rounded-full border border-white/10 bg-white/10 px-5 py-3 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-brand-600" />
+        <button class="rounded-full bg-white px-6 py-3 font-semibold text-black hover:opacity-90">Trimite</button>
+      </form>
+      <p class="mt-2 text-xs text-white/50">GDPR friendly • înlocuiește ulterior cu formularul tău MailerLite.</p>
     </div>
   </section>
 
-  <!-- How it works -->
-  <section id="how" class="relative border-y border-white/10 bg-gradient-to-b from-slate-900/40 to-slate-950">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid items-center gap-12 lg:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Cum funcționează</h2>
-          <ol class="mt-6 space-y-4">
-            <li class="flex gap-3"><span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-sm font-bold">1</span><div><p class="font-semibold">Atragi atenția</p><p class="text-slate-300">Hero clar, promisiune puternică, imagine brand (CashFlowLab.png).</p></div></li>
-            <li class="flex gap-3"><span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-sm font-bold">2</span><div><p class="font-semibold">Construiești încredere</p><p class="text-slate-300">Funcționalități, social proof, badge-uri, capturi reale.</p></div></li>
-            <li class="flex gap-3"><span class="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/20 text-sm font-bold">3</span><div><p class="font-semibold">Convertesti</p><p class="text-slate-300">CTA-uri ferme, prețuri clare, FAQ, risc redus.</p></div></li>
-          </ol>
-          <div class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
-            <form id="lead" class="flex flex-col gap-3 sm:flex-row" action="#" method="post">
-              <label class="sr-only" for="email">Email</label>
-              <input id="email" name="email" required type="email" placeholder="Emailul tău" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-400" />
-              <button type="submit" class="rounded-xl bg-brand-500 px-6 py-3 font-semibold hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-400">Primește kitul</button>
-            </form>
-            <p class="mt-2 text-xs text-slate-400">Prin trimitere ești de acord cu <a href="#" class="underline">Termenii</a> & <a href="#" class="underline">Politica GDPR</a>.</p>
-          </div>
-        </div>
-        <div id="demo" class="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-xl-soft">
-          <iframe class="h-full w-full" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demo CashFlowLab" loading="lazy" referrerpolicy="no-referrer" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="relative">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Oameni reali, rezultate reale</h2>
-        <p class="mt-3 text-slate-300">Feedback din funnel-uri lansate cu Jarvis HQ 2.0.</p>
-      </div>
-      <div class="mt-12 grid gap-6 md:grid-cols-3">
-        <figure class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <blockquote class="text-slate-200">„Conversiile au crescut cu 42% în 2 săptămâni.”</blockquote>
-          <figcaption class="mt-4 text-sm text-slate-400">Alex • Creator</figcaption>
-        </figure>
-        <figure class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <blockquote class="text-slate-200">„Setup-ul a durat o zi. Restul a fost plug-and-play.”</blockquote>
-          <figcaption class="mt-4 text-sm text-slate-400">Mara • Soloprenor</figcaption>
-        </figure>
-        <figure class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <blockquote class="text-slate-200">„Design premium fără dureri de cap. Recomand.”</blockquote>
-          <figcaption class="mt-4 text-sm text-slate-400">Vlad • Marketer</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" class="relative border-y border-white/10 bg-slate-950/60">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Alege planul potrivit</h2>
-        <p class="mt-3 text-slate-300">Transparență totală. Fără taxe ascunse.</p>
-      </div>
-      <div class="mt-12 grid gap-6 lg:grid-cols-3">
-        <!-- Starter -->
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <p class="text-sm font-semibold text-brand-300">Starter</p>
-          <p class="mt-4 text-4xl font-extrabold">€39<span class="text-base font-medium text-slate-400">/unic</span></p>
-          <ul class="mt-6 space-y-2 text-sm text-slate-300">
-            <li class="flex gap-2"><i data-lucide="check"></i> Landing premium (single page)</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> Integrare MailerLite (formular)</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> SEO de bază</li>
-          </ul>
-          <a href="#cta" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-slate-900 hover:bg-slate-200">Începe</a>
-        </div>
-        <!-- Pro -->
-        <div class="relative rounded-2xl border border-brand-400/40 bg-gradient-to-b from-brand-500/15 to-white/5 p-6 shadow-xl-soft ring-1 ring-inset ring-brand-400/30">
-          <div class="absolute -top-3 left-6 rounded-full bg-brand-500 px-3 py-1 text-xs font-bold">Recomandat</div>
-          <p class="text-sm font-semibold text-brand-200">Pro</p>
-          <p class="mt-4 text-4xl font-extrabold">€99<span class="text-base font-medium text-slate-400">/unic</span></p>
-          <ul class="mt-6 space-y-2 text-sm text-slate-300">
-            <li class="flex gap-2"><i data-lucide="check"></i> Tot din Starter</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> 3 secțiuni extra (blog, about, contact)</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> Analytics + Pixel</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> Optimizare Lighthouse 90+</li>
-          </ul>
-          <a href="#cta" class="mt-6 inline-flex w-full items-center justify-center rounded-xl bg-brand-500 px-5 py-3 font-semibold hover:bg-brand-600">Alege Pro</a>
-        </div>
-        <!-- Elite -->
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-6">
-          <p class="text-sm font-semibold text-brand-300">Elite</p>
-          <p class="mt-4 text-4xl font-extrabold">€199<span class="text-base font-medium text-slate-400">/unic</span></p>
-          <ul class="mt-6 space-y-2 text-sm text-slate-300">
-            <li class="flex gap-2"><i data-lucide="check"></i> Tot din Pro</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> Secțiuni custom + A/B</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> Setup complet hosting + domeniu</li>
-            <li class="flex gap-2"><i data-lucide="check"></i> Suport prioritar</li>
-          </ul>
-          <a href="#cta" class="mt-6 inline-flex w-full items-center justify-center rounded-xl border border-white/10 px-5 py-3 font-semibold hover:bg-white/5">Contact Elite</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="relative">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Întrebări frecvente</h2>
-        <p class="mt-3 text-slate-300">Răspunsuri rapide la cele mai comune întrebări.</p>
-      </div>
-      <div class="mt-10 space-y-4">
-        <details class="group rounded-2xl border border-white/10 p-5">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 font-semibold">Este compatibil cu MailerLite?<i data-lucide="chevron-down" class="transition group-open:rotate-180"></i></summary>
-          <p class="mt-3 text-slate-300">Da, formularul este pregătit. Înlocuiești <code>action</code> și adaugi câmpurile ascunse oferite de MailerLite.</p>
-        </details>
-        <details class="group rounded-2xl border border-white/10 p-5">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 font-semibold">Cum adaug CashFlowLab.png?
-            <i data-lucide="chevron-down" class="transition group-open:rotate-180"></i></summary>
-          <p class="mt-3 text-slate-300">Plasează fișierul în aceeași locație cu acest HTML și păstrează numele exact <strong>CashFlowLab.png</strong>. Imaginea e referențiată în mai multe secțiuni.</p>
-        </details>
-        <details class="group rounded-2xl border border-white/10 p-5">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 font-semibold">Pot schimba culorile?
-            <i data-lucide="chevron-down" class="transition group-open:rotate-180"></i></summary>
-          <p class="mt-3 text-slate-300">Da, vezi <code>tailwind.config</code> din head pentru paleta <code>brand</code>. Schimbă nuanțele după preferințe.</p>
-        </details>
-        <details class="group rounded-2xl border border-white/10 p-5">
-          <summary class="flex cursor-pointer list-none items-center justify-between gap-2 font-semibold">Se încarcă repede?
-            <i data-lucide="chevron-down" class="transition group-open:rotate-180"></i></summary>
-          <p class="mt-3 text-slate-300">Da, folosește CDN, imagini lazy, cod redus. Pentru producție recomandăm minificare și host pe Vercel/Netlify.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="relative border-t border-white/10 bg-slate-950/60">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-      <div class="grid gap-10 md:grid-cols-2">
-        <div>
-          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Hai să vorbim</h2>
-          <p class="mt-3 text-slate-300">Ai o idee sau vrei o variantă custom? Trimite un mesaj.</p>
-          <div class="mt-6 space-y-3 text-sm text-slate-300">
-            <p class="flex items-center gap-2"><i data-lucide="mail"></i> hello@cashflowlab.local</p>
-            <p class="flex items-center gap-2"><i data-lucide="map-pin"></i> Berlin, Germania</p>
-          </div>
-        </div>
-        <form class="rounded-2xl border border-white/10 bg-white/5 p-6" onsubmit="event.preventDefault(); alert('Mulțumim! Te vom contacta în curând.');">
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label class="text-sm text-slate-300" for="nume">Nume</label>
-              <input id="nume" required class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-400" />
-            </div>
-            <div>
-              <label class="text-sm text-slate-300" for="email2">Email</label>
-              <input id="email2" required type="email" class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-400" />
-            </div>
-            <div class="sm:col-span-2">
-              <label class="text-sm text-slate-300" for="mesaj">Mesaj</label>
-              <textarea id="mesaj" rows="5" required class="mt-1 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-400"></textarea>
-            </div>
-            <div class="sm:col-span-2 flex items-start gap-2">
-              <input id="agree" type="checkbox" required class="mt-1" />
-              <label for="agree" class="text-xs text-slate-300">Sunt de acord cu prelucrarea datelor conform <a href="#" class="underline">Politicii GDPR</a>.</label>
-            </div>
-            <button class="sm:col-span-2 rounded-xl bg-brand-500 px-6 py-3 font-semibold hover:bg-brand-600">Trimite</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
   <footer class="border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
-      <div class="flex flex-col items-center justify-between gap-6 md:flex-row">
-        <div class="flex items-center gap-3">
-          <img src="./CashFlowLab.png" alt="CashFlowLab" class="h-8 w-8 rounded-full object-cover" loading="lazy" />
-          <p class="text-sm text-slate-400">© <span id="year"></span> CashFlowLab. Toate drepturile rezervate.</p>
-        </div>
-        <nav class="flex items-center gap-6 text-sm text-slate-300">
-          <a href="#" class="hover:text-white">Termeni</a>
-          <a href="#" class="hover:text-white">Politica de confidențialitate</a>
-          <a href="#" class="hover:text-white">Cookie-uri</a>
-        </nav>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-white/60">© <span id="year"></span> CashFlowLab</p>
+      <div class="text-sm text-white/60 flex gap-6">
+        <a href="#" class="hover:text-white">Termeni</a>
+        <a href="#" class="hover:text-white">Confidențialitate</a>
       </div>
     </div>
   </footer>
 
-  <!-- Cookie banner -->
-  <div id="cookie" class="fixed inset-x-3 bottom-3 z-50 hidden items-center justify-between gap-4 rounded-2xl border border-white/10 bg-slate-900/90 p-4 shadow-xl-soft md:flex">
-    <p class="text-sm text-slate-300">Folosim cookie-uri pentru a îmbunătăți experiența. <a href="#" class="underline">Află mai multe</a>.</p>
-    <div class="flex items-center gap-2">
-      <button id="declineCookies" class="rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-white/5">Refuz</button>
-      <button id="acceptCookies" class="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200">Accept</button>
-    </div>
-  </div>
-
-  <!-- Scroll to top -->
-  <button id="toTop" title="Sus" class="fixed bottom-6 right-6 hidden h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/10 backdrop-blur hover:bg-white/20"><i data-lucide="arrow-up"></i></button>
-
-  <!-- Scripts -->
   <script>
-    // Icons
-    window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
-
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mobile nav
-    const openMobile = document.getElementById('openMobile');
-    const mobileMenu = document.getElementById('mobileMenu');
-    openMobile?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-    // Theme
-    const root = document.documentElement;
-    const themeToggle = document.getElementById('themeToggle');
-    const setTheme = (mode) => { root.classList.toggle('dark', mode === 'dark'); root.setAttribute('data-theme', mode); localStorage.setItem('theme', mode); };
-    const initial = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setTheme(initial);
-    themeToggle?.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-
-    // Cookie
-    const cookieKey = 'cfl_cookie_v1';
-    const cookieBar = document.getElementById('cookie');
-    const acceptCookies = document.getElementById('acceptCookies');
-    const declineCookies = document.getElementById('declineCookies');
-    if (!localStorage.getItem(cookieKey)) cookieBar.classList.remove('hidden');
-    acceptCookies?.addEventListener('click', () => { localStorage.setItem(cookieKey, 'yes'); cookieBar.classList.add('hidden'); });
-    declineCookies?.addEventListener('click', () => { localStorage.setItem(cookieKey, 'no'); cookieBar.classList.add('hidden'); });
-
-    // Scroll to top
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) toTop.classList.remove('hidden'); else toTop.classList.add('hidden');
-    });
-    toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Lead form (demo) — replace with MailerLite action URL
-    const leadForm = document.getElementById('lead');
-    leadForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      if (!email) return;
-      alert('Mulțumim! Verifică inbox-ul pentru kitul tău.');
-      // TODO: set form.action = 'https://assets.mailerlite.com/jsonp/xxxx'; add hidden fields
-      e.target.reset();
-    });
   </script>
-
-  <!-- Analytics (dezactivat by default) -->
-  <!--
-  <script defer data-domain="cashflowlab.local" src="https://plausible.io/js/script.js"></script>
-  -->
 </body>
 </html>
+
