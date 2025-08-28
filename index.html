@@ -1,226 +1,89 @@
 <!-- ============================================
-FILE: /index.html  (Romanian) — TIGHT-LEFT + NO-GAP HERO
+FILE: /index.html (Romanian) — NEO DESIGN v2 (dynamic type, chips, steps)
 ============================================ -->
 <!doctype html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CASHFLOWLAB — Construiește. Lansează. Monetizează.</title>
-  <meta name="description" content="CashFlowLab: blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CASHFLOWLAB — Construiește. Lansează. Monetizează.</title>
+<meta name="description" content="CashFlowLab: blueprint + kit de lansare pentru venituri digitale. Clar, modern, eficient.">
+<link rel="canonical" href="index.html">
+<link rel="preload" as="image" href="hero-tech.png">
+<meta property="og:image" content="hero-tech.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="hero-tech.png">
+<style>
+:root{ --text:#ECECF6; --muted:#B8B4D3; --accent:#8B5CF6; --accent2:#6EE7B7; --gold:#C4A46B; --bg1:#100D1E; --bg2:#0C0A14; --rad:20px }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial; color:var(--text); background:
+radial-gradient(1200px 700px at 15% 0%, rgba(139,92,246,.22), transparent 60%),
+radial-gradient(900px 600px at 100% 10%, rgba(196,164,107,.16), transparent 60%),
+radial-gradient(900px 600px at 20% 100%, rgba(110,231,183,.08), transparent 60%),
+linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 60%, var(--bg1) 100%);
+background-attachment: fixed }
 
-  <!-- Canonical + Social preview (relative-safe) -->
-  <link rel="canonical" href="index.html">
-  <link rel="preload" as="image" href="hero-tech.png">
-  <meta property="og:title" content="CashFlowLab — Construiește. Lansează. Monetizează.">
-  <meta property="og:description" content="Blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
-  <meta property="og:image" content="hero-tech.png">
-  <meta property="og:image:alt" content="CashFlowLab — hero vizual">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ro_RO">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CashFlowLab — Construiește. Lansează. Monetizează.">
-  <meta name="twitter:description" content="Blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
-  <meta name="twitter:image" content="hero-tech.png">
 
-  <style>
-    :root{ --text:#eae9f4; --muted:#b6b3d1; --accent:#8b5cf6; --gold:#c4a46b; --rad:18px }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial; color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 15% 5%, rgba(139,92,246,.28), transparent 60%),
-        radial-gradient(900px 500px at 100% 10%, rgba(196,164,107,.20), transparent 60%),
-        radial-gradient(700px 500px at 30% 100%, rgba(139,92,246,.18), transparent 60%),
-        linear-gradient(180deg, #120d24 0%, #0f0d1f 40%, #120d24 100%);
-      background-attachment: fixed; }
+a{color:inherit}
+.container{max-width:1200px; margin:0; padding:10px 14px}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:10px}
+.logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.08em}
+.logo img{height:32px; width:auto; border-radius:8px}
+.nav-links{display:flex; gap:8px; align-items:center}
 
-    /* TIGHT-LEFT LAYOUT */
-    .container{max-width:100%; margin:0; padding:8px 12px}
-    .hero{padding:8px 12px 0}
-    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:8px}
-    @media (max-width:1060px){ .hero-grid{grid-template-columns:1fr} }
-    h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:4px 0 6px}
-    .sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 14px}
-    .pill{display:inline-flex; align-items:center; gap:10px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
 
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:10px}
-    .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em}
-    .logo img{height:32px; width:auto; border-radius:8px}
-    .nav-links{display:flex; gap:10px; align-items:center}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:800; border:1px solid rgba(255,255,255,.08)}
-    .btn-primary{background:linear-gradient(180deg, rgba(139,92,246,.25), rgba(255,255,255,.02))}
-    .btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.25), rgba(255,255,255,.02)); border-color:rgba(196,164,107,.35)}
-    .btn-ghost{background:transparent}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:800; border:1px solid rgba(255,255,255,.08)}
+.btn-primary{background:linear-gradient(180deg, rgba(139,92,246,.30), rgba(255,255,255,.02))}
+.btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.02)); border-color:rgba(196,164,107,.35)}
+.btn-ghost{background:transparent}
 
-    /* NO-GAP HERO: dacă imaginea lipsește, nu rămâne spațiu */
-    .hero-media{min-height:0; border-radius:var(--rad); overflow:hidden; position:relative; background:radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.20), transparent 60%)}
-    .hero-img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block}
 
-    .section{padding:8px 12px}
-    .grid{display:grid; gap:14px}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .muted{color:var(--muted)}
-    .center{text-align:center}
-    .footer{padding:30px 12px 60px; text-align:center; color:var(--muted)}
-  </style>
-</head>
-<body>
-  <header class="container">
-    <nav class="nav">
-      <div class="logo">
-        <img src="cashflowlab-logo.png" alt="CashFlowLab logo" onerror="this.style.display='none'">
-        <span>CASHFLOWLAB</span>
-      </div>
-      <div class="nav-links">
-        <span class="btn btn-ghost" aria-current="page">RO</span>
-        <a class="btn btn-ghost" href="en/index.html" lang="en" hreflang="en">EN</a>
-        <a href="#features">De ce</a>
-        <a href="#inside">Ce primești</a>
-        <a href="#pricing">Preț</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără</a>
-      </div>
-    </nav>
-  </header>
+/* HERO */
+.hero{padding:12px 14px 0}
+.hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:12px}
+@media (max-width:1060px){ .hero-grid{grid-template-columns:1fr} }
 
-  <main class="container hero">
-    <section class="hero-grid">
-      <div>
-        <span class="pill">Modern • Mov & Gold • 2025</span>
-        <h1>Plan + Kit de lansare pentru a genera un flux de numerar <span style="color:var(--gold)">real</span>.</h1>
-        <p class="sub">CashFlowLab este sistemul care elimină confuzia: pași clari, sabloane gata de folosit și ghidare ca să lansezi rapid și să monetizezi.</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap">
-          <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără acum</a>
-          <a class="btn btn-ghost" href="#inside">Vezi ce conține</a>
-        </div>
-        <p class="muted" style="margin-top:8px">Plată securizată pe Gumroad • Acces instant • Actualizări incluse</p>
-      </div>
-      <aside class="hero-media" aria-label="CashFlowLab vizual">
-        <picture>
-          <source srcset="hero-tech.webp" type="image/webp">
-          <img id="heroImgRO" src="hero-tech.png" alt="Previzualizare CashFlowLab" class="hero-img" fetchpriority="high" loading="eager">
-        </picture>
-      </aside>
-    </section>
 
-    <section id="features" class="section">
-      <h2 style="margin:0 0 8px">De ce funcționează</h2>
-      <div class="grid grid-3">
-        <div><h3>Pași clari → rezultate</h3><p class="muted">Checklist zilnic, obiective simple, ținte de venit.</p></div>
-        <div><h3>Kit de lansare</h3><p class="muted">Tot ce-ți trebuie ca să pornești azi.</p></div>
-        <div><h3>Asistență Jarvis</h3><p class="muted">Îți optimizăm pașii și te ținem pe traseu.</p></div>
-      </div>
-    </section>
+.eyebrow{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.16), rgba(139,92,246,.20))}
+.eyebrow svg{width:14px; height:14px}
 
-    <section id="inside" class="section">
-      <h2 style="margin:0 0 8px">Ce primești</h2>
-      <div class="grid grid-2">
-        <div><h3>Blueprint & proces</h3><ul class="muted" style="margin:6px 0 0; padding-left:18px"><li>Obiective săptămânale & zilnice</li><li>Calendar de conținut</li><li>Framework de oferte</li></ul></div>
-        <div><h3>Execuție</h3><ul class="muted" style="margin:6px 0 0; padding-left:18px"><li>Template site + stiluri premium</li><li>Emailuri 1–5</li><li>Prompturi pentru vizualuri</li></ul></div>
-      </div>
-      <div class="center" style="margin-top:12px"><a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Ia acces</a></div>
-    </section>
 
-    <section id="pricing" class="section">
-      <h2 style="margin:0 0 8px">Acces complet</h2>
-      <p class="muted">€27 <b>+ taxe</b> • plată unică • acces instant</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap">
-        <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără pe Gumroad</a>
-        <a class="btn btn-ghost" href="#faq">Întrebări frecvente</a>
-      </div>
-    </section>
+h1{font-size:clamp(30px,5vw,52px); line-height:1.02; margin:10px 0 8px}
+.hero h1 .flash{background:linear-gradient(90deg, var(--gold), var(--accent)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.lead{color:var(--muted); font-size:clamp(16px,2.2vw,19px); margin:0 0 14px; max-width:60ch}
 
-    <section id="faq" class="section">
-      <h2 style="margin:0 0 8px">FAQ</h2>
-      <div class="grid grid-2">
-        <div><b>În cât timp am acces?</b><p class="muted">Imediat după plată pe Gumroad primești link-ul de descărcare.</p></div>
-        <div><b>Primește update-uri?</b><p class="muted">Da, update-urile sunt incluse.</p></div>
-        <div><b>Pot cere ajutor?</b><p class="muted">Da, optimizăm împreună setup-ul tău.</p></div>
-        <div><b>Refund?</b><p class="muted">14 zile garanție — fără complicații.</p></div>
-      </div>
-      <div class="center" style="margin-top:12px"><a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără acum</a></div>
-    </section>
-  </main>
 
-  <footer class="container footer">
-    <div class="center" style="margin-bottom:8px"><a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără CashFlowLab</a></div>
-    <small>© CashFlowLab. Toate drepturile rezervate.</small>
-  </footer>
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 10px}
+.chip{display:inline-flex; gap:8px; align-items:center; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.10); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02))}
+.chip svg{width:16px; height:16px}
 
-  <!-- Elimină golul dacă imaginea lipsește; încearcă și alte căi comune -->
-  <script>
-  (function(){
-    var img = document.getElementById('heroImgRO');
-    if(!img) return;
-    function collapse(){ var aside=img.closest('.hero-media'); if(aside) aside.remove(); var grid=document.querySelector('.hero-grid'); if(grid) grid.style.gridTemplateColumns='1fr'; }
-    if(img.complete && img.naturalWidth===0){ collapse(); return; }
-    var cand = ['hero-tech.png','hero-tech.webp','assets/hero-tech.png','/hero-tech.png'];
-    var i=0, ok=false; function next(){ if(i>=cand.length){ if(!ok) collapse(); return; } var url=cand[i++]; var t=new Image(); t.onload=function(){ ok=true; img.src=url; }; t.onerror=next; t.src=url; } next();
-  })();
-  </script>
-</body>
+
+.hero-media{min-height:0; border-radius:var(--rad); overflow:hidden; position:relative; background:radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.20), transparent 60%)}
+.hero-img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block}
+
+
+/* SECTIUNI: ritm vizual mai puternic */
+.section{padding:12px 14px}
+.title{font-size:clamp(22px,3.2vw,28px); margin:0 0 6px}
+
+
+.features{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+@media (max-width:900px){.features{grid-template-columns:1fr}}
+.f{padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background:linear-gradient(145deg, rgba(139,92,246,.12), rgba(196,164,107,.08)); backdrop-filter: blur(3px)}
+.f h3{margin:0 0 6px}
+
+
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+.step{padding:16px; border-radius:16px; border:1px dashed rgba(255,255,255,.18)}
+.k{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:8px; background:linear-gradient(180deg, rgba(139,92,246,.35), rgba(255,255,255,.06)); font-weight:900}
+
+
+.strip{display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:10px 12px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02))}
+
+
+.faq{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+@media (max-width:900px){.faq{grid-template-columns:1fr}}
+.q{padding:14px; border-radius:14px; border:1px solid rgba(255,255,255,.10)}
 </html>
-
-
-<!-- ============================================
-FILE: /en/index.html  (English) — TIGHT-LEFT + NO-GAP HERO
-============================================ -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CASHFLOWLAB — Build. Launch. Monetize.</title>
-  <meta name="description" content="CashFlowLab: blueprint + launch kit for digital income. Clear, simple, modern.">
-
-  <link rel="canonical" href="index.html">
-  <link rel="preload" as="image" href="../hero-tech.png">
-  <meta property="og:title" content="CashFlowLab — Build. Launch. Monetize.">
-  <meta property="og:description" content="Blueprint + launch kit for digital income. Clear, simple, modern.">
-  <meta property="og:image" content="../hero-tech.png">
-  <meta property="og:image:alt" content="CashFlowLab — hero visual">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CashFlowLab — Build. Launch. Monetize.">
-  <meta name="twitter:description" content="Blueprint + launch kit for digital income. Clear, simple, modern.">
-  <meta name="twitter:image" content="../hero-tech.png">
-
-  <style>
-    :root{ --text:#eae9f4; --muted:#b6b3d1; --accent:#8b5cf6; --gold:#c4a46b; --rad:18px }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial; color:var(--text);
-      background:
-        radial-gradient(1000px 600px at 15% 5%, rgba(139,92,246,.28), transparent 60%),
-        radial-gradient(900px 500px at 100% 10%, rgba(196,164,107,.20), transparent 60%),
-        radial-gradient(700px 500px at 30% 100%, rgba(139,92,246,.18), transparent 60%),
-        linear-gradient(180deg, #120d24 0%, #0f0d1f 40%, #120d24 100%);
-      background-attachment: fixed; }
-
-    .container{max-width:100%; margin:0; padding:8px 12px}
-    .hero{padding:8px 12px 0}
-    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:8px}
-    @media (max-width:1060px){ .hero-grid{grid-template-columns:1fr} }
-    h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:4px 0 6px}
-    .sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 14px}
-    .pill{display:inline-flex; align-items:center; gap:10px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
-
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:10px}
-    .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em}
-    .logo img{height:32px; width:auto; border-radius:8px}
-    .nav-links{display:flex; gap:10px; align-items:center}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:800; border:1px solid rgba(255,255,255,.08)}
-    .btn-primary{background:linear-gradient(180deg, rgba(139,92,246,.25), rgba(255,255,255,.02))}
-    .btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.25), rgba(255,255,255,.02)); border-color:rgba(196,164,107,.35)}
-    .btn-ghost{background:transparent}
-
-    .hero-media{min-height:0; border-radius:var(--rad); overflow:hidden; position:relative; background:radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.20), transparent 60%)}
-    .hero-img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block}
-
-    .section{padding:8px 12px}
-    .grid{display:grid; gap:14px}
-    .grid-3{grid-template-column
