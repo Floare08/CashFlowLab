@@ -3,275 +3,361 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CashFlowLab — Elegant. Puternic. Gata de vânzare.</title>
-  <meta name="description" content="CashFlowLab: landing ultra‑premium, construit pentru conversie. Video, funnel, checkout, analytics & GDPR — totul gata." />
-  <meta name="theme-color" content="#faf8ff" />
-  <link rel="icon" href="/favicon.png" type="image/png" />
+  <title>CashFlowLab — Ultra‑Premium Gold/Tech 2025</title>
+  <meta name="description" content="CashFlowLab: landing premium cu fundal gold/tech, CTA glossy, countdown, funnel MailerLite, checkout Gumroad, GDPR și Analytics. Totul gata de lansare." />
+  <meta name="theme-color" content="#0b0f16" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CashFlowLab — Ultra‑Premium" />
+  <meta property="og:description" content="Elegant. Puternic. Gata de vânzare. Video demo, funnel, checkout 2‑click, GDPR & Pixels." />
+  <meta property="og:image" content="/bg-cfl.webp" />
+  <meta property="og:url" content="https://cashflowlabai.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts & Tailwind -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="CashFlowLab — Elegant. Puternic. Gata de vânzare." />
-  <meta property="og:description" content="Site premium 2025 cu funnel, checkout și măsurare corectă. Lansezi azi." />
-  <meta property="og:image" content="./CashFlowLab.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config={theme:{extend:{colors:{base:{50:'#faf8ff',100:'#f4efff',900:'#0f0a1f'},brand:{50:'#f7f3ff',100:'#efe7ff',400:'#c7a9ff',500:'#b889ff',600:'#8d5bff',700:'#6b3dff'},lux:{400:'#ffcf6e',500:'#f4b942',600:'#d89e2e'},ink:{600:'#1b1f2a'}},boxShadow:{soft:'0 14px 40px rgba(17,12,40,.10)',glow:'0 0 0 1px rgba(184,137,255,.35), 0 14px 46px rgba(255,207,110,.28)'},borderRadius:{pill:'9999px', '3xl':'1.75rem'}}}}
+    tailwind.config = { theme: { extend: {
+      colors: {
+        base:{50:'#0b0f16',100:'#121725',200:'#1a2335',900:'#0b0f16'},
+        gold:{50:'#fff6e5',200:'#ffd9a3',400:'#f7bf5b',500:'#e8a520',600:'#d08c10',700:'#a46c0a'},
+        royal:{50:'#efe7ff',200:'#d7c6ff',400:'#a47bff',500:'#8b5cff',600:'#6b3fe8',700:'#4b2cb5'},
+        ink:{DEFAULT:'#0b0f16'}
+      },
+      boxShadow:{ soft:'0 14px 40px rgba(0,0,0,.25)', glow:'0 0 0 1px rgba(232,165,32,.35), 0 14px 40px rgba(132,96,255,.25)' },
+      borderRadius:{ 'pill':'9999px','3xl':'1.75rem' }
+    } } }
   </script>
+
   <style>
-    :root{--ring:rgba(184,137,255,.35)}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background: url('./CashFlowLab.png') no-repeat center center fixed;
-background-size: cover;
-    .headline{font-family:Sora,Inter,system-ui,Segoe UI,Roboto,Arial}
-    ..mesh {
-  background: linear-gradient(
-    rgba(255,255,255,0.85),
-    rgba(250,248,255,0.92)
-  );
-}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.35rem;border-radius:9999px;font-weight:800;letter-spacing:.2px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
-    .btn:active{transform:translateY(0)}
-    .btn-primary{color:#0f0a1f;background:linear-gradient(135deg,#ffd999,#b889ff);box-shadow:0 12px 32px rgba(244,185,66,.32)}
-    .btn-primary:hover{transform:translateY(-1px);box-shadow:0 18px 50px rgba(184,137,255,.40)}
-    .btn-ghost{border:1px solid rgba(17,12,40,.10);background:linear-gradient(180deg,#ffffff,#fbf8ff)}
-    .btn-outline{border:1px solid rgba(17,12,40,.12);background:#fff}
-    .input{border:1px solid rgba(17,12,40,.12);background:#fff;padding:1rem 1.2rem;border-radius:9999px;outline:none;width:100%}
-    .input:focus{box-shadow:0 0 0 4px var(--ring)}
-    .card{background:#fff;border:1px solid rgba(17,12,40,.08);border-radius:1.25rem;box-shadow:0 10px 30px rgba(17,12,40,.06)}
-    .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .7rem;border-radius:9999px;background:#fff;border:1px solid rgba(17,12,40,.10)}
-    .glass{backdrop-filter:blur(12px);background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.70));border:1px solid rgba(17,12,40,.08)}
-    .count-num{min-width:2.6ch;display:inline-block;text-align:center}
+    :root{ --ring: rgba(164,108,10,.35) }
+    html,body{ height:100% }
+    body{ font-family: Inter,system-ui,Segoe UI,Roboto,Arial; color:#0b0f16 }
+    .headline{ font-family: Sora,Inter,system-ui,Segoe UI,Roboto,Arial }
+
+    /* Global background layers */
+    .bg-root{ position:fixed; inset:0; background:#0b0f16 center/cover no-repeat; z-index:-2; }
+    .bg-tint{ position:fixed; inset:0; z-index:-1; background:
+      radial-gradient(60rem 40rem at 15% -10%, rgba(164,108,10,.18), transparent 60%),
+      radial-gradient(70rem 45rem at 85% -5%, rgba(139,92,255,.18), transparent 60%),
+      linear-gradient(180deg, rgba(10,12,20,.65), rgba(10,12,20,.78));
+      backdrop-filter: blur(2px);
+    }
+
+    /* Cards & Inputs */
+    .card{ background: rgba(255,255,255,.85); border:1px solid rgba(12,18,32,.12); border-radius:1.25rem; box-shadow:0 10px 30px rgba(0,0,0,.12) }
+    .chip{ display:inline-flex; align-items:center; gap:.45rem; padding:.4rem .7rem; border-radius:9999px; background: rgba(255,255,255,.8); border:1px solid rgba(12,18,32,.12)}
+    .input{ border:1px solid rgba(12,18,32,.18); background:rgba(255,255,255,.92); padding:1rem 1.2rem; border-radius:9999px; outline:none; width:100% }
+    .input:focus{ box-shadow:0 0 0 4px var(--ring) }
+
+    /* Buttons inspired by the logo (gold + royal) */
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.55rem; padding:.95rem 1.35rem; border-radius:9999px; font-weight:800; letter-spacing:.2px; transition: transform .18s ease, box-shadow .18s ease, background .18s ease }
+    .btn:active{ transform: translateY(0) }
+    .btn-gold{ color:#111; background:linear-gradient(135deg,#ffe7ae,#f7bf5b,#e8a520); box-shadow:0 16px 46px rgba(232,165,32,.35), 0 2px 0 rgba(0,0,0,.12); position:relative; overflow:hidden }
+    .btn-gold::after{ content:""; position:absolute; inset:0; background:linear-gradient(120deg, transparent, rgba(255,255,255,.45), transparent); transform:translateX(-120%); transition:transform .6s ease }
+    .btn-gold:hover::after{ transform:translateX(120%) }
+    .btn-gold:hover{ transform: translateY(-1px); box-shadow:0 20px 60px rgba(232,165,32,.45) }
+    .btn-ghost{ color:#111; background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(247,248,255,.9)); border:1px solid rgba(12,18,32,.14) }
+    .btn-ghost:hover{ box-shadow:0 10px 26px rgba(0,0,0,.1) }
+    .btn-royal{ color:#fff; background:linear-gradient(135deg,#8b5cff,#a47bff); box-shadow:0 16px 46px rgba(139,92,255,.35) }
+
+    /* Logo pill */
+    .logo-pill{ display:flex; align-items:center; gap:.6rem; padding:.45rem .75rem; border-radius:9999px; background:linear-gradient(135deg,#23283a,#1a2031); border:1px solid rgba(255,255,255,.08) }
+
+    /* Utilities */
+    .shadow-soft{ box-shadow:0 16px 46px rgba(0,0,0,.20) }
   </style>
 
-  <!-- CONFIG -->
+  <!-- CONFIG (edit doar valorile) -->
   <script>
-    window.CFL={
-      MAILERLITE_FORM_ACTION:'',
-      GUMROAD_PRODUCT_URL:'https://florinwave0.gumroad.com/l/yspwee',
-      GA4_MEASUREMENT_ID:'',
-      META_PIXEL_ID:'',
-      TIKTOK_PIXEL_ID:''
+    window.CFL = {
+      MAILERLITE_FORM_ACTION: '', // ex: 'https://assets.mailerlite.com/jsonp/xxxxx/forms/xxxx/subscribe'
+      GUMROAD_PRODUCT_URL: 'https://florinwave0.gumroad.com/l/yspwee',
+      GA4_MEASUREMENT_ID: '',
+      META_PIXEL_ID: '',
+      TIKTOK_PIXEL_ID: ''
     };
   </script>
 </head>
 <body class="antialiased">
-  <div class="mesh relative">
-    <header class="sticky top-0 z-40 border-b border-[rgba(17,12,40,.08)] bg-white/70 backdrop-blur">
-      <div class="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
-        <a href="#home" class="flex items-center gap-3">
-          <svg width="36" height="36" viewBox="0 0 48 48" aria-hidden="true">
-            <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#f4b942"/><stop offset="100%" stop-color="#8d5bff"/></linearGradient></defs>
-            <rect rx="12" width="48" height="48" fill="url(#g)"/>
-            <text x="24" y="31" text-anchor="middle" font-size="18" font-family="Sora,Inter" fill="#fff">CFL</text>
-          </svg>
-          <span class="text-xl font-extrabold tracking-tight">CashFlowLab</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-sm text-[rgba(27,31,42,.7)]">
-          <a href="#features" class="hover:text-brand-700">Funcționalități</a>
-          <a href="#showreel" class="hover:text-brand-700">Showreel</a>
-          <a href="#pricing" class="hover:text-brand-700">Prețuri</a>
-          <a href="#about" class="hover:text-brand-700">Despre</a>
-          <a href="#blog" class="hover:text-brand-700">Blog</a>
-          <a href="#faq" class="hover:text-brand-700">FAQ</a>
-        </nav>
-        <a id="buyTop" href="#" class="btn btn-primary">Cumpără — 27€ + taxe</a>
-      </div>
-    </header>
+  <!-- Global background image layers -->
+  <div class="bg-root"></div>
+  <div class="bg-tint"></div>
 
-    <!-- HERO -->
-    <section id="home" class="relative">
-      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-6 py-16 lg:py-24 items-center">
-        <div class="space-y-6">
-          <div class="flex flex-wrap gap-2">
-            <span class="chip">🥇 Aurii + mov regal</span>
-            <span class="chip">🔒 GDPR</span>
-            <span class="chip">📊 GA4 + Pixels</span>
-          </div>
-          <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">CashFlowLab. <span class="bg-clip-text text-transparent bg-gradient-to-r from-lux-500 to-brand-600">Puterea simplității</span>.</h1>
-          <p class="text-lg text-[rgba(27,31,42,.75)] max-w-xl">Un landing premium, construit ca un produs: clar, rapid și orientat pe rezultate — video, funnel, checkout & măsurare corectă. Pornești azi, scalezi mâine.</p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#cta" class="btn btn-primary">Începe gratuit</a>
-            <a href="#showreel" class="btn btn-outline">Vezi demo</a>
-          </div>
-          <div class="flex items-center gap-6 text-sm text-[rgba(27,31,42,.6)] pt-2">
-            <span>Responsive 100%</span><span>SEO corect</span><span>Checkout 2‑click</span>
-          </div>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 border-b border-[rgba(255,255,255,.08)] bg-[rgba(10,12,20,.55)] backdrop-blur">
+    <div class="max-w-7xl mx-auto h-16 px-6 flex items-center justify-between">
+      <a href="#home" class="logo-pill">
+        <img id="logoImg" alt="CashFlowLab" class="h-7 w-7 rounded-full ring-1 ring-[rgba(255,255,255,.15)]" loading="lazy" />
+        <span class="text-sm font-extrabold tracking-wider text-white">CashFlowLab</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-white/80">
+        <a href="#features" class="hover:text-white">Funcționalități</a>
+        <a href="#showreel" class="hover:text-white">Showreel</a>
+        <a href="#pricing" class="hover:text-white">Prețuri</a>
+        <a href="#about" class="hover:text-white">Despre</a>
+        <a href="#blog" class="hover:text-white">Blog</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+      </nav>
+      <a id="buyTop" href="#" class="btn btn-gold">Cumpără acum — 27€ + taxe</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="relative">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 px-6 py-16 lg:py-24 items-center">
+      <div class="space-y-6 text-white">
+        <div class="flex flex-wrap gap-2">
+          <span class="chip">✨ Auriu + mov regal</span>
+          <span class="chip">🔒 GDPR</span>
+          <span class="chip">📈 GA4 + Pixels</span>
         </div>
-        <figure class="glass rounded-3xl p-2 shadow-soft">
-          <div class="relative overflow-hidden rounded-[calc(theme(borderRadius.3xl)-.5rem)]">
-            <video class="w-full h-full" playsinline muted loop autoplay preload="metadata" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
-              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
-            </video>
-          </div>
-        </figure>
-      </div>
-
-      <!-- COUNTDOWN BAR -->
-      <div class="max-w-5xl mx-auto px-6 pb-8">
-        <div class="card p-4 flex items-center justify-between gap-4">
-          <p class="font-semibold">Oferta PRO se închide în:</p>
-          <div id="countdown" class="text-lg font-extrabold">
-            <span class="count-num" id="cd-d">00</span>z : 
-            <span class="count-num" id="cd-h">00</span>h : 
-            <span class="count-num" id="cd-m">00</span>m : 
-            <span class="count-num" id="cd-s">00</span>s
-          </div>
-          <a id="buyBar" href="#" class="btn btn-primary">Upgrade 27€</a>
+        <h1 class="headline text-4xl sm:text-6xl font-extrabold leading-[1.05]">Elegant. Puternic. <span class="bg-clip-text text-transparent bg-gradient-to-r from-gold-400 via-gold-500 to-royal-500">Gata de vânzare.</span></h1>
+        <p class="text-lg/7 text-white/85 max-w-xl">Un landing premium, construit ca un produs: clar, rapid, cu tot ce contează — video, funnel, checkout și măsurare corectă. Inspirat din sigla ta gold/tech.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#cta" class="btn btn-gold">Începe gratuit</a>
+          <a href="#showreel" class="btn btn-ghost">Vezi demo</a>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-white/70 pt-2">
+          <span>Responsive 100%</span><span>SEO corect</span><span>Checkout 2‑click</span>
         </div>
       </div>
-    </section>
-  </div>
+      <div class="card p-2 bg-white/90">
+        <div class="relative overflow-hidden rounded-[calc(theme(borderRadius.3xl)-.5rem)]">
+          <video class="w-full h-full" playsinline muted loop autoplay preload="metadata" poster="https://images.unsplash.com/photo-1520975693416-35e88239e98e?q=80&w=1200&auto=format&fit=crop">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown bar -->
+    <div class="max-w-6xl mx-auto px-6 pb-8">
+      <div class="card p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <p class="font-bold">Oferta PRO se închide în:</p>
+          <p class="text-sm text-black/70">Upgrade la 27€ + taxe. După termen, revine la prețul standard.</p>
+        </div>
+        <div class="flex items-center gap-4 text-center font-extrabold text-lg">
+          <div><span id="d">00</span><div class="text-xs font-semibold">zile</div></div>
+          <div><span id="h">00</span><div class="text-xs font-semibold">ore</div></div>
+          <div><span id="m">00</span><div class="text-xs font-semibold">min</div></div>
+          <div><span id="s">00</span><div class="text-xs font-semibold">sec</div></div>
+          <a id="buyBar" href="#" class="btn btn-royal">Ia PRO</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FEATURES -->
   <section id="features" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center max-w-3xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto text-white">
       <h2 class="headline text-3xl sm:text-4xl font-extrabold">Tot ce ai nevoie. Nimic în plus.</h2>
-      <p class="mt-3 text-[rgba(27,31,42,.7)]">Arhitectură modernă, conversii reale, experiență fluidă.</p>
+      <p class="mt-3 text-white/85">Arhitectură modernă, conversii reale, experiență fluidă.</p>
     </div>
+
     <div class="grid lg:grid-cols-3 gap-6 mt-10">
-      <div class="card p-6"><div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">⚙️</div><h3 class="font-semibold mb-1">Performanță & SEO</h3><p class="text-[rgba(27,31,42,.7)]">Lazy‑loading, bundle minim, meta/OG corecte, scoruri Lighthouse solide.</p></div>
-      <div class="card p-6"><div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">🎯</div><h3 class="font-semibold mb-1">CTA‑uri care convertesc</h3><p class="text-[rgba(27,31,42,.7)]">Butoane glossy, micro‑interacțiuni discrete, flux clar.</p></div>
-      <div class="card p-6"><div class="h-10 w-10 rounded-xl grid place-items-center bg-brand-50 text-brand-700 mb-4">🧩</div><h3 class="font-semibold mb-1">Integrare completă</h3><p class="text-[rgba(27,31,42,.7)]">MailerLite, Gumroad, GA4, Meta, TikTok, consent manager.</p></div>
+      <div class="card p-6">
+        <div class="h-10 w-10 rounded-xl grid place-items-center bg-gold-50 text-gold-700 mb-4">⚙️</div>
+        <h3 class="font-semibold mb-1">Performanță & SEO</h3>
+        <p class="text-black/70">Lazy‑loading, meta/OG corecte, scoruri Lighthouse solide.</p>
+      </div>
+      <div class="card p-6">
+        <div class="h-10 w-10 rounded-xl grid place-items-center bg-gold-50 text-royal-600 mb-4">🎯</div>
+        <h3 class="font-semibold mb-1">CTA‑uri glossy</h3>
+        <p class="text-black/70">Butoane inspirate din logo: gold + mov, micro‑interacțiuni.</p>
+      </div>
+      <div class="card p-6">
+        <div class="h-10 w-10 rounded-xl grid place-items-center bg-gold-50 text-royal-600 mb-4">🧩</div>
+        <h3 class="font-semibold mb-1">Integrare completă</h3>
+        <p class="text-black/70">MailerLite, Gumroad, GA4, Meta, TikTok, consent manager.</p>
+      </div>
     </div>
   </section>
 
   <!-- SHOWREEL -->
   <section id="showreel" class="max-w-7xl mx-auto px-6 pb-6">
-    <div class="text-center mb-6">
+    <div class="text-center mb-6 text-white">
       <h2 class="headline text-3xl font-extrabold">Demo în acțiune</h2>
-      <p class="mt-2 text-[rgba(27,31,42,.7)]">Setup, lansare, checkout — în clipuri reale.</p>
+      <p class="mt-2 text-white/85">Setup, lansare, checkout — clipuri reale.</p>
     </div>
     <div class="grid lg:grid-cols-2 gap-6">
       <figure class="card overflow-hidden">
-        <div class="relative aspect-video"><span class="absolute left-3 top-3 chip">🎥 Setup</span><iframe class="w-full h-full" loading="lazy" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Setup în 24h" allowfullscreen></iframe></div>
-        <figcaption class="px-4 py-3 text-[rgba(27,31,42,.7)]"><strong>Andrei • soloprenor</strong> — „Am configurat în aceeași zi și am colectat primele lead‑uri.”</figcaption>
+        <div class="relative aspect-video">
+          <span class="absolute left-3 top-3 chip">🎥 Setup</span>
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/R6MlUcmOul8" title="Setup în 24h" loading="lazy" allowfullscreen></iframe>
+        </div>
       </figure>
       <figure class="card overflow-hidden">
-        <div class="relative aspect-video"><span class="absolute left-3 top-3 chip">🎥 Checkout</span><iframe class="w-full h-full" loading="lazy" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Checkout 2‑click" allowfullscreen></iframe></div>
-        <figcaption class="px-4 py-3 text-[rgba(27,31,42,.7)]"><strong>Ioana • creator</strong> — „Gumroad e instant. Primul produs vândut în 48h.”</figcaption>
+        <div class="relative aspect-video">
+          <span class="absolute left-3 top-3 chip">🎥 Checkout</span>
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="Checkout în 2-click" loading="lazy" allowfullscreen></iframe>
+        </div>
       </figure>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALE -->
-  <section class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center mb-8">
-      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Dovada socială</h2>
-      <p class="mt-2 text-[rgba(27,31,42,.7)]">Creatorii care au lansat cu CashFlowLab.</p>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-      <blockquote class="card p-6">„Mi‑a tăiat timpul de lansare la jumătate.”<footer class="mt-3 text-sm text-[rgba(27,31,42,.7)]">— Radu, marketer</footer></blockquote>
-      <blockquote class="card p-6">„Arată premium și vinde. Atât.”<footer class="mt-3 text-sm text-[rgba(27,31,42,.7)]">— Ioana, creator digital</footer></blockquote>
-      <blockquote class="card p-6">„Setup în 60 minute, primele lead‑uri în aceeași zi.”<footer class="mt-3 text-sm text-[rgba(27,31,42,.7)]">— Mihai, consultant</footer></blockquote>
     </div>
   </section>
 
   <!-- PRICING -->
   <section id="pricing" class="max-w-7xl mx-auto px-6 py-16">
-    <div class="text-center mb-10"><h2 class="headline text-3xl sm:text-4xl font-extrabold">Planuri simple</h2><p class="mt-2 text-[rgba(27,31,42,.7)]">Începe gratuit, upgrade când ești gata.</p></div>
+    <div class="text-center mb-10 text-white">
+      <h2 class="headline text-3xl sm:text-4xl font-extrabold">Planuri simple</h2>
+      <p class="mt-2 text-white/85">Începe gratuit, upgrade când ești gata.</p>
+    </div>
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="card p-6 flex flex-col"><h3 class="text-xl font-bold">Starter</h3><p class="text-[rgba(27,31,42,.7)] mt-1">Site + funnel + ghid.</p><div class="text-4xl font-extrabold mt-4">Gratuit</div><ul class="mt-4 space-y-2 text-[rgba(27,31,42,.8)]"><li>• Single‑file HTML premium</li><li>• Copy & CTA‑uri optimizate</li><li>• Ghid integrare</li></ul><a href="#cta" class="btn btn-outline mt-6">Începe</a></div>
-      <div class="card p-6 flex flex-col ring-1 ring-[rgba(184,137,255,.25)]"><h3 class="text-xl font-bold">Pro</h3><p class="text-[rgba(27,31,42,.7)] mt-1">Variantă complet conectată + fine‑tuning.</p><div class="text-4xl font-extrabold mt-4">27€ <span class="text-base font-semibold text-[rgba(27,31,42,.6)]">+ taxe</span></div><ul class="mt-4 space-y-2 text-[rgba(27,31,42,.8)]"><li>• Conectare MailerLite</li><li>• GA4 + Pixels</li><li>• Personalizare brand</li></ul><a id="buyMid" href="#" class="btn btn-primary mt-6">Cumpără acum — 27€</a></div>
+      <div class="card p-6 flex flex-col">
+        <h3 class="text-xl font-bold">Starter</h3>
+        <p class="text-black/70 mt-1">Site + funnel + ghid.</p>
+        <div class="text-4xl font-extrabold mt-4">Gratuit</div>
+        <ul class="mt-4 space-y-2 text-black/80">
+          <li>• Single‑file HTML premium</li>
+          <li>• Copy & CTA‑uri optimizate</li>
+          <li>• Ghid integrare</li>
+        </ul>
+        <a href="#cta" class="btn btn-ghost mt-6">Începe</a>
+      </div>
+      <div class="card p-6 flex flex-col ring-1 ring-[rgba(232,165,32,.35)]">
+        <h3 class="text-xl font-bold">Pro</h3>
+        <p class="text-black/70 mt-1">Variantă complet conectată + fine‑tuning.</p>
+        <div class="text-4xl font-extrabold mt-4">27€ <span class="text-base font-semibold text-black/60">+ taxe</span></div>
+        <ul class="mt-4 space-y-2 text-black/80">
+          <li>• Conectare MailerLite</li>
+          <li>• GA4 + Pixels</li>
+          <li>• Personalizare brand</li>
+        </ul>
+        <a id="buyMid" href="#" class="btn btn-gold mt-6">Cumpără acum — 27€ + taxe</a>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA LEAD -->
   <section id="cta" class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <h2 class="headline text-3xl sm:text-4xl font-extrabold">Primește kitul gratuit</h2>
-    <p class="mt-3 text-[rgba(27,31,42,.7)]">Completezi emailul, îți trimitem instant linkul + pașii. Te poți dezabona oricând.</p>
+    <h2 class="headline text-3xl sm:text-4xl font-extrabold text-white">Primește kitul gratuit</h2>
+    <p class="mt-3 text-white/85">Completezi emailul, îți trimitem instant linkul + pașii. Poți dezabona oricând.</p>
     <form id="leadForm" class="mx-auto mt-6 flex max-w-xl flex-col sm:flex-row gap-3">
       <input id="leadEmail" required type="email" placeholder="Emailul tău" class="input" />
-      <button id="leadBtn" class="btn btn-primary" type="submit">Primește kitul</button>
+      <button id="leadBtn" class="btn btn-gold" type="submit">Primește kitul</button>
     </form>
-    <p id="leadMsg" class="text-sm text-[rgba(27,31,42,.7)] mt-3 hidden">Mulțumim! Verifică inbox‑ul.</p>
+    <p id="leadMsg" class="text-sm text-white/85 mt-3 hidden">Mulțumim! Verifică inbox‑ul.</p>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="max-w-6xl mx-auto px-6 py-16">
-    <div class="grid lg:grid-cols-2 gap-8 items-center">
-      <div>
-        <h2 class="headline text-3xl sm:text-4xl font-extrabold">Salut, sunt Florin</h2>
-        <p class="mt-4 text-[rgba(27,31,42,.8)] leading-relaxed">Încerc, la fel ca tine, să învăț mereu. Cred că putem crește împreună — eu construiesc produse simple și puternice, tu le pui în lume. CashFlowLab e metoda mea: un kit curat, care te lasă să lansezi rapid fără bătăi de cap. Învățăm amândoi, pas cu pas, cu rezultate reale.</p>
-        <div class="mt-6 flex gap-3"><a href="#cta" class="btn btn-primary">Începe gratuit</a><a href="#pricing" class="btn btn-ghost">Vezi planuri</a></div>
+  <section id="about" class="max-w-6xl mx-auto px-6 py-14">
+    <div class="grid md:grid-cols-2 gap-6 items-start">
+      <div class="card p-6">
+        <h3 class="headline text-2xl font-extrabold mb-2">Despre mine</h3>
+        <p class="text-black/80">Sunt Florin. Încerc, la fel ca tine, să învăț. Cred că se poate să învățăm amândoi — iar CashFlowLab e modul meu de a pune în practică ceea ce aflu. Construiesc lucruri simple, elegante și utile. Dacă te ajută, atunci suntem pe drumul bun.</p>
       </div>
-      <figure class="card overflow-hidden"><img loading="lazy" alt="CashFlowLab preview" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop"/></figure>
+      <div class="card p-6">
+        <h3 class="headline text-2xl font-extrabold mb-2">De ce CashFlowLab?</h3>
+        <p class="text-black/80">Am pus la un loc un landing premium care nu cere agenție, nu cere builder. Un singur fișier, hook‑uri corecte, checkout 2‑click. Concentrează‑te pe produs, nu pe setup.</p>
+      </div>
     </div>
   </section>
 
   <!-- BLOG MINI -->
-  <section id="blog" class="max-w-7xl mx-auto px-6 pb-20">
-    <div class="text-center mb-8"><h2 class="headline text-3xl sm:text-4xl font-extrabold">Note & insight‑uri</h2><p class="mt-2 text-[rgba(27,31,42,.7)]">Scurt, aplicat, fără zgomot.</p></div>
+  <section id="blog" class="max-w-7xl mx-auto px-6 py-10">
+    <h2 class="headline text-3xl font-extrabold text-white text-center mb-6">Blog mini</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <article class="card p-5"><h3 class="font-semibold">5 pași ca să lansezi azi</h3><p class="mt-2 text-[rgba(27,31,42,.75)]">Setup rapid: domeniu, Netlify, funnel, checkout, analytics.</p><a href="#cta" class="mt-3 inline-block text-brand-700 font-semibold">Aplică →</a></article>
-      <article class="card p-5"><h3 class="font-semibold">CTA-uri care vând</h3><p class="mt-2 text-[rgba(27,31,42,.75)]">Design glossy, contrast clar, copy scurt. Teste A/B.</p><a href="#cta" class="mt-3 inline-block text-brand-700 font-semibold">Vezi exemplu →</a></article>
-      <article class="card p-5"><h3 class="font-semibold">GDPR fără stres</h3><p class="mt-2 text-[rgba(27,31,42,.75)]">Consent real, analytics opționale, mesaje transparente.</p><a href="#faq" class="mt-3 inline-block text-brand-700 font-semibold">Află cum →</a></article>
+      <article class="card p-5">
+        <h3 class="font-bold text-lg">3 pași: de la idee la landing</h3>
+        <p class="text-black/70 mt-2">Definește promisiunea, adaugă dovada (video/testimoniale), măsoară ce contează. Less noise, more signal.</p>
+      </article>
+      <article class="card p-5">
+        <h3 class="font-bold text-lg">CTA‑uri care convertesc</h3>
+        <p class="text-black/70 mt-2">Contrast, claritate și fricțiune mică. Button copy scurt + micro‑interacțiuni = click.</p>
+      </article>
+      <article class="card p-5">
+        <h3 class="font-bold text-lg">GDPR fără durere</h3>
+        <p class="text-black/70 mt-2">Consent granular + încărcare condiționată a pixelilor. Respect și performanță în același loc.</p>
+      </article>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="max-w-6xl mx-auto px-6 pb-20">
     <div class="grid md:grid-cols-2 gap-4">
-      <details class="card p-5"><summary class="cursor-pointer font-semibold">Funcționează fără builder?</summary><p class="mt-3 text-[rgba(27,31,42,.75)]">Da, este un singur fișier HTML. Îl pui pe Netlify sau îl deschizi local.</p></details>
-      <details class="card p-5"><summary class="cursor-pointer font-semibold">Pot schimba culorile?</summary><p class="mt-3 text-[rgba(27,31,42,.75)]">Da. Paleta (auriu + mov regal) e în config Tailwind.</p></details>
-      <details class="card p-5"><summary class="cursor-pointer font-semibold">Ce se întâmplă dacă nu setez MailerLite/Gumroad?</summary><p class="mt-3 text-[rgba(27,31,42,.75)]">Formularul afișează mesaj, iar butoanele Gumroad merg pe linkul implicit — nu se rup.</p></details>
-      <details class="card p-5"><summary class="cursor-pointer font-semibold">Este conform GDPR?</summary><p class="mt-3 text-[rgba(27,31,42,.75)]">Da. Banner de consimțământ, preferințe pentru Analytics/Marketing și text clar.</p></details>
+      <details class="card p-5">
+        <summary class="cursor-pointer font-semibold">Funcționează fără builder?</summary>
+        <p class="mt-3 text-black/75">Da, este un singur fișier HTML. Îl pui pe Netlify/Vercel sau deschizi local.</p>
+      </details>
+      <details class="card p-5">
+        <summary class="cursor-pointer font-semibold">Pot schimba culorile?</summary>
+        <p class="mt-3 text-black/75">Da. Culorile gold/royal sunt în config Tailwind, poți ajusta rapid.</p>
+      </details>
+      <details class="card p-5">
+        <summary class="cursor-pointer font-semibold">Ce se întâmplă dacă nu setez MailerLite/Gumroad?</summary>
+        <p class="mt-3 text-black/75">Formularul afișează mesaj de confirmare, iar butoanele Gumroad merg pe linkul implicit — nu se „rup”.</p>
+      </details>
+      <details class="card p-5">
+        <summary class="cursor-pointer font-semibold">Este conform GDPR?</summary>
+        <p class="mt-3 text-black/75">Da. Banner de consimțământ, preferințe pentru Analytics/Marketing și text de confidențialitate.</p>
+      </details>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-[rgba(17,12,40,.08)] bg-white/70 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-[rgba(27,31,42,.65)]">© <span id="year"></span> CashFlowLab</p>
-      <div class="text-sm flex gap-6 text-[rgba(27,31,42,.65)]">
-        <a href="#" class="hover:text-brand-700">Termeni</a>
-        <a href="#" class="hover:text-brand-700">Confidențialitate</a>
-        <button id="openConsent" class="hover:text-brand-700">Preferințe cookie</button>
+  <footer class="border-t border-[rgba(255,255,255,.08)] bg-[rgba(10,12,20,.55)] backdrop-blur">
+    <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-white/85">
+      <p class="text-sm">© <span id="year"></span> CashFlowLab</p>
+      <div class="text-sm flex gap-6">
+        <a href="#" class="hover:text-white">Termeni</a>
+        <a href="#" class="hover:text-white">Confidențialitate</a>
+        <button id="openConsent" class="hover:text-white">Preferințe cookie</button>
       </div>
     </div>
   </footer>
 
   <!-- COOKIE BAR -->
-  <div id="cookieBar" class="fixed inset-x-4 bottom-4 z-50 hidden items-center justify-between gap-3 glass p-4 rounded-3xl shadow-soft">
-    <p class="text-sm text-[rgba(27,31,42,.75)]">Folosim cookie-uri necesare. Analytics/Marketing doar cu acord.</p>
+  <div id="cookieBar" class="fixed inset-x-4 bottom-4 z-50 hidden items-center justify-between gap-3 bg-[rgba(255,255,255,.92)] p-4 rounded-3xl shadow-soft">
+    <p class="text-sm text-black/75">Folosim cookie‑uri necesare. Analytics/Marketing doar cu acord.</p>
     <div class="flex items-center gap-2">
       <button id="denyAll" class="btn btn-ghost" type="button">Respinge</button>
-      <button id="customize" class="btn btn-outline" type="button">Personalizează</button>
-      <button id="allowAll" class="btn btn-primary" type="button">Acceptă tot</button>
+      <button id="customize" class="btn btn-ghost" type="button">Personalizează</button>
+      <button id="allowAll" class="btn btn-gold" type="button">Acceptă tot</button>
     </div>
   </div>
 
   <!-- CONSENT MODAL -->
   <dialog id="consentModal" class="backdrop:bg-[rgba(0,0,0,.35)] p-0 w-[min(520px,92vw)] rounded-3xl">
-    <div class="glass p-6 rounded-3xl">
+    <div class="bg-[rgba(255,255,255,.96)] p-6 rounded-3xl">
       <h3 class="headline text-xl font-bold">Preferințe cookie</h3>
-      <p class="mt-2 text-sm text-[rgba(27,31,42,.7)]">Alege ce tipuri permiți. Poți reveni oricând.</p>
+      <p class="mt-2 text-sm text-black/70">Alege ce tipuri permiți. Poți reveni oricând.</p>
       <div class="mt-4 space-y-3">
-        <label class="flex items-center justify-between card p-3"><span>Necesare</span><input type="checkbox" checked disabled></label>
-        <label class="flex items-center justify-between card p-3"><span>Analytics (GA4/Plausible)</span><input id="toggleAnalytics" type="checkbox"></label>
-        <label class="flex items-center justify-between card p-3"><span>Marketing (Meta/TikTok)</span><input id="toggleMarketing" type="checkbox"></label>
+        <label class="flex items-center justify-between card p-3">
+          <span>Necesare</span>
+          <input type="checkbox" checked disabled>
+        </label>
+        <label class="flex items-center justify-between card p-3">
+          <span>Analytics (GA4/Plausible)</span>
+          <input id="toggleAnalytics" type="checkbox">
+        </label>
+        <label class="flex items-center justify-between card p-3">
+          <span>Marketing (Meta/TikTok)</span>
+          <input id="toggleMarketing" type="checkbox">
+        </label>
       </div>
-      <div class="mt-6 flex justify-end gap-2"><button id="saveConsent" class="btn btn-primary" type="button">Salvează</button><button id="closeConsent" class="btn btn-outline" type="button">Închide</button></div>
+      <div class="mt-6 flex justify-end gap-2">
+        <button id="saveConsent" class="btn btn-royal" type="button">Salvează</button>
+        <button id="closeConsent" class="btn btn-ghost" type="button">Închide</button>
+      </div>
     </div>
   </dialog>
 
-  <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[60] hidden rounded-full bg-white text-brand-700 px-4 py-2 text-sm font-semibold shadow-glow">Preferințe salvate</div>
+  <!-- TOAST -->
+  <div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[60] hidden rounded-full bg-white text-royal-700 px-4 py-2 text-sm font-semibold shadow-glow">Preferințe salvate</div>
 
   <!-- SCRIPTS -->
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-
-    // Countdown: 7 zile de la prima vizită
-    const end=(()=>{const k='cfl_offer_end';const saved=localStorage.getItem(k);if(saved) return new Date(saved);const d=new Date();d.setDate(d.getDate()+7);localStorage.setItem(k,d.toISOString());return d;})();
-    function pad(n){return String(n).padStart(2,'0')}
-    function tick(){const now=new Date();let t=Math.max(0,end-now);const s=Math.floor(t/1000)%60,m=Math.floor(t/1000/60)%60,h=Math.floor(t/1000/60/60)%24,d=Math.floor(t/1000/60/60/24);['d','h','m','s'].forEach((u,i)=>document.getElementById('cd-'+u).textContent=pad([d,h,m,s][i]));}
-    setInterval(tick,1000);tick();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
     // Consent state
     const CONSENT_KEY='cfl_consent_v3';
-    const getConsent=()=>{try{return JSON.parse(localStorage.getItem(CONSENT_KEY)||'{}')}catch{return{}}}
-    const setConsent=o=>localStorage.setItem(CONSENT_KEY,JSON.stringify(o));
+    const getConsent=()=>{ try{return JSON.parse(localStorage.getItem(CONSENT_KEY)||'{}');}catch{return{}} };
+    const setConsent=(obj)=> localStorage.setItem(CONSENT_KEY, JSON.stringify(obj));
 
     const cookieBar=document.getElementById('cookieBar');
     const consentModal=document.getElementById('consentModal');
@@ -279,32 +365,92 @@ background-size: cover;
     const toggleAnalytics=document.getElementById('toggleAnalytics');
     const toggleMarketing=document.getElementById('toggleMarketing');
     const toast=document.getElementById('toast');
-    const showToast=m=>{toast.textContent=m;toast.classList.remove('hidden');setTimeout(()=>toast.classList.add('hidden'),1500)}
+    const showToast=(m)=>{ toast.textContent=m; toast.classList.remove('hidden'); setTimeout(()=>toast.classList.add('hidden'),1500); };
 
     // Gumroad links
-    const gumURL=CFL.GUMROAD_PRODUCT_URL||'https://florinwave0.gumroad.com/l/yspwee';
-    ;['buyTop','buyMid','buyBar'].forEach(id=>{const el=document.getElementById(id);if(el){el.href=gumURL;el.target='_blank';el.rel='noopener'}})
+    const gumURL = CFL.GUMROAD_PRODUCT_URL || 'https://florinwave0.gumroad.com/l/yspwee';
+    const buyTop=document.getElementById('buyTop');
+    const buyMid=document.getElementById('buyMid');
+    const buyBar=document.getElementById('buyBar');
+    [buyTop,buyMid,buyBar].forEach(a=>{ if(a){ a.href=gumURL; a.target='_blank'; a.rel='noopener'; }});
 
-    // Cookie bar
-    window.addEventListener('DOMContentLoaded',()=>{const c=getConsent();if(!('analytics'in c)&&!('marketing'in c)) cookieBar.classList.remove('hidden')})
-    const on=(el,ev,fn)=>el&&el.addEventListener(ev,fn)
-    on(document.getElementById('customize'),'click',()=>{cookieBar.classList.add('hidden');consentModal.showModal()})
-    on(openConsent,'click',()=>{const c=getConsent();toggleAnalytics.checked=!!c.analytics;toggleMarketing.checked=!!c.marketing;consentModal.showModal()})
-    on(document.getElementById('allowAll'),'click',()=>{setConsent({analytics:true,marketing:true});cookieBar.classList.add('hidden');initIntegrations();showToast('Acceptat — tracking activ')})
-    on(document.getElementById('denyAll'),'click',()=>{setConsent({analytics:false,marketing:false});cookieBar.classList.add('hidden');showToast('Respins — doar necesare')})
-    on(document.getElementById('saveConsent'),'click',()=>{setConsent({analytics:toggleAnalytics.checked,marketing:toggleMarketing.checked});consentModal.close();initIntegrations();showToast('Preferințe salvate')})
-    on(document.getElementById('closeConsent'),'click',()=>consentModal.close())
+    // Cookie bar visibility
+    window.addEventListener('DOMContentLoaded',()=>{
+      const c=getConsent();
+      if(!('analytics' in c) && !('marketing' in c)) cookieBar.classList.remove('hidden');
+    });
+
+    // Helpers
+    const on=(el,ev,fn)=> el && el.addEventListener(ev,fn);
+    on(document.getElementById('customize'),'click',()=>{ cookieBar.classList.add('hidden'); consentModal.showModal(); });
+    on(openConsent,'click',()=>{ const c=getConsent(); toggleAnalytics.checked=!!c.analytics; toggleMarketing.checked=!!c.marketing; consentModal.showModal(); });
+    on(document.getElementById('allowAll'),'click',()=>{ setConsent({analytics:true,marketing:true}); cookieBar.classList.add('hidden'); initIntegrations(); showToast('Acceptat — tracking activ');});
+    on(document.getElementById('denyAll'),'click',()=>{ setConsent({analytics:false,marketing:false}); cookieBar.classList.add('hidden'); showToast('Respins — doar necesare');});
+    on(document.getElementById('saveConsent'),'click',()=>{ setConsent({analytics:toggleAnalytics.checked, marketing:toggleMarketing.checked}); consentModal.close(); initIntegrations(); showToast('Preferințe salvate'); });
+    on(document.getElementById('closeConsent'),'click',()=> consentModal.close());
 
     // Lead form
     const leadForm=document.getElementById('leadForm');
-    on(leadForm,'submit',async e=>{e.preventDefault();const email=document.getElementById('leadEmail').value.trim();if(!email) return; if(!CFL.MAILERLITE_FORM_ACTION){document.getElementById('leadMsg').classList.remove('hidden');leadForm.reset();return;} try{const resp=await fetch(CFL.MAILERLITE_FORM_ACTION,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({fields:JSON.stringify({email})})}); if(resp.ok){document.getElementById('leadMsg').classList.remove('hidden');leadForm.reset(); if(window.gtag) gtag('event','generate_lead'); if(window.fbq) fbq('track','Lead'); if(window.ttq) ttq.track('CompleteRegistration'); } else{alert('Nu am reușit să trimitem. Verifică MAILERLITE_FORM_ACTION.')}}catch(err){alert('Eroare de rețea. Încearcă din nou.')}})
+    on(leadForm,'submit', async (e)=>{
+      e.preventDefault();
+      const email=document.getElementById('leadEmail').value.trim();
+      if(!email) return;
+      if(!CFL.MAILERLITE_FORM_ACTION){
+        document.getElementById('leadMsg').classList.remove('hidden');
+        leadForm.reset();
+        return; // safe demo
+      }
+      try{
+        const resp=await fetch(CFL.MAILERLITE_FORM_ACTION,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({fields: JSON.stringify({ email }) })});
+        if(resp.ok){ document.getElementById('leadMsg').classList.remove('hidden'); leadForm.reset(); if(window.gtag) gtag('event','generate_lead'); if(window.fbq) fbq('track','Lead'); if(window.ttq) ttq.track('CompleteRegistration'); }
+        else{ alert('Nu am reușit să trimitem. Verifică MAILERLITE_FORM_ACTION.'); }
+      }catch(err){ alert('Eroare de rețea. Încearcă din nou.'); }
+    });
 
     // Integrations
-    function loadScript(src,attrs={}){return new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.async=true;Object.entries(attrs).forEach(([k,v])=>{if(v==="") s.setAttribute(k,""); else s.setAttribute(k,v)});s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
-    function initGA4(id){if(!id) return; window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments)} window.gtag=gtag; gtag('js',new Date()); gtag('config',id,{anonymize_ip:true}); loadScript(`https://www.googletagmanager.com/gtag/js?id=${id}`)}
-    function initMetaPixel(id){if(!id) return; !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init',id); fbq('track','PageView')}
-    function initTikTok(id){if(!id) return; !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript';o.async=true;o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a)};}(window,document,'ttq'); ttq.load(id); ttq.page()}
-    function initIntegrations(){const c=getConsent(); if(c.analytics) initGA4(CFL.GA4_MEASUREMENT_ID); if(c.marketing){initMetaPixel(CFL.META_PIXEL_ID); initTikTok(CFL.TIKTOK_PIXEL_ID)}}
+    function loadScript(src, attrs={}){ return new Promise((res,rej)=>{ const s=document.createElement('script'); s.src=src; s.async=true; Object.entries(attrs).forEach(([k,v])=>{ if(v==="") s.setAttribute(k,""); else s.setAttribute(k,v); }); s.onload=res; s.onerror=rej; document.head.appendChild(s); }); }
+    function initGA4(id){ if(!id) return; window.dataLayer=window.dataLayer||[]; function gtag(){dataLayer.push(arguments);} window.gtag=gtag; gtag('js', new Date()); gtag('config', id, { anonymize_ip:true }); loadScript(`https://www.googletagmanager.com/gtag/js?id=${id}`); }
+    function initMetaPixel(id){ if(!id) return; !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', id); fbq('track','PageView'); }
+    function initTikTok(id){ if(!id) return; !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=['page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.load=function(e,n){var i='https://analytics.tiktok.com/i18n/pixel/events.js';ttq._i=ttq._i||{};ttq._i[e]=[];ttq._t=ttq._t||{};ttq._t[e]=+new Date;ttq._o=ttq._o||{};ttq._o[e]=n||{};var o=document.createElement('script');o.type='text/javascript';o.async=true;o.src=i+'?sdkid='+e+'&lib='+t;var a=document.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a);};}(window,document,'ttq');ttq.load(id);ttq.page(); }
+
+    function initIntegrations(){
+      const c=getConsent();
+      if(c.analytics) initGA4(CFL.GA4_MEASUREMENT_ID);
+      if(c.marketing){ initMetaPixel(CFL.META_PIXEL_ID); initTikTok(CFL.TIKTOK_PIXEL_ID); }
+    }
+
+    // Countdown 7 zile per vizitator
+    (function(){
+      const elD=document.getElementById('d'), elH=document.getElementById('h'), elM=document.getElementById('m'), elS=document.getElementById('s');
+      if(!elD) return;
+      const KEY='cfl_timer_start_v1';
+      let start = localStorage.getItem(KEY); if(!start){ start=Date.now(); localStorage.setItem(KEY,start); }
+      const end = Number(start) + 7*24*60*60*1000; // 7 zile
+      const tick=()=>{
+        const now=Date.now();
+        const left=Math.max(0, end-now);
+        const d=Math.floor(left/86400000);
+        const h=Math.floor((left%86400000)/3600000);
+        const m=Math.floor((left%3600000)/60000);
+        const s=Math.floor((left%60000)/1000);
+        elD.textContent=String(d).padStart(2,'0');
+        elH.textContent=String(h).padStart(2,'0');
+        elM.textContent=String(m).padStart(2,'0');
+        elS.textContent=String(s).padStart(2,'0');
+      };
+      tick(); setInterval(tick,1000);
+    })();
+
+    // Dynamic asset resolver for background & logo
+    (async()=>{
+      const bgEl=document.querySelector('.bg-root');
+      const logo=document.getElementById('logoImg');
+      const bgPaths=['/bg-cfl.webp','/assets/bg-cfl.webp','/CashFlowLab.png','/assets/CashFlowLab.png','/bg.jpg','/assets/bg.jpg'];
+      const logoPaths=['/logo-cfl.webp','/assets/logo-cfl.webp','/logo.png','/assets/logo.png'];
+      async function ok(p){ try{ const r=await fetch(p,{method:'HEAD'}); return r.ok } catch{ return false } }
+      for(const p of bgPaths){ if(await ok(p)){ bgEl.style.backgroundImage=`url('${p}')`; break; } }
+      for(const p of logoPaths){ if(await ok(p)){ logo.src=p; break; } }
+    })();
   </script>
 </body>
 </html>
