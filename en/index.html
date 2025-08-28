@@ -103,31 +103,20 @@
   </header>
 
   <!-- HERO -->
-  <main class="container hero">
-    <section class="hero-grid">
-      <div>
-        <h1>Plan + Launch Kit for <span style="color:var(--gold)">real cashflow</span>.</h1>
-        <p class="lead">Clear steps, ready-to-use templates, and guidance. Launch in days, not weeks.</p>
-        <div class="chips">
-          <span class="chip">Instant access</span>
-          <span class="chip">Premium template</span>
-          <span class="chip">Emails 1–5</span>
-          <span class="chip">14-day guarantee</span>
-        </div>
-        <p class="cta-row">
-          <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Buy now</a>
-          <a class="btn ghost" href="#inside">See what's inside</a>
-        </p>
-        <div class="strip">€27 <b>+ taxes</b> • Secure payment on Gumroad • Updates included</div>
-      </div>
-     <aside class="hero-media" aria-label="CashFlowLab vizual">
-  <picture>
-    <source srcset="cashflow-hero.webp" type="image/webp">
-    <img src="cashflow-hero.png" alt="Previzualizare CashFlowLab"
-         class="hero-img" fetchpriority="high" loading="eager"
-         onerror="(function(img){const aside=img.closest('.hero-media'); if(aside) aside.remove(); const g=document.querySelector('.hero-grid'); if(g) g.style.gridTemplateColumns='1fr';})(this)">
-  </picture>
-</aside>
+ .hero-grid{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:10px}
+@media (max-width:1060px){ .hero-grid{grid-template-columns:1fr} }
+
+.hero-media{
+  display:flex; align-items:center; justify-content:flex-end;
+  border-radius:16px; overflow:hidden; min-height:260px;
+  background: radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.18), transparent 60%);
+}
+.hero-img{
+  max-width:100%; height:auto; object-fit:cover; border-radius:16px;
+  /* dacă vrei să „tragă” spre marginea dreaptă: */
+  object-position:center right;
+}
+
 
           <source srcset="../hero-tech.webp" type="image/webp">
           <img src="../hero-tech.png" alt="CashFlowLab preview" class="hero-img"
