@@ -342,28 +342,36 @@
 
     function setLang(lang){
       const d = I18N[lang] || I18N.en; localStorage.setItem('lang', lang);
-      // text nodes
-      h1.innerHTML=d.h1; sub.innerHTML=d.sub; badges_small.innerHTML=d.badges_small; secure.innerHTML=d.secure;
-      offer_ends_label.textContent=d.offer_ends_label; value_text.innerHTML=d.value_text;
-      step1.textContent=d.step1; step2.textContent=d.step2; step3.textContent=d.step3; access.textContent=d.access; automate.textContent=d.automate; scale.textContent=d.scale;
-      badge1.textContent=d.badge1; badge2.textContent=d.badge2; badge3.textContent=d.badge3; badge4.textContent=d.badge4;
-      inside_title.textContent=d.inside_title; pack_h.textContent=d.pack_h; pack_p.innerHTML=d.pack_p; map_h.textContent=d.map_h; map_p.textContent=d.map_p; auto_h.textContent=d.auto_h; auto_p.textContent=d.auto_p;
-      how_title.textContent=d.how_title; how1.textContent=d.how1; how1_p.textContent=d.how1_p; how2.textContent=d.how2; how2_p.textContent=d.how2_p; how3.textContent=d.how3; how3_p.textContent=d.how3_p;
-      tools_title.textContent=d.tools_title; pr1_h.textContent=d.pr1_h; pr1_p.innerHTML=d.pr1_p; pr2_h.textContent=d.pr2_h; pr2_p.textContent=d.pr2_p; pr3_h.textContent=d.pr3_h; pr3_p.innerHTML=d.pr3_p;
-      testi_title.textContent=d.testi_title; t1.textContent=d.t1; t2.textContent=d.t2; faq_title.textContent=d.faq_title; q1.textContent=d.q1; a1.textContent=d.a1; q2.textContent=d.q2; a2.textContent=d.a2; q3.textContent=d.q3; a3.textContent=d.a3;
-      urgency.textContent=d.urgency; sticky_msg.textContent=d.sticky_msg; footer.innerHTML=d.footer;
+      const el = id => document.getElementById(id);
+      // text nodes (safe checks so nu crapă dacă lipsesc)
+      const setHTML = (id, val)=>{ const n=el(id); if(n) n.innerHTML = val; };
+      const setText  = (id, val)=>{ const n=el(id); if(n) n.textContent = val; };
+
+      setHTML('h1', d.h1); setHTML('sub', d.sub); setHTML('badges_small', d.badges_small); setHTML('secure', d.secure);
+      setText('offer_ends_label', d.offer_ends_label); setHTML('value_text', d.value_text);
+      setText('step1', d.step1); setText('step2', d.step2); setText('step3', d.step3); setText('access', d.access); setText('automate', d.automate); setText('scale', d.scale);
+      setText('badge1', d.badge1); setText('badge2', d.badge2); setText('badge3', d.badge3); setText('badge4', d.badge4);
+      setText('inside_title', d.inside_title); setText('pack_h', d.pack_h); setHTML('pack_p', d.pack_p); setText('map_h', d.map_h); setHTML('map_p', d.map_p); setText('auto_h', d.auto_h); setHTML('auto_p', d.auto_p);
+      setText('how_title', d.how_title); setText('how1', d.how1); setHTML('how1_p', d.how1_p); setText('how2', d.how2); setHTML('how2_p', d.how2_p); setText('how3', d.how3); setHTML('how3_p', d.how3_p);
+      setText('tools_title', d.tools_title); setText('pr1_h', d.pr1_h); setHTML('pr1_p', d.pr1_p); setText('pr2_h', d.pr2_h); setText('pr2_p', d.pr2_p); setText('pr3_h', d.pr3_h); setHTML('pr3_p', d.pr3_p);
+      setText('testi_title', d.testi_title); setText('t1', d.t1); setText('t2', d.t2); setText('faq_title', d.faq_title); setText('q1', d.q1); setText('a1', d.a1); setText('q2', d.q2); setText('a2', d.a2); setText('q3', d.q3); setText('a3', d.a3);
+      setText('urgency', d.urgency); setText('sticky_msg', d.sticky_msg); setHTML('footer', d.footer);
+
       // buttons/links
-      cta_top.textContent=d.cta_top; cta_hero.innerHTML=d.cta_hero; cta_bottom.innerHTML=d.cta_bottom; cta_sticky.textContent=d.cta_sticky;
+      setText('cta_top', d.cta_top); setHTML('cta_hero', d.cta_hero); setHTML('cta_bottom', d.cta_bottom); setText('cta_sticky', d.cta_sticky);
+
       // meta
-      document.getElementById('meta-title').textContent=d.meta_title;
-      document.getElementById('og-title').setAttribute('content', d.meta_title);
-      document.getElementById('tw-title').setAttribute('content', d.meta_title);
-      document.getElementById('meta-desc').setAttribute('content', d.meta_desc);
-      document.getElementById('og-desc').setAttribute('content', d.meta_desc);
-      document.getElementById('tw-desc').setAttribute('content', d.meta_desc);
+      el('meta-title')?.textContent = d.meta_title;
+      el('og-title')?.setAttribute('content', d.meta_title);
+      el('tw-title')?.setAttribute('content', d.meta_title);
+      el('meta-desc')?.setAttribute('content', d.meta_desc);
+      el('og-desc')?.setAttribute('content', d.meta_desc);
+      el('tw-desc')?.setAttribute('content', d.meta_desc);
+
       // schema product
-      const schema = {"@context":"https://schema.org","@type":"Product","name":"CashFlow Lab","description":d.meta_desc,"brand":"CashFlow Lab","offers":{"@type":"Offer","price":"27","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":cta_hero.parentElement.href}};
-      document.getElementById('schema-product').textContent = JSON.stringify(schema);
+      const schema = {"@context":"https://schema.org","@type":"Product","name":"CashFlow Lab","description":d.meta_desc,"brand":"CashFlow Lab","offers":{"@type":"Offer","price":"27","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":document.getElementById('cta-hero-link')?.href || ''}};
+      const sp = el('schema-product'); if(sp) sp.textContent = JSON.stringify(schema);
+
       document.documentElement.lang = (lang==='ro'?'ro':'en');
     }
     document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setLang(btn.getAttribute('data-lang'))));
