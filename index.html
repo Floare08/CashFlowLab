@@ -1,270 +1,402 @@
 <!doctype html>
-<html lang="ro">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CashFlowLab Service — Gold Edition (Optimized)</title>
-  <meta name="description" content="CashFlowLab Service — produs premium pentru monetizare rapidă cu AI: funnel complet, automatizări și implementare asistată. Gold Edition.">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CashFlow Lab – AI that builds cashflow while you sleep</title>
+  <meta name="description" content="Turn your phone or laptop into a 24/7 cashflow machine. No skills. No audience. Just AI working for you. Lifetime access – 27 €." />
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://cashflowlab.example/">
+  <meta property="og:title" content="CashFlow Lab – AI that builds cashflow while you sleep" />
+  <meta property="og:description" content="Turn your phone or laptop into a 24/7 cashflow machine. No skills. No audience. Just AI working for you. Lifetime access – 27 €." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/placeholder/cashflow-lab/main/og-image.png" />
+  <meta property="og:site_name" content="CashFlow Lab" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CashFlow Lab – AI that builds cashflow while you sleep" />
+  <meta name="twitter:description" content="Turn your phone or laptop into a 24/7 cashflow machine. No skills. No audience. Just AI working for you. Lifetime access – 27 €." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/placeholder/cashflow-lab/main/og-image.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{
-      /* Gold palette */
-      --gold-50:#FFF6D4; --gold-200:#F5D36C; --gold-400:#E6BE8A; --gold-500:#D4AF37; --gold-700:#B8860B;
-      --ink:#0B0B0D; --text:#F9F9FF; --muted:#DAD7EB;
-      --nav-h:64px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%; margin:0}
-    body{
-      position:relative; /* pentru straturile de fundal */
-      font-family:'Poppins',sans-serif; color:var(--text);
-      background:#000; /* fallback când imaginea nu e încărcată */
-    }
-    /* FUNDAL STABIL (fără zoom)  -------------------------------------- */
-    body::before{ /* imaginea ta pe întreg ecranul, întreagă */
-      content:""; position:fixed; inset:0; z-index:-2;
-      background: #000 center/contain no-repeat fixed;
-      background-image: url('CashFlowLabAI.png');
-    }
-    body::after{ /* overlay pentru contrast & citibilitate */
-      content:""; position:fixed; inset:0; z-index:-1;
-      background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(0,0,0,.35), transparent 55%),
-        linear-gradient(180deg, rgba(0,0,0,.76) 0%, rgba(0,0,0,.68) 40%, rgba(0,0,0,.76) 100%);
-      pointer-events:none;
-    }
-    /* Dacă vrei cover pe mobile foarte îngust, decomentează:
-    @media(max-width:520px){ body::before{ background-size:cover; } }
-    */
-
-    /* NAV -------------------------------------------------------------- */
-    .nav{position:sticky; top:0; z-index:10; height:var(--nav-h);
-      backdrop-filter:saturate(140%) blur(8px);
-      background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35));
-      border-bottom:1px solid rgba(255,255,255,.1);
-      display:flex; align-items:center; justify-content:center;}
-    .nav .inner{display:flex; align-items:center; justify-content:space-between; width:min(1160px,100%); padding:0 16px}
-    .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.3px}
-    .brand .mark{width:30px; height:30px; border-radius:999px; background:linear-gradient(135deg,var(--gold-200),var(--gold-500)); box-shadow:0 6px 20px rgba(212,175,55,.35)}
-    .nav a{color:var(--text); text-decoration:none; font-weight:600; opacity:.92}
-    .nav .links{display:flex; gap:16px; align-items:center}
-    .nav .buy{padding:.55rem .9rem; border-radius:999px; color:#0b0b0f;
-      background:linear-gradient(135deg, var(--gold-200), var(--gold-500)); border:none;
-      box-shadow:0 10px 30px rgba(212,175,55,.30)}
-
-    /* ANCORE: să nu fie acoperite de navbar la scroll */
-    [id]{scroll-margin-top:calc(var(--nav-h) + 18px)}
-
-    /* HERO ------------------------------------------------------------- */
-    header.hero{min-height:calc(100svh - var(--nav-h)); display:grid; place-items:center; text-align:center; padding:64px 16px}
-    .wrap{width:min(1120px,100%); margin-inline:auto}
-    .kicker{display:inline-block; padding:.35rem .8rem; border-radius:999px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); font-weight:600}
-    h1{margin:12px 0 8px; font-size:clamp(38px,6vw,66px); line-height:1.05; text-shadow:0 10px 40px rgba(0,0,0,.55)}
-    p.sub{margin:0 auto 22px; max-width:900px; font-size:clamp(16px,2.2vw,20px); opacity:.95}
-
-    .btns{display:flex; gap:12px; flex-wrap:wrap; justify-content:center}
-    .btn{display:inline-flex; align-items:center; justify-content:center; gap:.6rem; padding:1rem 1.35rem; border-radius:999px; text-decoration:none; border:none; cursor:pointer; font-weight:800; letter-spacing:.3px; transition:transform .18s, box-shadow .18s, opacity .18s}
-    .btn.gold{color:#0b0b0f; background:linear-gradient(135deg, var(--gold-200), var(--gold-500)); box-shadow:0 14px 40px rgba(180,130,10,.35)}
-    .btn.gold:hover{transform:translateY(-1px); box-shadow:0 18px 52px rgba(180,130,10,.45)}
-    .btn.ghost{color:#fff; background:linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.42)) padding-box, linear-gradient(135deg, var(--gold-500), #8B5CF6) border-box; border:2px solid transparent; box-shadow:0 10px 34px rgba(0,0,0,.35)}
-
-    /* COUNTDOWN */
-    .timer{display:flex; gap:10px; justify-content:center; margin:16px 0 0}
-    .timebox{min-width:78px; background:rgba(0,0,0,.45); border:1px solid rgba(255,255,255,.16); padding:10px 12px; border-radius:14px}
-    .timebox b{display:block; font-size:28px}
-    .timebox span{font-size:12px; opacity:.8}
-
-    /* SECTIONS --------------------------------------------------------- */
-    section{padding:64px 16px; background:rgba(0,0,0,.62); border-top:1px solid rgba(255,255,255,.12)}
-    .container{width:min(1160px,100%); margin:0 auto}
-    .grid{display:grid; gap:16px}
-    @media(min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.14); border-radius:22px; padding:22px; backdrop-filter:blur(6px)}
-    .card h3{margin:0 0 8px}
-    .card p{margin:0; color:#efeefe; opacity:.95}
-
-    /* Planuri */
-    .plans{display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .price{display:flex; align-items:baseline; gap:10px; margin:6px 0 18px}
-    .price .main{font-size:44px; font-weight:800; color:var(--gold-200)}
-
-    /* Footer */
-    footer{padding:32px 16px; text-align:center; background:rgba(0,0,0,.72); border-top:1px solid rgba(255,255,255,.12)}
-    a:any-link{color:inherit}
+    html { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .glow { box-shadow: 0 0 32px rgba(212,175,55,.35), 0 0 64px rgba(31,162,255,.25); }
+    .card { backdrop-filter: blur(10px); background: rgba(15,23,42,.55); }
+    .gradient-text{background:linear-gradient(90deg,#d4af37,#1fa2ff,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .shine{ position:relative; overflow:hidden; }
+    .shine:before{ content:""; position:absolute; inset:-200% -50%; background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent); transform:translateX(-100%); animation:shine 3.5s infinite; }
+    @keyframes shine{ 100%{ transform:translateX(100%);} }
+    .floating{ animation: float 8s ease-in-out infinite; }
+    @keyframes float{ 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-10px)} }
+    .lang-btn{ padding:.25rem .75rem; border-radius:.75rem; border:1px solid rgba(255,255,255,.1); color:#cbd5e1 }
+    .lang-btn:hover{ color:white; border-color:rgba(255,255,255,.2) }
+    .sticky-cta{ position:sticky; bottom:16px; z-index:50 }
   </style>
-</head>
-<body>
-  <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="inner">
-      <div class="brand"><span class="mark"></span> <a href="#acasa" aria-label="CashFlowLab Service">CashFlowLab</a></div>
-      <div class="links">
-        <a href="#caracteristici">Caracteristici</a>
-        <a href="#pachet">Pachet</a>
-        <a href="#testimoniale">Testimoniale</a>
-        <a href="#faq">FAQ</a>
-        <a class="buy" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <header class="hero" id="acasa">
-    <div class="wrap">
-      <span class="kicker">Gold Edition • Limited Access</span>
-      <h1>CashFlowLab Service</h1>
-      <p class="sub">Produs de lux pentru creșterea fluxului de numerar cu AI. Blueprint de lansare rapidă, kit complet de funnel, automatizări inteligente și implementare asistată — totul în stil Gold Edition.</p>
-      <div class="btns">
-        <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Cumpără pe Gumroad</a>
-        <a class="btn ghost" href="#pachet">Planuri & Prețuri</a>
+  <!-- Schema.org Product -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"CashFlow Lab",
+    "description":"AI system that helps you build cashflow using templates, prompts and automation.",
+    "brand":"CashFlow Lab",
+    "offers":{
+      "@type":"Offer",
+      "price":"27",
+      "priceCurrency":"EUR",
+      "availability":"https://schema.org/InStock",
+      "url":"https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=hero_cta"
+    }
+  }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white selection:bg-amber-400/40">
+  <!-- Background FX with circuits (inline SVG) -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute -top-40 -left-32 w-[50rem] h-[50rem] rounded-full bg-amber-400/10 blur-3xl"></div>
+    <div class="absolute -bottom-40 -right-32 w-[50rem] h-[50rem] rounded-full bg-indigo-500/10 blur-3xl"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image:url('data:image/svg+xml;utf8,\
+      <svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1600 900\'>\
+        <rect width=\'1600\' height=\'900\' fill=\'none\'/>\
+        <g stroke=\'%23d4af37\' stroke-opacity=\'.25\' stroke-width=\'2\' fill=\'none\'>\
+          <path d=\'M0 200 h300 l80 80 h300 l80 -80 h300 l80 80 h300\'/>\
+          <path d=\'M0 500 h250 l120 -120 h260 l120 120 h260 l120 -120 h260\'/>\
+          <path d=\'M0 750 h200 l160 -160 h220 l160 160 h220 l160 -160 h220\'/>\
+          <circle cx=\'380\' cy=\'280\' r=\'5\'/>\
+          <circle cx=\'760\' cy=\'280\' r=\'5\'/>\
+          <circle cx=\'1140\' cy=\'280\' r=\'5\'/>\
+        </g>\
+      </svg>'); background-size:cover; background-position:center;"></div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 border-b border-white/5 bg-black/40 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- Infinity + Diamond Logo -->
+        <svg width="40" height="40" viewBox="0 0 128 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldBlue" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#d4af37"/>
+              <stop offset="60%" stop-color="#1fa2ff"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 32c0-8 6-14 14-14 14 0 22 28 36 28 8 0 14-6 14-14s-6-14-14-14c-14 0-22 28-36 28-8 0-14-6-14-14z" fill="none" stroke="url(#goldBlue)" stroke-width="10" stroke-linecap="round"/>
+          <polygon points="96,8 112,20 106,40 86,40 80,20" fill="#0ea5e9" stroke="#7dd3fc" stroke-width="2"/>
+        </svg>
+        <span class="font-extrabold tracking-tight text-white" id="brand">CashFlow Lab</span>
+        <span class="text-xs text-slate-400 border border-white/10 rounded-lg px-2 py-0.5">ULTRA</span>
       </div>
-      <div class="timer" aria-label="Ofertă limitată">
-        <div class="timebox"><b id="t-d">00</b><span>Zile</span></div>
-        <div class="timebox"><b id="t-h">00</b><span>Ore</span></div>
-        <div class="timebox"><b id="t-m">00</b><span>Minute</span></div>
-        <div class="timebox"><b id="t-s">00</b><span>Secunde</span></div>
+      <div class="flex items-center gap-2">
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ro">RO</button>
+        <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=top_cta" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block">
+          <button class="shine glow rounded-2xl bg-amber-400 hover:bg-amber-500 text-black font-semibold px-5 py-2" data-i18n="cta_top">Start now – 27 €</button>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- CARACTERISTICI -->
-  <section id="caracteristici" aria-label="Caracteristici">
-    <div class="container">
-      <div class="grid cols-3">
-        <div class="card"><h3>Blueprint 7 zile</h3><p>Pași zilnici până la primele vânzări. Fără guesswork — doar execuție.</p></div>
-        <div class="card"><h3>Funnel complet</h3><p>Landing premium, copy testat, emailuri, checkout cu conversii ridicate.</p></div>
-        <div class="card"><h3>Automatizări AI</h3><p>Prompts avansate, micro‑agenți și workflow-uri pentru conținut & ads.</p></div>
-        <div class="card"><h3>Design „Gold Label”</h3><p>Estetică high‑end, kit UI, guideline de brand — totul coerent.</p></div>
-        <div class="card"><h3>Implementare asistată</h3><p>Checklist & suport pentru lansare rapidă fără blocaje.</p></div>
-        <div class="card"><h3>Update-uri incluse</h3><p>Acces la iterații și optimizări pe baza datelor reale.</p></div>
-      </div>
+  <!-- HERO -->
+  <section class="relative">
+    <!-- Hero watermark logo -->
+    <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+      <svg width="600" height="300" viewBox="0 0 128 64" aria-hidden="true">
+        <defs>
+          <linearGradient id="heroGoldBlue" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#d4af37"/>
+            <stop offset="60%" stop-color="#1fa2ff"/>
+          </linearGradient>
+        </defs>
+        <path d="M20 32c0-8 6-14 14-14 14 0 22 28 36 28 8 0 14-6 14-14s-6-14-14-14c-14 0-22 28-36 28-8 0-14-6-14-14z" fill="none" stroke="url(#heroGoldBlue)" stroke-width="6" stroke-linecap="round"/>
+        <polygon points="96,8 112,20 106,40 86,40 80,20" fill="#0ea5e9" stroke="#7dd3fc" stroke-width="1.5"/>
+      </svg>
     </div>
-  </section>
 
-  <!-- PACHET: 3 planuri -->
-  <section id="pachet" aria-label="Planuri & Prețuri">
-    <div class="container">
-      <h2 style="margin:0 0 18px">Alege varianta potrivită</h2>
-      <div class="plans">
-        <div class="card">
-          <h3>Starter</h3>
-          <p style="opacity:.9">Pentru lansare rapidă cu esențialul.</p>
-          <div class="price"><div class="main">€49</div><div class="sub">licență individuală</div></div>
-          <ul style="margin:0 0 12px; padding-left:18px">
-            <li>Landing Gold (1 variantă)</li>
-            <li>Blueprint 7 zile</li>
-            <li>Headlines & hooks</li>
-          </ul>
-          <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Alege Starter</a>
+    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          <span data-i18n="h1">AI that builds <span class="gradient-text">cashflow</span> for you while you sleep 😴💸</span>
+        </h1>
+        <p class="mt-5 text-lg md:text-2xl text-slate-300 max-w-2xl"><span data-i18n="sub">Turn your phone or laptop into a 24/7 cashflow machine. No skills. No audience. Just AI working for you.</span></p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+          <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=hero_cta" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto">
+            <button class="shine glow w-full sm:w-auto rounded-2xl bg-amber-400 hover:bg-amber-500 text-black font-semibold text-lg px-8 py-4">🔥 Start CashFlow Lab – 27 €</button>
+          </a>
+          <div class="text-sm text-slate-400"><span data-i18n="badges_small">Templates included • Launch in 72h • No skills required</span></div>
         </div>
-        <div class="card" style="outline:2px solid rgba(212,175,55,.35)">
-          <h3>Pro <span style="font-size:12px; opacity:.8">(recomandat)</span></h3>
-          <p style="opacity:.9">Tot ce ai nevoie pentru conversii solide.</p>
-          <div class="price"><div class="main">€149</div><div class="sub">licență standard</div></div>
-          <ul style="margin:0 0 12px; padding-left:18px">
-            <li>Landing Gold (2 variante A/B)</li>
-            <li>Email Funnel (5 mesaje)</li>
-            <li>Prompts Ads & Content</li>
-            <li>Checklist 24h Launch</li>
-          </ul>
-          <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Alege Pro</a>
-        </div>
-        <div class="card">
-          <h3>Elite</h3>
-          <p style="opacity:.9">Pachet complet + ajutor la implementare.</p>
-          <div class="price"><div class="main">€299</div><div class="sub">licență extinsă</div></div>
-          <ul style="margin:0 0 12px; padding-left:18px">
-            <li>Tot din Pro</li>
-            <li>Implementare asistată (1 sesiune)</li>
-            <li>Kit UI avansat + guideline</li>
-            <li>Update-uri prioritare</li>
-          </ul>
-          <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener">Alege Elite</a>
+        <div class="mt-3 text-xs text-slate-400">🔒 Secure checkout via Gumroad • 💳 14‑day refund</div>
+        <div class="mt-6 text-slate-300"><span class="mr-2"><span data-i18n="offer_ends">Offer ends in:</span></span><span id="countdown" class="font-mono text-amber-300"></span></div>
+        <div class="mt-6 text-slate-300 text-sm">Value: <span class="line-through opacity-60">149 €</span> → <span class="text-amber-300 font-semibold">Today: 27 €</span></div>
+      </div>
+      <div class="relative floating">
+        <div class="card rounded-3xl p-4 border border-white/10 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1551281044-8af2c2c4ec5e?q=80&w=1600&auto=format&fit=crop" alt="AI dashboard" class="rounded-2xl object-cover aspect-video" loading="lazy" width="1600" height="900"/>
+          <div class="grid grid-cols-3 gap-3 mt-4">
+            <div class="card rounded-2xl p-4 border border-white/10 text-center">
+              <div class="text-amber-300 text-sm font-semibold"><span data-i18n="step1">STEP 1</span></div>
+              <div class="mt-1 font-semibold"><span data-i18n="access">Access</span></div>
+            </div>
+            <div class="card rounded-2xl p-4 border border-white/10 text-center">
+              <div class="text-amber-300 text-sm font-semibold"><span data-i18n="step2">STEP 2</span></div>
+              <div class="mt-1 font-semibold"><span data-i18n="automate">Automate</span></div>
+            </div>
+            <div class="card rounded-2xl p-4 border border-white/10 text-center">
+              <div class="text-amber-300 text-sm font-semibold"><span data-i18n="step3">STEP 3</span></div>
+              <div class="mt-1 font-semibold"><span data-i18n="scale">Scale</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALE -->
-  <section id="testimoniale" aria-label="Testimoniale">
-    <div class="container">
-      <h2 style="margin:0 0 18px;">Ce spun clienții</h2>
-      <div class="grid cols-3">
-        <div class="card"><p>„Aspectul gold mi-a ridicat instant brandul. Primele vânzări în 48h.”</p><p style="opacity:.8; margin-top:8px;">— Andrei M.</p></div>
-        <div class="card"><p>„Blueprint-ul e clar și aplicabil. Conversii x2 după implementare.”</p><p style="opacity:.8; margin-top:8px;">— Ioana M.</p></div>
-        <div class="card"><p>„Automatizările AI taie micro‑taskurile. Am timp de ofertare.”</p><p style="opacity:.8; margin-top:8px;">— Radu M.</p></div>
+  <!-- Trust badges -->
+  <section class="max-w-7xl mx-auto px-4 pb-6 -mt-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-slate-400 text-sm">
+      <div class="card rounded-xl p-3 border border-white/5"><span data-i18n="badge1">One-time payment</span></div>
+      <div class="card rounded-xl p-3 border border-white/5"><span data-i18n="badge2">Lifetime access</span></div>
+      <div class="card rounded-xl p-3 border border-white/5"><span data-i18n="badge3">Templates included</span></div>
+      <div class="card rounded-xl p-3 border border-white/5"><span data-i18n="badge4">No skills needed</span></div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold text-center mb-8">What you get inside</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-2xl">📦</div>
+        <h4 class="mt-2 font-semibold">Templates & Prompts Pack</h4>
+        <p class="text-slate-300 mt-1">Plug‑and‑play prompts, scripts and content blocks (.doc/.csv).</p>
       </div>
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-2xl">🎥</div>
+        <h4 class="mt-2 font-semibold">Video Walkthroughs</h4>
+        <p class="text-slate-300 mt-1">Step‑by‑step videos: setup, automation, launch in 72h.</p>
+      </div>
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-2xl">🗺️</div>
+        <h4 class="mt-2 font-semibold">Workflow Map</h4>
+        <p class="text-slate-300 mt-1">A visual map of the whole cashflow system to follow easily.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="max-w-7xl mx-auto px-4 py-14">
+    <h2 class="text-3xl font-bold text-center mb-10"><span data-i18n="how_title">How it works – in 3 simple steps</span></h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-amber-300 text-sm font-semibold">STEP 1</div>
+        <h3 class="mt-1 text-xl font-semibold"><span data-i18n="how1">Access the system</span></h3>
+        <p class="mt-2 text-slate-300"><span data-i18n="how1_p">Instant access to frameworks, prompts & exact setup to start fast.</span></p>
+      </div>
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-amber-300 text-sm font-semibold">STEP 2</div>
+        <h3 class="mt-1 text-xl font-semibold"><span data-i18n="how2">Plug & automate</span></h3>
+        <p class="mt-2 text-slate-300"><span data-i18n="how2_p">Plug‑and‑play templates + automation flows. No audience required.</span></p>
+      </div>
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-amber-300 text-sm font-semibold">STEP 3</div>
+        <h3 class="mt-1 text-xl font-semibold"><span data-i18n="how3">Scale cashflow</span></h3>
+        <p class="mt-2 text-slate-300"><span data-i18n="how3_p">Let AI create content, leads & sales while you sleep. Optimize weekly.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO DEMO -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-center mb-6">See it in action</h2>
+    <p class="text-center text-slate-300 mb-6">A short walkthrough of CashFlow Lab so you know exactly what you get.</p>
+    <div class="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 card">
+      <div class="aspect-video">
+        <iframe
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          title="CashFlow Lab Demo"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          class="w-full h-full">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-4xl">✅</div>
+        <h4 class="mt-2 font-semibold"><span data-i18n="pr1_h">Zero experience</span></h4>
+        <p class="text-slate-300 mt-1"><span data-i18n="pr1_p">Clear, step-by-step walkthroughs and ready-made assets.</span></p>
+      </div>
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-4xl">⚡</div>
+        <h4 class="mt-2 font-semibold"><span data-i18n="pr2_h">Fast launch</span></h4>
+        <p class="text-slate-300 mt-1"><span data-i18n="pr2_p">Most users ship v1 in 72 hours or less.</span></p>
+      </div>
+      <div class="card rounded-2xl p-6 border border-white/10">
+        <div class="text-4xl">💸</div>
+        <h4 class="mt-2 font-semibold"><span data-i18n="pr3_h">One-time price</span></h4>
+        <p class="text-slate-300 mt-1"><span data-i18n="pr3_p">Lifetime access for <strong>27 €</strong>. No subscriptions.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools we use -->
+  <section class="max-w-6xl mx-auto px-4 py-8">
+    <div class="card rounded-2xl p-6 border border-white/10">
+      <div class="text-sm text-slate-400">Tools we use</div>
+      <div class="mt-3 flex flex-wrap items-center gap-3 opacity-80">
+        <span class="px-3 py-1 rounded-lg border border-white/10">OpenAI</span>
+        <span class="px-3 py-1 rounded-lg border border-white/10">Leonardo.AI</span>
+        <span class="px-3 py-1 rounded-lg border border-white/10">CapCut</span>
+        <span class="px-3 py-1 rounded-lg border border-white/10">Gumroad</span>
+        <span class="px-3 py-1 rounded-lg border border-white/10">Netlify</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-4xl mx-auto px-4 py-12 text-center">
+    <h3 class="text-2xl font-semibold mb-6"><span data-i18n="testi_title">What others say</span></h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <figure class="card rounded-2xl p-6 border border-white/10 text-left">
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/48?img=12" alt="Andrei avatar" class="w-10 h-10 rounded-full" loading="lazy" width="48" height="48"/>
+          <figcaption class="text-slate-2 00 font-semibold">Andrei <span class="text-slate-400 font-normal">— Freelancer</span></figcaption>
+        </div>
+        <blockquote class="italic text-slate-200 mt-2">“I launched in 3 days and made my first sale.”</blockquote>
+      </figure>
+      <figure class="card rounded-2xl p-6 border border-white/10 text-left">
+        <div class="flex items-center gap-3">
+          <img src="https://i.pravatar.cc/48?img=32" alt="Maria avatar" class="w-10 h-10 rounded-full" loading="lazy" width="48" height="48"/>
+          <figcaption class="text-slate-200 font-semibold">Maria <span class="text-slate-400 font-normal">— Student</span></figcaption>
+        </div>
+        <blockquote class="italic text-slate-200 mt-2">“Finally something clear and step by step.”</blockquote>
+      </figure>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" aria-label="Întrebări frecvente">
-    <div class="container">
-      <h2 style="margin:0 0 18px;">FAQ</h2>
-      <div class="grid cols-3">
-        <div class="card"><h3>Primesc fișierele editabile?</h3><p>Da, tot: HTML/CSS, componente, copy, prompts și checklist-uri.</p></div>
-        <div class="card"><h3>E nevoie de experiență tehnică?</h3><p>Nu. Urmezi ghidul și lansăm rapid cu implementarea asistată.</p></div>
-        <div class="card"><h3>Pot personaliza brandul?</h3><p>Da: culori, logo, imagini și ton — ai guideline și exemple.</p></div>
+  <section class="max-w-5xl mx-auto px-4 py-12">
+    <h3 class="text-2xl font-semibold text-center mb-6">FAQ</h3>
+    <div class="space-y-3">
+      <details class="card rounded-2xl p-5 border border-white/10">
+        <summary class="cursor-pointer font-semibold"><span data-i18n="q1">Do I need coding skills?</span></summary>
+        <p class="mt-2 text-slate-300"><span data-i18n="a1">No. Everything is plug-and-play with templates and walkthroughs.</span></p>
+      </details>
+      <details class="card rounded-2xl p-5 border border-white/10">
+        <summary class="cursor-pointer font-semibold"><span data-i18n="q2">What if I don’t have an audience?</span></summary>
+        <p class="mt-2 text-slate-300"><span data-i18n="a2">The system includes traffic ideas and short-form content frameworks to start from zero.</span></p>
+      </details>
+      <details class="card rounded-2xl p-5 border border-white/10">
+        <summary class="cursor-pointer font-semibold"><span data-i18n="q3">Is 27 € a subscription?</span></summary>
+        <p class="mt-2 text-slate-300"><span data-i18n="a3">No, it’s a one-time payment for lifetime access.</span></p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="max-w-7xl mx-auto px-4 pb-20 text-center">
+    <p class="text-rose-400 font-semibold"><span data-i18n="urgency">⚠️ Limited offer: only 27 € (price goes up soon).</span></p>
+    <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=bottom_cta" target="_blank" rel="noopener noreferrer">
+      <button class="mt-4 shine glow rounded-2xl bg-amber-400 hover:bg-amber-500 text-black font-semibold text-lg px-8 py-4"><span data-i18n="cta_bottom">🚀 Join Today – CashFlow Lab 27 €</span></button>
+    </a>
+  </section>
+
+  <!-- Sticky CTA -->
+  <div class="sticky-cta w-full px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="card rounded-2xl border border-white/10 flex items-center justify-between gap-3 p-3">
+        <div class="text-sm text-slate-300">Ready to start your AI cashflow?</div>
+        <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=sticky_cta" target="_blank" rel="noopener noreferrer"><button class="shine glow rounded-xl bg-amber-400 hover:bg-amber-500 text-black font-semibold px-4 py-2">Start for 27 €</button></a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- CONTACT -->
-  <section id="contact" aria-label="Contact">
-    <div class="container" style="display:grid; gap:28px; grid-template-columns:1fr;">
-      <form class="card" onsubmit="return goContact(event)" style="max-width:720px; margin:0 auto; width:100%">
-        <h3 style="margin:0 0 6px;">Îți implementăm noi?</h3>
-        <p style="opacity:.9">Spune-ne pe scurt ce vrei să construim și revenim în 24h.</p>
-        <label for="email" style="display:block; margin:10px 0 6px;">Email</label>
-        <input id="email" type="email" required placeholder="nume@exemplu.com" style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.2); background:rgba(0,0,0,.35); color:#fff; margin-bottom:10px;">
-        <label for="msg" style="display:block; margin-bottom:6px;">Mesaj</label>
-        <textarea id="msg" rows="4" placeholder="Brand, ofertă, țintă, termen" style="width:100%; padding:12px 14px; border-radius:14px; border:1px solid rgba(255,255,255,.2); background:rgba(0,0,0,.35); color:#fff; margin-bottom:14px;"></textarea>
-        <button class="btn gold" type="submit">Trimite</button>
-        <p id="contact-ok" style="display:none; margin-top:10px; color:var(--gold-400)">Mulțumim! Revenim în 24h.</p>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="y"></span> CashFlowLab • Gold Service ·
-    <a href="https://florinwave0.gumroad.com" target="_blank" rel="noopener">Gumroad Store</a>
-  </footer>
+  <footer class="border-t border-white/5 text-center text-slate-400 text-sm py-6"><span data-i18n="footer">CashFlow Lab – The AI that builds cashflow while you sleep.</span></footer>
 
   <script>
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Simple 48h countdown from first visit
+    (function(){
+      const KEY = "gptcashflow_deadline";
+      const el = document.getElementById("countdown");
+      if(!el) return;
+      let deadline = localStorage.getItem(KEY);
+      if(!deadline){ deadline = Date.now() + 1000*60*60*48; localStorage.setItem(KEY, String(deadline)); } else { deadline = Number(deadline); }
+      function tick(){
+        const diff = deadline - Date.now();
+        if(diff <= 0){ el.textContent = "00:00:00"; return; }
+        const h = Math.floor(diff/3.6e6).toString().padStart(2,'0');
+        const m = Math.floor((diff%3.6e6)/6e4).toString().padStart(2,'0');
+        const s = Math.floor((diff%6e4)/1000).toString().padStart(2,'0');
+        el.textContent = `${h}:${m}:${s}`;
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
 
-    // Mailto handler
-    function goContact(e){
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const msg = encodeURIComponent(document.getElementById('msg').value.trim());
-      const subject = encodeURIComponent('CashFlowLab Service — DFY Inquiry');
-      window.location.href = `mailto:cashflowlab@proton.me?subject=${subject}&body=${encodeURIComponent('De la: ' + email + '\n\nMesaj: ')}${msg}`;
-      document.getElementById('contact-ok').style.display='block';
-      return false;
+    // Language packs (EN/RO) + default by URL param
+    const I18N = {
+      en:{cta_top:'Start now – 27 €',h1:'AI that builds <span class="gradient-text">cashflow</span> for you while you sleep 😴💸',sub:'Turn your phone or laptop into a 24/7 cashflow machine. No skills. No audience. Just AI working for you.',badges_small:'Templates included • Launch in 72h • No skills required',offer_ends:'Offer ends in:',step1:'STEP 1',access:'Access',step2:'STEP 2',automate:'Automate',step3:'STEP 3',scale:'Scale',badge1:'One‑time payment',badge2:'Lifetime access',badge3:'Templates included',badge4:'No skills needed',how_title:'How it works – in 3 simple steps',how1:'Access the system',how1_p:'Instant access to frameworks, prompts & exact setup to start fast.',how2:'Plug & automate',how2_p:'Plug‑and‑play templates + automation flows. No audience required.',how3:'Scale cashflow',how3_p:'Let AI create content, leads & sales while you sleep. Optimize weekly.',pr1_h:'Zero experience',pr1_p:'Clear, step‑by‑step walkthroughs and ready‑made assets.',pr2_h:'Fast launch',pr2_p:'Most users ship v1 in 72 hours or less.',pr3_h:'One‑time price',pr3_p:'Lifetime access for <strong>27 €</strong>. No subscriptions.',testi_title:'What others say',t1:'“I launched in 3 days and made my first sale.”',t1_by:'— Andrei',t2:'“Finally something clear and step by step.”',t2_by:'— Maria',faq:'FAQ',q1:'Do I need coding skills?',a1:'No. Everything is plug‑and‑play with templates and walkthroughs.',q2:"What if I don’t have an audience?",a2:'The system includes traffic ideas and short‑form content frameworks to start from zero.',q3:'Is 27 € a subscription?',a3:"No, it's a one‑time payment for lifetime access.",urgency:'⚠️ Limited offer: only 27 € (price goes up soon).',cta_bottom:'🚀 Join Today – CashFlow Lab 27 €',footer:'CashFlow Lab – The AI that builds cashflow while you sleep.'},
+      ro:{cta_top:'Începe acum – 27 €',h1:'AI care îți construiește <span class="gradient-text">cashflow</span> în timp ce dormi 😴💸',sub:'Transformă‑ți telefonul sau laptopul într‑o mașină de cashflow 24/7. Fără abilități. Fără audiență. Doar AI care lucrează pentru tine.',badges_small:'Template‑uri incluse • Lansare în 72h • Fără abilități',offer_ends:'Oferta se încheie în:',step1:'PASUL 1',access:'Acces',step2:'PASUL 2',automate:'Automatizează',step3:'PASUL 3',scale:'Scalează',badge1:'Plată unică',badge2:'Acces pe viață',badge3:'Template‑uri incluse',badge4:'Fără skill‑uri',how_title:'Cum funcționează – în 3 pași simpli',how1:'Accesează sistemul',how1_p:'Acces instant la framework‑uri, prompturi și setup‑ul exact ca să începi rapid.',how2:'Conectează & automatizează',how2_p:'Template‑uri plug‑and‑play + fluxuri de automatizare. Fără audiență.',how3:'Scalează cashflow‑ul',how3_p:'Lasă AI‑ul să creeze conținut, lead‑uri și vânzări cât dormi. Optimizează săptămânal.',pr1_h:'Zero experiență',pr1_p:'Pași clari, ghidare pas cu pas și resurse gata de folosit.',pr2_h:'Lansare rapidă',pr2_p:'Cei mai mulți lansează v1 în 72 de ore sau mai puțin.',pr3_h:'Preț unic',pr3_p:'Acces pe viață pentru <strong>27 €</strong>. Fără abonamente.',testi_title:'Ce spun alții',t1:'„Am lansat în 3 zile și am făcut prima vânzare.”',t1_by:'— Andrei',t2:'„În sfârșit ceva clar și pas cu pas.”',t2_by:'— Maria',faq:'Întrebări frecvente',q1:'Am nevoie de programare?',a1:'Nu. Totul e plug‑and‑play cu template‑uri și ghiduri.',q2:'Dacă nu am audiență?',a2:'Sistemul include idei de trafic și framework‑uri pentru video scurte ca să pornești de la zero.',q3:'Cei 27 € sunt abonament?',a3:'Nu, este o plată unică pentru acces pe viață.',urgency:'⚠️ Ofertă limitată: doar 27 € (prețul crește în curând).',cta_bottom:'🚀 Intră azi – CashFlow Lab 27 €',footer:'CashFlow Lab – AI‑ul care îți construiește cashflow cât dormi.'}
+    };
+
+    function setLang(lang){
+      const dict = I18N[lang] || I18N.en;
+      document.querySelectorAll('[data-i18n]').forEach(el=>{ const key=el.getAttribute('data-i18n'); if(dict[key]!==undefined){ el.innerHTML = dict[key]; }});
+      document.title = lang==='ro' ? 'CashFlow Lab – AI care îți construiește cashflow cât dormi' : 'CashFlow Lab – AI that builds cashflow while you sleep';
+      const desc = document.querySelector('meta[name="description"]');
+      if(desc){ desc.setAttribute('content', lang==='ro' ? 'Transformă‑ți telefonul sau laptopul într‑o mașină de cashflow 24/7. Fără abilități. Fără audiență. Doar AI care lucrează pentru tine. Acces pe viață – 27 €.' : 'Turn your phone or laptop into a 24/7 cashflow machine. No skills. No audience. Just AI working for you. Lifetime access – 27 €.'); }
+      localStorage.setItem('lang', lang);
     }
+    document.querySelectorAll('[data-lang]').forEach(btn=> btn.addEventListener('click', ()=> setLang(btn.getAttribute('data-lang'))));
+    const urlLang = new URLSearchParams(location.search).get('lang');
+    setLang(urlLang || localStorage.getItem('lang') || 'en');
 
-    // Countdown 48h de la prima vizită (localStorage)
-    const KEY='cfl_deadline';
-    let deadline=Number(localStorage.getItem(KEY));
-    if(!deadline){ deadline = Date.now() + 48*60*60*1000; localStorage.setItem(KEY, String(deadline)); }
+    // --- GDPR Cookie Banner + Consent-gated analytics (Plausible) ---
+    (function(){
+      const CONSENT_KEY = "cf_consent";
+      function loadPlausible(){
+        if(document.getElementById('plausible-js')) return;
+        const s = document.createElement('script');
+        s.id = 'plausible-js';
+        s.defer = true;
+        s.setAttribute('data-domain', 'cashflowlab.example');
+        s.src = 'https://plausible.io/js/script.js';
+        document.head.appendChild(s);
+      }
 
-    function tick(){
-      const t = Math.max(0, deadline - Date.now());
-      const s = Math.floor(t/1000);
-      const d = Math.floor(s/86400);
-      const h = Math.floor((s%86400)/3600);
-      const m = Math.floor((s%3600)/60);
-      const ss= Math.floor(s%60);
-      const pad=n=>String(n).padStart(2,'0');
-      const el = id => document.getElementById(id);
-      el('t-d').textContent=pad(d);
-      el('t-h').textContent=pad(h);
-      el('t-m').textContent=pad(m);
-      el('t-s').textContent=pad(ss);
-    }
-    tick(); setInterval(tick,1000);
+      const consent = localStorage.getItem(CONSENT_KEY);
+      if(consent === 'true'){ loadPlausible(); return; }
+
+      const bar = document.createElement('div');
+      bar.className = 'fixed inset-x-0 bottom-0 z-50 bg-black/80 backdrop-blur border-t border-white/10';
+      bar.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col sm:flex-row items-center gap-3 justify-between text-sm text-slate-300">
+          <div>We use privacy-friendly analytics to improve the site. No cookies until you accept.</div>
+          <div class="flex items-center gap-2">
+            <button id="cf-accept" class="rounded-lg bg-amber-400 text-black font-semibold px-4 py-2">Accept</button>
+            <button id="cf-decline" class="rounded-lg border border-white/10 px-4 py-2">Decline</button>
+          </div>
+        </div>`;
+      document.body.appendChild(bar);
+      document.getElementById('cf-accept').addEventListener('click', ()=>{
+        localStorage.setItem(CONSENT_KEY, 'true');
+        bar.remove();
+        loadPlausible();
+      });
+      document.getElementById('cf-decline').addEventListener('click', ()=>{
+        localStorage.setItem(CONSENT_KEY, 'false');
+        bar.remove();
+      });
+    })();
   </script>
 </body>
 </html>
