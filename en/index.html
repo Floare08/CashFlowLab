@@ -78,6 +78,17 @@
     .muted{color:var(--muted)}
     .footer{padding:32px 14px 60px; text-align:center; color:var(--muted)}
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* === Icons === */
+    .iconed{display:flex; align-items:flex-start; gap:10px}
+    .icon{
+      display:inline-grid; place-items:center; flex:0 0 36px; height:36px; width:36px;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(139,92,246,.28), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12)
+    }
+    .icon svg{width:20px; height:20px; color:#fff; opacity:.95}
+    .icon-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.04)); border-color:rgba(196,164,107,.35)}
   </style>
 
   <!-- Schema.org Product -->
@@ -141,46 +152,95 @@
     </section>
   </main>
 
-  <!-- FEATURES -->
+  <!-- FEATURES with icons -->
   <section id="features" class="section">
     <h2>Why it works</h2>
     <div class="grid-3">
-      <div class="card"><h3>Clarity</h3><p class="muted">Daily & weekly goals that lead to results.</p></div>
-      <div class="card"><h3>Execution</h3><p class="muted">Proven templates: site, emails 1–5, visual prompts.</p></div>
-      <div class="card"><h3>Momentum</h3><p class="muted">Simple plan → daily actions → cashflow.</p></div>
+      <div class="card iconed">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1010 10h-2A8 8 0 1112 4V2zm0 4a6 6 0 106 6h-2a4 4 0 11-4-4V6zm1 2v3.586l2.707 2.707-1.414 1.414L11 12.414V8h2z"/></svg>
+        </span>
+        <div>
+          <h3>Clarity</h3>
+          <p class="muted">Daily & weekly goals that lead to results.</p>
+        </div>
+      </div>
+      <div class="card iconed">
+        <span class="icon icon-gold">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3l7 7-4 1-3 3-1 4-7-7 4-1 3-3 1-4zM5 19l3-3-1 4-2 1 0-2z"/></svg>
+        </span>
+        <div>
+          <h3>Execution</h3>
+          <p class="muted">Proven templates: site, emails 1–5, visual prompts.</p>
+        </div>
+      </div>
+      <div class="card iconed">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12h4l2-6 4 16 2-10h4"/></svg>
+        </span>
+        <div>
+          <h3>Momentum</h3>
+          <p class="muted">Simple plan → daily actions → cashflow.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- INSIDE -->
+  <!-- INSIDE with icons -->
   <section id="inside" class="section">
     <h2>What you get</h2>
     <div class="grid-2">
-      <div class="card">
-        <h3>Blueprint & process</h3>
-        <ul class="muted" style="margin:8px 0 0; padding-left:18px">
-          <li>Weekly & daily targets</li>
-          <li>Launch checklist</li>
-          <li>Content calendar</li>
-        </ul>
+      <div class="card iconed">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 5-9 5L3 7l9-5zm0 8l9 5-9 5-9-5 9-5zm0 6l6 3-6 3-6-3 6-3z"/></svg>
+        </span>
+        <div>
+          <h3>Blueprint & process</h3>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Weekly & daily targets</li>
+            <li>Launch checklist</li>
+            <li>Content calendar</li>
+          </ul>
+        </div>
       </div>
-      <div class="card">
-        <h3>Execution kit</h3>
-        <ul class="muted" style="margin:8px 0 0; padding-left:18px">
-          <li>Site template + premium styles</li>
-          <li>Emails 1–5 (editable)</li>
-          <li>Visual prompts</li>
-        </ul>
+      <div class="card iconed">
+        <span class="icon icon-gold">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2h3v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7h3zm2-2h6v2H9V5zm1 6h4v2h-4v-2z"/></svg>
+        </span>
+        <div>
+          <h3>Execution kit</h3>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Site template + premium styles</li>
+            <li>Emails 1–5 (editable)</li>
+            <li>Visual prompts</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- HOW IT WORKS with icons -->
   <section class="section">
     <h2>How it works</h2>
     <div class="grid-3">
-      <div class="step"><b>1) Set targets</b><p class="muted">Clarify the offer and revenue milestones.</p></div>
-      <div class="step"><b>2) Launch fast</b><p class="muted">Publish page, email sequence, first posts.</p></div>
-      <div class="step"><b>3) Optimize</b><p class="muted">Iterate on feedback and scale what works.</p></div>
+      <div class="step iconed">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h2v18H4V3zm3 2h9l-1 3 1 3H7V5z"/></svg>
+        </span>
+        <div><b>1) Set targets</b><p class="muted">Clarify the offer and revenue milestones.</p></div>
+      </div>
+      <div class="step iconed">
+        <span class="icon icon-gold">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </span>
+        <div><b>2) Launch fast</b><p class="muted">Publish page, email sequence, first posts.</p></div>
+      </div>
+      <div class="step iconed">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1l4 4-4 4V6H7a3 3 0 000 6h3v2H7A5 5 0 117 4h10V1zm0 11a3 3 0 010 6H14v2h3a5 5 0 000-10h-3v2h3z"/></svg>
+        </span>
+        <div><b>3) Optimize</b><p class="muted">Iterate on feedback and scale what works.</p></div>
+      </div>
     </div>
   </section>
 
