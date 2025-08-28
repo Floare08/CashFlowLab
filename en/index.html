@@ -120,8 +120,15 @@
         </p>
         <div class="strip">€27 <b>+ taxes</b> • Secure payment on Gumroad • Updates included</div>
       </div>
-      <aside class="hero-media" aria-label="CashFlowLab visual">
-        <picture>
+     <aside class="hero-media" aria-label="CashFlowLab vizual">
+  <picture>
+    <source srcset="cashflow-hero.webp" type="image/webp">
+    <img src="cashflow-hero.png" alt="Previzualizare CashFlowLab"
+         class="hero-img" fetchpriority="high" loading="eager"
+         onerror="(function(img){const aside=img.closest('.hero-media'); if(aside) aside.remove(); const g=document.querySelector('.hero-grid'); if(g) g.style.gridTemplateColumns='1fr';})(this)">
+  </picture>
+</aside>
+
           <source srcset="../hero-tech.webp" type="image/webp">
           <img src="../hero-tech.png" alt="CashFlowLab preview" class="hero-img"
                fetchpriority="high" loading="eager"
