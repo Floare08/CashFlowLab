@@ -1,3 +1,6 @@
+<!-- =============================
+FILE 1: /index.html  (Romanian)
+============================== -->
 <!doctype html>
 <html lang="ro">
 <head>
@@ -5,17 +8,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CASHFLOWLAB — Construiește. Lansează. Monetizează.</title>
   <meta name="description" content="CashFlowLab: blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
-  <link rel="alternate" hreflang="ro" href="/ro/">
-  <link rel="alternate" hreflang="en" href="/en/">
+  <!-- Canonical + Social preview -->
+  <link rel="canonical" href="/index.html">
+  <link rel="preload" as="image" href="/hero-tech.png">
+  <meta property="og:title" content="CashFlowLab — Construiește. Lansează. Monetizează.">
+  <meta property="og:description" content="Blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
+  <meta property="og:image" content="/hero-tech.png">
+  <meta property="og:image:alt" content="CashFlowLab — premium hero">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ro_RO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CashFlowLab — Construiește. Lansează. Monetizează.">
+  <meta name="twitter:description" content="Blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
+  <meta name="twitter:image" content="/hero-tech.png">
+  <!-- Alternate language URLs -->
+  <link rel="alternate" hreflang="ro" href="/index.html">
+  <link rel="alternate" hreflang="en" href="/en/index.html">
   <style>
     :root{ --bg:#0b0a12; --panel:#121024; --text:#eae9f4; --muted:#b6b3d1; --accent:#8b5cf6; --gold:#c4a46b; --ok:#22c55e; --rad:18px; }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial; color:var(--text);
       background:
-        radial-gradient(900px 500px at 10% -10%, rgba(139,92,246,.25), transparent 60%),
-        radial-gradient(800px 500px at 120% 10%, rgba(196,164,107,.15), transparent 60%),
-        linear-gradient(180deg, #0b0a12, #0a0a13);
+        radial-gradient(1000px 600px at 15% 5%, rgba(139,92,246,.28), transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, rgba(196,164,107,.20), transparent 60%),
+        radial-gradient(700px 500px at 30% 100%, rgba(139,92,246,.18), transparent 60%),
+        linear-gradient(180deg, #120d24 0%, #0f0d1f 40%, #120d24 100%);
       background-attachment: fixed;
     }
     a{color:inherit}
@@ -23,41 +41,34 @@
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .logo{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.06em}
     .logo-img{height:36px; width:auto; border-radius:8px; display:block}
-    .logo-badge{display:none}
     .nav-links{display:flex; gap:14px; align-items:center}
     .nav a{opacity:.9; text-decoration:none; padding:8px 10px; border-radius:10px}
     .nav a:hover{background:rgba(255,255,255,.06)}
-    .lang{display:inline-flex; gap:6px}
+    .lang{display:inline-flex; gap:6px; align-items:center}
     .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:800; letter-spacing:.02em; border:1px solid rgba(255,255,255,.08); cursor:pointer}
     .btn-primary{background:linear-gradient(180deg, rgba(139,92,246,.25), rgba(255,255,255,.02));}
     .btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.25), rgba(255,255,255,.02)); border-color:rgba(196,164,107,.35)}
     .btn-ghost{background:transparent}
-    .glass{background:linear-gradient( to bottom right, rgba(18,16,36,.72), rgba(18,16,36,.55)); border:1px solid rgba(255,255,255,.06); border-radius:var(--rad); box-shadow:0 20px 50px rgba(0,0,0,.35); backdrop-filter: blur(8px)}
-    .hero{padding:36px 24px}
+    /* No more "glass" boxes: make them transparent so text sits on the background */
+    .glass{background:transparent; border:0; box-shadow:none}
+    .card{padding:18px; border-radius:16px; border:0; background:transparent}
+
+    .hero{padding:36px 24px 0}
     .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:26px}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
     h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:12px 0 10px}
     p.sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 16px}
-    .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
-    .hero-media{min-height:320px; border-radius:var(--rad); border:1px solid rgba(255,255,255,.06); position:relative; overflow:hidden; background:
-      radial-gradient(500px 300px at 70% 30%, rgba(139,92,246,.22), transparent 60%),
-      linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));}
-    .hero-media.noimg{background:
-      radial-gradient(600px 360px at 30% 40%, rgba(139,92,246,.25), transparent 60%),
-      radial-gradient(800px 480px at 90% 20%, rgba(196,164,107,.18), transparent 70%),
-      linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));}
+    .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
+
+    .hero-media{min-height:320px; border-radius:var(--rad); position:relative; overflow:hidden}
     .hero-img{width:100%; height:100%; object-fit:cover; display:block}
+
     .section{margin-top:26px; padding:22px}
     .grid{display:grid; gap:18px}
     .grid-3{grid-template-columns:repeat(3,1fr)}
     .grid-2{grid-template-columns:repeat(2,1fr)}
     @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
-    .card{padding:18px; border-radius:16px; border:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015))}
-    .card h3{margin:0 0 6px}
     .muted{color:var(--muted)}
-    .list{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:8px}
-    .list li{display:flex; gap:10px; align-items:flex-start}
-    .check{color:var(--ok); font-weight:800}
     .center{text-align:center}
     .footer{padding:40px 24px 80px; text-align:center; color:var(--muted)}
     .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent); margin:28px 0}
@@ -68,14 +79,14 @@
   <header class="container">
     <nav class="nav">
       <div class="logo">
-        <img src="cashflowlab-logo.png" alt="CashFlowLab logo" class="logo-img" onerror="this.style.display='none'">
+        <img src="/cashflowlab-logo.png" alt="CashFlowLab logo" class="logo-img" onerror="this.style.display='none'">
         <span>CASHFLOWLAB</span>
       </div>
       <div class="nav-links">
         <!-- Language toggle -->
         <span class="lang">
-          <a href="/ro/" lang="ro" hreflang="ro" class="btn btn-ghost" aria-label="Versiunea în română">RO</a>
-          <a href="/en/" lang="en" hreflang="en" class="btn btn-ghost" aria-label="English version">EN</a>
+          <span class="btn btn-ghost" aria-current="page">RO</span>
+          <a href="/en/index.html" lang="en" hreflang="en" class="btn btn-ghost">EN</a>
         </span>
         <a href="#features">Features</a>
         <a href="#inside">Ce conține</a>
@@ -100,63 +111,51 @@
         </div>
         <p class="muted" style="margin-top:10px">Plată sigură pe Gumroad • Acces instant • Update-uri incluse</p>
       </div>
-      <aside class="hero-media" aria-label="CashFlowLab visual">
-        <img src="hero-tech.png" alt="Previzualizare CashFlowLab" class="hero-img" onerror="this.style.display='none'; this.parentElement.classList.add('noimg')">
+      <aside class="hero-media" aria-label="CashFlowLab vizual">
+        <picture>
+          <source srcset="/hero-tech.webp" type="image/webp">
+          <img src="/hero-tech.png" alt="Previzualizare CashFlowLab" class="hero-img" width="1600" height="900" fetchpriority="high">
+        </picture>
       </aside>
     </section>
 
     <!-- Features -->
-    <section id="features" class="glass section">
+    <section id="features" class="section">
       <h2 style="margin:0 0 10px">De ce funcționează</h2>
       <div class="grid grid-3">
         <div class="card">
           <h3>Pași clari → rezultate</h3>
           <p class="muted">Checklist zilnic, obiective simple și ținte de venit.</p>
-          <ul class="list">
-            <li><span class="check">✔</span> Plan pe 30 de zile</li>
-            <li><span class="check">✔</span> KPI ușor de urmărit</li>
-            <li><span class="check">✔</span> Sistem replicabil</li>
-          </ul>
         </div>
         <div class="card">
           <h3>Kit de lansare</h3>
           <p class="muted">Tot ce-ți trebuie ca să pornești azi.</p>
-          <ul class="list">
-            <li><span class="check">✔</span> Landing page modern</li>
-            <li><span class="check">✔</span> Email funnel (1–5)</li>
-            <li><span class="check">✔</span> Prompts & asset-uri</li>
-          </ul>
         </div>
         <div class="card">
           <h3>Asistență Jarvis</h3>
           <p class="muted">Îți optimizez pașii și te țin pe traseu.</p>
-          <ul class="list">
-            <li><span class="check">✔</span> Răspuns rapid pe întrebări</li>
-            <li><span class="check">✔</span> Recomandări personalizate</li>
-            <li><span class="check">✔</span> Roadmap pentru scalare</li>
-          </ul>
         </div>
       </div>
     </section>
 
     <!-- Inside -->
-    <section id="inside" class="glass section">
+    <section id="inside" class="section">
       <h2 style="margin:0 0 10px">Ce primești concret</h2>
       <div class="grid grid-2">
         <div class="card">
           <h3>Blueprint & proces</h3>
-          <ul class="list">
-            <li><span class="check">✔</span> Obiective săptămânale & zilnice</li>
-            <li><span class="check">✔</span> Calendar de conținut</li>
-            <li><span class="check">✔</span> Framework de oferte</li>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Obiective săptămânale & zilnice</li>
+            <li>Calendar de conținut</li>
+            <li>Framework de oferte</li>
           </ul>
         </div>
         <div class="card">
           <h3>Kit de execuție</h3>
-          <ul class="list">
-            <li><span class="check">✔</span> Template site + stiluri premium</li>
-            <li><span class="check">✔</span> Emailuri 1–5 (editable)</li>
-            <li><span class="check">✔</span> Prompturi pentru vizualuri</li>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Template site + stiluri premium</li>
+            <li>Emailuri 1–5 (editable)</li>
+            <li>Prompturi pentru vizualuri</li>
           </ul>
         </div>
       </div>
@@ -165,8 +164,8 @@
       </div>
     </section>
 
-    <!-- Pricing (un singur produs) -->
-    <section id="pricing" class="glass section">
+    <!-- Pricing -->
+    <section id="pricing" class="section">
       <h2 style="margin:0 0 10px">Acces complet</h2>
       <div class="card" style="display:grid; gap:10px; align-items:center">
         <p class="muted">Plată unică. Acces instant + update-uri incluse.</p>
@@ -178,7 +177,7 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="glass section">
+    <section id="faq" class="section">
       <h2 style="margin:0 0 10px">FAQ</h2>
       <div class="grid grid-2">
         <div class="card">
@@ -191,7 +190,7 @@
         </div>
         <div class="card">
           <b>Pot cere ajutor?</b>
-          <p class="muted">Da, îți răspund și optimizăm împreună setup-ul tău.</p>
+          <p class="muted">Da, îmi scrii și optimizăm împreună setup-ul tău.</p>
         </div>
         <div class="card">
           <b>Refund?</b>
@@ -205,11 +204,226 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer container">
+  <footer class="container footer">
     <div class="center" style="margin-bottom:10px">
       <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Cumpără CashFlowLab">Cumpără CashFlowLab</a>
     </div>
     <small>© CashFlowLab. Toate drepturile rezervate.</small>
+  </footer>
+</body>
+</html>
+
+
+<!-- =============================
+FILE 2: /en/index.html  (English)
+============================== -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CASHFLOWLAB — Build. Launch. Monetize.</title>
+  <meta name="description" content="CashFlowLab: blueprint + launch kit for digital income. Clear, simple, modern.">
+  <!-- Canonical + Social preview -->
+  <link rel="canonical" href="/en/index.html">
+  <link rel="preload" as="image" href="/hero-tech.png">
+  <meta property="og:title" content="CashFlowLab — Build. Launch. Monetize.">
+  <meta property="og:description" content="Blueprint + launch kit for digital income. Clear, simple, modern.">
+  <meta property="og:image" content="/hero-tech.png">
+  <meta property="og:image:alt" content="CashFlowLab — premium hero">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CashFlowLab — Build. Launch. Monetize.">
+  <meta name="twitter:description" content="Blueprint + launch kit for digital income. Clear, simple, modern.">
+  <meta name="twitter:image" content="/hero-tech.png">
+  <!-- Alternate language URLs -->
+  <link rel="alternate" hreflang="en" href="/en/index.html">
+  <link rel="alternate" hreflang="ro" href="/index.html">
+  <style>
+    :root{ --bg:#0b0a12; --panel:#121024; --text:#eae9f4; --muted:#b6b3d1; --accent:#8b5cf6; --gold:#c4a46b; --ok:#22c55e; --rad:18px; }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial; color:var(--text);
+      background:
+        radial-gradient(1000px 600px at 15% 5%, rgba(139,92,246,.28), transparent 60%),
+        radial-gradient(900px 500px at 100% 10%, rgba(196,164,107,.20), transparent 60%),
+        radial-gradient(700px 500px at 30% 100%, rgba(139,92,246,.18), transparent 60%),
+        linear-gradient(180deg, #120d24 0%, #0f0d1f 40%, #120d24 100%);
+      background-attachment: fixed;
+    }
+    a{color:inherit}
+    .container{max-width:1100px; margin-inline:auto; padding:24px}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.06em}
+    .logo-img{height:36px; width:auto; border-radius:8px; display:block}
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav a{opacity:.9; text-decoration:none; padding:8px 10px; border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+    .lang{display:inline-flex; gap:6px; align-items:center}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:800; letter-spacing:.02em; border:1px solid rgba(255,255,255,.08); cursor:pointer}
+    .btn-primary{background:linear-gradient(180deg, rgba(139,92,246,.25), rgba(255,255,255,.02));}
+    .btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.25), rgba(255,255,255,.02)); border-color:rgba(196,164,107,.35)}
+    .btn-ghost{background:transparent}
+    .glass{background:transparent; border:0; box-shadow:none}
+    .card{padding:18px; border-radius:16px; border:0; background:transparent}
+
+    .hero{padding:36px 24px 0}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:26px}
+    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+    h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:12px 0 10px}
+    p.sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 16px}
+    .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
+
+    .hero-media{min-height:320px; border-radius:var(--rad); position:relative; overflow:hidden}
+    .hero-img{width:100%; height:100%; object-fit:cover; display:block}
+
+    .section{margin-top:26px; padding:22px}
+    .grid{display:grid; gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .footer{padding:40px 24px 80px; text-align:center; color:var(--muted)}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent); margin:28px 0}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container">
+    <nav class="nav">
+      <div class="logo">
+        <img src="/cashflowlab-logo.png" alt="CashFlowLab logo" class="logo-img" onerror="this.style.display='none'">
+        <span>CASHFLOWLAB</span>
+      </div>
+      <div class="nav-links">
+        <!-- Language toggle -->
+        <span class="lang">
+          <a href="/index.html" lang="ro" hreflang="ro" class="btn btn-ghost">RO</a>
+          <span class="btn btn-ghost" aria-current="page">EN</span>
+        </span>
+        <a href="#features">Features</a>
+        <a href="#inside">What you get</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <!-- Primary CTA to Gumroad -->
+        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Buy now on Gumroad">Buy</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <main class="container hero">
+    <section class="hero-grid">
+      <div class="glass section">
+        <span class="pill">Modern • Purple & Gold • 2025</span>
+        <h1>Blueprint + Launch Kit to generate <span style="color:var(--gold)">real cashflow</span>.</h1>
+        <p class="sub">CashFlowLab is the system that removes confusion: clear steps, ready‑to‑use templates, and guidance so you can launch fast and monetize.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Buy now">Buy now</a>
+          <a class="btn btn-ghost" href="#inside">See what's inside</a>
+        </div>
+        <p class="muted" style="margin-top:10px">Secure payment on Gumroad • Instant access • Updates included</p>
+      </div>
+      <aside class="hero-media" aria-label="CashFlowLab visual">
+        <picture>
+          <source srcset="/hero-tech.webp" type="image/webp">
+          <img src="/hero-tech.png" alt="CashFlowLab preview" class="hero-img" width="1600" height="900" fetchpriority="high">
+        </picture>
+      </aside>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <h2 style="margin:0 0 10px">Why it works</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Clear steps → results</h3>
+          <p class="muted">Daily checklist, simple objectives, revenue targets.</p>
+        </div>
+        <div class="card">
+          <h3>Launch kit</h3>
+          <p class="muted">Everything you need to start today.</p>
+        </div>
+        <div class="card">
+          <h3>Jarvis assistance</h3>
+          <p class="muted">I optimize your steps and keep you on track.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inside -->
+    <section id="inside" class="section">
+      <h2 style="margin:0 0 10px">What you get</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Blueprint & process</h3>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Weekly & daily objectives</li>
+            <li>Content calendar</li>
+            <li>Offer framework</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Execution kit</h3>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px">
+            <li>Site template + premium styles</li>
+            <li>Emails 1–5 (editable)</li>
+            <li>Visual prompts</li>
+          </ul>
+        </div>
+      </div>
+      <div class="center" style="margin-top:14px">
+        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Get access to CashFlowLab">Get access to CashFlowLab</a>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+      <h2 style="margin:0 0 10px">Full access</h2>
+      <div class="card" style="display:grid; gap:10px; align-items:center">
+        <p class="muted">One‑time payment. Instant access + updates included.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Buy on Gumroad">Buy on Gumroad</a>
+          <a class="btn btn-ghost" href="#faq">Frequently asked questions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <h2 style="margin:0 0 10px">FAQ</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <b>How fast do I get access?</b>
+          <p class="muted">Right after payment on Gumroad you receive the download link.</p>
+        </div>
+        <div class="card">
+          <b>Do I get updates?</b>
+          <p class="muted">Yes, updates are included for this edition.</p>
+        </div>
+        <div class="card">
+          <b>Can I ask for help?</b>
+          <p class="muted">Yes, send your questions and we'll optimize your setup together.</p>
+        </div>
+        <div class="card">
+          <b>Refund?</b>
+          <p class="muted">If it’s not for you, you can request a refund within 14 days.</p>
+        </div>
+      </div>
+      <div class="center" style="margin-top:14px">
+        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Buy now">Buy now</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container footer">
+    <div class="center" style="margin-bottom:10px">
+      <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Buy CashFlowLab">Buy CashFlowLab</a>
+    </div>
+    <small>© CashFlowLab. All rights reserved.</small>
   </footer>
 </body>
 </html>
