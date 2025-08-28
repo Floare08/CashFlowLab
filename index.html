@@ -3,344 +3,208 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CASHFLOWLAB — Build. Launch. Cashflow.</title>
-  <meta name="description" content="CashFlowLab — sistem premium pentru venituri digitale.">
+  <title>CASHFLOWLAB — Construiește. Lansează. Monetizează.</title>
+  <meta name="description" content="CashFlowLab: blueprint + kit de lansare pentru venituri digitale. Clar, simplu, modern.">
   <style>
     :root{
-      --bg:#0b0a12; --panel:#121024; --accent:#8b5cf6; --accent-2:#c4a46b; --text:#eae9f4; --muted:#b6b3d1; --ok:#22c55e;
-      --rad:18px; --shadow:0 20px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+      --bg:#0b0a12; --panel:#121024; --text:#eae9f4; --muted:#b6b3d1;
+      --accent:#8b5cf6; --gold:#c4a46b; --ok:#22c55e; --rad:18px;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text);
+    body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial; color:var(--text);
       background:
-        radial-gradient(1000px 500px at 10% -10%, rgba(139,92,246,.35), transparent 60%),
-        radial-gradient(800px 400px at 110% 10%, rgba(196,164,107,.18), transparent 60%),
-        linear-gradient(180deg, #0b0a12 0%, #0a0a13 100%);
+        radial-gradient(900px 500px at 10% -10%, rgba(139,92,246,.25), transparent 60%),
+        radial-gradient(800px 500px at 120% 10%, rgba(196,164,107,.15), transparent 60%),
+        linear-gradient(180deg, #0b0a12, #0a0a13);
       background-attachment: fixed;
-      overflow-x:hidden;
     }
-    .container{max-width:1200px; margin-inline:auto; padding:24px}
+    a{color:inherit}
+    .container{max-width:1100px; margin-inline:auto; padding:24px}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .logo{display:flex; align-items:center; gap:12px; letter-spacing:.06em; font-weight:800}
-    .logo .badge{width:36px; height:36px; border-radius:50%; background:linear-gradient(145deg,var(--accent),#6d28d9); box-shadow: var(--shadow);}
-    .logo .text{font-size:18px}
-    .glass{
-      background: linear-gradient( to bottom right, rgba(18,16,36,.7), rgba(18,16,36,.5) );
-      border:1px solid rgba(255,255,255,.06);
-      border-radius: var(--rad);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(8px);
-    }
-    .btn{
-      --p:var(--accent);
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:14px 20px; border-radius:14px; border:1px solid rgba(255,255,255,.08);
-      background:linear-gradient(180deg, color-mix(in srgb, var(--p) 25%, transparent), rgba(255,255,255,.02));
-      color:var(--text); text-decoration:none; font-weight:700; letter-spacing:.02em; cursor:pointer;
-      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-      box-shadow: 0 10px 24px rgba(0,0,0,.25);
-    }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 14px 32px rgba(0,0,0,.32)}
-    .btn-primary{--p:var(--accent)}
-    .btn-gold{--p:var(--accent-2)}
-    .btn-ghost{background:transparent; border-color:rgba(255,255,255,.12)}
-    .hero{padding:48px 24px 24px}
-    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:28px}
+    .logo{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.06em}
+    .logo-badge{width:36px;height:36px;border-radius:50%;background:linear-gradient(145deg,var(--accent),#6d28d9); box-shadow:0 8px 24px rgba(0,0,0,.35)}
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav a{opacity:.9; text-decoration:none; padding:8px 10px; border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:800; letter-spacing:.02em; border:1px solid rgba(255,255,255,.08); cursor:pointer}
+    .btn-primary{background:linear-gradient(180deg, rgba(139,92,246,.25), rgba(255,255,255,.02));}
+    .btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.25), rgba(255,255,255,.02)); border-color:rgba(196,164,107,.35)}
+    .btn-ghost{background:transparent}
+    .glass{background:linear-gradient( to bottom right, rgba(18,16,36,.72), rgba(18,16,36,.55)); border:1px solid rgba(255,255,255,.06); border-radius:var(--rad); box-shadow:0 20px 50px rgba(0,0,0,.35); backdrop-filter: blur(8px)}
+    .hero{padding:36px 24px}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:26px}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
-    h1{font-size: clamp(28px, 4vw, 48px); line-height:1.06; margin:10px 0 14px}
-    .sub{color:var(--muted); font-size: clamp(16px, 2vw, 18px)}
-    .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.1); color:#fff; background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
-    .countdown{display:flex; gap:12px; margin:18px 0}
-    .tile{flex:1; min-width:90px; text-align:center; padding:14px 8px; border-radius:16px; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01)); border:1px solid rgba(255,255,255,.08)}
-    .tile h3{margin:0; font-size:28px}
-    .tile p{margin:6px 0 0; color:var(--muted); font-size:12px; letter-spacing:.12em}
-    .panel{padding:22px}
-    .grid{display:grid; gap:18px}
-    .grid-3{grid-template-columns: repeat(3, 1fr)}
-    .grid-2{grid-template-columns: repeat(2, 1fr)}
-    @media (max-width:900px){.grid-3{grid-template-columns:1fr}; .grid-2{grid-template-columns:1fr}}
-    .card-title{font-weight:800; margin:0 0 6px}
-    .muted{color:var(--muted)}
-    .check{color:var(--ok); font-weight:700}
-    .footer{padding:40px 24px 80px; text-align:center}
-    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent); margin:28px 0}
-    .bg-ring{
-      position:relative; isolation:isolate;
-    }
-    .bg-ring::after{
-      content:""; position:absolute; inset:-60px;
+    h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:12px 0 10px}
+    p.sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 16px}
+    .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
+    .hero-media{min-height:280px; border-radius:var(--rad); border:1px solid rgba(255,255,255,.06)}
+    /* Dacă ai un background propriu, pune fișierul în root și actualizează numele mai jos. 
+       Dacă fișierul nu există, secțiunea rămâne pe gradient, deci nu se strică nimic. */
+    .hero-media{
       background:
-        radial-gradient(400px 400px at 30% 10%, rgba(139,92,246,.18), transparent 60%),
-        radial-gradient(600px 600px at 80% 30%, rgba(196,164,107,.12), transparent 60%);
-      z-index:-1; filter: blur(6px);
-    }
-    /* (opțional) poți seta un background propriu: */
-    .hero-bg{
-      border-radius: var(--rad);
-      min-height: 280px;
-      background:
-        url('background-cashflowlab.jpg') center/cover no-repeat,
+        url('cashflowlab-bg.webp') center/cover no-repeat,
+        url('cashflowlab-bg.jpg') center/cover no-repeat,
+        radial-gradient(500px 300px at 70% 30%, rgba(139,92,246,.22), transparent 60%),
         linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.06);
-      box-shadow: var(--shadow);
     }
-    .list{display:grid; gap:10px; margin:0; padding:0; list-style:none}
+    .section{margin-top:26px; padding:22px}
+    .grid{display:grid; gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .card{padding:18px; border-radius:16px; border:1px solid rgba(255,255,255,.06); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015))}
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    .list{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:8px}
     .list li{display:flex; gap:10px; align-items:flex-start}
-    .list b{color:#fff}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
+    .check{color:var(--ok); font-weight:800}
+    .center{text-align:center}
+    .footer{padding:40px 24px 80px; text-align:center; color:var(--muted)}
   </style>
 </head>
-
 <body>
+  <!-- Header -->
   <header class="container">
-    <nav class="nav glass panel">
+    <nav class="nav">
       <div class="logo">
-        <span class="badge"></span>
-        <span class="text">CASHFLOWLAB</span>
+        <span class="logo-badge" aria-hidden="true"></span>
+        <span>CASHFLOWLAB</span>
       </div>
-      <div class="cta-row">
-        <a class="btn btn-ghost" href="#features" data-nav="true">Features</a>
-        <a class="btn btn-ghost" href="#pricing" data-nav="true">Pricing</a>
-        <a class="btn btn-gold" id="btn-nav-buy">Cumpără acum</a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#inside">Ce conține</a>
+        <a href="#pricing">Preț</a>
+        <a href="#faq">FAQ</a>
+        <!-- CTA principal către Gumroad -->
+        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Cumpără acum pe Gumroad">Cumpără</a>
       </div>
     </nav>
   </header>
 
+  <!-- Hero -->
   <main class="container hero">
     <section class="hero-grid">
-      <div class="bg-ring glass panel">
-        <span class="pill">Premium • Mov & Gold • 2025</span>
-        <h1>Construiește. Lansează. Monetizează. <span style="color:var(--accent-2)">Cashflow</span> real.</h1>
-        <p class="sub">Ai sistemul complet pentru a crea venit digital cu stilul <b>CashFlowLab</b>. Zero confuzie, doar pași clari și unelte care chiar funcționează.</p>
-
-        <div class="countdown" role="timer" aria-live="polite">
-          <div class="tile"><h3 id="dd">–</h3><p>ZILE</p></div>
-          <div class="tile"><h3 id="hh">–</h3><p>ORE</p></div>
-          <div class="tile"><h3 id="mm">–</h3><p>MIN</p></div>
-          <div class="tile"><h3 id="ss">–</h3><p>SEC</p></div>
+      <div class="glass section">
+        <span class="pill">Modern • Mov & Gold • 2025</span>
+        <h1>Blueprint + Kit de lansare ca să generezi <span style="color:var(--gold)">cashflow</span> real.</h1>
+        <p class="sub">CashFlowLab e sistemul care te scapă de confuzie: pași clari, template-uri gata de folosit și asistență ca să lansezi rapid și să monetizezi.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Cumpără acum">Cumpără acum</a>
+          <a class="btn btn-ghost" href="#inside">Vezi ce primești</a>
         </div>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" id="btn-hero-buy">Cumpără acum</a>
-          <a class="btn btn-ghost" href="#pricing" data-nav="true">Vezi pachetele</a>
-        </div>
-        <p class="muted" style="margin-top:10px">Plată sigură via Gumroad • Acces instant • Update-uri gratuite</p>
+        <p class="muted" style="margin-top:10px">Plată sigură pe Gumroad • Acces instant • Update-uri incluse</p>
       </div>
-
-      <aside class="hero-bg"></aside>
+      <aside class="hero-media" role="img" aria-label="CashFlowLab visual background"></aside>
     </section>
 
-    <section id="features" class="glass panel" style="margin-top:24px">
-      <h2 style="margin:0 0 10px">Ce primești</h2>
+    <!-- Features -->
+    <section id="features" class="glass section">
+      <h2 style="margin:0 0 10px">De ce funcționează</h2>
       <div class="grid grid-3">
-        <div class="glass panel">
-          <h3 class="card-title">Blueprint → Cashflow</h3>
-          <p class="muted">Plan fără ceață: pași zilnici, checklist și ținte clare de venit.</p>
+        <div class="card">
+          <h3>Pași clari → rezultate</h3>
+          <p class="muted">Checklist zilnic, obiective simple și ținte de venit.</p>
           <ul class="list">
-            <li><span class="check">✔</span> Taskuri zilnice & sprinturi</li>
-            <li><span class="check">✔</span> KPI & tracking simplu</li>
-            <li><span class="check">✔</span> Sisteme “copy-paste”</li>
+            <li><span class="check">✔</span> Plan pe 30 de zile</li>
+            <li><span class="check">✔</span> KPI ușor de urmărit</li>
+            <li><span class="check">✔</span> Sistem replicabil</li>
           </ul>
         </div>
-        <div class="glass panel">
-          <h3 class="card-title">Kit de Lansare</h3>
-          <p class="muted">Template premium site, email funnel & asset-uri media.</p>
+        <div class="card">
+          <h3>Kit de lansare</h3>
+          <p class="muted">Tot ce-ți trebuie ca să pornești azi.</p>
           <ul class="list">
-            <li><span class="check">✔</span> Landing page premium</li>
-            <li><span class="check">✔</span> Email 1–5 pre-scrise</li>
-            <li><span class="check">✔</span> Prompturi vizuale</li>
+            <li><span class="check">✔</span> Landing page modern</li>
+            <li><span class="check">✔</span> Email funnel (1–5)</li>
+            <li><span class="check">✔</span> Prompts & asset-uri</li>
           </ul>
         </div>
-        <div class="glass panel">
-          <h3 class="card-title">Asistență Jarvis</h3>
-          <p class="muted">Workflow testat, fără bătăi de cap. Tu executi, eu optimizez.</p>
+        <div class="card">
+          <h3>Asistență Jarvis</h3>
+          <p class="muted">Îți optimizez pașii și te țin pe traseu.</p>
           <ul class="list">
-            <li><span class="check">✔</span> Optimizări la cerere</li>
-            <li><span class="check">✔</span> Update-uri continue</li>
-            <li><span class="check">✔</span> Roadmap scalare</li>
+            <li><span class="check">✔</span> Răspuns rapid pe întrebări</li>
+            <li><span class="check">✔</span> Recomandări personalizate</li>
+            <li><span class="check">✔</span> Roadmap pentru scalare</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section id="pricing" class="glass panel" style="margin-top:24px">
-      <h2 style="margin:0 0 10px">Pachete</h2>
-      <div class="grid grid-3">
-        <div class="glass panel">
-          <h3 class="card-title">Starter</h3>
-          <p class="muted">Începe rapid cu baza solidă.</p>
-          <p><b style="font-size:28px">€29</b> / one-time</p>
-          <a class="btn btn-primary" id="btn-buy-starter">Ia Starter</a>
+    <!-- Inside -->
+    <section id="inside" class="glass section">
+      <h2 style="margin:0 0 10px">Ce primești concret</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Blueprint & proces</h3>
+          <ul class="list">
+            <li><span class="check">✔</span> Obiective săptămânale & zilnice</li>
+            <li><span class="check">✔</span> Calendar de conținut</li>
+            <li><span class="check">✔</span> Framework de oferte</li>
+          </ul>
         </div>
-        <div class="glass panel" style="outline:1px solid rgba(196,164,107,.5)">
-          <h3 class="card-title">Pro (Recomandat)</h3>
-          <p class="muted">Totul pentru lansare + optimizări.</p>
-          <p><b style="font-size:28px">€69</b> / one-time</p>
-          <a class="btn btn-gold" id="btn-buy-pro">Ia Pro</a>
-        </div>
-        <div class="glass panel">
-          <h3 class="card-title">Ultimate</h3>
-          <p class="muted">Stack complet și suport prioritar.</p>
-          <p><b style="font-size:28px">€129</b> / one-time</p>
-          <a class="btn btn-primary" id="btn-buy-ultimate">Ia Ultimate</a>
+        <div class="card">
+          <h3>Kit de execuție</h3>
+          <ul class="list">
+            <li><span class="check">✔</span> Template site + stiluri premium</li>
+            <li><span class="check">✔</span> Emailuri 1–5 (editable)</li>
+            <li><span class="check">✔</span> Prompturi pentru vizualuri</li>
+          </ul>
         </div>
       </div>
-      <div class="divider"></div>
-      <div class="cta-row" style="justify-content:center">
-        <a class="btn btn-gold" id="btn-pricing-buy">Cumpără CashFlowLab</a>
-        <a class="btn btn-ghost" href="#faq" data-nav="true">Întrebări frecvente</a>
+      <div class="center" style="margin-top:14px">
+        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Ia acces la CashFlowLab">Ia acces la CashFlowLab</a>
       </div>
     </section>
 
-    <section id="faq" class="glass panel" style="margin-top:24px">
+    <!-- Pricing (un singur produs) -->
+    <section id="pricing" class="glass section">
+      <h2 style="margin:0 0 10px">Acces complet</h2>
+      <div class="card" style="display:grid; gap:10px; align-items:center">
+        <p class="muted">Plată unică. Acces instant + update-uri incluse.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Cumpără pe Gumroad">Cumpără pe Gumroad</a>
+          <a class="btn btn-ghost" href="#faq">Întrebări frecvente</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="glass section">
       <h2 style="margin:0 0 10px">FAQ</h2>
       <div class="grid grid-2">
-        <div class="glass panel">
-          <b>Primesc update-uri?</b>
-          <p class="muted">Da, primești update-uri gratuite pe viață pentru acest produs.</p>
+        <div class="card">
+          <b>În cât timp am acces?</b>
+          <p class="muted">Imediat după plată pe Gumroad primești link-ul de descărcare.</p>
         </div>
-        <div class="glass panel">
-          <b>Cât de repede am acces?</b>
-          <p class="muted">Imediat după plată pe Gumroad, primești linkul de descărcare.</p>
+        <div class="card">
+          <b>Primește update-uri?</b>
+          <p class="muted">Da, update-urile sunt incluse pentru această ediție.</p>
         </div>
-        <div class="glass panel">
+        <div class="card">
           <b>Pot cere ajutor?</b>
-          <p class="muted">Da, îmi scrii și optimizăm împreună setup-ul tău.</p>
+          <p class="muted">Da, îți răspund și optimizăm împreună setup-ul tău.</p>
         </div>
-        <div class="glass panel">
+        <div class="card">
           <b>Refund?</b>
-          <p class="muted">Dacă nu e pentru tine, îți returnez banii în 14 zile.</p>
+          <p class="muted">Dacă nu e pentru tine, poți cere banii în 14 zile.</p>
         </div>
+      </div>
+      <div class="center" style="margin-top:14px">
+        <a class="btn btn-gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Cumpără acum">Cumpără acum</a>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer container">
-    <h3 style="margin:0 0 12px">Ești la un click de primul tău cashflow.</h3>
-    <div class="cta-row" style="justify-content:center">
-      <a class="btn btn-gold" id="btn-footer-buy">Cumpără acum</a>
-      <a class="btn btn-primary" href="#features" data-nav="true">Vezi ce primești</a>
+    <div class="center" style="margin-bottom:10px">
+      <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Cumpără CashFlowLab">Cumpără CashFlowLab</a>
     </div>
-    <p class="muted" style="margin-top:12px">© CashFlowLab. Toate drepturile rezervate.</p>
+    <small>© CashFlowLab. Toate drepturile rezervate.</small>
   </footer>
 
-  <!-- Overlay Gumroad (pentru pop-up la click) -->
-  <script src="https://gumroad.com/js/gumroad.js" defer></script>
-
-  <script>
-    // ===== Countdown (setează automat +7 zile de la prima vizită) =====
-    (function(){
-      const key="cfl_countdown_deadline";
-      const now = Date.now();
-      let deadline = localStorage.getItem(key);
-      if(!deadline){
-        const d = new Date(now + 7*24*60*60*1000);
-        deadline = d.toISOString();
-        localStorage.setItem(key, deadline);
-      }
-      function tick(){
-        const end = new Date(localStorage.getItem(key)).getTime();
-        let diff = Math.max(0, end - Date.now());
-        const s = Math.floor(diff/1000)%60;
-        const m = Math.floor(diff/1000/60)%60;
-        const h = Math.floor(diff/1000/60/60)%24;
-        const d = Math.floor(diff/1000/60/60/24);
-        const pad = n => n.toString().padStart(2,'0');
-        document.getElementById('dd').textContent = d;
-        document.getElementById('hh').textContent = pad(h);
-        document.getElementById('mm').textContent = pad(m);
-        document.getElementById('ss').textContent = pad(s);
-      }
-      tick(); setInterval(tick, 1000);
-    })();
-
-    // ===== Gumroad binding (leagă toate butoanele de produsul tău) =====
-    (function(){
-      const PRODUCT_URL = "https://florinwave0.gumroad.com/l/yspwee";
-      const UTM = {source:"cashflowlab", medium:"site", campaign:"launch"};
-
-      const buildUrl = () => {
-        const url = new URL(PRODUCT_URL);
-        url.searchParams.set("utm_source", UTM.source);
-        url.searchParams.set("utm_medium", UTM.medium);
-        url.searchParams.set("utm_campaign", UTM.campaign);
-        url.searchParams.set("utm_content", location.pathname.replace(/\//g,"_") || "home");
-        return url.toString();
-      };
-
-      const isButtonLike = (el) => {
-        if (!el || el.nodeType !== 1) return false;
-        const tag = el.tagName.toLowerCase();
-        const cls = el.className || "";
-        const classHits = /(btn|button|cta|primary|ghost|gold)/i.test(cls);
-        const roleButton = el.getAttribute("role")==="button";
-        return tag==="button" || (tag==="a" && classHits) || roleButton || classHits;
-      };
-
-      const shouldSkip = (el) => {
-        if (el.hasAttribute("data-keep") || el.hasAttribute("data-nav")) return true;
-        if (el.tagName && el.tagName.toLowerCase()==="a") {
-          const href = el.getAttribute("href")||"";
-          if (href.startsWith("#")) return true;
-          if (/^mailto:|^tel:/.test(href)) return true;
-          if (/gumroad\.com\/l\//i.test(href)) return true;
-        }
-        return false;
-      };
-
-      const applyGumroad = (el) => {
-        if (!isButtonLike(el) || shouldSkip(el)) return;
-        const href = buildUrl();
-        el.setAttribute("aria-label","Cumpără acum pe Gumroad");
-        el.style.cursor="pointer";
-
-        // Folosim overlay dacă există gumroad.js încărcat
-        if (el.tagName.toLowerCase()==="a") {
-          el.classList.add("gumroad-button");
-          el.setAttribute("href", href);
-        } else {
-          el.addEventListener("click", (e)=>{
-            e.preventDefault();
-            const a = document.createElement("a");
-            a.className = "gumroad-button";
-            a.href = href;
-            a.style.display="none";
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-          }, {passive:false});
-        }
-        el.dataset.gumroadBound="true";
-        el.title = el.title || "Cumpără pe Gumroad";
-      };
-
-      const bindAll = (root=document) => {
-        const candidates = Array.from(root.querySelectorAll("*"))
-          .filter(isButtonLike)
-          .filter(el => !el.dataset.gumroadBound);
-        candidates.forEach(applyGumroad);
-      };
-
-      document.addEventListener("DOMContentLoaded", bindAll);
-      window.addEventListener("load", bindAll);
-
-      const mo = new MutationObserver((muts)=>{
-        for (const m of muts) {
-          m.addedNodes.forEach((n)=>{
-            if (n.nodeType!==1) return;
-            if (isButtonLike(n) && !n.dataset.gumroadBound && !shouldSkip(n)) applyGumroad(n);
-            const kids = n.querySelectorAll ? n.querySelectorAll("*") : [];
-            kids.forEach((c)=>{
-              if (isButtonLike(c) && !c.dataset.gumroadBound && !shouldSkip(c)) applyGumroad(c);
-            });
-          });
-        }
-      });
-      mo.observe(document.documentElement, {childList:true, subtree:true});
-    })();
-  </script>
+  <!-- JS minim: nimic care să-ți afecteze stilurile sau imaginile -->
 </body>
 </html>
