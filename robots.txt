@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cashflowlab.example/sitemap.xml
+Sitemap: https://cashflowlabai.com/sitemap.xml
