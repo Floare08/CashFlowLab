@@ -373,9 +373,20 @@
       const sp = el('schema-product'); if(sp) sp.textContent = JSON.stringify(schema);
 
       document.documentElement.lang = (lang==='ro'?'ro':'en');
+      // toggle active state on language buttons
+      document.querySelectorAll('[data-lang]').forEach(b=>{
+        const active = b.getAttribute('data-lang')===lang;
+        b.classList.toggle('ring-1', active);
+        b.classList.toggle('ring-amber-400/60', active);
+      });
     }
     document.querySelectorAll('[data-lang]').forEach(btn=>btn.addEventListener('click',()=>setLang(btn.getAttribute('data-lang'))));
-    setLang(localStorage.getItem('lang')||'en');
+    document.addEventListener('DOMContentLoaded',()=>{
+  const qp = new URLSearchParams(location.search).get('lang');
+  const saved = localStorage.getItem('lang');
+  const initial = (qp==='ro'||qp==='en') ? qp : ((saved==='ro'||saved==='en') ? saved : 'ro');
+  setLang(initial);
+});
   </script>
 </body>
 </html>
