@@ -1,204 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CashFlowLab — Construiește cashflow zilnic cu AI (fără audiență)</title>
-  <meta name="description" content="Lansezi în 72h cu template-uri, prompts și automatizări verificate. Fără skill-uri, fără audiență. Plată unică – 27 €." />
-  <meta name="robots" content="index,follow,max-image-preview:large">
-
-  <!-- Canonical & hreflang (actualizează domeniul tău real) -->
-  <link rel="canonical" href="https://cashflowlab.example/">
-  <link rel="alternate" href="https://cashflowlab.example/" hreflang="ro">
-  <link rel="alternate" href="https://cashflowlab.example/en/" hreflang="en">
-  <link rel="alternate" href="https://cashflowlab.example/" hreflang="x-default">
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="CashFlowLab — Construiește cashflow zilnic cu AI (fără audiență)" />
-  <meta property="og:description" content="Lansezi în 72h cu template-uri, prompts și automatizări verificate. Fără skill-uri, fără audiență. Plată unică – 27 €." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/CashFlowLabAI.png" />
-  <meta property="og:site_name" content="CashFlowLab" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CashFlowLab — Construiește cashflow zilnic cu AI (fără audiență)" />
-  <meta name="twitter:description" content="Lansezi în 72h cu template-uri, prompts și automatizări verificate. Fără skill-uri, fără audiență. Plată unică – 27 €." />
-  <meta name="twitter:image" content="/CashFlowLabAI.png" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/CashFlowLabAI.png" />
-  <link rel="apple-touch-icon" href="/CashFlowLabAI.png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>CashFlowLab — Premium 2025</title>
+  <meta name="description" content="CashFlowLab — Ecosistem premium pentru cashflow cu GPT. Lansări, funneluri, resurse și tool‑uri." />
   <style>
-    html { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .glow { box-shadow: 0 0 32px rgba(212,175,55,.35), 0 0 64px rgba(31,162,255,.25); }
-    .card { backdrop-filter: blur(10px); background: rgba(15,23,42,.55); }
-    .gradient-text{background:linear-gradient(90deg,#d4af37,#1fa2ff,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .shine{ position:relative; overflow:hidden; }
-    .shine:before{ content:""; position:absolute; inset:-200% -50%; background:linear-gradient(120deg,transparent,rgba(255,255,255,.25),transparent); transform:translateX(-100%); animation:shine 3.5s infinite; }
-    @keyframes shine{ 100%{ transform:translateX(100%);} }
-    .floating{ animation: float 8s ease-in-out infinite; }
-    @keyframes float{ 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-10px)} }
-    .sticky-cta{ position:sticky; bottom:16px; z-index:50 }
+    :root{
+      --bg:#0b0b12;          /* dark base */
+      --card:#141425;        /* card surface */
+      --muted:#a0a3b1;       /* muted text */
+      --text:#f5f7ff;        /* main text */
+      --accent:#6E00FF;      /* purple */
+      --accent-2:#9B59FF;    /* purple light */
+      --gold:#E6B800;        /* gold */
+      --gold-2:#FFDF6E;      /* soft gold */
+      --radius:22px;
+      --shadow:0 20px 40px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 70% -10%, rgba(110,0,255,.25), transparent 60%),radial-gradient(1000px 500px at 10% -20%, rgba(230,184,0,.18), transparent 60%), var(--bg); color:var(--text); font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, Apple Color Emoji, Segoe UI Emoji;
+      overflow-x:hidden;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1180px, 92vw); margin:0 auto}
+
+    /* Buttons */
+    .btn{display:inline-flex; align-items:center; gap:.6rem; padding:.9rem 1.2rem; border-radius:999px; font-weight:700; letter-spacing:.2px; border:1px solid transparent; transition:.25s ease; cursor:pointer}
+    .btn-primary{background:linear-gradient(135deg, var(--accent), var(--accent-2) 55%, var(--gold) 115%); box-shadow:0 10px 24px rgba(110,0,255,.35), inset 0 1px 0 rgba(255,255,255,.09)}
+    .btn-primary:hover{transform:translateY(-1px); filter:saturate(1.05)}
+    .btn-ghost{background:transparent; border-color:#2a2a45; color:#d9dbf2}
+    .btn-ghost:hover{background:#18182a}
+
+    header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.2) blur(10px); background:rgba(11,11,18,.5); border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:.8rem}
+    .logo{width:36px; height:36px; border-radius:50%; background:conic-gradient(from 140deg, var(--gold), var(--accent), var(--accent-2), var(--gold-2)); box-shadow:0 0 0 2px rgba(255,255,255,.06) inset}
+    .brand h1{font-size:1.05rem; margin:0; font-weight:800; letter-spacing:.4px}
+
+    .hero{padding:72px 0 40px}
+    .hero h2{font-size:clamp(2rem, 5vw, 3rem); line-height:1.1; margin:0 0 14px; font-weight:900}
+    .hero p{color:var(--muted); font-size:clamp(1rem, 2.2vw, 1.12rem); margin:0 0 22px}
+
+    .frame{position:relative; padding:34px; border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); box-shadow:var(--shadow);}
+    .frame::before{content:""; position:absolute; inset:-1px; border-radius:calc(var(--radius) + 10px); background:conic-gradient(from 140deg, var(--gold), var(--accent), var(--accent-2), var(--gold-2), var(--gold)); filter:blur(16px); opacity:.35; z-index:-1}
+
+    .cta-row{display:flex; flex-wrap:wrap; gap:12px}
+
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:18px; margin-top:28px}
+    .col-4{grid-column:span 4}
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    @media (max-width:900px){ .col-4,.col-6{grid-column:span 12} }
+
+    .card{background:var(--card); border-radius:18px; padding:20px; border:1px solid rgba(255,255,255,.06)}
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+
+    /* Sticky Buy Bar */
+    .sticky-buy{position:sticky; bottom:0; z-index:60; backdrop-filter:blur(10px); background:linear-gradient(180deg, rgba(11,11,18,0), rgba(11,11,18,.85) 30%, rgba(11,11,18,.95)); border-top:1px solid rgba(255,255,255,.06);}
+    .sticky-inner{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0}
+    .sticky-title{font-weight:800}
+
+    footer{padding:40px 0 60px; color:#b7bad0}
+    .center{display:flex; align-items:center; justify-content:center}
+
+    .badge{display:inline-flex; align-items:center; gap:.5rem; padding:.42rem .7rem; border-radius:999px; border:1px dashed rgba(255,255,255,.2); color:#e7eaff; font-size:.86rem}
   </style>
-
-  <!-- Schema.org Product (RO) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Product","name":"CashFlowLab","description":"Lansezi în 72h cu template-uri, prompts și automatizări verificate. Fără skill-uri, fără audiență. Plată unică – 27 €.","brand":"CashFlowLab","offers":{"@type":"Offer","price":"27","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=hero_cta&utm_lang=ro"}}
-  </script>
 </head>
-<body class="min-h-screen bg-slate-950 text-white selection:bg-amber-400/40">
-  <!-- Background FX -->
-  <div class="fixed inset-0 -z-10">
-    <div class="absolute -top-40 -left-32 w-[50rem] h-[50rem] rounded-full bg-amber-400/10 blur-3xl"></div>
-    <div class="absolute -bottom-40 -right-32 w-[50rem] h-[50rem] rounded-full bg-indigo-500/10 blur-3xl"></div>
-  </div>
+<body>
+  <script>
+    /* 🔗 Setează aici linkul tău de Gumroad */
+    const GUMROAD_URL = "PASTE_YOUR_GUMROAD_LINK_HERE"; // ex: "https://florinwave0.gumroad.com/l/yspwee"
+  </script>
 
-  <!-- Navbar (RO activ, EN link) -->
-  <header class="sticky top-0 z-40 border-b border-white/5 bg-black/40 backdrop-blur">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center gap-3">
-        <svg width="40" height="40" viewBox="0 0 128 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="goldBlue" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#d4af37"/>
-              <stop offset="60%" stop-color="#1fa2ff"/>
-            </linearGradient>
-          </defs>
-          <path d="M20 32c0-8 6-14 14-14 14 0 22 28 36 28 8 0 14-6 14-14s-6-14-14-14c-14 0-22 28-36 28-8 0-14-6-14-14z" fill="none" stroke="url(#goldBlue)" stroke-width="10" stroke-linecap="round"/>
-        </svg>
-        <span class="font-extrabold tracking-tight text-white">CashFlowLab</span>
-        <span class="text-xs text-slate-400 border border-white/10 rounded-lg px-2 py-0.5">ULTRA</span>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>CashFlowLab</h1>
       </div>
-      <nav class="flex flex-wrap items-center gap-2">
-        <!-- Limbi -->
-        <span class="px-3 py-1 rounded-lg border border-amber-400/40 text-amber-300 font-semibold">RO</span>
-        <a href="/en/" class="px-3 py-1 rounded-lg border border-white/10 text-slate-300 hover:text-white">EN</a>
-        <!-- CTA -->
-        <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=top_cta&utm_lang=ro" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-block">
-          <button class="shine glow rounded-2xl bg-amber-400 hover:bg-amber-500 text-black font-semibold px-5 py-2">Începe acum – 27 €</button>
-        </a>
+      <nav class="cta-row">
+        <a class="btn btn-ghost" data-cta="gumroad" aria-label="Vezi pe Gumroad">Vezi pe Gumroad</a>
+        <a class="btn btn-primary" data-cta="gumroad" aria-label="Cumpără pe Gumroad">Cumpără pe Gumroad</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="relative">
-    <!-- watermark discret -->
-    <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-      <svg width="600" height="300" viewBox="0 0 128 64" aria-hidden="true">
-        <defs><linearGradient id="heroGoldBlue" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d4af37"/><stop offset="60%" stop-color="#1fa2ff"/></linearGradient></defs>
-        <path d="M20 32c0-8 6-14 14-14 14 0 22 28 36 28 8 0 14-6 14-14s-6-14-14-14c-14 0-22 28-36 28-8 0-14-6-14-14z" fill="none" stroke="url(#heroGoldBlue)" stroke-width="6" stroke-linecap="round"/>
-      </svg>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Construiește <span class="gradient-text">cashflow zilnic</span> cu AI — pe pilot automat</h1>
-        <p class="mt-5 text-lg md:text-2xl text-slate-300 max-w-2xl">Lansezi o ofertă simplă în 72h folosind paginile, prompturile și automatizările noastre. Fără tehnic. Fără audiență. Un playbook clar până la primele vânzări.</p>
-        <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
-          <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=hero_cta&utm_lang=ro" target="_blank" rel="noopener" class="w-full sm:w-auto">
-            <button class="shine glow w-full sm:w-auto rounded-2xl bg-amber-400 hover:bg-amber-500 text-black font-semibold text-lg px-8 py-4">🔥 Pornește CashFlowLab — 27 €</button>
-          </a>
-          <div class="text-sm text-slate-400">Lansare în 72h • Template-uri verificate • Ghiduri pas cu pas</div>
+  <main class="container">
+    <section class="hero">
+      <div class="frame">
+        <span class="badge">Premium 2025 • Funnel GPT • Cashflow</span>
+        <h2>Construiește-ți <span style="background:linear-gradient(90deg,var(--gold),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">ecosistemul de venit</span> cu GPT.</h2>
+        <p>Template-uri, automatizări și ghiduri curate, gândite să-ți convertească traficul în venit recurent. Optimizat pentru mobile & desktop, cu design <em>ultra‑premium</em>.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-cta="gumroad" aria-label="Cumpără acum">🚀 Cumpără acum pe Gumroad</a>
+          <a class="btn btn-ghost" data-cta="gumroad" aria-label="Vezi detalii">Detalii produs</a>
         </div>
-        <div class="mt-3 text-xs text-slate-400">🔒 Plată securizată pe Gumroad • 💳 Garanție 14 zile (refund)</div>
-        <div class="mt-6 text-slate-300"><span class="mr-2">Oferta se încheie în:</span><span id="countdown" class="font-mono text-amber-300"></span></div>
-        <div class="mt-6 text-slate-300 text-sm">Preț obișnuit <span class="line-through opacity-60">149 €</span> → <span class="text-amber-300 font-semibold">Astăzi: 27 €</span></div>
       </div>
 
-      <!-- Card demo cu IMAGINE -->
-      <div class="relative floating">
-        <div class="card rounded-3xl p-4 border border-white/10 shadow-2xl">
-          <!-- schimbă src dacă ai altă cale -->
-          <img src="/hero-tech.png" alt="Tech Dashboard" class="rounded-2xl w-full h-auto object-cover"/>
-          <div class="grid grid-cols-3 gap-3 mt-4">
-            <div class="card rounded-2xl p-4 border border-white/10 text-center"><div class="text-amber-300 text-sm font-semibold">PAS 1</div><div class="mt-1 font-semibold">Acces</div></div>
-            <div class="card rounded-2xl p-4 border border-white/10 text-center"><div class="text-amber-300 text-sm font-semibold">PAS 2</div><div class="mt-1 font-semibold">Automatizează</div></div>
-            <div class="card rounded-2xl p-4 border border-white/10 text-center"><div class="text-amber-300 text-sm font-semibold">PAS 3</div><div class="mt-1 font-semibold">Scalează</div></div>
+      <div class="grid">
+        <div class="col-4">
+          <div class="card">
+            <h3>Setup în 60 minute</h3>
+            <p class="muted">Flow clar, pași simpli, fără bătăi de cap. Include video & checklist.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <h3>Design de milioane</h3>
+            <p class="muted">Paletă mov‑gold, UI modern, componente reutilizabile, copy gata de folosit.</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <h3>Automatizări GPT</h3>
+            <p class="muted">Prompturi, webhook‑uri, scenarii ML — toate preconfigurate pentru conversii.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Beneficii -->
-  <section id="beneficii" class="max-w-7xl mx-auto px-4 pb-6 -mt-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center text-slate-400 text-sm">
-      <div class="card rounded-xl p-3 border border-white/5">Plată unică</div>
-      <div class="card rounded-xl p-3 border border-white/5">Acces pe viață</div>
-      <div class="card rounded-xl p-3 border border-white/5">Template-uri testate</div>
-      <div class="card rounded-xl p-3 border border-white/5">Fără skill-uri</div>
-    </div>
-  </section>
-
-  <!-- Ce primești -->
-  <section id="inside" class="max-w-7xl mx-auto px-4 py-10">
-    <h2 class="text-3xl font-bold text-center mb-8">Tot ce primești înăuntru</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card rounded-2xl p-6 border border-white/10"><div class="text-2xl">📦</div><h4 class="mt-2 font-semibold">Pachetul de Lansare Cashflow</h4><p class="text-slate-300 mt-1">Prompturile, paginile și scripturile exact cu care livrăm rapid (.doc/.csv). Copy → paste → publish.</p></div>
-      <div class="card rounded-2xl p-6 border border-white/10"><div class="text-2xl">🗺️</div><h4 class="mt-2 font-semibold">Playbook de Cashflow</h4><p class="text-slate-300 mt-1">Hartă în pași clari: idee → ofertă → trafic → primele vânzări. Fără umplutură.</p></div>
-      <div class="card rounded-2xl p-6 border border-white/10"><div class="text-2xl">⚙️</div><h4 class="mt-2 font-semibold">Rețete de Automatizare</h4><p class="text-slate-300 mt-1">Fluxuri pentru conținut, lead-uri, follow-up și suport — pornești și AI muncește.</p></div>
-    </div>
-  </section>
-
-  <!-- Proof -->
-  <section class="max-w-6xl mx-auto px-4 py-8">
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="card rounded-2xl p-6 border border-white/10"><div class="text-4xl">✅</div><h4 class="mt-2 font-semibold">Claritate, nu teorie</h4><p class="text-slate-300 mt-1">Fără generalități. Doar asset-uri și checklist-uri care mișcă acul.</p></div>
-      <div class="card rounded-2xl p-6 border border-white/10"><div class="text-4xl">⚡</div><h4 class="mt-2 font-semibold">Zero → live în 72h</h4><p class="text-slate-300 mt-1">Cei mai mulți publică v1 în sub 3 zile — chiar fără audiență.</p></div>
-      <div class="card rounded-2xl p-6 border border-white/10"><div class="text-4xl">💸</div><h4 class="mt-2 font-semibold">Fără risc</h4><p class="text-slate-300 mt-1">Acces pe viață pentru <strong>27 €</strong> + refund 14 zile.</p></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="max-w-5xl mx-auto px-4 py-12">
-    <h3 class="text-2xl font-semibold text-center mb-6">Întrebări frecvente</h3>
-    <div class="space-y-3">
-      <details class="card rounded-2xl p-5 border border-white/10"><summary class="cursor-pointer font-semibold">Am nevoie de programare sau design?</summary><p class="mt-2 text-slate-300">Nu. Paginile și mesajele sunt pre-construite. Tu personalizezi și publici.</p></details>
-      <details class="card rounded-2xl p-5 border border-white/10"><summary class="cursor-pointer font-semibold">Dacă nu am audiență?</summary><p class="mt-2 text-slate-300">Primești plan de trafic pe 7 zile + template-uri de video scurt ca să pornești de la zero.</p></details>
-      <details class="card rounded-2xl p-5 border border-white/10"><summary class="cursor-pointer font-semibold">Cei 27 € sunt abonament?</summary><p class="mt-2 text-slate-300">Nu. Plată unică pentru acces pe viață și update-uri.</p></details>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="max-w-7xl mx-auto px-4 pb-20 text-center">
-    <p class="text-rose-400 font-semibold">⚠️ Locuri limitate: prețul crește curând. Blochează 27 € acum.</p>
-    <div class="mt-4 flex flex-wrap gap-3 justify-center">
-      <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=bottom_cta&utm_lang=ro" target="_blank" rel="noopener"><button class="shine glow rounded-2xl bg-amber-400 hover:bg-amber-500 text-black font-semibold text-lg px-8 py-4">🚀 Intră azi — 27 €</button></a>
-      <a href="#contact"><button class="rounded-2xl border border-white/15 px-6 py-4 font-semibold">Întreabă-ne ceva</button></a>
-      <a href="https://florinwave0.gumroad.com" target="_blank" rel="noopener"><button class="rounded-2xl border border-amber-300/40 text-amber-200 px-6 py-4 font-semibold">Vezi toate produsele</button></a>
-    </div>
-  </section>
-
-  <!-- Sticky CTA -->
-  <div class="sticky-cta w-full px-4">
-    <div class="max-w-7xl mx-auto">
-      <div class="card rounded-2xl border border-white/10 flex items-center justify-between gap-3 p-3">
-        <div class="text-sm text-slate-300">Gata să pornești AI cashflow?</div>
-        <a href="https://gumroad.com/l/gptcashflow?utm_source=site&utm_medium=sticky_cta&utm_lang=ro" target="_blank" rel="noopener"><button class="shine glow rounded-xl bg-amber-400 hover:bg-amber-500 text-black font-semibold px-4 py-2">Start 27 €</button></a>
+    <section class="grid" aria-label="Planuri">
+      <div class="col-6">
+        <div class="card">
+          <h3>Starter</h3>
+          <p class="muted">Intră rapid în joc cu esențialul.</p>
+          <ul>
+            <li>• Landing page premium</li>
+            <li>• 5 emailuri funnel</li>
+            <li>• 10 prompturi GPT</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-ghost" data-cta="gumroad">Vezi pe Gumroad</a>
+          </div>
+        </div>
       </div>
+      <div class="col-6">
+        <div class="card">
+          <h3>Pro</h3>
+          <p class="muted">Tot ce ai în Starter + automatizări.</p>
+          <ul>
+            <li>• Secțiuni extra + UI kit</li>
+            <li>• 10 emailuri funnel</li>
+            <li>• Automatizări MailerLite</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" data-cta="gumroad">Cumpără Pro</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-buy">
+    <div class="container sticky-inner">
+      <div>
+        <div class="sticky-title">CashFlowLab — pachet premium</div>
+        <div class="muted">Lansează-ți funnelul în câteva ore.</div>
+      </div>
+      <a class="btn btn-primary" data-cta="gumroad">Cumpără pe Gumroad</a>
     </div>
   </div>
 
-  <footer id="contact" class="border-t border-white/5 text-center text-slate-400 text-sm py-6">
-    CashFlowLab — Sistemul AI care livrează cashflow cât dormi.
+  <footer class="container center">
+    <small>© <span id="year"></span> CashFlowLab. Toate drepturile rezervate.</small>
   </footer>
 
   <script>
-    // Countdown 48h de la prima vizită (cheie separată pentru RO)
-    (function(){
-      const KEY='cfl_deadline_ro', el=document.getElementById('countdown'); if(!el) return;
-      let d=localStorage.getItem(KEY); d=d?Number(d):Date.now()+1000*60*60*48; localStorage.setItem(KEY,String(d));
-      function tick(){const diff=d-Date.now(); if(diff<=0){el.textContent='00:00:00';return;}
-        const h=String(Math.floor(diff/3.6e6)).padStart(2,'0');
-        const m=String(Math.floor((diff%3.6e6)/6e4)).padStart(2,'0');
-        const s=String(Math.floor((diff%6e4)/1000)).padStart(2,'0');
-        el.textContent=`${h}:${m}:${s}`; requestAnimationFrame(tick);} tick();
-    })();
+    // Setează href pentru toate butoanele marcate cu data-cta="gumroad"
+   const GUMROAD_URL = "https://florinwave0.gumroad.com/l/yspwee";
+    ctas.forEach(a => {
+      a.href = GUMROAD_URL && !GUMROAD_URL.includes("PASTE_") ? GUMROAD_URL : "#";
+      a.addEventListener('click', (e)=>{
+        if(!GUMROAD_URL || GUMROAD_URL.includes("PASTE_")){
+          e.preventDefault();
+          alert('Setează mai întâi variabila GUMROAD_URL din partea de sus a paginii cu linkul tău complet de Gumroad.');
+        }
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
