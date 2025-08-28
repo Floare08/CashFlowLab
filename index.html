@@ -388,5 +388,22 @@
   setLang(initial);
 });
   </script>
+<script>
+(function(){
+  function ready(fn){ if(document.readyState!=='loading') fn(); else document.addEventListener('DOMContentLoaded', fn); }
+  ready(function(){
+    // Attach language button handlers after DOM is ready
+    const langBtns = document.querySelectorAll('[data-lang]');
+    if(langBtns.length){
+      langBtns.forEach(b=>{ b.addEventListener('click', ()=> setLang(b.getAttribute('data-lang'))); });
+    }
+    // Initialize language: URL > saved > RO default
+    const qp = new URLSearchParams(location.search).get('lang');
+    const saved = localStorage.getItem('lang');
+    const initial = (qp==='ro'||qp==='en') ? qp : ((saved==='ro'||saved==='en') ? saved : 'ro');
+    setLang(initial);
+  });
+})();
+</script>
 </body>
 </html>
