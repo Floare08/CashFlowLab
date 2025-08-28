@@ -35,7 +35,7 @@
       background-attachment: fixed; }
 
     a{color:inherit}
-    .container{max-width:1200px; margin-inline:auto; padding:8px 12px}
+    .container{max-width:100%; margin:0; padding:8px 12px}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .logo{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.06em}
     .logo-img{height:36px; width:auto; border-radius:8px; display:block}
@@ -51,15 +51,15 @@
     .card{padding:18px; border-radius:16px; border:0; background:transparent}
 
     .hero{padding:8px 12px 0}
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:12px}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:8px}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
     h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:4px 0 6px}
     p.sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 16px}
     .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
 
     /* Hero media block shows gradient even if image fails */
-    .hero-media{min-height:220px; border-radius:var(--rad); position:relative; overflow:hidden; background:radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.20), transparent 60%)}
-    .hero-img{width:100%; height:100%; object-fit:cover; display:block}
+    .hero-media{min-height:0; border-radius:var(--rad); position:relative; overflow:hidden; background:radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.20), transparent 60%)}
+    .hero-img{width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; display:block}
     .section{padding:8px 12px}
   </style>
 </head>
@@ -101,7 +101,7 @@
       <aside class="hero-media" aria-label="CashFlowLab visual">
         <picture>
           <source srcset="../hero-tech.webp" type="image/webp">
-          <img id="heroImgEN" src="../hero-tech.png" alt="CashFlowLab preview" class="hero-img" width="1600" height="900" fetchpriority="high" onerror="this.style.display='none'">
+          <img id="heroImgEN" src="../hero-tech.png" alt="CashFlowLab preview" class="hero-img" width="1600" height="900" fetchpriority="high" onerror="(function(img){var aside=img.closest('.hero-media'); if(aside) aside.remove(); var grid=document.querySelector('.hero-grid'); if(grid) grid.style.gridTemplateColumns='1fr';})(this)">
         </picture>
       </aside>
     </section>
@@ -201,14 +201,20 @@
 (function(){
   var img = document.getElementById('heroImgEN');
   if(!img) return;
-  if(img.complete && img.naturalWidth>0) return; // already loaded
+  function collapse(){
+    var aside = img.closest('.hero-media'); if(aside) aside.remove();
+    var grid = document.querySelector('.hero-grid'); if(grid) grid.style.gridTemplateColumns='1fr';
+  }
+  // If image already failed
+  if(img.complete && img.naturalWidth===0){ collapse(); return; }
+  // Try common paths; if none, collapse the media column
   var cand = ['../hero-tech.png','../assets/hero-tech.png','/hero-tech.png','/assets/hero-tech.png','hero-tech.png'];
-  var i = 0;
+  var i = 0; var found = false;
   function next(){
-    if(i>=cand.length){ return; }
+    if(i>=cand.length){ if(!found) collapse(); return; }
     var url = cand[i++];
     var test = new Image();
-    test.onload = function(){ img.style.display='block'; img.src = url; };
+    test.onload = function(){ found = true; img.src = url; };
     test.onerror = next;
     test.src = url;
   }
