@@ -35,7 +35,7 @@
       background-attachment: fixed; }
 
     a{color:inherit}
-    .container{max-width:1100px; margin-inline:auto; padding:24px}
+    .container{max-width:1100px; margin-inline:auto; padding:12px 16px}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .logo{display:flex; align-items:center; gap:12px; font-weight:900; letter-spacing:.06em}
     .logo-img{height:36px; width:auto; border-radius:8px; display:block}
@@ -50,17 +50,18 @@
     .glass{background:transparent; border:0; box-shadow:none}
     .card{padding:18px; border-radius:16px; border:0; background:transparent}
 
-    .hero{padding:36px 24px 0}
-    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:26px}
+    .hero{padding:12px 16px 0}
+    .hero-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:16px}
     @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
-    h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:12px 0 10px}
+    h1{font-size:clamp(28px,4vw,46px); line-height:1.06; margin:8px 0 8px}
     p.sub{color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 16px}
     .pill{display:inline-flex; align-items:center; gap:10px; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:linear-gradient(90deg, rgba(196,164,107,.14), rgba(139,92,246,.18));}
 
     /* Hero media block shows gradient even if image fails */
-    .hero-media{min-height:320px; border-radius:var(--rad); position:relative; overflow:hidden;
+    .hero-media{min-height:260px; border-radius:var(--rad); position:relative; overflow:hidden;
       background:radial-gradient(600px 420px at 80% 20%, rgba(139,92,246,.24), transparent 60%)}
     .hero-img{width:100%; height:100%; object-fit:cover; display:block}
+    .section{padding:12px 16px}
   </style>
 </head>
 <body>
@@ -101,7 +102,7 @@
       <aside class="hero-media" aria-label="CashFlowLab visual">
         <picture>
           <source srcset="../hero-tech.webp" type="image/webp">
-          <img src="../hero-tech.png" alt="CashFlowLab preview" class="hero-img" width="1600" height="900" fetchpriority="high" onerror="this.style.display='none'">
+          <img id="heroImgEN" src="../hero-tech.png" alt="CashFlowLab preview" class="hero-img" width="1600" height="900" fetchpriority="high" onerror="this.style.display='none'">
         </picture>
       </aside>
     </section>
@@ -191,11 +192,29 @@
   </main>
 
   <!-- Footer -->
-  <footer class="container" style="padding:40px 24px 80px; text-align:center; color:#b6b3d1">
+  <footer class="container" style="padding:24px 16px 56px; text-align:center; color:#b6b3d1">
     <div class="center" style="margin-bottom:10px">
       <a class="btn btn-primary" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener" aria-label="Buy CashFlowLab">Buy CashFlowLab</a>
     </div>
     <small>© CashFlowLab. All rights reserved.</small>
   </footer>
+<script>
+(function(){
+  var img = document.getElementById('heroImgEN');
+  if(!img) return;
+  if(img.complete && img.naturalWidth>0) return; // already loaded
+  var cand = ['../hero-tech.png','../assets/hero-tech.png','/hero-tech.png','/assets/hero-tech.png','hero-tech.png'];
+  var i = 0;
+  function next(){
+    if(i>=cand.length){ return; }
+    var url = cand[i++];
+    var test = new Image();
+    test.onload = function(){ img.style.display='block'; img.src = url; };
+    test.onerror = next;
+    test.src = url;
+  }
+  next();
+})();
+</script>
 </body>
 </html>
