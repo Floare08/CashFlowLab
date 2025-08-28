@@ -114,8 +114,96 @@
               <rect x="30" y="30" width="540" height="60" rx="12" fill="#101828" stroke="#1f2a44"/>
               <rect x="30" y="110" width="260" height="180" rx="16" fill="#101828" stroke="#1f2a44"/>
               <rect x="310" y="110" width="260" height="180" rx="16" fill="#101828" stroke="#1f2a44"/>
-              <path d="M60 230 C120 120, 220 300, 270 160" stroke="url(#grad1)" stroke-width="6" fill="none"/>
-              <circle cx="340" cy="200" r="56" fill="none" stroke="url(#grad1)" stroke-width="8"/>
+              <!-- 3D Floating Hexagon (replaces curved line) -->
+<defs>
+  <linearGradient id="hexFace" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#d4af37"/>
+    <stop offset="50%" stop-color="#f5d36c"/>
+    <stop offset="100%" stop-color="#8b5cf6"/>
+  </linearGradient>
+  <linearGradient id="hexSide" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#1fa2ff"/>
+    <stop offset="100%" stop-color="#0ea5e9"/>
+  </linearGradient>
+  <filter id="softGlow">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge>
+      <feMergeNode in="b"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs>
+<g id="hex3d" transform="translate(165 195)">
+  <g transform="skewX(-8)">
+    <g filter="url(#softGlow)">
+      <!-- back face -->
+      <polygon points="14,-28 48.64,-8 48.64,32 14,52 -20.64,32 -20.64,-8" fill="#0b142c" stroke="#1f2a44" stroke-width="2" opacity="0.9"/>
+      <!-- side faces -->
+      <polygon points="34.64,-20 34.64,20 48.64,32 48.64,-8" fill="url(#hexSide)" opacity="0.8"/>
+      <polygon points="-34.64,-20 0,-40 14,-28 -20.64,-8" fill="url(#hexSide)" opacity="0.8"/>
+      <polygon points="-34.64,20 0,40 14,52 -20.64,32" fill="url(#hexSide)" opacity="0.6"/>
+      <!-- front face -->
+      <polygon points="0,-40 34.64,-20 34.64,20 0,40 -34.64,20 -34.64,-20" fill="url(#hexFace)" stroke="url(#hexSide)" stroke-width="3"/>
+      <!-- highlight -->
+      <polyline points="-20,-10 10,-25 26,-14" fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="translate" values="0 -3; 0 3; 0 -3" dur="5s" repeatCount="indefinite"/>
+    </g>
+  </g>
+</g>
+              <!-- Hologram Honeycomb (replaces circle) -->
+<defs>
+  <radialGradient id="holoGrad" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#8b5cf6" stop-opacity=".9"/>
+    <stop offset="60%" stop-color="#1fa2ff" stop-opacity=".5"/>
+    <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="holoGlow">
+    <feGaussianBlur stdDeviation="2" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="holoClip"><circle cx="0" cy="0" r="64"/></clipPath>
+  <symbol id="hcell" viewBox="-8 -8 16 16">
+    <polygon points="0,-8 6.93,-4 6.93,4 0,8 -6.93,4 -6.93,-4" fill="none" stroke="#7dd3fc" stroke-width="1"/>
+  </symbol>
+</defs>
+<g id="holo" transform="translate(420 200) skewY(-10)">
+  <!-- outer hologram ring -->
+  <circle cx="0" cy="0" r="64" fill="none" stroke="url(#holoGrad)" stroke-width="4" stroke-dasharray="8 8">
+    <animate attributeName="stroke-dashoffset" values="0;16;0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <!-- honeycomb grid clipped to circle -->
+  <g clip-path="url(#holoClip)" filter="url(#holoGlow)" opacity=".85">
+    <g>
+      <use href="#hcell" x="-28" y="-28"/>
+      <use href="#hcell" x="-14" y="-28"/>
+      <use href="#hcell" x="0" y="-28"/>
+      <use href="#hcell" x="14" y="-28"/>
+      <use href="#hcell" x="28" y="-28"/>
+    </g>
+    <g transform="translate(7,14)">
+      <use href="#hcell" x="-28" y="-28"/>
+      <use href="#hcell" x="-14" y="-28"/>
+      <use href="#hcell" x="0" y="-28"/>
+      <use href="#hcell" x="14" y="-28"/>
+      <use href="#hcell" x="28" y="-28"/>
+    </g>
+    <g transform="translate(0,28)">
+      <use href="#hcell" x="-28" y="-28"/>
+      <use href="#hcell" x="-14" y="-28"/>
+      <use href="#hcell" x="0" y="-28"/>
+      <use href="#hcell" x="14" y="-28"/>
+      <use href="#hcell" x="28" y="-28"/>
+    </g>
+    <g transform="translate(7,42)">
+      <use href="#hcell" x="-28" y="-28"/>
+      <use href="#hcell" x="-14" y="-28"/>
+      <use href="#hcell" x="0" y="-28"/>
+      <use href="#hcell" x="14" y="-28"/>
+      <use href="#hcell" x="28" y="-28"/>
+    </g>
+  </g>
+  <animate attributeName="opacity" values=".75;1;.75" dur="4s" repeatCount="indefinite"/>
+</g>
               <text x="40" y="68" fill="#e5e7eb" font-size="18" font-family="Inter,system-ui">CashFlowLab • Dashboard</text>
             </svg>
           </div>
