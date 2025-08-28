@@ -102,7 +102,7 @@
         <p class="muted" style="margin-top:10px">Secure payment on Gumroad • Instant access • Updates included</p>
       </div>
       <aside class="hero-media" aria-label="CashFlowLab visual">
-        <img src="hero-tech.png" alt="CashFlowLab preview" class="hero-img" onerror="this.style.display='none'; this.parentElement.classList.add('noimg')">
+        <img id="heroImgEn" src="/hero-tech.png" alt="CashFlowLab preview" class="hero-img">
       </aside>
     </section>
 
@@ -212,5 +212,23 @@
     </div>
     <small>© CashFlowLab. All rights reserved.</small>
   </footer>
+<script>
+  (function(){
+    var img = document.getElementById('heroImgEn');
+    if(!img) return;
+    var paths = ['/hero-tech.png','../hero-tech.png','hero-tech.png'];
+    var i = 0;
+    function setNext(){
+      img.onerror = function(){
+        i++;
+        if(i < paths.length){ img.src = paths[i]; }
+        else { img.onerror=null; img.style.display='none'; var p = img.parentElement; if(p) p.classList.add('noimg'); }
+      };
+      img.src = paths[i];
+    }
+    // if the initial /hero-tech.png didn't load, onerror will advance
+    setNext();
+  })();
+</script>
 </body>
 </html>
