@@ -1,4 +1,4 @@
-  <!doctype html>
+<!doctype html>
 <html lang="ro">
 <head>
   <meta charset="utf-8">
@@ -15,7 +15,7 @@
   <!-- Preload hero -->
   <link rel="preload" as="image" href="hero-tech.png" imagesrcset="hero-tech.png 1600w" imagesizes="(max-width:1060px) 100vw, 50vw">
 
-  <!-- Icons / Manifest (opțional, dacă fișierele există) -->
+  <!-- Icons / Manifest -->
   <link rel="icon" href="/favicon-32.png" sizes="32x32">
   <link rel="icon" href="/favicon-16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -53,8 +53,12 @@
     a{color:inherit}
     .container{max-width:100%; padding:10px 14px}
     .nav{display:flex; justify-content:space-between; align-items:center; gap:10px}
-    .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em}
-    .logo img{height:28px; width:auto; border-radius:8px}
+
+    /* LOGO fix (SVG + o singură linie, fără dubluri) */
+    .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em; white-space:nowrap; text-decoration:none}
+    .logo img{height:28px; width:28px; border-radius:8px; flex:0 0 28px}
+    .brand{white-space:nowrap}
+
     .links{display:flex; gap:10px; align-items:center}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px;
          border:1px solid rgba(255,255,255,.1); border-radius:12px; text-decoration:none; font-weight:800}
@@ -117,7 +121,7 @@
     "@type":"Organization",
     "name":"CashFlowLab",
     "url":"/",
-    "logo":"/cashflowlab-logo.png",
+    "logo":"/cashflowlab-mark.svg",
     "sameAs":[
       "https://www.instagram.com/",
       "https://x.com/"
@@ -163,10 +167,10 @@
   <!-- NAV -->
   <header class="container">
     <nav class="nav" aria-label="Navigație principală">
-      <div class="logo">
-        <img src="cashflowlab-logo.png" alt="CashFlowLab" onerror="this.style.display='none'">
-        <span>CASHFLOWLAB</span>
-      </div>
+      <a class="logo" href="/" aria-label="CashFlowLab">
+        <img src="/cashflowlab-mark.svg" alt="" aria-hidden="true" width="28" height="28">
+        <span class="brand">CASHFLOWLAB</span>
+      </a>
       <div class="links">
         <span class="btn ghost" aria-current="page">RO</span>
         <a class="btn ghost" href="/en/index.html" hreflang="en" lang="en">EN</a>
@@ -208,13 +212,12 @@
     </section>
   </main>
 
-  <!-- FEATURES cu iconițe -->
+  <!-- FEATURES -->
   <section id="features" class="section" aria-labelledby="features-title">
     <h2 id="features-title">De ce funcționează</h2>
     <div class="grid-3">
       <div class="card iconed">
         <span class="icon" aria-hidden="true">
-          <!-- target -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Țintă"><path d="M12 2a10 10 0 1010 10h-2A8 8 0 1112 4V2zm0 4a6 6 0 106 6h-2a4 4 0 11-4-4V6zm1 2v3.586l2.707 2.707-1.414 1.414L11 12.414V8h2z"/></svg>
         </span>
         <div>
@@ -224,7 +227,6 @@
       </div>
       <div class="card iconed">
         <span class="icon icon-gold" aria-hidden="true">
-          <!-- rocket -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Rachetă"><path d="M14 3l7 7-4 1-3 3-1 4-7-7 4-1 3-3 1-4zM5 19l3-3-1 4-2 1 0-2z"/></svg>
         </span>
         <div>
@@ -234,7 +236,6 @@
       </div>
       <div class="card iconed">
         <span class="icon" aria-hidden="true">
-          <!-- activity pulse -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Activitate"><path d="M3 12h4l2-6 4 16 2-10h4"/></svg>
         </span>
         <div>
@@ -245,13 +246,12 @@
     </div>
   </section>
 
-  <!-- INSIDE cu iconițe -->
+  <!-- INSIDE -->
   <section id="inside" class="section" aria-labelledby="inside-title">
     <h2 id="inside-title">Ce primești</h2>
     <div class="grid-2">
       <div class="card iconed">
         <span class="icon" aria-hidden="true">
-          <!-- layers -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Straturi"><path d="M12 2l9 5-9 5L3 7l9-5zm0 8l9 5-9 5-9-5 9-5zm0 6l6 3-6 3-6-3 6-3z"/></svg>
         </span>
         <div>
@@ -265,7 +265,6 @@
       </div>
       <div class="card iconed">
         <span class="icon icon-gold" aria-hidden="true">
-          <!-- toolbox -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Trusă unelte"><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2h3v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7h3zm2-2h6v2H9V5zm1 6h4v2h-4v-2z"/></svg>
         </span>
         <div>
@@ -280,27 +279,24 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS cu iconițe -->
+  <!-- HOW IT WORKS -->
   <section class="section" aria-labelledby="how-title">
     <h2 id="how-title">Cum lucrăm</h2>
     <div class="grid-3">
       <div class="step iconed">
         <span class="icon" aria-hidden="true">
-          <!-- flag -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Steag"><path d="M4 3h2v18H4V3zm3 2h9l-1 3 1 3H7V5z"/></svg>
         </span>
         <div><b>1) Setăm țintele</b><p class="muted">Clarificăm oferta și pragurile de venit.</p></div>
       </div>
       <div class="step iconed">
         <span class="icon icon-gold" aria-hidden="true">
-          <!-- bolt -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Fulger"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
         </span>
         <div><b>2) Lansezi rapid</b><p class="muted">Publici pagina, secvența de email, primele postări.</p></div>
       </div>
       <div class="step iconed">
         <span class="icon" aria-hidden="true">
-          <!-- optimize -->
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Optimizează"><path d="M17 1l4 4-4 4V6H7a3 3 0 000 6h3v2H7A5 5 0 117 4h10V1zm0 11a3 3 0 010 6H14v2h3a5 5 0 000-10h-3v2h3z"/></svg>
         </span>
         <div><b>3) Optimizezi</b><p class="muted">Iterăm pe feedback și scalezi ce funcționează.</p></div>
@@ -363,7 +359,7 @@
     });
   </script>
 
-  <!-- Google tag (gtag.js) — deblochează după ce ai un ID GA4 -->
+  <!-- Google tag (gtag.js) — deblochează după ce ai un ID GA4) -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
