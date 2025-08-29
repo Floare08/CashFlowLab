@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D7BF8A"/>
+      <stop offset="50%" stop-color="#C4A46B"/>
+      <stop offset="100%" stop-color="#9F7A3C"/>
+    </linearGradient>
+  </defs>
+  <g fill="none">
+    <path d="M 856.044 752.902 A 420.000 420.000 0 1 1 856.044 271.098"
+          stroke="url(#gold)" stroke-width="82" stroke-linecap="round"/>
+    <circle cx="832" cy="512" r="56" fill="#8B5CF6"/>
+  </g>
+</svg>

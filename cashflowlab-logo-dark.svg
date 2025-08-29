@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 320">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D7BF8A"/>
+      <stop offset="50%" stop-color="#C4A46B"/>
+      <stop offset="100%" stop-color="#9F7A3C"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F5F4FF"/>
+      <stop offset="100%" stop-color="#C4A46B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="320" fill="none"/>
+  <g transform="translate(40,40)">
+    <g transform="translate(0,0)">
+      <path d="M 258.298 188.829 A 120.000 120.000 0 1 1 258.298 51.171" stroke="url(#gold)" stroke-width="24" stroke-linecap="round" fill="none"/>
+      <circle cx="252" cy="120" r="16" fill="#8B5CF6"/>
+    </g>
+    <g transform="translate(320,32)">
+      <text x="0" y="140" fill="url(#textGrad)"
+            font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif"
+            font-weight="900" font-size="128" letter-spacing="3">CASHFLOWLAB</text>
+    </g>
+  </g>
+</svg>
