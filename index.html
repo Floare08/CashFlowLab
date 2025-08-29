@@ -4,23 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ★ Brand + SEO de bază -->
-  <title>CashFlowLabAI — Plan + Kit de lansare | Premium AI Funnels</title>
-  <meta name="description" content="CashFlowLabAI: plan + kit pentru cashflow real. Pași clari, șabloane premium și lansare rapidă. €27 + taxe.">
+  <title>CASHFLOWLAB — Plan + Kit de lansare | Premium AI Funnels</title>
+  <meta name="description" content="Plan + Kit pentru cashflow real. Pași clari, șabloane premium, lansare rapidă. €27 + taxe.">
   <meta name="theme-color" content="#0e0b1f">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://cashflowlabai.com/">
 
-  <!-- ★ Hreflang (URL-uri absolute + x-default) -->
-  <link rel="alternate" hreflang="ro" href="https://cashflowlabai.com/">
-  <link rel="alternate" hreflang="en" href="https://cashflowlabai.com/en/">
-  <link rel="alternate" hreflang="x-default" href="https://cashflowlabai.com/">
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="ro" href="/index.html">
+  <link rel="alternate" hreflang="en" href="/en/index.html">
 
-  <!-- ★ Preload cover (nou) -->
-  <link rel="preload" as="image"
-        href="/assets/cover-ro-1920x1080.webp"
-        imagesrcset="/assets/cover-ro-1080.webp 1080w, /assets/cover-ro-1920x1080.webp 1920w"
-        imagesizes="(max-width:1060px) 100vw, 50vw">
+  <!-- Preload hero -->
+  <link rel="preload" as="image" href="hero-tech.png" imagesrcset="hero-tech.png 1600w" imagesizes="(max-width:1060px) 100vw, 50vw">
 
   <!-- Icons / Manifest -->
   <link rel="icon" href="/favicon-32.png" sizes="32x32">
@@ -28,28 +22,27 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- ★ Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="CashFlowLabAI">
-  <meta property="og:title" content="CashFlowLabAI — Plan + Kit de lansare">
+  <!-- Open Graph -->
+  <meta property="og:title" content="CashFlowLab — Plan + Kit de lansare">
   <meta property="og:description" content="Pași clari, șabloane premium, lansare rapidă. €27 + taxe.">
-  <meta property="og:url" content="https://cashflowlabai.com/">
-  <meta property="og:image" content="https://cashflowlabai.com/assets/cover-ro-1920x1080.webp">
-  <meta property="og:image:alt" content="Previzualizare CashFlowLabAI">
+  <meta property="og:image" content="/hero-tech.png">
+  <meta property="og:image:alt" content="Previzualizare CashFlowLab">
+  <meta property="og:type" content="website">
   <meta property="og:locale" content="ro_RO">
 
-  <!-- ★ Twitter -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CashFlowLabAI — Plan + Kit de lansare">
+  <meta name="twitter:title" content="CashFlowLab — Plan + Kit de lansare">
   <meta name="twitter:description" content="Pași clari, șabloane premium, lansare rapidă. €27 + taxe.">
-  <meta name="twitter:image" content="https://cashflowlabai.com/assets/cover-ro-1920x1080.webp">
+  <meta name="twitter:image" content="/hero-tech.png">
 
   <style>
     :root{
       --text:#f5f4ff; --muted:#bcb8d6; --gold:#c4a46b; --accent:#8b5cf6;
       --bg1:#100d1e; --bg2:#0c0a14; --rad:16px
     }
-    *{box-sizing:border-box} html,body{height:100%}
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0; color:var(--text);
       font-family:system-ui,Segoe UI,Roboto,Arial,Helvetica;
@@ -63,14 +56,13 @@
     .container{max-width:100%; padding:10px 14px}
     .nav{display:flex; justify-content:space-between; align-items:center; gap:10px}
 
-    /* LOGO */
+    /* LOGO fix (SVG + o singură linie, fără dubluri) */
     .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em; white-space:nowrap; text-decoration:none}
     .logo img{height:28px; width:28px; border-radius:8px; flex:0 0 28px}
     .brand{white-space:nowrap}
 
     .links{display:flex; gap:10px; align-items:center}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px;
-         border:1px solid rgba(255,255,255,.1); border-radius:12px; text-decoration:none; font-weight:800}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid rgba(255,255,255,.1); border-radius:12px; text-decoration:none; font-weight:800}
     .gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.03)); border-color:rgba(196,164,107,.35)}
     .ghost{background:transparent}
 
@@ -81,8 +73,7 @@
     .lead{color:var(--muted); font-size:clamp(16px,2.2vw,19px); margin:0 0 12px; max-width:62ch}
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0}
     .chip{padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(255,255,255,.04); font-weight:600}
-    .strip{margin:10px 0; padding:10px 12px; border:1px solid rgba(255,255,255,.12);
-           border-radius:14px; background:rgba(255,255,255,.04); display:inline-flex; gap:12px; flex-wrap:wrap}
+    .strip{margin:10px 0; padding:10px 12px; border:1px solid rgba(255,255,255,.12); border-radius:14px; background:rgba(255,255,255,.04); display:inline-flex; gap:12px; flex-wrap:wrap}
 
     /* HERO image în dreapta */
     .hero-media{
@@ -117,52 +108,54 @@
     .icon svg{width:20px; height:20px; color:#fff; opacity:.95}
     .icon-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.04)); border-color:rgba(196,164,107,.35)}
 
+    /* Preferință pentru utilizatori cu reduce-motion */
     @media (prefers-reduced-motion: reduce){
       .btn:hover,.btn:active{transform:none !important}
     }
   </style>
 
-  <!-- ★ Schema.org Organization -->
+  <!-- Schema.org Organization -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Organization",
-    "name":"CashFlowLabAI",
-    "url":"https://cashflowlabai.com/",
-    "logo":"https://cashflowlabai.com/cashflowlab-mark.svg",
+    "name":"CashFlowLab",
+    "url":"/",
+    "logo":"/cashflowlab-mark.svg",
     "sameAs":[
-      "https://florinwave0.gumroad.com/"
+      "https://www.instagram.com/",
+      "https://x.com/"
     ]
   }
   </script>
 
-  <!-- ★ Schema.org WebSite -->
+  <!-- Schema.org WebSite -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebSite",
-    "name":"CashFlowLabAI",
-    "url":"https://cashflowlabai.com/",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://cashflowlabai.com/?q={search_term_string}",
-      "query-input":"required name=search_term_string"
+    "name":"CashFlowLab",
+    "url":"/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
   }
   </script>
 
-  <!-- ★ Schema.org Product -->
+  <!-- Schema.org Product -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Product",
-    "name":"CashFlowLabAI — Plan + Kit de lansare",
+    "name":"CashFlowLab — Plan + Kit de lansare",
     "description":"Plan + Kit pentru cashflow real: pași clari, șabloane premium, lansare rapidă.",
-    "image":"https://cashflowlabai.com/assets/cover-ro-1920x1080.webp",
-    "brand":{"@type":"Brand","name":"CashFlowLabAI"},
+    "image":"/hero-tech.png",
+    "brand":{"@type":"Brand","name":"CashFlowLab"},
     "offers":{
       "@type":"Offer",
-      "price":"27.00",
+      "price":"27",
       "priceCurrency":"EUR",
       "url":"https://florinwave0.gumroad.com/l/yspwee",
       "availability":"https://schema.org/InStock"
@@ -174,13 +167,13 @@
   <!-- NAV -->
   <header class="container">
     <nav class="nav" aria-label="Navigație principală">
-      <a class="logo" href="/" aria-label="CashFlowLabAI">
+      <a class="logo" href="/" aria-label="CashFlowLab">
         <img src="/cashflowlab-mark.svg" alt="" aria-hidden="true" width="28" height="28">
-        <span class="brand">CASHFLOWLABAI</span>
+        <span class="brand">CASHFLOWLAB</span>
       </a>
       <div class="links">
         <span class="btn ghost" aria-current="page">RO</span>
-        <a class="btn ghost" href="https://cashflowlabai.com/en/" hreflang="en" lang="en">EN</a>
+        <a class="btn ghost" href="/en/index.html" hreflang="en" lang="en">EN</a>
         <a class="btn gold" href="#pricing" aria-label="Mergi la preț">Cumpără</a>
       </div>
     </nav>
@@ -205,17 +198,15 @@
           <a class="btn ghost" href="#inside">Vezi ce conține</a>
         </p>
         <div class="strip">€27 <b>+ taxe</b> • Plată securizată pe Gumroad • Update-uri incluse</div>
-        <p class="muted" style="margin-top:6px">Brand scris exact: <b>CashFlowLabAI</b> (un cuvânt).</p>
       </div>
 
-      <aside class="hero-media" aria-label="CashFlowLabAI vizual">
+      <aside class="hero-media" aria-label="CashFlowLab vizual">
         <img
-          src="/assets/cover-ro-1920x1080.webp"
-          srcset="/assets/cover-ro-1080.webp 1080w, /assets/cover-ro-1920x1080.webp 1920w"
-          sizes="(max-width:1060px) 100vw, 50vw"
-          alt="Previzualizare CashFlowLabAI"
+          src="hero-tech.png"
+          alt="Previzualizare CashFlowLab"
           class="hero-img"
-          width="1920" height="1080"
+          width="1600"
+          height="900"
           loading="eager"
           fetchpriority="high">
       </aside>
@@ -351,9 +342,9 @@
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div style="margin-bottom:8px">
-      <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer">Cumpără CashFlowLabAI</a>
+      <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer">Cumpără CashFlowLab</a>
     </div>
-    <small>© CashFlowLabAI. Toate drepturile rezervate.</small>
+    <small>© CashFlowLab. Toate drepturile rezervate.</small>
   </footer>
 
   <!-- Micro-optimizări performanță: lazy + decoding pentru imagini non-critice -->
@@ -369,7 +360,7 @@
     });
   </script>
 
-  <!-- Google tag (gtag.js) — activează după ce ai ID GA4) -->
+  <!-- Google tag (gtag.js) — deblochează după ce ai un ID GA4) -->
   <!--
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
