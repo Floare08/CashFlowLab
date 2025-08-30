@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CASHFLOWLAB — Launch Plan + Kit | Premium AI Funnels</title>
-  <meta name="description" content="Launch Plan + Kit for real cashflow. Clear steps, premium templates, fast launch. €27 + taxes.">
+
+  <title>CASHFLOWLAB — Free, Mini, Medium, PRO Kits | Premium AI Funnels</title>
+  <meta name="description" content="CashFlowLab: 4 kits for fast launch — Free (€0), Mini (€9), Medium (€24.99) and PRO (€49.99). Premium templates, funnels, emails 1–5, clear guide. + taxes.">
   <meta name="theme-color" content="#0e0b1f">
   <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://cashflowlabai.com/en/">
 
   <!-- Hreflang -->
   <link rel="alternate" hreflang="ro" href="/index.html">
   <link rel="alternate" hreflang="en" href="/en/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://cashflowlabai.com/">
 
   <!-- Preload hero -->
-  <link rel="preload" as="image" href="/hero-tech.png" imagesrcset="/hero-tech.png 1600w" imagesizes="(max-width:1060px) 100vw, 50vw">
+  <link rel="preload" as="image" href="https://cashflowlabai.com/hero-tech.png">
 
   <!-- Icons / Manifest -->
   <link rel="icon" href="/favicon-32.png" sizes="32x32">
@@ -21,26 +24,31 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
+  <!-- Perf hints for Gumroad -->
+  <link rel="preconnect" href="https://cashflowlabai.gumroad.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cashflowlabai.gumroad.com">
+
   <!-- Open Graph -->
-  <meta property="og:title" content="CashFlowLab — Launch Plan + Kit">
-  <meta property="og:description" content="Clear steps, premium templates, fast launch. €27 + taxes.">
-  <meta property="og:image" content="/hero-tech.png">
+  <meta property="og:title" content="CashFlowLab — Free, Mini, Medium, PRO Kits">
+  <meta property="og:description" content="Free (€0), Mini (€9), Medium (€24.99), PRO (€49.99). Premium templates, funnels, emails 1–5, clear guide. + taxes.">
+  <meta property="og:image" content="https://cashflowlabai.com/hero-tech.png">
   <meta property="og:image:alt" content="CashFlowLab preview">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="CashFlowLab">
+  <meta property="og:url" content="https://cashflowlabai.com/en/">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CashFlowLab — Launch Plan + Kit">
-  <meta name="twitter:description" content="Clear steps, premium templates, fast launch. €27 + taxes.">
-  <meta name="twitter:image" content="/hero-tech.png">
+  <meta name="twitter:title" content="CashFlowLab — Free, Mini, Medium, PRO Kits">
+  <meta name="twitter:description" content="Free (€0), Mini (€9), Medium (€24.99), PRO (€49.99). Premium templates, funnels, emails 1–5, clear guide. + taxes.">
+  <meta name="twitter:image" content="https://cashflowlabai.com/hero-tech.png">
+  <meta name="twitter:url" content="https://cashflowlabai.com/en/">
 
   <style>
-    :root{
-      --text:#f5f4ff; --muted:#bcb8d6; --gold:#c4a46b; --accent:#8b5cf6;
-      --bg1:#100d1e; --bg2:#0c0a14; --rad:16px
-    }
-    *{box-sizing:border-box} html,body{height:100%}
+    :root{ --text:#f5f4ff; --muted:#bcb8d6; --gold:#c4a46b; --accent:#8b5cf6; --bg1:#100d1e; --bg2:#0c0a14; --rad:16px }
+    *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0; color:var(--text);
       font-family:system-ui,Segoe UI,Roboto,Arial,Helvetica;
@@ -53,18 +61,13 @@
     a{color:inherit}
     .container{max-width:100%; padding:10px 14px}
     .nav{display:flex; justify-content:space-between; align-items:center; gap:10px}
-
-    /* Logo (SVG + single line, no duplicates) */
     .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em; white-space:nowrap; text-decoration:none}
     .logo img{height:28px; width:28px; border-radius:8px; flex:0 0 28px}
     .brand{white-space:nowrap}
-
     .links{display:flex; gap:10px; align-items:center}
-    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px;
-         border:1px solid rgba(255,255,255,.1); border-radius:12px; text-decoration:none; font-weight:800}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid rgba(255,255,255,.1); border-radius:12px; text-decoration:none; font-weight:800}
     .gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.03)); border-color:rgba(196,164,107,.35)}
     .ghost{background:transparent}
-
     .hero{padding:12px 14px 0}
     .hero-grid{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:10px}
     @media (max-width:1060px){ .hero-grid{grid-template-columns:1fr} }
@@ -72,20 +75,9 @@
     .lead{color:var(--muted); font-size:clamp(16px,2.2vw,19px); margin:0 0 12px; max-width:62ch}
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0}
     .chip{padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(255,255,255,.04); font-weight:600}
-    .strip{margin:10px 0; padding:10px 12px; border:1px solid rgba(255,255,255,.12);
-           border-radius:14px; background:rgba(255,255,255,.04); display:inline-flex; gap:12px; flex-wrap:wrap}
-
-    /* HERO image right */
-    .hero-media{
-      display:flex; align-items:center; justify-content:flex-end;
-      border-radius:var(--rad); overflow:hidden; min-height:260px;
-      background: radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.18), transparent 60%);
-    }
-    .hero-img{
-      max-width:100%; height:auto; object-fit:cover;
-      aspect-ratio:16/9; object-position:center right; border-radius:var(--rad);
-    }
-
+    .strip{margin:10px 0; padding:10px 12px; border:1px solid rgba(255,255,255,.12); border-radius:14px; background:rgba(255,255,255,.04); display:inline-flex; gap:12px; flex-wrap:wrap}
+    .hero-media{display:flex; align-items:center; justify-content:flex-end; border-radius:var(--rad); overflow:hidden; min-height:260px; background: radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.18), transparent 60%)}
+    .hero-img{max-width:100%; height:auto; object-fit:cover; aspect-ratio:16/9; object-position:center right; border-radius:var(--rad)}
     .section{padding:12px 14px}
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
     .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
@@ -97,83 +89,133 @@
     .footer{padding:32px 14px 60px; text-align:center; color:var(--muted)}
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
 
-    /* Icons */
-    .iconed{display:flex; align-items:flex-start; gap:10px}
+    /* === Icons (smaller) === */
     .icon{
-      display:inline-grid; place-items:center; flex:0 0 36px; height:36px; width:36px;
+      display:inline-grid; place-items:center; flex:0 0 28px; height:28px; width:28px;
       border-radius:10px;
-      background:linear-gradient(180deg, rgba(139,92,246,.28), rgba(255,255,255,.04));
+      background:linear-gradient(180deg, rgba(139,92,246,.22), rgba(255,255,255,.04));
       border:1px solid rgba(255,255,255,.12)
     }
-    .icon svg{width:20px; height:20px; color:#fff; opacity:.95}
+    .icon svg{width:16px; height:16px; color:#fff; opacity:.95}
     .icon-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.04)); border-color:rgba(196,164,107,.35)}
 
-    @media (prefers-reduced-motion: reduce){
-      .btn:hover,.btn:active{transform:none !important}
+    /* === Product grid/cards (highlight) === */
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .product-card{
+      position:relative; padding:16px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(145deg, rgba(139,92,246,.10), rgba(196,164,107,.08));
+      transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
     }
+    .product-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(196,164,107,.55);
+      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(196,164,107,.25);
+    }
+    .product-card.featured{
+      border-color:rgba(196,164,107,.75);
+      box-shadow:0 12px 36px rgba(0,0,0,.45), inset 0 0 0 1px rgba(196,164,107,.35);
+    }
+    .ribbon{
+      position:absolute; top:12px; left:-8px;
+      background:linear-gradient(180deg, rgba(196,164,107,.9), rgba(196,164,107,.65));
+      color:#0e0b1f; font-weight:900; font-size:12px; padding:6px 10px 6px 14px;
+      border-top-right-radius:999px; border-bottom-right-radius:999px;
+      border:1px solid rgba(0,0,0,.2)
+    }
+    .price-badge{
+      position:absolute; top:12px; right:12px;
+      padding:6px 10px; border-radius:999px; font-weight:800;
+      background:linear-gradient(180deg, rgba(196,164,107,.35), rgba(255,255,255,.06));
+      border:1px solid rgba(196,164,107,.45);
+    }
+    .tag-badge{
+      display:inline-block; margin-top:6px; font-size:12px; opacity:.9;
+      padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.16)
+    }
+    .product-title{margin:0 0 6px 0; font-weight:800; font-size:18px}
+    .product-desc{margin:0 0 12px 0; color:var(--muted)}
+    .product-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.16);border-radius:12px;text-decoration:none;font-weight:800;background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.03))}
+    .product-feats{margin:8px 0 10px 18px;color:var(--muted);line-height:1.5}
+    .product-feats li{margin:2px 0}
   </style>
+
+  <!-- Gumroad Overlay -->
+  <script src="https://gumroad.com/js/gumroad.js" async></script>
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"CashFlowLab",
-    "url":"/",
-    "logo":"/cashflowlab-mark.svg",
-    "sameAs":[
-      "https://www.instagram.com/",
-      "https://x.com/"
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/cashflowlab-mark.svg","sameAs":["https://www.instagram.com/","https://x.com/"]}
   </script>
 
   <!-- Schema.org WebSite -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"CashFlowLab",
-    "url":"/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"CashFlowLab","url":"https://cashflowlabai.com/","potentialAction":{"@type":"SearchAction","target":"https://cashflowlabai.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
   </script>
 
-  <!-- Schema.org Product -->
+  <!-- Schema.org Products (all 4) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"CashFlowLab — Launch Plan + Kit",
-    "description":"Launch Plan + Kit for real cashflow: clear steps, premium templates, fast launch.",
-    "image":"/hero-tech.png",
-    "brand":{"@type":"Brand","name":"CashFlowLab"},
-    "offers":{
-      "@type":"Offer",
-      "price":"27",
-      "priceCurrency":"EUR",
-      "url":"https://florinwave0.gumroad.com/l/yspwee",
-      "availability":"https://schema.org/InStock"
-    }
+    "@graph":[
+      {
+        "@type":"Product",
+        "name":"CashFlowLab Free Kit",
+        "description":"Free starter with essential checklist and quick guide — collects email and delivers instantly via Gumroad.",
+        "image":"https://cashflowlabai.com/hero-tech.png",
+        "brand":{"@type":"Brand","name":"CashFlowLab"},
+        "offers":{"@type":"Offer","price":"0.00","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/linjxk","availability":"https://schema.org/InStock"}
+      },
+      {
+        "@type":"Product",
+        "name":"CashFlowLab MINI — Starter Kit",
+        "description":"Light version: 3 critical checklists + 1–2 fast templates. Perfect for your first online revenue.",
+        "image":"https://cashflowlabai.com/hero-tech.png",
+        "brand":{"@type":"Brand","name":"CashFlowLab"},
+        "offers":{"@type":"Offer","price":"9.00","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/bpsbou","availability":"https://schema.org/InStock"}
+      },
+      {
+        "@type":"Product",
+        "name":"CashFlowLab MEDIUM — Intermediate",
+        "description":"Intermediate plan with email sequence, product page and smart automations. Built for conversion.",
+        "image":"https://cashflowlabai.com/hero-tech.png",
+        "brand":{"@type":"Brand","name":"CashFlowLab"},
+        "offers":{"@type":"Offer","price":"24.99","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/divha","availability":"https://schema.org/InStock"}
+      },
+      {
+        "@type":"Product",
+        "name":"CashFlowLab PRO — Scale Kit",
+        "description":"Complete package: 45-day plan, premium templates, funnels and scaling guide. Everything you need for cashflow.",
+        "image":"https://cashflowlabai.com/hero-tech.png",
+        "brand":{"@type":"Brand","name":"CashFlowLab"},
+        "offers":{"@type":"Offer","price":"49.99","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/udxody","availability":"https://schema.org/InStock"}
+      }
+    ]
   }
+  </script>
+
+  <!-- Schema.org ItemList (product links) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+    {"@type":"ListItem","position":1,"url":"https://cashflowlabai.gumroad.com/l/linjxk"},
+    {"@type":"ListItem","position":2,"url":"https://cashflowlabai.gumroad.com/l/bpsbou"},
+    {"@type":"ListItem","position":3,"url":"https://cashflowlabai.gumroad.com/l/divha"},
+    {"@type":"ListItem","position":4,"url":"https://cashflowlabai.gumroad.com/l/udxody"}
+  ]}
   </script>
 </head>
 <body>
   <!-- NAV -->
   <header class="container">
-    <nav class="nav" aria-label="Primary navigation">
+    <nav class="nav" aria-label="Main navigation">
       <a class="logo" href="/en/" aria-label="CashFlowLab">
-        <img src="/cashflowlab-mark.svg" alt="" aria-hidden="true" width="28" height="28">
+        <img src="https://cashflowlabai.com/cashflowlab-mark.svg" alt="" aria-hidden="true" width="28" height="28">
         <span class="brand">CASHFLOWLAB</span>
       </a>
       <div class="links">
         <a class="btn ghost" href="/index.html" hreflang="ro" lang="ro">RO</a>
         <span class="btn ghost" aria-current="page">EN</span>
-        <a class="btn gold" href="#pricing" aria-label="Go to price">Buy</a>
+        <a class="btn gold" href="#kits" aria-label="Jump to kits">Shop</a>
       </div>
     </nav>
   </header>
@@ -182,31 +224,25 @@
   <main class="container hero" id="main">
     <section class="hero-grid" aria-labelledby="hero-title">
       <div>
-        <h1 id="hero-title">Launch Plan + Kit for <span style="color:var(--gold)">real cashflow</span>.</h1>
-        <p class="lead">Clear steps, ready-to-use templates, and guidance. Launch in days, not weeks.</p>
+        <h1 id="hero-title">Launch kits for <span style="color:var(--gold)">real cashflow</span>.</h1>
+        <p class="lead">Pick your level: Free, Mini, Medium or PRO. Premium templates, emails 1–5, funnels and a clear guide.</p>
         <div class="chips" aria-label="Quick benefits">
           <span class="chip">Instant access</span>
-          <span class="chip">Premium template</span>
+          <span class="chip">Premium templates</span>
           <span class="chip">Emails 1–5</span>
           <span class="chip">14-day guarantee</span>
         </div>
         <p class="cta-row">
-          <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer" aria-label="Buy now on Gumroad">
-            Buy now
-          </a>
-          <a class="btn ghost" href="#inside">See what’s inside</a>
+          <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Buy PRO now (Gumroad overlay)">Buy PRO</a>
+          <a class="btn ghost" href="#kits">See all</a>
         </p>
-        <div class="strip">€27 <b>+ taxes</b> • Secure payment on Gumroad • Updates included</div>
+        <div class="strip">
+          Free • Mini <b>€9</b> + taxes • Medium <b>€24.99</b> + taxes • PRO <b>€49.99</b> + taxes
+        </div>
       </div>
 
       <aside class="hero-media" aria-label="CashFlowLab visual">
-        <img
-          src="/hero-tech.png"
-          alt="CashFlowLab preview"
-          class="hero-img"
-          width="1600" height="900"
-          loading="eager"
-          fetchpriority="high">
+        <img src="https://cashflowlabai.com/hero-tech.png" alt="CashFlowLab preview" class="hero-img" width="1600" height="900" loading="eager" fetchpriority="high">
       </aside>
     </section>
   </main>
@@ -221,7 +257,7 @@
         </span>
         <div>
           <h3>Clarity</h3>
-          <p class="muted">Daily & weekly objectives that lead to results.</p>
+          <p class="muted">Daily & weekly targets that lead to results.</p>
         </div>
       </div>
       <div class="card iconed">
@@ -230,7 +266,7 @@
         </span>
         <div>
           <h3>Execution</h3>
-          <p class="muted">Proven templates: site, emails 1–5, visual prompts.</p>
+          <p class="muted">Battle-tested templates: site, emails 1–5, visual prompts.</p>
         </div>
       </div>
       <div class="card iconed">
@@ -264,7 +300,7 @@
       </div>
       <div class="card iconed">
         <span class="icon icon-gold" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Toolbox"><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2h3v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7h3zm2-2h6v2H9V5zm1 6h4v2h-4v-2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Tools"><path d="M7 7V5a2 2 0 012-2h6a2 2 0 012 2v2h3v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7h3zm2-2h6v2H9V5zm1 6h4v2h-4v-2z"/></svg>
         </span>
         <div>
           <h3>Execution kit</h3>
@@ -278,41 +314,102 @@
     </div>
   </section>
 
+  <!-- KITS -->
+  <section id="kits" class="section" aria-labelledby="kits-title">
+    <h2 id="kits-title">Choose your kit</h2>
+    <div class="product-grid">
+      <!-- FREE -->
+      <article class="product-card">
+        <span class="price-badge">Free</span>
+        <h3 class="product-title">CashFlowLab Free Kit</h3>
+        <p class="product-desc"><b>Start now, no cost.</b> Collects email and sends the checklist + quick guide instantly via Gumroad.</p>
+        <ul class="product-feats">
+          <li>7–14 day starter plan</li>
+          <li>Essential checklist + instructions</li>
+          <li>Zero risk • Test the flow</li>
+        </ul>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/linjxk" aria-label="Download Free Kit (Gumroad overlay)">Download Free</a>
+        <span class="tag-badge">Collects email</span>
+      </article>
+
+      <!-- MINI -->
+      <article class="product-card">
+        <span class="price-badge">€9 + taxes</span>
+        <h3 class="product-title">CashFlowLab MINI — Starter Kit</h3>
+        <p class="product-desc"><b>Essentials that move the needle.</b> Fast to implement, ideal for your first revenue.</p>
+        <ul class="product-feats">
+          <li>3 critical checklists</li>
+          <li>1–2 plug-and-play templates</li>
+          <li>Short execution guide</li>
+        </ul>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/bpsbou" aria-label="Buy MINI (Gumroad overlay)">Buy MINI</a>
+        <span class="tag-badge">Starter</span>
+      </article>
+
+      <!-- MEDIUM (FEATURED) -->
+      <article class="product-card featured">
+        <span class="ribbon">Best Value</span>
+        <span class="price-badge">€24.99 + taxes</span>
+        <h3 class="product-title">CashFlowLab MEDIUM — Intermediate</h3>
+        <p class="product-desc"><b>Built for conversion.</b> More templates + smart automations for a funnel that sells.</p>
+        <ul class="product-feats">
+          <li>Email sequence 1–5 + product page</li>
+          <li>Upsell & order bump ideas</li>
+          <li>Simple automations (triggers & tags)</li>
+        </ul>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/divha" aria-label="Buy MEDIUM (Gumroad overlay)">Buy MEDIUM</a>
+        <span class="tag-badge">Intermediate</span>
+      </article>
+
+      <!-- PRO -->
+      <article class="product-card">
+        <span class="price-badge">€49.99 + taxes</span>
+        <h3 class="product-title">CashFlowLab PRO — Scale Kit</h3>
+        <p class="product-desc"><b>All-in for growth.</b> Everything to scale: full plan, premium templates, final funnel.</p>
+        <ul class="product-feats">
+          <li>45-day plan • complete roadmap</li>
+          <li>Premium templates + checklists</li>
+          <li>Scaling & optimization framework</li>
+        </ul>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Buy PRO (Gumroad overlay)">Buy PRO</a>
+        <span class="tag-badge">Complete</span>
+      </article>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="section" aria-labelledby="how-title">
-    <h2 id="how-title">How we work</h2>
+    <h2 id="how-title">How it works</h2>
     <div class="grid-3">
       <div class="step iconed">
         <span class="icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Flag"><path d="M4 3h2v18H4V3zm3 2h9l-1 3 1 3H7V5z"/></svg>
         </span>
-        <div><b>1) Set goals</b><p class="muted">We clarify the offer and revenue thresholds.</p></div>
+        <div><b>1) Set targets</b><p class="muted">Clarify your offer and revenue milestones.</p></div>
       </div>
       <div class="step iconed">
         <span class="icon icon-gold" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Bolt"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
         </span>
-        <div><b>2) Launch fast</b><p class="muted">Publish the page, email sequence, first posts.</p></div>
+        <div><b>2) Launch fast</b><p class="muted">Publish the page, email sequence, and first posts.</p></div>
       </div>
       <div class="step iconed">
         <span class="icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Optimize"><path d="M17 1l4 4-4 4V6H7a3 3 0 000 6h3v2H7A5 5 0 117 4h10V1zm0 11a3 3 0 010 6H14v2h3a5 5 0 000-10h-3v2h3z"/></svg>
         </span>
-        <div><b>3) Optimize</b><p class="muted">Iterate on feedback and scale what works.</p></div>
+        <div><b>3) Optimize</b><p class="muted">Iterate on feedback and scale what's working.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- PRICING (PRO) -->
   <section id="pricing" class="section" aria-labelledby="pricing-title">
     <h2 id="pricing-title">Full access</h2>
     <div class="card">
-      <p class="muted">€27 <b>+ taxes</b> • one-time • instant access • updates included</p>
+      <p class="muted">PRO: <b>€49.99</b> <b>+ taxes</b> • one-time payment • instant access • updates included</p>
       <p class="cta-row">
-        <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer" aria-label="Buy on Gumroad">
-          Buy on Gumroad
-        </a>
-        <a class="btn ghost" href="#faq">Frequently asked questions</a>
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Buy on Gumroad (overlay)">Buy on Gumroad</a>
+        <a class="btn ghost" href="#faq">FAQ</a>
       </p>
     </div>
   </section>
@@ -321,31 +418,31 @@
   <section id="faq" class="section" aria-labelledby="faq-title">
     <h2 id="faq-title">FAQ</h2>
     <div class="grid-2">
-      <div class="card"><b>When do I get access?</b><p class="muted">Immediately after purchase you’ll get the download link.</p></div>
-      <div class="card"><b>Do I get updates?</b><p class="muted">Yes, updates are included for this edition.</p></div>
-      <div class="card"><b>Can I ask for help?</b><p class="muted">Yes, I’ll assist you with the setup.</p></div>
-      <div class="card"><b>Refund?</b><p class="muted">14-day guarantee — no hassle.</p></div>
+      <div class="card"><b>When do I get access?</b><p class="muted">Immediately after payment (or €0 for Free) via Gumroad download link.</p></div>
+      <div class="card"><b>Are updates included?</b><p class="muted">Yes, for this edition they are included.</p></div>
+      <div class="card"><b>Can I get help?</b><p class="muted">Yes, I’ll assist you with setup as needed.</p></div>
+      <div class="card"><b>Refunds?</b><p class="muted">14-day guarantee — no hassle.</p></div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="section" aria-labelledby="cta-final-title">
     <div class="card" style="text-align:center">
-      <h3 id="cta-final-title">Start today?</h3>
-      <p class="muted">You’ve got everything you need to launch and monetize.</p>
-      <p><a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer">Get access</a></p>
+      <h3 id="cta-final-title">Ready to start?</h3>
+      <p class="muted">You’ve got everything to launch and monetize.</p>
+      <p><a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody">Get PRO</a></p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div style="margin-bottom:8px">
-      <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer">Buy CashFlowLab</a>
+      <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody">Buy CashFlowLab</a>
     </div>
     <small>© CashFlowLab. All rights reserved.</small>
   </footer>
 
-  <!-- Performance micro-optimizations: lazy + decoding for non-critical images -->
+  <!-- Perf micro-tweaks -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hero = document.querySelector('.hero-img');
@@ -357,16 +454,5 @@
       });
     });
   </script>
-
-  <!-- Google tag (gtag.js) — enable after you have a GA4 ID -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
 </body>
 </html>
