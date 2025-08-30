@@ -23,8 +23,10 @@
   <link rel="icon" href="/favicon-16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="preconnect" href="https://florinwave0.gumroad.com" crossorigin>
-  <link rel="dns-prefetch" href="https://florinwave0.gumroad.com">
+
+  <!-- Perf hints for Gumroad (UPDATED) -->
+  <link rel="preconnect" href="https://cashflowlabai.gumroad.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cashflowlabai.gumroad.com">
 
   <!-- Open Graph -->
   <meta property="og:title" content="CashFlowLab — Plan + Kit de lansare">
@@ -62,17 +64,13 @@
     a{color:inherit}
     .container{max-width:100%; padding:10px 14px}
     .nav{display:flex; justify-content:space-between; align-items:center; gap:10px}
-
-    /* LOGO fix (SVG + o singură linie, fără dubluri) */
     .logo{display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:.06em; white-space:nowrap; text-decoration:none}
     .logo img{height:28px; width:28px; border-radius:8px; flex:0 0 28px}
     .brand{white-space:nowrap}
-
     .links{display:flex; gap:10px; align-items:center}
     .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:1px solid rgba(255,255,255,.1); border-radius:12px; text-decoration:none; font-weight:800}
     .gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.03)); border-color:rgba(196,164,107,.35)}
     .ghost{background:transparent}
-
     .hero{padding:12px 14px 0}
     .hero-grid{display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:10px}
     @media (max-width:1060px){ .hero-grid{grid-template-columns:1fr} }
@@ -81,18 +79,8 @@
     .chips{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0}
     .chip{padding:6px 10px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(255,255,255,.04); font-weight:600}
     .strip{margin:10px 0; padding:10px 12px; border:1px solid rgba(255,255,255,.12); border-radius:14px; background:rgba(255,255,255,.04); display:inline-flex; gap:12px; flex-wrap:wrap}
-
-    /* HERO image în dreapta */
-    .hero-media{
-      display:flex; align-items:center; justify-content:flex-end;
-      border-radius:var(--rad); overflow:hidden; min-height:260px;
-      background: radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.18), transparent 60%);
-    }
-    .hero-img{
-      max-width:100%; height:auto; object-fit:cover;
-      aspect-ratio:16/9; object-position:center right; border-radius:var(--rad);
-    }
-
+    .hero-media{display:flex; align-items:center; justify-content:flex-end; border-radius:var(--rad); overflow:hidden; min-height:260px; background: radial-gradient(520px 360px at 80% 20%, rgba(139,92,246,.18), transparent 60%)}
+    .hero-img{max-width:100%; height:auto; object-fit:cover; aspect-ratio:16/9; object-position:center right; border-radius:var(--rad)}
     .section{padding:12px 14px}
     .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
     .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
@@ -103,23 +91,10 @@
     .muted{color:var(--muted)}
     .footer{padding:32px 14px 60px; text-align:center; color:var(--muted)}
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
-
-    /* === Icons === */
-    .iconed{display:flex; align-items:flex-start; gap:10px}
-    .icon{
-      display:inline-grid; place-items:center; flex:0 0 36px; height:36px; width:36px;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(139,92,246,.28), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.12)
-    }
-    .icon svg{width:20px; height:20px; color:#fff; opacity:.95}
-    .icon-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.04)); border-color:rgba(196,164,107,.35)}
-
-    /* Preferință pentru utilizatori cu reduce-motion */
-    @media (prefers-reduced-motion: reduce){
-      .btn:hover,.btn:active{transform:none !important}
-    }
   </style>
+
+  <!-- Gumroad Overlay (NEW) -->
+  <script src="https://gumroad.com/js/gumroad.js" async></script>
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
@@ -129,10 +104,7 @@
     "name":"CashFlowLab",
     "url":"https://cashflowlabai.com/",
     "logo":"https://cashflowlabai.com/cashflowlab-mark.svg",
-    "sameAs":[
-      "https://www.instagram.com/",
-      "https://x.com/"
-    ]
+    "sameAs":["https://www.instagram.com/","https://x.com/"]
   }
   </script>
 
@@ -143,15 +115,11 @@
     "@type":"WebSite",
     "name":"CashFlowLab",
     "url":"https://cashflowlabai.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target":"https://cashflowlabai.com/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "potentialAction":{"@type":"SearchAction","target":"https://cashflowlabai.com/?q={search_term_string}","query-input":"required name=search_term_string"}
   }
   </script>
 
-  <!-- Schema.org Product -->
+  <!-- Schema.org Product (UPDATED URL) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -164,9 +132,23 @@
       "@type":"Offer",
       "price":"27",
       "priceCurrency":"EUR",
-      "url":"https://florinwave0.gumroad.com/l/yspwee",
+      "url":"https://cashflowlabai.gumroad.com/l/udxody",
       "availability":"https://schema.org/InStock"
     }
+  }
+  </script>
+
+  <!-- Schema.org ItemList (NEW: cele 4 produse) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "itemListElement":[
+      {"@type":"Product","name":"CashFlowLab Free Kit","url":"https://cashflowlabai.gumroad.com/l/linjxk"},
+      {"@type":"Product","name":"CashFlowLab MINI — Starter Kit","url":"https://cashflowlabai.gumroad.com/l/bpsbou"},
+      {"@type":"Product","name":"CashFlowLab MEDIUM — Intermediar","url":"https://cashflowlabai.gumroad.com/l/divha"},
+      {"@type":"Product","name":"CashFlowLab PRO — Scale Kit","url":"https://cashflowlabai.gumroad.com/l/udxody"}
+    ]
   }
   </script>
 </head>
@@ -181,7 +163,7 @@
       <div class="links">
         <span class="btn ghost" aria-current="page">RO</span>
         <a class="btn ghost" href="/en/index.html" hreflang="en" lang="en">EN</a>
-        <a class="btn gold" href="#pricing" aria-label="Mergi la preț">Cumpără</a>
+        <a class="btn gold" href="#kits" aria-label="Mergi la kituri">Cumpără</a>
       </div>
     </nav>
   </header>
@@ -199,7 +181,7 @@
           <span class="chip">Garanție 14 zile</span>
         </div>
         <p class="cta-row">
-          <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer" aria-label="Cumpără acum pe Gumroad">
+          <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără acum (overlay Gumroad)">
             Cumpără acum
           </a>
           <a class="btn ghost" href="#inside">Vezi ce conține</a>
@@ -212,10 +194,8 @@
           src="https://cashflowlabai.com/hero-tech.png"
           alt="Previzualizare CashFlowLab"
           class="hero-img"
-          width="1600"
-          height="900"
-          loading="eager"
-          fetchpriority="high">
+          width="1600" height="900"
+          loading="eager" fetchpriority="high">
       </aside>
     </section>
   </main>
@@ -287,6 +267,40 @@
     </div>
   </section>
 
+  <!-- KITS (NEW) -->
+  <section id="kits" class="section" aria-labelledby="kits-title">
+    <h2 id="kits-title">Alege kitul potrivit</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      <!-- FREE -->
+      <article class="card">
+        <h3 style="margin:0 0 6px 0">CashFlowLab Free Kit</h3>
+        <p class="muted" style="margin:0 0 10px 0">Descarcă gratuit. Primești pe email prin Gumroad.</p>
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/linjxk" aria-label="Descarcă Free Kit (overlay Gumroad)">Descarcă gratuit</a>
+      </article>
+
+      <!-- MINI -->
+      <article class="card">
+        <h3 style="margin:0 0 6px 0">CashFlowLab MINI — Starter Kit</h3>
+        <p class="muted" style="margin:0 0 10px 0">Varianta light: checklist-uri esențiale + 1–2 șabloane.</p>
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/bpsbou" aria-label="Cumpără MINI (overlay Gumroad)">Cumpără MINI</a>
+      </article>
+
+      <!-- MEDIUM -->
+      <article class="card">
+        <h3 style="margin:0 0 6px 0">CashFlowLab MEDIUM — Intermediar</h3>
+        <p class="muted" style="margin:0 0 10px 0">Mai multe șabloane + automatizări smart.</p>
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/divha" aria-label="Cumpără MEDIUM (overlay Gumroad)">Cumpără MEDIUM</a>
+      </article>
+
+      <!-- PRO -->
+      <article class="card">
+        <h3 style="margin:0 0 6px 0">CashFlowLab PRO — Scale Kit</h3>
+        <p class="muted" style="margin:0 0 10px 0">Pachet complet pentru viteză și conversii.</p>
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără PRO (overlay Gumroad)">Cumpără PRO</a>
+      </article>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="section" aria-labelledby="how-title">
     <h2 id="how-title">Cum lucrăm</h2>
@@ -312,13 +326,13 @@
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- PRICING (rămâne pentru PRO) -->
   <section id="pricing" class="section" aria-labelledby="pricing-title">
     <h2 id="pricing-title">Acces complet</h2>
     <div class="card">
       <p class="muted">€27 <b>+ taxe</b> • plată unică • acces instant • update-uri incluse</p>
       <p class="cta-row">
-        <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer" aria-label="Cumpără pe Gumroad">
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără pe Gumroad (overlay)">
           Cumpără pe Gumroad
         </a>
         <a class="btn ghost" href="#faq">Întrebări frecvente</a>
@@ -330,7 +344,7 @@
   <section id="faq" class="section" aria-labelledby="faq-title">
     <h2 id="faq-title">Întrebări frecvente</h2>
     <div class="grid-2">
-      <div class="card"><b>În cât timp am acces?</b><p class="muted">Imediat după plată primești link de descărcare.</p></div>
+      <div class="card"><b>În cât timp am acces?</b><p class="muted">Imediat după plată (sau €0 la Free) primești linkul pe email prin Gumroad.</p></div>
       <div class="card"><b>Primesc update-uri?</b><p class="muted">Da, sunt incluse pentru această ediție.</p></div>
       <div class="card"><b>Pot cere ajutor?</b><p class="muted">Da, te asist punctual la setup.</p></div>
       <div class="card"><b>Refund?</b><p class="muted">14 zile garanție — fără complicații.</p></div>
@@ -342,19 +356,19 @@
     <div class="card" style="text-align:center">
       <h3 id="cta-final-title">Pornim azi?</h3>
       <p class="muted">Ai tot ce-ți trebuie pentru a lansa și monetiza.</p>
-      <p><a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer">Ia acces</a></p>
+      <p><a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody">Ia acces</a></p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div style="margin-bottom:8px">
-      <a class="btn gold" href="https://florinwave0.gumroad.com/l/yspwee" target="_blank" rel="noopener noreferrer">Cumpără CashFlowLab</a>
+      <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody">Cumpără CashFlowLab</a>
     </div>
     <small>© CashFlowLab. Toate drepturile rezervate.</small>
   </footer>
 
-  <!-- Micro-optimizări performanță: lazy + decoding pentru imagini non-critice -->
+  <!-- Micro-optimizări performanță -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const hero = document.querySelector('.hero-img');
@@ -366,16 +380,5 @@
       });
     });
   </script>
-
-  <!-- Google tag (gtag.js) — deblochează după ce ai un ID GA4) -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
 </body>
 </html>
