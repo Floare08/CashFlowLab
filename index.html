@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Perf hints for Gumroad (UPDATED) -->
+  <!-- Perf hints for Gumroad -->
   <link rel="preconnect" href="https://cashflowlabai.gumroad.com" crossorigin>
   <link rel="dns-prefetch" href="https://cashflowlabai.gumroad.com">
 
@@ -91,65 +91,82 @@
     .muted{color:var(--muted)}
     .footer{padding:32px 14px 60px; text-align:center; color:var(--muted)}
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
+
+    /* === Icons (smaller) === */
+    .icon{
+      display:inline-grid; place-items:center; flex:0 0 28px; height:28px; width:28px;
+      border-radius:10px;
+      background:linear-gradient(180deg, rgba(139,92,246,.22), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12)
+    }
+    .icon svg{width:16px; height:16px; color:#fff; opacity:.95}
+    .icon-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.04)); border-color:rgba(196,164,107,.35)}
+
+    /* === Product grid/cards (highlight) === */
+    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .product-card{
+      position:relative; padding:16px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background:linear-gradient(145deg, rgba(139,92,246,.10), rgba(196,164,107,.08));
+      transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .product-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(196,164,107,.55);
+      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(196,164,107,.25);
+    }
+    .product-card.featured{
+      border-color:rgba(196,164,107,.75);
+      box-shadow:0 12px 36px rgba(0,0,0,.45), inset 0 0 0 1px rgba(196,164,107,.35);
+    }
+    .ribbon{
+      position:absolute; top:12px; left:-8px;
+      background:linear-gradient(180deg, rgba(196,164,107,.9), rgba(196,164,107,.65));
+      color:#0e0b1f; font-weight:900; font-size:12px; padding:6px 10px 6px 14px;
+      border-top-right-radius:999px; border-bottom-right-radius:999px;
+      border:1px solid rgba(0,0,0,.2)
+    }
+    .price-badge{
+      position:absolute; top:12px; right:12px;
+      padding:6px 10px; border-radius:999px; font-weight:800;
+      background:linear-gradient(180deg, rgba(196,164,107,.35), rgba(255,255,255,.06));
+      border:1px solid rgba(196,164,107,.45);
+    }
+    .tag-badge{
+      display:inline-block; margin-top:6px; font-size:12px; opacity:.9;
+      padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.16)
+    }
+    .product-title{margin:0 0 6px 0; font-weight:800; font-size:18px}
+    .product-desc{margin:0 0 12px 0; color:var(--muted)}
+    .product-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.16);border-radius:12px;text-decoration:none;font-weight:800;background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.03))}
   </style>
 
-  <!-- Gumroad Overlay (NEW) -->
+  <!-- Gumroad Overlay -->
   <script src="https://gumroad.com/js/gumroad.js" async></script>
 
   <!-- Schema.org Organization -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"CashFlowLab",
-    "url":"https://cashflowlabai.com/",
-    "logo":"https://cashflowlabai.com/cashflowlab-mark.svg",
-    "sameAs":["https://www.instagram.com/","https://x.com/"]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/cashflowlab-mark.svg","sameAs":["https://www.instagram.com/","https://x.com/"]}
   </script>
 
   <!-- Schema.org WebSite -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"CashFlowLab",
-    "url":"https://cashflowlabai.com/",
-    "potentialAction":{"@type":"SearchAction","target":"https://cashflowlabai.com/?q={search_term_string}","query-input":"required name=search_term_string"}
-  }
+  {"@context":"https://schema.org","@type":"WebSite","name":"CashFlowLab","url":"https://cashflowlabai.com/","potentialAction":{"@type":"SearchAction","target":"https://cashflowlabai.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
   </script>
 
-  <!-- Schema.org Product (UPDATED URL) -->
+  <!-- Schema.org Product (PRO) -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"CashFlowLab — Plan + Kit de lansare",
-    "description":"Plan + Kit pentru cashflow real: pași clari, șabloane premium, lansare rapidă.",
-    "image":"https://cashflowlabai.com/hero-tech.png",
-    "brand":{"@type":"Brand","name":"CashFlowLab"},
-    "offers":{
-      "@type":"Offer",
-      "price":"27",
-      "priceCurrency":"EUR",
-      "url":"https://cashflowlabai.gumroad.com/l/udxody",
-      "availability":"https://schema.org/InStock"
-    }
-  }
+  {"@context":"https://schema.org","@type":"Product","name":"CashFlowLab — Plan + Kit de lansare","description":"Plan + Kit pentru cashflow real: pași clari, șabloane premium, lansare rapidă.","image":"https://cashflowlabai.com/hero-tech.png","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"27","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/udxody","availability":"https://schema.org/InStock"}}
   </script>
 
-  <!-- Schema.org ItemList (NEW: cele 4 produse) -->
+  <!-- Schema.org ItemList (toate produsele) -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[
-      {"@type":"Product","name":"CashFlowLab Free Kit","url":"https://cashflowlabai.gumroad.com/l/linjxk"},
-      {"@type":"Product","name":"CashFlowLab MINI — Starter Kit","url":"https://cashflowlabai.gumroad.com/l/bpsbou"},
-      {"@type":"Product","name":"CashFlowLab MEDIUM — Intermediar","url":"https://cashflowlabai.gumroad.com/l/divha"},
-      {"@type":"Product","name":"CashFlowLab PRO — Scale Kit","url":"https://cashflowlabai.gumroad.com/l/udxody"}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
+    {"@type":"Product","name":"CashFlowLab Free Kit","url":"https://cashflowlabai.gumroad.com/l/linjxk"},
+    {"@type":"Product","name":"CashFlowLab MINI — Starter Kit","url":"https://cashflowlabai.gumroad.com/l/bpsbou"},
+    {"@type":"Product","name":"CashFlowLab MEDIUM — Intermediar","url":"https://cashflowlabai.gumroad.com/l/divha"},
+    {"@type":"Product","name":"CashFlowLab PRO — Scale Kit","url":"https://cashflowlabai.gumroad.com/l/udxody"}
+  ]}
   </script>
 </head>
 <body>
@@ -181,21 +198,14 @@
           <span class="chip">Garanție 14 zile</span>
         </div>
         <p class="cta-row">
-          <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără acum (overlay Gumroad)">
-            Cumpără acum
-          </a>
+          <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără acum (overlay Gumroad)">Cumpără acum</a>
           <a class="btn ghost" href="#inside">Vezi ce conține</a>
         </p>
         <div class="strip">€27 <b>+ taxe</b> • Plată securizată pe Gumroad • Update-uri incluse</div>
       </div>
 
       <aside class="hero-media" aria-label="CashFlowLab vizual">
-        <img
-          src="https://cashflowlabai.com/hero-tech.png"
-          alt="Previzualizare CashFlowLab"
-          class="hero-img"
-          width="1600" height="900"
-          loading="eager" fetchpriority="high">
+        <img src="https://cashflowlabai.com/hero-tech.png" alt="Previzualizare CashFlowLab" class="hero-img" width="1600" height="900" loading="eager" fetchpriority="high">
       </aside>
     </section>
   </main>
@@ -267,36 +277,45 @@
     </div>
   </section>
 
-  <!-- KITS (NEW) -->
+  <!-- KITS -->
   <section id="kits" class="section" aria-labelledby="kits-title">
     <h2 id="kits-title">Alege kitul potrivit</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+    <div class="product-grid">
       <!-- FREE -->
-      <article class="card">
-        <h3 style="margin:0 0 6px 0">CashFlowLab Free Kit</h3>
-        <p class="muted" style="margin:0 0 10px 0">Descarcă gratuit. Primești pe email prin Gumroad.</p>
-        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/linjxk" aria-label="Descarcă Free Kit (overlay Gumroad)">Descarcă gratuit</a>
+      <article class="product-card">
+        <span class="price-badge">Gratuit</span>
+        <h3 class="product-title">CashFlowLab Free Kit</h3>
+        <p class="product-desc">Descarcă gratuit. Primești pe email prin Gumroad.</p>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/linjxk" aria-label="Descarcă Free Kit (overlay Gumroad)">Descarcă gratuit</a>
+        <span class="tag-badge">Colectează email</span>
       </article>
 
       <!-- MINI -->
-      <article class="card">
-        <h3 style="margin:0 0 6px 0">CashFlowLab MINI — Starter Kit</h3>
-        <p class="muted" style="margin:0 0 10px 0">Varianta light: checklist-uri esențiale + 1–2 șabloane.</p>
-        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/bpsbou" aria-label="Cumpără MINI (overlay Gumroad)">Cumpără MINI</a>
+      <article class="product-card">
+        <span class="price-badge">€9</span>
+        <h3 class="product-title">CashFlowLab MINI — Starter Kit</h3>
+        <p class="product-desc">Varianta light: checklist-uri esențiale + 1–2 șabloane.</p>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/bpsbou" aria-label="Cumpără MINI (overlay Gumroad)">Cumpără MINI</a>
+        <span class="tag-badge">Starter</span>
       </article>
 
-      <!-- MEDIUM -->
-      <article class="card">
-        <h3 style="margin:0 0 6px 0">CashFlowLab MEDIUM — Intermediar</h3>
-        <p class="muted" style="margin:0 0 10px 0">Mai multe șabloane + automatizări smart.</p>
-        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/divha" aria-label="Cumpără MEDIUM (overlay Gumroad)">Cumpără MEDIUM</a>
+      <!-- MEDIUM (FEATURED) -->
+      <article class="product-card featured">
+        <span class="ribbon">Recomandat</span>
+        <span class="price-badge">€17</span>
+        <h3 class="product-title">CashFlowLab MEDIUM — Intermediar</h3>
+        <p class="product-desc">Mai multe șabloane + automatizări smart.</p>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/divha" aria-label="Cumpără MEDIUM (overlay Gumroad)">Cumpără MEDIUM</a>
+        <span class="tag-badge">Intermediar</span>
       </article>
 
       <!-- PRO -->
-      <article class="card">
-        <h3 style="margin:0 0 6px 0">CashFlowLab PRO — Scale Kit</h3>
-        <p class="muted" style="margin:0 0 10px 0">Pachet complet pentru viteză și conversii.</p>
-        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără PRO (overlay Gumroad)">Cumpără PRO</a>
+      <article class="product-card">
+        <span class="price-badge">€27</span>
+        <h3 class="product-title">CashFlowLab PRO — Scale Kit</h3>
+        <p class="product-desc">Pachet complet pentru viteză și conversii.</p>
+        <a class="product-cta gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără PRO (overlay Gumroad)">Cumpără PRO</a>
+        <span class="tag-badge">Complet</span>
       </article>
     </div>
   </section>
@@ -326,15 +345,13 @@
     </div>
   </section>
 
-  <!-- PRICING (rămâne pentru PRO) -->
+  <!-- PRICING (PRO) -->
   <section id="pricing" class="section" aria-labelledby="pricing-title">
     <h2 id="pricing-title">Acces complet</h2>
     <div class="card">
       <p class="muted">€27 <b>+ taxe</b> • plată unică • acces instant • update-uri incluse</p>
       <p class="cta-row">
-        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără pe Gumroad (overlay)">
-          Cumpără pe Gumroad
-        </a>
+        <a class="btn gold gumroad-button" href="https://cashflowlabai.gumroad.com/l/udxody" aria-label="Cumpără pe Gumroad (overlay)">Cumpără pe Gumroad</a>
         <a class="btn ghost" href="#faq">Întrebări frecvente</a>
       </p>
     </div>
