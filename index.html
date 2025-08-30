@@ -89,17 +89,12 @@
     .footer{padding:32px 14px 60px; text-align:center; color:var(--muted)}
     .cta-row{display:flex; gap:10px; flex-wrap:wrap}
 
-    /* === Icons (smaller) === */
-    .icon{
-      display:inline-grid; place-items:center; flex:0 0 28px; height:28px; width:28px;
-      border-radius:10px;
-      background:linear-gradient(180deg, rgba(139,92,246,.22), rgba(255,255,255,.04));
-      border:1px solid rgba(255,255,255,.12)
-    }
+    /* Icons (smaller) */
+    .icon{display:inline-grid; place-items:center; flex:0 0 28px; height:28px; width:28px; border-radius:10px; background:linear-gradient(180deg, rgba(139,92,246,.22), rgba(255,255,255,.04)); border:1px solid rgba(255,255,255,.12)}
     .icon svg{width:16px; height:16px; color:#fff; opacity:.95}
     .icon-gold{background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.04)); border-color:rgba(196,164,107,.35)}
 
-    /* === Product grid/cards (highlight) === */
+    /* Product grid/cards */
     .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
     .product-card{
       position:relative; padding:16px;border-radius:16px;
@@ -107,146 +102,108 @@
       background:linear-gradient(145deg, rgba(139,92,246,.10), rgba(196,164,107,.08));
       transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
     }
-    .product-card:hover{
-      transform:translateY(-2px);
-      border-color:rgba(196,164,107,.55);
-      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(196,164,107,.25);
-    }
+    .product-card:hover{ transform:translateY(-2px); border-color:rgba(196,164,107,.55); box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(196,164,107,.25) }
     .product-card.featured{
       border-color:rgba(196,164,107,.75);
       box-shadow:0 12px 36px rgba(0,0,0,.45), inset 0 0 0 1px rgba(196,164,107,.35);
+      padding-top:56px; /* spațiu pt ribbon și pe desktop */
     }
-    .ribbon{
-      position:absolute; top:12px; left:-8px;
-      background:linear-gradient(180deg, rgba(196,164,107,.9), rgba(196,164,107,.65));
-      color:#0e0b1f; font-weight:900; font-size:12px; padding:6px 10px 6px 14px;
-      border-top-right-radius:999px; border-bottom-right-radius:999px;
-      border:1px solid rgba(0,0,0,.2)
-    }
-    .price-badge{
-      position:absolute; top:12px; right:12px;
-      padding:6px 10px; border-radius:999px; font-weight:800;
-      background:linear-gradient(180deg, rgba(196,164,107,.35), rgba(255,255,255,.06));
-      border:1px solid rgba(196,164,107,.45);
-    }
-    .tag-badge{
-      display:inline-block; margin-top:6px; font-size:12px; opacity:.9;
-      padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.16)
-    }
+    .ribbon{ position:absolute; top:12px; left:-8px; background:linear-gradient(180deg, rgba(196,164,107,.9), rgba(196,164,107,.65)); color:#0e0b1f; font-weight:900; font-size:12px; padding:6px 10px 6px 14px; border-top-right-radius:999px; border-bottom-right-radius:999px; border:1px solid rgba(0,0,0,.2) }
+    .price-badge{ position:absolute; top:12px; right:12px; padding:6px 10px; border-radius:999px; font-weight:800; background:linear-gradient(180deg, rgba(196,164,107,.35), rgba(255,255,255,.06)); border:1px solid rgba(196,164,107,.45) }
+    .tag-badge{ display:inline-block; margin-top:6px; font-size:12px; opacity:.9; padding:4px 8px; border-radius:999px; border:1px solid rgba(255,255,255,.16) }
     .product-title{margin:0 0 6px 0; font-weight:800; font-size:18px}
     .product-desc{margin:0 0 12px 0; color:var(--muted)}
     .product-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(255,255,255,.16);border-radius:12px;text-decoration:none;font-weight:800;background:linear-gradient(180deg, rgba(196,164,107,.28), rgba(255,255,255,.03))}
     .product-feats{margin:8px 0 10px 18px;color:var(--muted);line-height:1.5}
     .product-feats li{margin:2px 0}
 
-    /* === MOBILE FIXES: prevenim suprapuneri pe ecrane mici === */
+    /* Mobile fixes */
     .product-title,.product-desc{word-break:break-word;overflow-wrap:anywhere;}
-
     @media (max-width:520px){
-      .product-card{ padding:16px; }
-      .product-card.featured{ padding-top:56px; } /* spațiu pentru ribbon */
-      .ribbon{ left:12px; top:12px; font-size:11px; padding:4px 8px; }
-      /* mutăm prețul sub titlu */
-      .price-badge{
-        position:static;
-        display:inline-block;
-        margin:2px 0 10px;
-      }
-      .product-title{ font-size:17px; line-height:1.2; }
-      .product-desc{ font-size:14px; line-height:1.45; }
-      .product-feats{ margin-left:16px; }
-      .product-cta{ width:100%; justify-content:center; }
+      .product-card{ padding:16px }
+      .product-card.featured{ padding-top:56px }
+      .ribbon{ left:12px; top:12px; font-size:11px; padding:4px 8px }
+      .price-badge{ position:static; display:inline-block; margin:2px 0 10px }
+      .product-title{ font-size:17px; line-height:1.2 }
+      .product-desc{ font-size:14px; line-height:1.45 }
+      .product-feats{ margin-left:16px }
+      .product-cta{ width:100%; justify-content:center }
     }
+
+    /* Skip link + cookie banner */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;padding:8px 12px;background:#fff;color:#000;border-radius:8px;z-index:10000}
+    .cookie-banner{position:fixed;bottom:14px;left:14px;right:14px;z-index:9999;padding:12px;border-radius:14px;border:1px solid rgba(255,255,255,.16);background:linear-gradient(145deg, rgba(139,92,246,.10), rgba(196,164,107,.08));backdrop-filter:blur(6px)}
+    .cookie-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:8px 12px;color:var(--text);font-weight:800}
+    .btn-gold{background:linear-gradient(180deg, rgba(196,164,107,.5), rgba(255,255,255,.08));border:1px solid rgba(196,164,107,.6);border-radius:10px;padding:8px 12px;color:var(--text);font-weight:800}
   </style>
 
   <!-- Gumroad Overlay -->
   <script src="https://gumroad.com/js/gumroad.js" async></script>
 
-  <!-- Schema.org Organization -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/cashflowlab-mark.svg","sameAs":["https://www.instagram.com/","https://x.com/"]}
+  <!-- Consent Mode v2: default deny până acceptă utilizatorul -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','default',{
+      ad_storage:'denied',
+      ad_user_data:'denied',
+      ad_personalization:'denied',
+      analytics_storage:'denied',
+      functionality_storage:'granted',
+      security_storage:'granted'
+    });
   </script>
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/cashflowlab-mark.svg","sameAs":["https://www.instagram.com/","https://x.com/"]}</script>
 
   <!-- Schema.org WebSite -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"CashFlowLab","url":"https://cashflowlabai.com/","potentialAction":{"@type":"SearchAction","target":"https://cashflowlabai.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
-  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"CashFlowLab","url":"https://cashflowlabai.com/","potentialAction":{"@type":"SearchAction","target":"https://cashflowlabai.com/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 
   <!-- Schema.org Products (toate 4) -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Product","name":"CashFlowLab Free Kit","description":"Starter gratuit cu checklist esențial și ghid rapid — colectează email și livrează automat prin Gumroad.","image":"https://cashflowlabai.com/hero-tech.png","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"0.00","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/linjxk","availability":"https://schema.org/InStock"}},{"@type":"Product","name":"CashFlowLab MINI — Starter Kit","description":"Varianta light: 3 checklisturi + 1–2 șabloane rapide. Perfect pentru primul cash online.","image":"https://cashflowlabai.com/hero-tech.png","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"9.00","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/bpsbou","availability":"https://schema.org/InStock"}},{"@type":"Product","name":"CashFlowLab MEDIUM — Intermediar","description":"Plan intermediar cu email sequence, pagină de produs și automatizări smart. Focus pe conversie.","image":"https://cashflowlabai.com/hero-tech.png","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"24.99","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/divha","availability":"https://schema.org/InStock"}},{"@type":"Product","name":"CashFlowLab PRO — Scale Kit","description":"Pachet complet: plan 45 de zile, șabloane premium, funnels și ghid de scalare. Tot ce ai nevoie pentru cashflow.","image":"https://cashflowlabai.com/hero-tech.png","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"49.99","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/udxody","availability":"https://schema.org/InStock"}}]}</script>
+
+  <!-- Schema.org ItemList -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://cashflowlabai.gumroad.com/l/linjxk"},{"@type":"ListItem","position":2,"url":"https://cashflowlabai.gumroad.com/l/bpsbou"},{"@type":"ListItem","position":3,"url":"https://cashflowlabai.gumroad.com/l/divha"},{"@type":"ListItem","position":4,"url":"https://cashflowlabai.gumroad.com/l/udxody"}]}</script>
+
+  <!-- FAQPage JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Product",
-        "name":"CashFlowLab Free Kit",
-        "description":"Starter gratuit cu checklist esențial și ghid rapid — colectează email și livrează automat prin Gumroad.",
-        "image":"https://cashflowlabai.com/hero-tech.png",
-        "brand":{"@type":"Brand","name":"CashFlowLab"},
-        "offers":{"@type":"Offer","price":"0.00","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/linjxk","availability":"https://schema.org/InStock"}
-      },
-      {
-        "@type":"Product",
-        "name":"CashFlowLab MINI — Starter Kit",
-        "description":"Varianta light: 3 checklisturi + 1–2 șabloane rapide. Perfect pentru primul cash online.",
-        "image":"https://cashflowlabai.com/hero-tech.png",
-        "brand":{"@type":"Brand","name":"CashFlowLab"},
-        "offers":{"@type":"Offer","price":"9.00","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/bpsbou","availability":"https://schema.org/InStock"}
-      },
-      {
-        "@type":"Product",
-        "name":"CashFlowLab MEDIUM — Intermediar",
-        "description":"Plan intermediar cu email sequence, pagină de produs și automatizări smart. Focus pe conversie.",
-        "image":"https://cashflowlabai.com/hero-tech.png",
-        "brand":{"@type":"Brand","name":"CashFlowLab"},
-        "offers":{"@type":"Offer","price":"24.99","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/divha","availability":"https://schema.org/InStock"}
-      },
-      {
-        "@type":"Product",
-        "name":"CashFlowLab PRO — Scale Kit",
-        "description":"Pachet complet: plan 45 de zile, șabloane premium, funnels și ghid de scalare. Tot ce ai nevoie pentru cashflow.",
-        "image":"https://cashflowlabai.com/hero-tech.png",
-        "brand":{"@type":"Brand","name":"CashFlowLab"},
-        "offers":{"@type":"Offer","price":"49.99","priceCurrency":"EUR","url":"https://cashflowlabai.gumroad.com/l/udxody","availability":"https://schema.org/InStock"}
-      }
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"În cât timp am acces?","acceptedAnswer":{"@type":"Answer","text":"Imediat după plată (sau €0 la Free) primești linkul pe email prin Gumroad."}},
+      {"@type":"Question","name":"Primesc update-uri?","acceptedAnswer":{"@type":"Answer","text":"Da, update-urile sunt incluse pentru această ediție."}},
+      {"@type":"Question","name":"Pot cere ajutor?","acceptedAnswer":{"@type":"Answer","text":"Da, ofer asistență punctuală la setup."}},
+      {"@type":"Question","name":"Refund?","acceptedAnswer":{"@type":"Answer","text":"14 zile garanție — fără complicații."}}
     ]
   }
   </script>
 
-  <!-- Schema.org ItemList (linkuri produse) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ItemList","itemListElement":[
-    {"@type":"ListItem","position":1,"url":"https://cashflowlabai.gumroad.com/l/linjxk"},
-    {"@type":"ListItem","position":2,"url":"https://cashflowlabai.gumroad.com/l/bpsbou"},
-    {"@type":"ListItem","position":3,"url":"https://cashflowlabai.gumroad.com/l/divha"},
-    {"@type":"ListItem","position":4,"url":"https://cashflowlabai.gumroad.com/l/udxody"}
-  ]}
-  </script>
-
-  <!-- Google tag (GA4) -->
+  <!-- GA4 (pune Measurement ID) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX'); /* înlocuiește cu Measurement ID real */
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- Meta Pixel -->
+  <!-- Meta Pixel (pune Pixel ID) -->
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
   n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[]; t=b.createElement(e); t.async=!0;
   t.src='https://connect.facebook.net/en_US/fbevents.js'; s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script');
-  fbq('init', 'YOUR_PIXEL_ID'); /* înlocuiește cu Pixel ID real */
+  fbq('init', 'YOUR_PIXEL_ID');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-  /></noscript>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
+  <a class="skip-link" href="#main">Sari la conținut</a>
+
   <!-- NAV -->
   <header class="container">
     <nav class="nav" aria-label="Navigație principală">
@@ -483,6 +440,69 @@
     </div>
     <small>© CashFlowLab. Toate drepturile rezervate.</small>
   </footer>
+
+  <!-- Cookie banner + Consent updates + UTM + Click tracking -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Setări cookie">
+    <div><b>Folosim cookie-uri</b> pentru analiză și marketing. Poți accepta sau refuza. Poți schimba oricând din setările browserului.</div>
+    <div class="cookie-actions">
+      <button id="cb-decline" class="btn-ghost">Refuz</button>
+      <button id="cb-accept" class="btn-gold">Accept</button>
+    </div>
+  </div>
+
+  <script>
+    // --- Cookie consent state ---
+    (function(){
+      const KEY='cf_consent_v2';
+      const banner=document.getElementById('cookie-banner');
+      const saved=localStorage.getItem(KEY);
+
+      function grant(){
+        gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+        if (window.fbq) try{ fbq('consent','grant'); }catch(e){}
+        banner.style.display='none';
+        localStorage.setItem(KEY,'granted');
+      }
+      function deny(){
+        gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+        if (window.fbq) try{ fbq('consent','revoke'); }catch(e){}
+        banner.style.display='none';
+        localStorage.setItem(KEY,'denied');
+      }
+      if (saved==='granted'){ grant(); }
+      if (saved==='denied'){ banner.style.display='none'; }
+
+      document.getElementById('cb-accept').addEventListener('click', grant);
+      document.getElementById('cb-decline').addEventListener('click', deny);
+    })();
+
+    // --- Auto-UTM pe toate .gumroad-button ---
+    (function(){
+      function addParams(url, paramsObj){
+        const u=new URL(url, location.href);
+        Object.entries(paramsObj).forEach(([k,v])=>{
+          if(!u.searchParams.has(k)) u.searchParams.set(k,v);
+        });
+        return u.toString();
+      }
+      const baseUTM={
+        utm_source:'cashflowlabai.com',
+        utm_medium:'cta',
+        utm_campaign:'homepage_ro'
+      };
+      document.querySelectorAll('.gumroad-button').forEach(btn=>{
+        const content = (btn.getAttribute('aria-label') || btn.textContent || '').trim();
+        const href = btn.getAttribute('href');
+        if(!href) return;
+        btn.setAttribute('href', addParams(href, {...baseUTM, utm_content: content}));
+        // Tracking click
+        btn.addEventListener('click', ()=>{
+          if (window.gtag) gtag('event','begin_checkout',{event_category:'checkout', value:1, item_id: content});
+          if (window.fbq) fbq('track','InitiateCheckout');
+        });
+      });
+    })();
+  </script>
 
   <!-- Micro-optimizări performanță -->
   <script>
