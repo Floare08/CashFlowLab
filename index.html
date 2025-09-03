@@ -5,133 +5,549 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CashFlowLab — AI care îți construiește cashflow în timp ce dormi</title>
   <meta name="description" content="CashFlowLab: kituri premium cu template-uri, automate și funnel AI. Lansare rapidă, venit recurent, integrare Gumroad. RO/EN." />
+  <link rel="canonical" href="https://cashflowlab.example/" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="CashFlowLab — AI care îți construiește cashflow" />
-  <meta property="og:description" content="Kiturile CashFlowLab te ajută să lansezi repede: pagini premium, funnel AI, email kit, automations. RO/EN." />
-  <meta property="og:image" content="images/og-hero-cover.webp" />
+  <meta property="og:description" content="Kiturile premium pentru lansare rapidă: template-uri, funnel & automate AI. RO/EN." />
+  <meta property="og:image" content="/images/og-cashflowlab.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CashFlowLab — AI cashflow kits" />
-  <meta name="twitter:description" content="Lansezi rapid cu AI: site premium, funnel, email kit, automations. RO/EN." />
-  <meta name="twitter:image" content="images/og-hero-cover.webp" />
-  <link rel="icon" href="images/favicon.png" />
-  <link rel="preload" as="image" href="images/hero-right-orb.webp" />
-  <script defer src="https://gumroad.com/js/gumroad.js"></script>
+  <meta name="twitter:title" content="CashFlowLab — AI care îți construiește cashflow" />
+  <meta name="twitter:description" content="Kiturile premium pentru lansare rapidă: template-uri, funnel & automate AI. RO/EN." />
+  <meta name="twitter:image" content="/images/og-cashflowlab.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/images/site.webmanifest" />
+
+  <!-- Preconnect Gumroad -->
+  <link rel="preconnect" href="https://gumroad.com" />
+
+  <!-- Primary CSS (premium 2025: aur + mov) -->
   <style>
-    :root{
-      --bg: #07081A;
-      --bg-2: #0B0D22;
-      --card: rgba(255,255,255,.06);
-      --border: rgba(255,255,255,.12);
-      --text: #E9EAF5;
-      --muted: #A6ABCF;
-      --gold: #F3C969;
-      --purple: #7A5CF1;
-      --purple-2: #9B84FF;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --radius-2: 28px;
-      --maxw: 1200px;
+    :root {
+      --bg: #07070a;
+      --card: #0e0e14;
+      --muted: #9aa0a6;
+      --text: #EBECF0;
+      --accent-gold: #ffd166;
+      --accent-gold-2: #f6c14f;
+      --accent-purple: #8A5FFF;
+      --accent-purple-2: #B794FF;
+      --ring: rgba(255, 209, 102, 0.4);
+      --grad-1: 255, 209, 102;  /* gold */
+      --grad-2: 138, 95, 255;   /* purple */
+      --shadow-1: 0 10px 30px rgba(0,0,0,0.35);
+      --shadow-2: 0 20px 60px rgba(138,95,255,0.25);
+      --radius-xl: 20px;
+      --radius-2xl: 28px;
+      --container: 1120px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.45;-webkit-font-smoothing:antialiased;}
-    a{text-decoration:none;color:inherit}
-    .container{max-width:var(--maxw);margin-inline:auto;padding:clamp(14px,2vw,24px)}
-    .hero-art{border-radius:var(--radius-2);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);margin-top:24px}
-    .hero-art img{width:100%;display:block}
-    .image-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:32px}
-    .image-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,.25);overflow:hidden;text-align:center;padding-bottom:12px}
-    .image-card img{width:100%;height:auto;display:block}
-    .image-card p{margin:8px 12px;font-size:.95rem;color:var(--muted)}
-    footer{border-top:1px solid var(--border);padding:32px 0;margin-top:64px;color:var(--muted);text-align:center;font-size:.9rem}
-    footer .links{margin-top:8px;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
-    footer a{color:var(--muted)}
-    footer a:hover{color:var(--gold)}
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; color: var(--text); background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, rgba(7,7,10,0.85), rgba(7,7,10,0.35) 70%, rgba(7,7,10,0));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; height: 72px;
+    }
+    .logo {
+      display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.2px;
+    }
+    .logo img { width: 36px; height: 36px; border-radius: 10px; }
+    .badge { font-size: 12px; padding: 6px 10px; border: 1px solid rgba(255,255,255,0.08); border-radius: 999px; color: var(--muted); }
+    .nav a.btn-sm { margin-left: 10px; }
+
+    .btn, .btn-sm {
+      display: inline-block; font-weight: 700; letter-spacing: 0.3px; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+      position: relative; isolation: isolate; white-space: nowrap;
+    }
+    .btn {
+      padding: 14px 22px; font-size: 15px; border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(135deg, rgba(var(--grad-1),0.12), rgba(var(--grad-2),0.12));
+      box-shadow: var(--shadow-1);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-1), var(--shadow-2); }
+    .btn:active { transform: translateY(0); filter: brightness(0.98); }
+    .btn .shine {
+      content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1;
+      background: linear-gradient(120deg, rgba(var(--grad-1),0.35), rgba(var(--grad-2),0.35));
+      filter: blur(16px); opacity: .45;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)); color: #0b0b10; border: none; }
+    .btn-outline { background: transparent; color: var(--text); }
+    .btn-sm { padding: 10px 14px; font-size: 14px; }
+
+    /* HERO */
+    .hero {
+      position: relative; padding: 120px 0 80px; overflow: clip; border-bottom: 1px solid rgba(255,255,255,0.06);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(138,95,255,0.25), transparent 70%),
+        radial-gradient(1000px 500px at 10% -10%, rgba(255,209,102,0.18), transparent 60%),
+        #09090e;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2; opacity: 0.85;
+      background-image: url('/images/hero-tech.png');
+      background-size: cover; background-position: center; filter: saturate(1.1) contrast(1.15) brightness(0.55);
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background: radial-gradient(900px 500px at 50% 0%, rgba(7,7,10,0), rgba(7,7,10,0.85) 60%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center; }
+    .eyebrow { font-size: 13px; letter-spacing: 0.4px; color: var(--accent-purple-2); text-transform: uppercase; font-weight: 800; }
+    h1 {
+      font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1.1; margin: 10px 0 16px; font-size: clamp(34px, 6vw, 64px);
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)); -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+    .sub { font-size: clamp(16px, 2.1vw, 20px); color: #D5D7DE; max-width: 720px; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+    .trust { display: flex; gap: 18px; align-items: center; margin-top: 18px; color: var(--muted); font-size: 14px; }
+
+    .glass { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-2xl); box-shadow: var(--shadow-1); }
+    .stat { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; }
+    .stat b { font-size: 18px; display: block; }
+
+    .hero-card { padding: 20px; }
+    .hero-card .countdown { font-family: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 28px; letter-spacing: 1px; }
+
+    /* Sections */
+    section { padding: 84px 0; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.4vw, 44px); margin: 0 0 12px; }
+    .section-sub { color: var(--muted); margin-bottom: 28px; }
+
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .feature { padding: 22px; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); }
+    .feature h3 { margin: 10px 0 8px; font-size: 18px; }
+    .feature p { color: #C7C9D1; margin: 0; font-size: 15px; }
+
+    .kits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .kit { padding: 26px; border-radius: var(--radius-2xl); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
+    .kit h3 { margin: 8px 0 6px; font-size: 20px; }
+    .price { font-size: 34px; font-weight: 800; margin: 6px 0 16px; background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .kit ul { margin: 0; padding-left: 18px; color: #D9DBE3; }
+    .kit li { margin: 8px 0; }
+    .kit .cta-row { margin-top: 16px; }
+
+    .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .quote { padding: 20px; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); font-size: 15px; }
+    .quote .who { margin-top: 10px; color: var(--muted); font-size: 14px; }
+
+    .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .faq-item { padding: 20px; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); }
+    .faq-item h4 { margin: 0 0 10px; }
+
+    footer { padding: 40px 0 90px; color: var(--muted); border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 18px; }
+    .foot-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; }
+
+    /* Mobile */
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .features, .kits, .testimonials, .faq, .footer-grid { grid-template-columns: 1fr; }
+      header .nav .right { display: none; }
+      .hero { padding: 96px 0 64px; }
+    }
+
+    /* Sticky mobile CTA */
+    .mobile-cta {
+      position: fixed; z-index: 60; bottom: 14px; left: 50%; transform: translateX(-50%);
+      width: min(680px, calc(100% - 24px)); display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      padding: 10px; border-radius: 16px; background: rgba(15,15,20,0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (min-width: 981px) { .mobile-cta { display: none; } }
   </style>
 </head>
 <body>
-  <!-- HERO -->
-  <header class="container hero" id="home">
-    <div class="hero-copy">
-      <h1 class="title">AI care îți construiește <span class="accent">cashflow</span> în timp ce dormi</h1>
-      <p>Lansezi în ore, nu în luni: site premium, funnel AI, template-uri de email și automatizări. Totul gata de vânzare.</p>
-    </div>
-    <div class="hero-media">
-      <div class="hero-art">
-        <img src="images/hero-right-orb.webp" alt="CashFlowLab premium tech hero" />
-      </div>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#" aria-label="CashFlowLab Home">
+        <img src="/images/logo-cashflowlab.png" alt="CashFlowLab Logo" width="36" height="36" />
+        <span>CashFlowLab</span>
+        <span class="badge" id="beta">v1 • Premium</span>
+      </a>
+      <nav class="right">
+        <a href="#kits" class="btn-sm btn-outline" data-i18n="nav.kits">Kits</a>
+        <a href="#faq" class="btn-sm btn-outline" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" class="btn-sm btn-outline" data-i18n="nav.contact">Contact</a>
+        <button id="langToggle" class="btn-sm btn">RO / EN</button>
+        <a href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" data-i18n="nav.buy">Cumpără PRO</a>
+      </nav>
     </div>
   </header>
 
-  <!-- FEATURES IMAGES -->
-  <section id="features" class="section container">
-    <h2 class="heading">Exemple vizuale</h2>
-    <div class="image-grid">
-      <div class="image-card">
-        <img src="images/funnel-diagram.webp" alt="CashFlowLab Funnel Diagram" />
-        <p>Structura completă a funnel-ului CashFlowLab</p>
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow" data-i18n="hero.eyebrow">Lansare rapidă • Funnel + AI</div>
+        <h1 data-i18n="hero.title">AI care îți construiește cashflow în timp ce dormi</h1>
+        <p class="sub" data-i18n="hero.sub">Kiturile CashFlowLab includ tot ce ai nevoie: pagini premium, copy, template-uri, automatizări, countdown, integrare Gumroad și email funnel. În română și engleză.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_primary">
+            <span class="shine"></span> Cumpără PRO
+          </a>
+          <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_secondary">Descarcă Free Kit</a>
+          <a class="btn btn-outline" href="#kits" data-i18n="hero.cta_third">Vezi toate kiturile</a>
+        </div>
+        <div class="trust">
+          <span>⭐️</span>
+          <span data-i18n="hero.trust">Design premium 2025 • Optimizat pentru mobil • SEO + OG gata</span>
+        </div>
       </div>
-      <div class="image-card">
-        <img src="images/tech-orb-alt.webp" alt="CashFlowLab Tech Orb" />
-        <p>Orb tehnologic care reprezintă energia AI</p>
-      </div>
-      <div class="image-card">
-        <img src="images/og-hero-cover.webp" alt="CashFlowLab Cover" />
-        <p>Design-ul de cover optimizat pentru social media</p>
-      </div>
-      <div class="image-card">
-        <img src="images/logo-mark.png" alt="CashFlowLab Logo Mark" />
-        <p>Logoul simplificat pentru identitate vizuală</p>
+
+      <div class="glass hero-card" aria-live="polite">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px;">
+          <b data-i18n="countdown.title">Countdown până la lansare</b>
+          <span class="badge" id="launchDateLabel"></span>
+        </div>
+        <!-- EDIT: Setează data/ora lansării aici (format ISO 8601) -->
+        <div id="countdown" class="countdown" data-countdown="2025-09-15T18:00:00+02:00" aria-label="Time until launch">00:00:00:00</div>
+        <p style="color:var(--muted); margin-top:8px;" data-i18n="countdown.help">Poți modifica data de lansare în cod (atributul <code>data-countdown</code>).</p>
+        <div class="stat" style="margin-top:16px;">
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="48" height="48" rx="12" fill="url(#g)" opacity="0.18"/>
+            <path d="M18 28h8l6 10 6-20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="g" x1="4" y1="4" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFD166"/>
+                <stop offset="1" stop-color="#8A5FFF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div>
+            <b data-i18n="countdown.point1">Template-uri + funnel gata din cutie</b>
+            <span style="color:var(--muted); display:block;" data-i18n="countdown.point2">Instalare în 30–60 min • Integrare Gumroad</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- MINI SHOWCASE: Images + short descriptions (compact) -->
-  <section id="showcase" class="section container">
-    <h3 class="heading" style="font-size:1.4rem">Showcase vizual (rapid)</h3>
-    <div class="mini-grid">
-      <article class="mini-card">
-        <img class="thumb" src="images/og-hero-cover.webp" alt="Covers – social/OG" />
-        <div class="meta">
-          <h4>Covers</h4>
-          <p>Cover pentru social & share (OG) — vizibil când distribui linkul.</p>
+  <!-- ===== Features ===== -->
+  <section id="features">
+    <div class="container">
+      <h2 class="section-title" data-i18n="features.title">Tot ce-ți trebuie pentru venit recurent</h2>
+      <p class="section-sub" data-i18n="features.sub">De la landing premium la emailuri, automatizări și livrare digitală – totul optimizat.</p>
+      <div class="features">
+        <div class="feature">
+          <div>🚀</div>
+          <h3 data-i18n="features.f1_t">Lansare ultra-rapidă</h3>
+          <p data-i18n="features.f1_d">Pagini premium + copy pre-scris. Publici azi, vinzi azi.</p>
         </div>
-      </article>
-      <article class="mini-card">
-        <img class="thumb" src="images/funnel-diagram.webp" alt="Funnel – diagrame" />
-        <div class="meta">
-          <h4>Funnel</h4>
-          <p>Schema Free → Mini → Medium → PRO, gata de adaptat la campanii.</p>
+        <div class="feature">
+          <div>🧠</div>
+          <h3 data-i18n="features.f2_t">Automate AI incluse</h3>
+          <p data-i18n="features.f2_d">Funnel, emailuri, workflow-uri gata, adaptabile brandului tău.</p>
         </div>
-      </article>
-      <article class="mini-card">
-        <img class="thumb" src="images/hero-right-orb.webp" alt="Preview Tech" />
-        <div class="meta">
-          <h4>Preview Tech</h4>
-          <p>Visual de accent (mov + gold) folosit în hero și materiale.</p>
+        <div class="feature">
+          <div>🛡️</div>
+          <h3 data-i18n="features.f3_t">Design premium 2025</h3>
+          <p data-i18n="features.f3_d">Auriu + mov, animații fine, accesibilitate și SEO corect.</p>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
-      <img src="images/logo-mark.png" alt="CashFlowLab Logo" style="width:28px;height:28px"/>
-      <span>© <span id="year"></span> CashFlowLab. Toate drepturile rezervate.</span>
+  <!-- ===== Kits / Pricing ===== -->
+  <section id="kits">
+    <div class="container">
+      <h2 class="section-title" data-i18n="kits.title">Alege kitul tău</h2>
+      <p class="section-sub" data-i18n="kits.sub">Începe cu Free Kit sau sari direct la Premium. Toate vin cu update-uri.</p>
+      <div class="kits">
+        <!-- Free Kit -->
+        <div class="kit">
+          <span class="badge" data-i18n="kits.badge_free">Gratuit</span>
+          <h3 data-i18n="kits.free_t">Free Kit</h3>
+          <div class="price">€0+</div>
+          <ul>
+            <li data-i18n="kits.free_1">Landing de bază RO/EN</li>
+            <li data-i18n="kits.free_2">Copy starter + OG/SEO</li>
+            <li data-i18n="kits.free_3">Buton Gumroad integrat</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer" data-i18n="kits.cta_free">Descarcă</a>
+          </div>
+        </div>
+        <!-- MINI — Starter Kit -->
+        <div class="kit">
+          <span class="badge">Nou</span>
+          <h3>CashFlowLab MINI — Starter Kit</h3>
+          <div class="price">€9</div>
+          <ul>
+            <li>Landing complet + secțiuni esențiale</li>
+            <li>3 componente UI + OG/SEO</li>
+            <li>1 email funnel (starter)</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener noreferrer">Detalii</a>
+            <a class="btn btn" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener noreferrer">Cumpără</a>
+          </div>
+        </div>
+        <!-- MEDIUM Kit -->
+        <div class="kit">
+          <span class="badge" data-i18n="kits.badge_best">Popular</span>
+          <h3>CashFlowLab MEDIUM</h3>
+          <div class="price">€27</div>
+          <ul>
+            <li>Landing complet + secțiuni</li>
+            <li>3 emailuri funnel</li>
+            <li>Checklist lansare</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener noreferrer">Detalii</a>
+            <a class="btn btn" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener noreferrer">Cumpără</a>
+          </div>
+        </div>
+        <!-- PRO — Scale Kit -->
+        <div class="kit">
+          <span class="badge" data-i18n="kits.badge_premium">Top</span>
+          <h3>CashFlowLab PRO — Scale Kit</h3>
+          <div class="price">€49.99</div>
+          <ul>
+            <li>Landing ultra-premium + video/hero</li>
+            <li>Funnel 5 emailuri + automate</li>
+            <li>Cover-uri Gumroad + OG pack</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer">Cumpără PRO</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="links">
-      <a href="#features">Exemple vizuale</a>
-      <a href="#">Termeni & Politică</a>
-      <a href="#home">Înapoi sus</a>
+  </section>
+
+  <!-- ===== Social proof / Testimonials ===== -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title" data-i18n="testimonials.title">Oameni reali, rezultate reale</h2>
+      <p class="section-sub" data-i18n="testimonials.sub">Feedback din comunitate după instalare și primele vânzări.</p>
+      <div class="testimonials">
+        <div class="quote">„Într-o seară l-am pus live. Primele 3 vânzări au venit în 24h.”<div class="who">— Andrei, creator</div></div>
+        <div class="quote">„Designul arată scump. Integrarea Gumroad a fost banală.”<div class="who">— Ioana, freelancer</div></div>
+        <div class="quote">„Mi-a rezolvat scrisul + layout-ul. Am economisit zile.”<div class="who">— Vlad, soloprenor</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title" data-i18n="faq.title">Întrebări frecvente</h2>
+      <div class="faq">
+        <div class="faq-item">
+          <h4 data-i18n="faq.q1_t">Cum instalez kitul?</h4>
+          <p data-i18n="faq.q1_d">Primești fișierul HTML/CSS/JS și ghidul. Îl urci pe Netlify/hostul tău și înlocuiești link-urile Gumroad.</p>
+        </div>
+        <div class="faq-item">
+          <h4 data-i18n="faq.q2_t">Pot schimba culorile și imaginile?</h4>
+          <p data-i18n="faq.q2_d">Da. Totul e într-un singur fișier + folderul <code>/images</code>. Schimbi fundalul (<code>hero-tech.png</code>) și logo-ul.</p>
+        </div>
+        <div class="faq-item">
+          <h4 data-i18n="faq.q3_t">E compatibil cu Gumroad?</h4>
+          <p data-i18n="faq.q3_d">Da. Butoanele deschid direct paginile produselor. Poți adăuga și overlay Gumroad.</p>
+        </div>
+        <div class="faq-item">
+          <h4 data-i18n="faq.q4_t">Primesc update-uri?</h4>
+          <p data-i18n="faq.q4_d">Da, pentru versiunile Mini/Medium/Premium. Free Kit primește patch-uri critice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="foot-logo"><img src="/images/logo-cashflowlab.png" alt="CashFlowLab" width="28" height="28"/>CashFlowLab</div>
+        <p style="margin-top:8px;">© <span id="y"></span> CashFlowLab. Toate drepturile rezervate.</p>
+      </div>
+      <div>
+        <b data-i18n="foot.links">Linkuri</b>
+        <ul style="list-style:none; padding:0; margin:10px 0 0;">
+          <li><a href="#kits" data-i18n="nav.kits">Kits</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <b data-i18n="foot.legal">Legal</b>
+        <ul style="list-style:none; padding:0; margin:10px 0 0;">
+          <li><a href="/privacy.html">Privacy</a></li>
+          <li><a href="/terms.html">Terms</a></li>
+          <li><a href="/cookies.html">Cookies</a></li>
+        </ul>
+      </div>
+      <div>
+        <b data-i18n="foot.social">Social</b>
+        <ul style="list-style:none; padding:0; margin:10px 0 0;">
+          <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 
+  <!-- Sticky mobile CTA -->
+  <div class="mobile-cta">
+    <a class="btn btn-primary" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" data-i18n="mobile.cta_buy">Cumpără PRO</a>
+    <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer" data-i18n="mobile.cta_free">Free Kit</a>
+  </div>
+
+  <!-- JSON-LD (Organization + Product) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CashFlowLab",
+    "url": "https://cashflowlab.example/",
+    "logo": "https://cashflowlab.example/images/logo-cashflowlab.png",
+    "sameAs": ["https://instagram.com/", "https://tiktok.com/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "CashFlowLab PRO — Scale Kit",
+    "brand": {"@type": "Brand", "name": "CashFlowLab"},
+    "image": "https://cashflowlab.example/images/og-cashflowlab.png",
+    "description": "Kiturile premium cu template-uri, funnel și automate AI pentru lansare rapidă.",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.99",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://cashflowlabai.gumroad.com/l/udxody"
+    }
+  }
+  </script>
+
+  <!-- App JS: i18n + countdown + small UX helpers -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Countdown
+    (function setupCountdown(){
+      const el = document.getElementById('countdown');
+      if(!el) return;
+      const iso = el.getAttribute('data-countdown');
+      const launch = iso ? new Date(iso) : null;
+      const label = document.getElementById('launchDateLabel');
+      if(launch && label){ label.textContent = launch.toLocaleString(); }
+
+      function fmt(n){ return String(Math.max(0, Math.floor(n))).padStart(2,'0'); }
+      function tick(){
+        if(!launch){ el.textContent = '—'; return; }
+        const now = new Date();
+        let diff = (launch - now) / 1000; // seconds
+        if (diff <= 0) { el.textContent = '00:00:00:00'; return; }
+        const days = Math.floor(diff / 86400); diff -= days * 86400;
+        const hrs  = Math.floor(diff / 3600); diff -= hrs * 3600;
+        const mins = Math.floor(diff / 60); diff -= mins * 60;
+        const secs = Math.floor(diff);
+        el.textContent = `${fmt(days)}:${fmt(hrs)}:${fmt(mins)}:${fmt(secs)}`;
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    // Simple i18n (RO/EN)
+    const i18n = {
+      ro: {
+        'nav.kits':'Kits', 'nav.faq':'FAQ', 'nav.contact':'Contact', 'nav.buy':'Cumpără PRO',
+        'hero.eyebrow':'Lansare rapidă • Funnel + AI',
+        'hero.title':'AI care îți construiește cashflow în timp ce dormi',
+        'hero.sub':'Kiturile CashFlowLab includ tot ce ai nevoie: pagini premium, copy, template-uri, automatizări, countdown, integrare Gumroad și email funnel. În română și engleză.',
+        'hero.cta_primary':'Cumpără PRO', 'hero.cta_secondary':'Descarcă Free Kit', 'hero.cta_third':'Vezi toate kiturile',
+        'hero.trust':'Design premium 2025 • Optimizat pentru mobil • SEO + OG gata',
+        'countdown.title':'Countdown până la lansare','countdown.help':'Poți modifica data de lansare în cod (atributul data-countdown).','countdown.point1':'Template-uri + funnel gata din cutie','countdown.point2':'Instalare în 30–60 min • Integrare Gumroad',
+        'features.title':'Tot ce-ți trebuie pentru venit recurent','features.sub':'De la landing premium la emailuri, automatizări și livrare digitală – totul optimizat.',
+        'features.f1_t':'Lansare ultra-rapidă','features.f1_d':'Pagini premium + copy pre-scris. Publici azi, vinzi azi.',
+        'features.f2_t':'Automate AI incluse','features.f2_d':'Funnel, emailuri, workflow-uri gata, adaptabile brandului tău.',
+        'features.f3_t':'Design premium 2025','features.f3_d':'Auriu + mov, animații fine, accesibilitate și SEO corect.',
+        'kits.title':'Alege kitul tău','kits.sub':'Începe cu Free Kit sau sari direct la Premium. Toate vin cu update-uri.',
+        'kits.badge_free':'Gratuit','kits.badge_best':'Popular','kits.badge_premium':'Top',
+        'kits.free_t':'Free Kit','kits.free_1':'Landing de bază RO/EN','kits.free_2':'Copy starter + OG/SEO','kits.free_3':'Buton Gumroad integrat','kits.cta_free':'Descarcă',
+        'kits.mini_t':'Mini/Medium Kit','kits.mini_1':'Landing complet + secțiuni','kits.mini_2':'3 emailuri funnel','kits.mini_3':'Checklist lansare','kits.cta_learn':'Detalii','kits.cta_buy':'Cumpără',
+        'kits.premium_t':'Premium Kit','kits.premium_1':'Landing ultra-premium + video/hero','kits.premium_2':'Funnel 5 emailuri + automate','kits.premium_3':'Cover-uri Gumroad + OG pack','kits.cta_premium':'Cumpără Premium',
+        'testimonials.title':'Oameni reali, rezultate reale','testimonials.sub':'Feedback din comunitate după instalare și primele vânzări.',
+        'faq.title':'Întrebări frecvente','faq.q1_t':'Cum instalez kitul?','faq.q1_d':'Primești fișierul HTML/CSS/JS și ghidul. Îl urci pe Netlify/hostul tău și înlocuiești link-urile Gumroad.',
+        'faq.q2_t':'Pot schimba culorile și imaginile?','faq.q2_d':'Da. Totul e într-un singur fișier + folderul /images. Schimbi fundalul (hero-tech.png) și logo-ul.',
+        'faq.q3_t':'E compatibil cu Gumroad?','faq.q3_d':'Da. Butoanele deschid direct paginile produselor. Poți adăuga și overlay Gumroad.',
+        'faq.q4_t':'Primesc update-uri?','faq.q4_d':'Da, pentru versiunile Mini/Medium/Premium. Free Kit primește patch-uri critice.',
+        'foot.links':'Linkuri','foot.legal':'Legal','foot.social':'Social',
+        'mobile.cta_buy':'Cumpără PRO','mobile.cta_free':'Free Kit'
+      },
+      en: {
+        'nav.kits':'Kits', 'nav.faq':'FAQ', 'nav.contact':'Contact', 'nav.buy':'Buy PRO',
+        'hero.eyebrow':'Fast launch • Funnel + AI',
+        'hero.title':'AI that builds your cashflow while you sleep',
+        'hero.sub':'CashFlowLab kits include everything: premium pages, copy, templates, automations, countdown, Gumroad integration, and email funnel. In Romanian and English.',
+        'hero.cta_primary':'Buy PRO', 'hero.cta_secondary':'Download Free Kit', 'hero.cta_third':'See all kits',
+        'hero.trust':'Premium 2025 design • Mobile‑first • SEO + OG ready',
+        'countdown.title':'Launch countdown','countdown.help':'Change the launch date in the code (data-countdown attribute).','countdown.point1':'Templates + funnel out of the box','countdown.point2':'Setup in 30–60 min • Gumroad ready',
+        'features.title':'Everything you need for recurring revenue','features.sub':'From premium landing to emails, automations and digital delivery — fully optimized.',
+        'features.f1_t':'Ultra‑fast launch','features.f1_d':'Premium pages + prewritten copy. Launch today, sell today.',
+        'features.f2_t':'AI automations included','features.f2_d':'Funnel, emails, workflows ready to adapt to your brand.',
+        'features.f3_t':'Premium 2025 design','features.f3_d':'Gold + purple, smooth animations, accessibility and solid SEO.',
+        'kits.title':'Choose your kit','kits.sub':'Start with the Free Kit or jump straight to Premium. All include updates.',
+        'kits.badge_free':'Free','kits.badge_best':'Popular','kits.badge_premium':'Top',
+        'kits.free_t':'Free Kit','kits.free_1':'Basic RO/EN landing','kits.free_2':'Starter copy + OG/SEO','kits.free_3':'Gumroad button integrated','kits.cta_free':'Download',
+        'kits.mini_t':'Mini/Medium Kit','kits.mini_1':'Full landing + sections','kits.mini_2':'3‑email funnel','kits.mini_3':'Launch checklist','kits.cta_learn':'Details','kits.cta_buy':'Buy',
+        'kits.premium_t':'Premium Kit','kits.premium_1':'Ultra‑premium landing + video/hero','kits.premium_2':'5‑email funnel + automations','kits.premium_3':'Gumroad covers + OG pack','kits.cta_premium':'Buy Premium',
+        'testimonials.title':'Real people, real results','testimonials.sub':'Community feedback after setup and first sales.',
+        'faq.title':'Frequently asked questions','faq.q1_t':'How do I install it?','faq.q1_d':'You get the HTML/CSS/JS + guide. Deploy to Netlify/your host and replace Gumroad links.',
+        'faq.q2_t':'Can I change colors and images?','faq.q2_d':'Yes. It’s a single file + the /images folder. Swap the background (hero-tech.png) and logo.',
+        'faq.q3_t':'Is it Gumroad‑compatible?','faq.q3_d':'Yes. Buttons open product pages directly. You can also add the Gumroad overlay.',
+        'faq.q4_t':'Do I get updates?','faq.q4_d':'Yes for Mini/Medium/Premium. Free Kit gets critical fixes.',
+        'foot.links':'Links','foot.legal':'Legal','foot.social':'Social',
+        'mobile.cta_buy':'Buy PRO','mobile.cta_free':'Free Kit'
+      }
+    };
+
+    function applyI18n(lang){
+      const dict = i18n[lang] || i18n.ro;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(dict[key]) el.textContent = dict[key];
+      });
+      const buyBtn = document.querySelector('nav a.btn-sm.btn-primary');
+      if(buyBtn && dict['nav.buy']) buyBtn.textContent = dict['nav.buy'];
+    }
+
+    // Default: RO
+    applyI18n('ro');
+
+    // Toggle button
+    document.getElementById('langToggle').addEventListener('click', function(){
+      const current = document.documentElement.lang === 'ro' ? 'en' : 'ro';
+      applyI18n(current);
+      this.textContent = current.toUpperCase() === 'RO' ? 'RO / EN' : (current.toUpperCase() + ' / RO');
+    });
   </script>
 </body>
 </html>
