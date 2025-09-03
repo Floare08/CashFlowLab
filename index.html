@@ -6,10 +6,8 @@
   <title>CashFlowLab — AI care îți construiește cashflow în timp ce dormi</title>
   <meta name="description" content="CashFlowLab: kituri premium cu template-uri, automate și funnel AI. Lansare rapidă, venit recurent, integrare Gumroad. RO/EN." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/hero-right-orb.webp" imagesizes="100vw" />
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="CashFlowLab — AI care îți construiește cashflow" />
@@ -20,6 +18,7 @@
   <meta name="twitter:description" content="Lansezi rapid cu AI: site premium, funnel, email kit, automations. RO/EN." />
   <meta name="twitter:image" content="assets/og-hero-cover.webp" />
   <link rel="icon" href="assets/favicon.png" />
+  <link rel="preload" as="image" href="assets/hero-right-orb.webp" />
   <script defer src="https://gumroad.com/js/gumroad.js"></script>
   <style>
     :root{
@@ -57,16 +56,12 @@
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{width:36px;height:36px}
     .brand .name{font-weight:800;letter-spacing:.3px}
-    .nav-links{display:flex;gap:24px;align-items:center}
-    .nav-links a{opacity:.85;transition:opacity .2s ease}
-    .nav-links a:hover{opacity:1}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{opacity:.85}
     .nav-cta{display:flex;gap:10px;align-items:center}
-    .pill{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.04);box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .pill{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
 
     /* lang switch */
-    #lang-switch{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:600}
-    #lang-switch .seg{opacity:.55}
-    #lang-switch .seg.active{opacity:1}
     #lang-switch{border:1px solid var(--border);background:var(--card);padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:600}
     #lang-switch .seg{opacity:.55}
     #lang-switch .seg.active{opacity:1}
@@ -86,7 +81,7 @@
 
     .hero-media{position:relative}
     .hero-art{border-radius:var(--radius-2);overflow:hidden;border:1px solid rgba(255,255,255,.12);background:radial-gradient(80% 80% at 50% 0%, rgba(122,92,241,.25), rgba(255,255,255,.02));box-shadow:var(--shadow);min-height:360px}
-    .hero-art img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:auto}
+    .hero-art img{width:100%;height:100%;display:block;object-fit:cover}
 
     .countdown-bar{margin-top:16px;border:1px dashed var(--gold);border-radius:14px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:linear-gradient(180deg, rgba(243,201,105,.08), rgba(122,92,241,.08))}
     .cd-label{font-weight:700}
@@ -127,6 +122,7 @@
       .card{grid-column:span 6}
       .step{grid-column:span 12}
       .testi{grid-column:span 12}
+      .hero-art{min-height:260px}
     }
     @media (max-width:640px){
       .card{grid-column:span 12}
@@ -188,7 +184,8 @@
           <img src="assets/hero-right-orb.png" alt="CashFlowLab premium tech hero" loading="eager" decoding="async" />
         </picture>
       </div>
-    </header>
+    </div>
+  </header>
 
   <!-- FEATURES -->
   <section id="features" class="section container">
@@ -461,7 +458,6 @@
         const value = dict[l][key];
         if(value) el.textContent = value;
       });
-      // update language switch visual
       $('#lang-switch .ro').classList.toggle('active', l==='ro');
       $('#lang-switch .en').classList.toggle('active', l==='en');
       localStorage.setItem('cf_lang', l);
