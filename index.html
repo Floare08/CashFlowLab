@@ -72,6 +72,13 @@
     .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
     .gal-item{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);cursor:pointer;background:#0f0e18}
     .gal-item img{width:100%;height:220px;object-fit:cover}
+    /* captions above gallery cards */
+    .gal-cap{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin:0 2px 8px;padding:0 2px}
+    .gal-cap .cap-title{font-weight:800;letter-spacing:.2px}
+    .gal-cap .cap-sub{color:var(--muted);font-size:13px;margin-top:2px}
+    .gal-cap .cap-left{display:flex;flex-direction:column}
+    .gal-cap .cap-right .chip{padding:6px 10px;font-size:12px}
+    @media (max-width:980px){.gal-cap{margin:0 0 8px}}
     .fallback{display:none;place-items:center;height:220px;color:#f3e6c4;font-weight:700;background:radial-gradient(400px 180px at 10% 0%, rgba(233,196,106,.18), transparent 60%),radial-gradient(400px 300px at 100% 40%, rgba(138,43,226,.18), transparent 60%)}
     .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(5,5,10,.8);backdrop-filter:blur(6px);z-index:20}
     .lightbox.open{display:flex}.lightbox-img{max-width:92vw;max-height:86vh;border-radius:12px;border:1px solid rgba(255,255,255,.15);box-shadow:0 20px 60px rgba(0,0,0,.6)}
@@ -157,31 +164,58 @@
       <p class="muted" data-i18n="gallery_d">Imaginile sunt gata de înlocuit cu ale tale. Dacă un fișier lipsește, cardul rămâne curat.</p>
       <div class="gallery" style="margin-top:12px">
         <!-- Cover -->
-        <div class="gal-item" data-large="/images/og-hero-cover.webp">
-          <picture>
-            <source srcset="/images/og-hero-cover.webp" type="image/webp"/>
-            <img loading="lazy" decoding="async" src="/images/og-hero-cover.jpg" alt="Hero Cover"
-                 onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
-          </picture>
-          <div class="fallback">Cover</div>
+        <div>
+          <div class="gal-cap">
+            <div class="cap-left">
+              <div class="cap-title">Cover premium</div>
+              <div class="cap-sub">Identitate gold+mov pentru Hero & share (OG).</div>
+            </div>
+            <div class="cap-right"><span class="chip">Medium</span></div>
+          </div>
+          <div class="gal-item" data-large="/images/og-hero-cover.webp">
+            <picture>
+              <source srcset="/images/og-hero-cover.webp" type="image/webp"/>
+              <img loading="lazy" decoding="async" src="/images/og-hero-cover.jpg" alt="Hero Cover"
+                   onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
+            </picture>
+            <div class="fallback">Cover</div>
+          </div>
         </div>
         <!-- Tech orb alt -->
-        <div class="gal-item" data-large="/images/tech-orb-alt.webp">
-          <picture>
-            <source srcset="/images/tech-orb-alt.webp" type="image/webp"/>
-            <img loading="lazy" decoding="async" src="/images/tech-orb-alt.png" alt="Tech Orb"
-                 onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
-          </picture>
-          <div class="fallback">Tech</div>
+        <div>
+          <div class="gal-cap">
+            <div class="cap-left">
+              <div class="cap-title">Content AI zilnic</div>
+              <div class="cap-sub">Vizual tech pentru postări & emailuri generate.</div>
+            </div>
+            <div class="cap-right"><span class="chip">Mini</span></div>
+          </div>
+          <div class="gal-item" data-large="/images/tech-orb-alt.webp">
+            <picture>
+              <source srcset="/images/tech-orb-alt.webp" type="image/webp"/>
+              <img loading="lazy" decoding="async" src="/images/tech-orb-alt.png" alt="Tech Orb"
+                   onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
+            </picture>
+            <div class="fallback">Tech</div>
+          </div>
         </div>
         <!-- Funnel diagram -->
-        <div class="gal-item" data-large="/images/funnel-diagram.webp">
-          <picture>
-            <source srcset="/images/funnel-diagram.webp" type="image/webp"/>
-            <img loading="lazy" decoding="async" src="/images/funnel-diagram.png" alt="Funnel Diagram"
-                 onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
-          </picture>
-          <div class="fallback">Funnel</div>
+        <div>
+          <div class="gal-cap">
+            <div class="cap-left">
+              <div class="cap-title">Funnel în 4 pași</div>
+              <div class="cap-sub">Capture → Nurture → Offer → Conversion (MailerLite + Gumroad).</div>
+            </div>
+            <div class="cap-right"><span class="chip">PRO</span></div>
+          </div>
+          <div class="gal-item" data-large="/images/funnel-diagram.webp">
+            <picture>
+              <source srcset="/images/funnel-diagram.webp" type="image/webp"/>
+              <img loading="lazy" decoding="async" src="/images/funnel-diagram.png" alt="Funnel Diagram"
+                   onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
+            </picture>
+            <div class="fallback">Funnel</div>
+          </div>
         </div>
       </div>
     </section>
