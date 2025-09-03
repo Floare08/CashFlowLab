@@ -18,14 +18,15 @@
   <meta property="og:description" content="Ecosistem premium: conținut AI, funnel automatizat, produse digitale.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cashflowlab.example/">
-  <meta property="og:image" content="https://cashflowlab.example/og-cover.jpg">
+  <meta property="og:image" content="https://cashflowlab.example/images/og-hero-cover.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CashFlowLab — Premium AI Funnel">
   <meta name="twitter:description" content="Conținut AI, funnel automatizat, produse digitale.">
-  <meta name="twitter:image" content="https://cashflowlab.example/og-cover.jpg">
+  <meta name="twitter:image" content="https://cashflowlab.example/images/og-hero-cover.webp">
   <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="%23e9c46a" offset="0"/><stop stop-color="%238a2be2" offset="1"/></linearGradient></defs><rect width="64" height="64" rx="12" fill="%230c0b14"/><path d="M14 40c10-24 26-24 36 0" stroke="url(%23g)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>'>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  $1  <!-- added: preload hero overlay image -->
+  <link rel="preload" as="image" href="/images/hero-right-orb.webp" fetchpriority="high">
   <style>
     :root{--bg:#0b0a12;--card:#10101a;--muted:#b7b7c9;--text:#e9e9f4;--gold:#e9c46a;--gold-2:#c6a451;--purple:#8a2be2;--purple-2:#5c1cb9;--glass: rgba(255,255,255,0.06);--br:20px;--shadow:0 10px 30px rgba(0,0,0,.45);--maxw:1200px}
     *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
@@ -79,7 +80,10 @@
     .faq details+details{margin-top:10px}.faq summary{cursor:pointer;font-weight:700}
     footer{padding:26px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.08)}
     @media (max-width:980px){.hero{grid-template-columns:1fr;gap:20px}.grid-3,.pricing,.gallery{grid-template-columns:1fr}.funnel{grid-template-columns:1fr;gap:10px}.arrow{display:none}}
-  </style>
+    /* --- added: hero overlay styles --- */
+  .hero-overlay{ position:absolute; right:-10px; top:-20px; width:min(60%,520px); height:auto; pointer-events:none; opacity:.95; mix-blend:screen; filter:saturate(110%) contrast(105%); }
+  @media (max-width:980px){ .hero-overlay{ right:-6px; top:auto; bottom:-18px; width:72%; opacity:.9; } }
+</style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlab.example/","logo":"https://cashflowlab.example/logo.png","sameAs":["https://instagram.com/cashflowlab"]}
   </script>
@@ -152,14 +156,32 @@
       <h2 class="section-title" data-i18n="gallery_t">Previzualizări (click pentru lightbox)</h2>
       <p class="muted" data-i18n="gallery_d">Imaginile sunt gata de înlocuit cu ale tale. Dacă un fișier lipsește, cardul rămâne curat.</p>
       <div class="gallery" style="margin-top:12px">
-        <div class="gal-item" data-large="./images/hero-tech.png">
-          <img src="./images/hero-tech.png" alt="Hero Tech" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="fallback">Hero</div>
+        <!-- Cover -->
+        <div class="gal-item" data-large="/images/og-hero-cover.webp">
+          <picture>
+            <source srcset="/images/og-hero-cover.webp" type="image/webp"/>
+            <img loading="lazy" decoding="async" src="/images/og-hero-cover.jpg" alt="Hero Cover"
+                 onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
+          </picture>
+          <div class="fallback">Cover</div>
         </div>
-        <div class="gal-item" data-large="./images/funnel-diagram.png">
-          <img src="./images/funnel-diagram.png" alt="Funnel Diagram" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="fallback">Funnel</div>
+        <!-- Tech orb alt -->
+        <div class="gal-item" data-large="/images/tech-orb-alt.webp">
+          <picture>
+            <source srcset="/images/tech-orb-alt.webp" type="image/webp"/>
+            <img loading="lazy" decoding="async" src="/images/tech-orb-alt.png" alt="Tech Orb"
+                 onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
+          </picture>
+          <div class="fallback">Tech</div>
         </div>
-        <div class="gal-item" data-large="./images/cashflowlab-cover.png">
-          <img src="./images/cashflowlab-cover.png" alt="Cover" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="fallback">Cover</div>
+        <!-- Funnel diagram -->
+        <div class="gal-item" data-large="/images/funnel-diagram.webp">
+          <picture>
+            <source srcset="/images/funnel-diagram.webp" type="image/webp"/>
+            <img loading="lazy" decoding="async" src="/images/funnel-diagram.png" alt="Funnel Diagram"
+                 onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
+          </picture>
+          <div class="fallback">Funnel</div>
         </div>
       </div>
     </section>
@@ -268,6 +290,12 @@
 
     // Year
     $("#year").textContent=new Date().getFullYear();
+    // debug: log 404s for gallery images (optional)
+    document.querySelectorAll('.gal-item img').forEach(img=>{
+      img.addEventListener('error',()=>{
+        console.warn('[IMG 404]', img.getAttribute('src'));
+      });
+    });
   </script>
 </body>
 </html>
