@@ -1,374 +1,456 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
-  <!-- CashFlowLab — Single-file Premium Landing (RO/EN)  |  Ultra v2 -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CashFlowLab — AI ce construiește cashflow în timp ce dormi</title>
-  <meta name="description" content="CashFlowLabAI: ecosistem premium care îți automatizează conținutul, funnelul și vânzările. Free Kit, Mini, Medium, PRO — Scale Kit.">
-  <link rel="canonical" href="https://cashflowlab.example/">
-
-  <!-- Social -->
-  <meta property="og:title" content="CashFlowLab — AI ce construiește cashflow în timp ce dormi">
-  <meta property="og:description" content="Conținut AI zilnic • Funnel automatizat • Produse digitale gata de vândut.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://cashflowlab.example/">
-  <meta property="og:image" content="https://cashflowlab.example/images/og-hero-cover.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CashFlowLab — Premium AI Funnel">
-  <meta name="twitter:description" content="Conținut AI, funnel automatizat, produse digitale.">
-  <meta name="twitter:image" content="https://cashflowlab.example/images/og-hero-cover.webp">
-
-  <!-- Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
-
-  <!-- Fonts & Preload -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CashFlowLab — AI care îți construiește cashflow în timp ce dormi</title>
+  <meta name="description" content="CashFlowLab: kituri premium cu template-uri, automate și funnel AI. Lansare rapidă, venit recurent, integrare Gumroad. RO/EN." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="/images/hero-right-orb.webp" fetchpriority="high">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CashFlowLab — AI care îți construiește cashflow" />
+  <meta property="og:description" content="Kiturile CashFlowLab te ajută să lansezi repede: pagini premium, funnel AI, email kit, automations. RO/EN." />
+  <meta property="og:image" content="assets/hero-tech.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CashFlowLab — AI cashflow kits" />
+  <meta name="twitter:description" content="Lansezi rapid cu AI: site premium, funnel, email kit, automations. RO/EN." />
+  <meta name="twitter:image" content="assets/hero-tech.png" />
+  <link rel="icon" href="assets/logo.svg" />
+  <script defer src="https://gumroad.com/js/gumroad.js"></script>
   <style>
-    :root{--bg:#0b0a12;--card:#10101a;--muted:#b7b7c9;--text:#e9e9f4;--gold:#e9c46a;--gold-2:#c6a451;--purple:#8a2be2;--purple-2:#5c1cb9;--green:#3ad29f;--red:#ff6b6b;--glass:rgba(255,255,255,0.06);--br:20px;--shadow:0 10px 30px rgba(0,0,0,.45);--maxw:1200px}
-    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:"Plus Jakarta Sans",system-ui,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}
-    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}button{font:inherit}
-
-    .bg-wrap{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;background:radial-gradient(1200px 800px at 85% 20%, rgba(138,43,226,.18), transparent 60%),radial-gradient(900px 600px at 10% 10%, rgba(233,196,106,.18), transparent 55%),radial-gradient(800px 800px at 50% 120%, rgba(138,43,226,.12), transparent 60%),linear-gradient(180deg, #0b0a12 0%, #0b0a12 100%)}
-    .particles{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle at 20% 30%, rgba(233,196,106,.35), transparent 28%),radial-gradient(circle at 80% 20%, rgba(138,43,226,.35), transparent 30%),radial-gradient(circle at 60% 80%, rgba(233,196,106,.25), transparent 30%);animation:float 16s ease-in-out infinite alternate;filter:blur(40px) saturate(120%);opacity:.55}
-    @keyframes float{0%{transform:translateY(0) rotate(0) scale(1)}100%{transform:translateY(-30px) rotate(1deg) scale(1.02)}}
-
-    .container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    :root{
+      --bg: #07081A;
+      --bg-2: #0B0D22;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: #E9EAF5;
+      --muted: #A6ABCF;
+      --gold: #F3C969; /* liquid gold */
+      --gold-2: #D8AE3F;
+      --purple: #7A5CF1;
+      --purple-2: #9B84FF;
+      --ok: #3DDC97;
+      --danger: #FF5470;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius-2: 28px;
+      --maxw: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(90% 70% at 10% 10%, rgba(122,92,241,.35) 0%, rgba(122,92,241,0) 50%),
+                                 radial-gradient(70% 60% at 90% 20%, rgba(243,201,105,.22) 0%, rgba(243,201,105,0) 45%),
+                                 var(--bg);
+      color:var(--text);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      line-height:1.45;
+      -webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin-inline:auto;padding:clamp(14px,2vw,24px)}
 
     /* NAV */
-    .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:rgba(11,10,18,.5);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;flex-wrap:wrap;gap:10px}
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo-img{width:28px;height:28px;border-radius:9px;object-fit:contain;background:#0e0d16;border:1px solid rgba(255,255,255,.08)}
-    .brand{font-weight:800;letter-spacing:.3px}
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.2) blur(14px);background:linear-gradient(180deg, rgba(7,8,26,.85), rgba(7,8,26,.55));border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:36px;height:36px}
+    .brand .name{font-weight:800;letter-spacing:.3px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{opacity:.85}
     .nav-cta{display:flex;gap:10px;align-items:center}
-    .chip{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:13px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:var(--glass)}
-    .lang-toggle,.currency-toggle{border:1px solid rgba(255,255,255,.12);background:var(--glass);color:var(--text);padding:8px 12px;border-radius:12px;cursor:pointer}
+    .pill{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--border);border-radius:999px;background:var(--card)}
 
-    /* BUTTONS */
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid rgba(255,255,255,.12);background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#19181f;box-shadow:0 8px 24px rgba(233,196,106,.22);transition:transform .12s ease, box-shadow .2s ease}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px rgba(233,196,106,.28)}
-    .btn-ghost{background:transparent;color:var(--text);border-color:rgba(255,255,255,.16)}
-    .btn-ghost:hover{background:rgba(255,255,255,.06)}
-    .btn-outline{background:transparent;border-color:rgba(233,196,106,.55);color:var(--text)}
+    /* lang switch */
+    #lang-switch{border:1px solid var(--border);background:var(--card);padding:8px 14px;border-radius:999px;cursor:pointer;font-weight:600}
+    #lang-switch .seg{opacity:.55}
+    #lang-switch .seg.active{opacity:1}
 
     /* HERO */
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:64px 0 42px}
-    .headline{font-size:clamp(30px,5.2vw,60px);line-height:1.06;font-weight:800;letter-spacing:-.02em;margin:0 0 16px;background:linear-gradient(180deg,#fff,#d9d7f0 60%,#a3a1c7);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 10px 40px rgba(138,43,226,.18)}
-    .sub{color:var(--muted);font-size:clamp(15px,2.3vw,18px);margin:0 0 24px}
-    .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0 18px}
-    .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:linear-gradient(135deg,rgba(233,196,106,.12),rgba(138,43,226,.12));border:1px solid rgba(233,196,106,.28);font-weight:700;color:#f7efdb}
+    .hero{display:grid;grid-template-columns: 1.05fr .95fr;gap:clamp(20px,3vw,48px);align-items:center;padding:clamp(24px,3vw,48px) 0}
+    .eyebrow{font-size:.9rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+    .title{font-size:clamp(2rem, 3.6vw, 4rem);font-weight:900;line-height:1.05}
+    .title .accent{background:linear-gradient(135deg, var(--gold), var(--purple-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .subtitle{font-size:clamp(1.05rem,1.4vw,1.25rem);color:var(--muted);max-width:55ch}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));box-shadow:var(--shadow);font-weight:700}
+    .btn.primary{background:linear-gradient(135deg, var(--gold), var(--purple));border-color:rgba(255,255,255,.08);color:#0B091A}
+    .btn.ghost{background:transparent}
+    .trust{display:flex;gap:14px;align-items:center;margin-top:10px;color:var(--muted);font-size:.95rem}
+    .trust .dot{width:8px;height:8px;border-radius:999px;background:var(--ok)}
 
-    .countdown{margin-top:8px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:#f7efdb;background:linear-gradient(135deg,rgba(233,196,106,.12),rgba(138,43,226,.12));border:1px solid rgba(233,196,106,.28);padding:10px 14px;border-radius:14px;font-weight:700}
-    .hero-media{position:relative;min-height:320px;border-radius:22px;overflow:hidden;background:radial-gradient(800px 400px at 30% 0%, rgba(233,196,106,.15), transparent 55%),radial-gradient(800px 500px at 80% 30%, rgba(138,43,226,.15), transparent 55%),#0f0e18;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
-    .parallax-layer{position:absolute;inset:auto;will-change:transform;transition:transform .08s linear}
-    .orb{width:220px;height:220px;border-radius:999px;filter:blur(20px);opacity:.7}
-    .orb.gold{background:radial-gradient(circle, rgba(233,196,106,.8), rgba(233,196,106,.1))}
-    .orb.purple{background:radial-gradient(circle, rgba(138,43,226,.75), rgba(138,43,226,.08))}
-    .hero-img{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;mix-blend:screen;opacity:.92}
-    .hero-overlay{position:absolute; right:-10px; top:-20px; width:min(60%,520px); height:auto; pointer-events:none; opacity:.95; mix-blend:screen; filter:saturate(120%) contrast(112%) brightness(1.08) drop-shadow(0 20px 40px rgba(0,0,0,.35));}
-    @media (max-width:980px){.hero-overlay{ right:-6px; top:auto; bottom:-18px; width:72%; opacity:.9; }}
-    .hero-mask{position:absolute;inset:0;background:radial-gradient(300px 200px at 80% 10%, transparent, rgba(0,0,0,.3) 60%)}
+    .hero-media{position:relative}
+    .hero-art{border-radius:var(--radius-2);overflow:hidden;border:1px solid var(--border);background:radial-gradient(80% 80% at 50% 0%, rgba(122,92,241,.35), rgba(255,255,255,.02));box-shadow:var(--shadow)}
+    .hero-art img{width:100%;height:100%;display:block;object-fit:cover;aspect-ratio:4/3}
 
-    /* SECTIONS */
-    section{padding:54px 0}
-    .section-title{font-size:28px;margin:0 0 10px}
-    .muted{color:var(--muted)}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--br);padding:18px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px;font-size:20px}
+    .countdown-bar{margin-top:16px;border:1px dashed var(--gold);border-radius:14px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:linear-gradient(180deg, rgba(243,201,105,.08), rgba(122,92,241,.08))}
+    .cd-label{font-weight:700}
+    .cd-time{font-variant-numeric:tabular-nums;font-weight:800}
 
-    /* FUNNEL INLINE GRAPHIC */
-    .funnel{display:grid;grid-template-columns:1fr 40px 1fr 40px 1fr 40px 1fr;gap:12px;align-items:center}
-    .f-step{padding:16px;border-radius:16px;background:linear-gradient(135deg, rgba(233,196,106,.08), rgba(138,43,226,.08));border:1px solid rgba(255,255,255,.12)}
-    .arrow{height:2px;background:linear-gradient(90deg, rgba(233,196,106,.6), rgba(138,43,226,.6));position:relative}
-    .arrow::after{content:"";position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:0;height:0;border-left:6px solid rgba(233,196,106,.8);border-top:6px solid transparent;border-bottom:6px solid transparent;filter:drop-shadow(0 0 6px rgba(233,196,106,.6))}
-
-    /* GALLERY */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .gal-item{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);cursor:pointer;background:#0f0e18}
-    .gal-item img{width:100%;height:220px;object-fit:cover;filter:saturate(112%) contrast(108%)}
-    .gal-cap{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin:0 2px 8px;padding:0 2px;flex-wrap:wrap}
-    .gal-cap .cap-title{font-weight:800;letter-spacing:.2px}
-    .gal-cap .cap-sub{color:var(--muted);font-size:13px;margin-top:2px}
-    .gal-cap .cap-left{display:flex;flex-direction:column}
-    .gal-cap .cap-right .chip{padding:6px 10px;font-size:12px}
+    /* FEATURES */
+    .section{padding:clamp(28px,5vw,68px) 0}
+    .section .heading{font-size:clamp(1.6rem,2.6vw,2.4rem);font-weight:900;margin:0 0 6px}
+    .section .sub{color:var(--muted);margin:0 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{grid-column: span 4;border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:18px}
+    .icon{width:28px;height:28px}
 
     /* PRICING */
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .price{font-size:34px;font-weight:800;margin:8px 0 6px;background:linear-gradient(180deg,#fff,#d7d7ee);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .plan{position:relative}
-    .plan.best::after{content:"Best value";position:absolute;top:-12px;right:12px;font-weight:800;font-size:12px;padding:6px 10px;border-radius:999px;background:linear-gradient(135deg,rgba(233,196,106,.2),rgba(138,43,226,.2));border:1px solid rgba(233,196,106,.4)}
-    .ul{margin:10px 0 14px;padding:0 0 0 18px;color:var(--muted)}.ul li{margin:6px 0}
+    .pricing .card{position:relative;display:flex;flex-direction:column;gap:10px}
+    .price{font-weight:900;font-size:1.8rem}
+    .badge{position:absolute;top:12px;right:12px;border:1px solid var(--border);background:linear-gradient(135deg, var(--gold), var(--purple));color:#0B091A;font-weight:800;padding:6px 10px;border-radius:999px}
+    .inc{color:var(--muted);font-size:.95rem}
 
-    /* Testimonials */
-    .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .quote{padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02))}
-    .quote b{display:block;margin-bottom:6px}
+    /* SALES PLAN */
+    .steps{counter-reset: step;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .step{grid-column:span 6;border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:18px;display:flex;gap:14px}
+    .step:before{counter-increment:step;content: counter(step);display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg, var(--gold), var(--purple));color:#0B091A;font-weight:900}
 
-    /* Sticky CTA (mobile) */
-    .sticky-cta{position:fixed;left:0;right:0;bottom:12px;display:none;justify-content:center;z-index:30}
-    .sticky-cta .wrap{display:flex;gap:8px;background:rgba(20,19,29,.85);backdrop-filter:blur(6px);padding:10px;border:1px solid rgba(255,255,255,.08);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
-    @media (max-width:980px){.hero{grid-template-columns:1fr;gap:20px}.grid-3,.pricing,.gallery,.t-grid{grid-template-columns:1fr}.funnel{grid-template-columns:1fr;gap:10px}.arrow{display:none}.nav-inner{flex-wrap:wrap;gap:10px}.nav-cta{width:100%;justify-content:flex-end}.sticky-cta{display:flex}}
+    /* TESTIMONIALS + FAQ */
+    .testi{grid-column:span 6;border:1px solid var(--border);background:var(--card);border-radius:var(--radius);padding:18px}
+    details{border:1px solid var(--border);background:var(--card);border-radius:14px;padding:14px}
+    details+details{margin-top:12px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:24px 0;color:var(--muted)}
+
+    /* RESPONSIVE */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .card{grid-column:span 6}
+      .step{grid-column:span 12}
+      .testi{grid-column:span 12}
+    }
+    @media (max-width:640px){
+      .card{grid-column:span 12}
+    }
   </style>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlab.example/","logo":"https://cashflowlab.example/images/logo-mark.png","sameAs":["https://instagram.com/cashflowlab"]}
-  </script>
 </head>
 <body>
-  <div class="bg-wrap"></div><div class="particles"></div>
-
-  <!-- NAVBAR -->
+  <!-- NAV -->
   <nav class="nav">
     <div class="container nav-inner">
-      <div class="logo" aria-label="CashFlowLab">
-        <img class="logo-img" src="/images/logo-mark.png" alt="CashFlowLab logo">
-        <span class="brand">CashFlowLab</span>
-        <span class="chip">AI</span>
+      <div class="brand">
+        <img src="assets/logo.svg" alt="CashFlowLab Logo" />
+        <span class="name">CashFlowLab</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features" data-i18n="nav.features">Beneficii</a>
+        <a href="#pricing" data-i18n="nav.pricing">Kiturile</a>
+        <a href="#plan" data-i18n="nav.plan">Plan vânzări</a>
+        <a href="#faq" data-i18n="nav.faq">Întrebări</a>
       </div>
       <div class="nav-cta">
-        <button class="currency-toggle" id="currencyToggle" aria-label="Switch currency">EUR €</button>
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
-        <a class="btn btn-ghost" href="#pricing" data-i18n="nav_pricing">Prețuri</a>
-        <a class="btn" href="#get-started" data-i18n="nav_get_started">Începe gratuit</a>
+        <a class="pill" href="#pricing" data-i18n="nav.cta">Vezi kiturile</a>
+        <button id="lang-switch" aria-label="Change language">
+          <span class="seg ro active">RO</span>
+          <span class="seg">|</span>
+          <span class="seg en">EN</span>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header class="container hero">
-    <div>
-      <h1 class="headline" data-i18n="hero_title">AI care construiește cashflow în timp ce dormi.</h1>
-      <p class="sub" data-i18n="hero_sub">Conținut AI zilnic • Funnel automatizat • Produse digitale gata de vândut. Design premium gold & mov.</p>
-      <div class="hero-ctas" id="get-started">
-        <a class="btn" id="ctaFree" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener" data-i18n="cta_free">Descarcă Free Kit</a>
-        <a class="btn btn-outline" href="#pricing" data-i18n="cta_view_packages">Vezi pachete</a>
+  <header class="container hero" id="home">
+    <div class="hero-copy">
+      <div class="eyebrow" data-i18n="hero.eyebrow">AI Funnel • Gumroad • Email Kit</div>
+      <h1 class="title" data-i18n="hero.title">
+        AI care îți construiește <span class="accent">cashflow</span> în timp ce dormi
+      </h1>
+      <p class="subtitle" data-i18n="hero.subtitle">
+        Lansezi în ore, nu în luni: site premium, funnel AI, template-uri de email și automatizări. Totul gata de vânzare.
+      </p>
+      <div class="cta-row">
+        <a class="btn primary" href="https://cashflowlab.gumroad.com/l/cashflowlab-premium" target="_blank" rel="noopener" data-i18n="hero.cta_primary">Cumpără Premium</a>
+        <a class="btn ghost" href="https://cashflowlab.gumroad.com/l/cashflowlab-free" target="_blank" rel="noopener" data-i18n="hero.cta_secondary">Ia Free Kit</a>
       </div>
-      <div class="badge-row">
-        <span class="badge" data-i18n="badge_secure">Plată securizată via Gumroad</span>
-        <span class="badge" data-i18n="badge_support">Suport rapid</span>
-        <span class="badge" data-i18n="badge_updates">Update-uri incluse</span>
+      <div class="trust">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-i18n="hero.trust">Plată sigură pe Gumroad • Descărcare instant</span>
       </div>
-      <div class="countdown">
-        <span data-i18n="countdown_label">Ofertă limitată expiră în:</span>
-        <span id="countdownTimer" aria-live="polite">—</span>
+      <div class="countdown-bar" role="status" aria-live="polite">
+        <span class="cd-label" data-i18n="countdown.label">Ofertă limitată se închide în</span>
+        <span class="cd-time" id="countdown">00:00:00</span>
       </div>
-      <p class="muted" style="margin-top:6px" data-i18n="trust_badge">100% no-BS • setup ghidat • design premium 2025</p>
     </div>
-
-    <div class="hero-media" id="heroMedia" aria-label="Hero media">
-      <div class="parallax-layer orb gold" style="left:-40px;top:30px" data-depth="0.15"></div>
-      <div class="parallax-layer orb purple" style="right:-30px;top:-20px" data-depth="0.25"></div>
-      <div class="parallax-layer orb gold" style="right:20px;bottom:-40px;width:260px;height:260px" data-depth="0.18"></div>
-      <img class="hero-img" src="./images/hero-tech.png" alt="CashFlowLab hero tech" onerror="this.style.display='none'">
-      <img class="hero-overlay" src="./images/hero-right-orb.webp" alt="CashFlowLab tech orb" />
-      <div class="hero-mask" aria-hidden="true"></div>
+    <div class="hero-media">
+      <div class="hero-art">
+        <img src="assets/hero-tech.png" alt="CashFlowLab premium tech hero" />
+      </div>
     </div>
   </header>
 
-  <!-- BENEFITS -->
-  <section class="container">
-    <div class="grid-3">
-      <div class="card"><h3 data-i18n="card1_t">Content AI zilnic</h3><p class="muted" data-i18n="card1_d">Prompts & șabloane care livrează postări, emailuri și videoclipuri automat.</p></div>
-      <div class="card"><h3 data-i18n="card2_t">Design premium</h3><p class="muted" data-i18n="card2_d">Gold + mov, parallax, micro-animații, lightbox, optimizat pentru mobil.</p></div>
-      <div class="card"><h3 data-i18n="card3_t">Setup ghidat</h3><p class="muted" data-i18n="card3_d">Instrucțiuni clare, fără bătăi de cap. Integrare rapidă cu Gumroad & MailerLite.</p></div>
+  <!-- FEATURES -->
+  <section id="features" class="section container">
+    <h2 class="heading" data-i18n="features.title">Tot ce-ți trebuie să lansezi repede</h2>
+    <p class="sub" data-i18n="features.sub">Design premium 2025 + tehnologie AI + integrare directă cu Gumroad.</p>
+    <div class="grid">
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12l9-5-9-5-9 5 9 5z"/></svg>
+        <h3 data-i18n="features.f1.title">Site premium + OG/SEO</h3>
+        <p data-i18n="features.f1.desc">Single-file optimizat, responsive, încărcare rapidă, meta + preview social corect.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <h3 data-i18n="features.f2.title">Countdown + urgență</h3>
+        <p data-i18n="features.f2.desc">Timer 72h pe vizitator cu păstrare în browser (localStorage) pentru conversii mai bune.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 10h20"/></svg>
+        <h3 data-i18n="features.f3.title">Funnel & email kit</h3>
+        <p data-i18n="features.f3.desc">Template-uri de email + structură de funnel RO/EN. Plug & play în MailerLite.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7l-8 10-5-5"/></svg>
+        <h3 data-i18n="features.f4.title">Gumroad ready</h3>
+        <p data-i18n="features.f4.desc">Buton overlay + link direct pe fiecare kit, plăți sigure, livrare instant.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7l2 3h9v15H3z"/></svg>
+        <h3 data-i18n="features.f5.title">Design 2025 ultracurat</h3>
+        <p data-i18n="features.f5.desc">Gold + mov, glassmorphism, shadow soft, grid aerisit. Arată scump. Vinde simplu.</p>
+      </article>
+      <article class="card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v-6M6 20v-4M18 20v-8"/></svg>
+        <h3 data-i18n="features.f6.title">Scalabil & ușor de editat</h3>
+        <p data-i18n="features.f6.desc">Totul în același fișier: text, stil, script. Editare rapidă, fără dependențe.</p>
+      </article>
     </div>
   </section>
 
-  <!-- FUNNEL OVERVIEW -->
-  <section class="container">
-    <div class="chip" style="margin-bottom:14px" data-i18n="pill_funnel">Funnel automatizat</div>
-    <h2 class="section-title" data-i18n="funnel_title">Structura: captare email → secvență funnel → ofertă finală → conversie</h2>
-    <p class="muted" data-i18n="funnel_sub">Optimizat pentru conversie. Integrare cu MailerLite. Email 5: ofertă limitată + P.S. testimoniale + FAQ.</p>
-    <div class="funnel" style="margin-top:16px">
-      <div class="f-step"><strong data-i18n="f1">Landing & Free Kit</strong><br><span class="muted" data-i18n="f1d">captare email + pixel</span></div>
-      <div class="arrow"></div>
-      <div class="f-step"><strong data-i18n="f2">Secvență email</strong><br><span class="muted" data-i18n="f2d">nurture & educație</span></div>
-      <div class="arrow"></div>
-      <div class="f-step"><strong data-i18n="f3">Ofertă</strong><br><span class="muted" data-i18n="f3d">Mini / Medium / PRO — Scale</span></div>
-      <div class="arrow"></div>
-      <div class="f-step"><strong data-i18n="f4">Conversie</strong><br><span class="muted" data-i18n="f4d">checkout Gumroad</span></div>
+  <!-- PRICING / KITS -->
+  <section id="pricing" class="section container pricing">
+    <h2 class="heading" data-i18n="pricing.title">Alege kitul potrivit</h2>
+    <p class="sub" data-i18n="pricing.sub">Începe gratis. Upgrade când ești gata să scalezi.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="badge" data-i18n="pricing.badge_free">Gratuit</span>
+        <h3 data-i18n="pricing.k1.title">Free Kit</h3>
+        <p class="inc" data-i18n="pricing.k1.desc">Landing page + 3 emailuri + checklist lansare.</p>
+        <div class="price" data-i18n="pricing.k1.price">€0</div>
+        <a class="btn" href="https://cashflowlab.gumroad.com/l/cashflowlab-free" target="_blank" rel="noopener" data-i18n="pricing.k1.cta">Descarcă</a>
+      </article>
+
+      <article class="card">
+        <span class="badge" data-i18n="pricing.badge_best">Best value</span>
+        <h3 data-i18n="pricing.k2.title">Mini Kit</h3>
+        <p class="inc" data-i18n="pricing.k2.desc">Tot din Free + 7 emailuri + 10 hook-uri video + 3 cover-uri.</p>
+        <div class="price" data-i18n="pricing.k2.price">€27</div>
+        <a class="btn primary" href="https://cashflowlab.gumroad.com/l/cashflowlab-mini" target="_blank" rel="noopener" data-i18n="pricing.k2.cta">Cumpără acum</a>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="pricing.k3.title">Medium Kit</h3>
+        <p class="inc" data-i18n="pricing.k3.desc">+ site full RO/EN, 14 emailuri, 25 hook-uri video, 6 cover-uri, plan ads.</p>
+        <div class="price" data-i18n="pricing.k3.price">€47</div>
+        <a class="btn" href="https://cashflowlab.gumroad.com/l/cashflowlab-medium" target="_blank" rel="noopener" data-i18n="pricing.k3.cta">Cumpără Medium</a>
+      </article>
+
+      <article class="card">
+        <span class="badge" data-i18n="pricing.badge_hot">Premium</span>
+        <h3 data-i18n="pricing.k4.title">Premium Kit</h3>
+        <p class="inc" data-i18n="pricing.k4.desc">+ template video TikTok, avatar AI, 21 emailuri, assets premium, tot setup-ul.</p>
+        <div class="price" data-i18n="pricing.k4.price">€97</div>
+        <a class="btn" href="https://cashflowlab.gumroad.com/l/cashflowlab-premium" target="_blank" rel="noopener" data-i18n="pricing.k4.cta">Cumpără Premium</a>
+      </article>
     </div>
   </section>
 
-  <!-- GALLERY WITH CAPTIONS -->
-  <section class="container" id="gallery">
-    <h2 class="section-title" data-i18n="gallery_t">Previzualizări (click pentru lightbox)</h2>
-    <p class="muted" data-i18n="gallery_d">Imaginile sunt gata de înlocuit cu ale tale. Dacă un fișier lipsește, cardul rămâne curat.</p>
-    <div class="gallery" style="margin-top:12px">
-      <div>
-        <div class="gal-cap"><div class="cap-left"><div class="cap-title">Cover premium</div><div class="cap-sub">Identitate gold+mov pentru Hero & share (OG).</div></div><div class="cap-right"><span class="chip">Medium</span></div></div>
-        <div class="gal-item" data-large="/images/og-hero-cover.webp">
-          <picture>
-            <source srcset="/images/og-hero-cover.webp" type="image/webp"/>
-            <img loading="lazy" decoding="async" src="/images/og-hero-cover.jpg" alt="Hero Cover" onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
-          </picture>
-          <div class="fallback">Cover</div>
-        </div>
+  <!-- SALES PLAN -->
+  <section id="plan" class="section container">
+    <h2 class="heading" data-i18n="plan.title">Plan de vânzări în 5 pași</h2>
+    <p class="sub" data-i18n="plan.sub">Execută simplu. Optimizezi pe parcurs. Focus pe conversii.</p>
+    <div class="steps">
+      <div class="step"><div>
+        <h4 data-i18n="plan.s1.t">Instalare & brand</h4>
+        <p data-i18n="plan.s1.d">Pui logo, culori, linkuri Gumroad. Verifici OG/SEO. Publici pe Netlify.</p>
+      </div></div>
+      <div class="step"><div>
+        <h4 data-i18n="plan.s2.t">Funnel + email</h4>
+        <p data-i18n="plan.s2.d">Importi email kit în MailerLite. Setezi automatizări pentru Free → Mini → Premium.</p>
+      </div></div>
+      <div class="step"><div>
+        <h4 data-i18n="plan.s3.t">Conținut scurt</h4>
+        <p data-i18n="plan.s3.d">3–5 clipuri/zi: hook + proof + CTA. Cover-uri incluse în kit. </p>
+      </div></div>
+      <div class="step"><div>
+        <h4 data-i18n="plan.s4.t">Trafic</h4>
+        <p data-i18n="plan.s4.d">Testezi 3 audiențe x 3 creații pe TikTok/IG. Buget mic, scalezi ce prinde.</p>
+      </div></div>
+      <div class="step"><div>
+        <h4 data-i18n="plan.s5.t">Optimizare</h4>
+        <p data-i18n="plan.s5.d">Iterezi headline, thumbnails, email 1–3. Folosești heatmaps și UTM-uri.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF + FAQ -->
+  <section class="section container" id="faq">
+    <div class="grid">
+      <div class="testi">
+        <h3 data-i18n="proof.title">Ce spun clienții</h3>
+        <p data-i18n="proof.p1">“Am lansat în 48h. Designul vinde singur. Emailurile au 41% open rate.”</p>
+        <p data-i18n="proof.p2">“Gumroad + CashFlowLab = fără bătăi de cap. Am trecut la Medium în a 2-a săptămână.”</p>
+        <p data-i18n="proof.p3">“Countdown + ofertă limitată = conversii duble pe trafic rece.”</p>
       </div>
-      <div>
-        <div class="gal-cap"><div class="cap-left"><div class="cap-title">Content AI zilnic</div><div class="cap-sub">Vizual tech pentru postări & emailuri generate.</div></div><div class="cap-right"><span class="chip">Mini</span></div></div>
-        <div class="gal-item" data-large="/images/tech-orb-alt.webp">
-          <picture>
-            <source srcset="/images/tech-orb-alt.webp" type="image/webp"/>
-            <img loading="lazy" decoding="async" src="/images/tech-orb-alt.png" alt="Tech Orb" onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
-          </picture>
-          <div class="fallback">Tech</div>
-        </div>
-      </div>
-      <div>
-        <div class="gal-cap"><div class="cap-left"><div class="cap-title">Funnel în 4 pași</div><div class="cap-sub">Capture → Nurture → Offer → Conversion (MailerLite + Gumroad).</div></div><div class="cap-right"><span class="chip">PRO</span></div></div>
-        <div class="gal-item" data-large="/images/funnel-diagram.webp">
-          <picture>
-            <source srcset="/images/funnel-diagram.webp" type="image/webp"/>
-            <img loading="lazy" decoding="async" src="/images/funnel-diagram.png" alt="Funnel Diagram" onerror="this.style.display='none';this.closest('.gal-item').querySelector('.fallback').style.display='grid'">
-          </picture>
-          <div class="fallback">Funnel</div>
-        </div>
+      <div class="testi">
+        <h3 data-i18n="faq.title">Întrebări frecvente</h3>
+        <details>
+          <summary data-i18n="faq.q1">Cum editez textele și imaginile?</summary>
+          <p data-i18n="faq.a1">Direct în fișier: totul e într-un singur HTML (copy, stil, script). Cauți textul și editezi.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q2">Funcționează fără cont Gumroad?</summary>
+          <p data-i18n="faq.a2">Ai nevoie de Gumroad pentru plăți și livrare. Linkurile și overlay-ul sunt deja integrate.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.q3">Pot rula doar în română?</summary>
+          <p data-i18n="faq.a3">Da. Poți lăsa doar RO. Comutatorul RO/EN e opțional și salvează alegerea vizitatorului.</p>
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="container" id="pricing">
-    <div class="chip" style="margin-bottom:14px" data-i18n="pill_pricing">Pachete</div>
-    <h2 class="section-title" data-i18n="pricing_t">Alege nivelul potrivit</h2>
-    <p class="muted" data-i18n="pricing_d">Toate pachetele includ update-uri și acces pe viață la resursele curente.</p>
-
-    <div class="pricing" style="margin-top:12px">
-      <div class="card plan">
-        <h3>MINI — Starter Kit</h3>
-        <div class="price"><span class="price-val" data-eur="9" data-plan="mini">€9</span></div>
-        <ul class="ul">
-          <li data-i18n="p_m1">20+ prompts zilnice</li>
-          <li data-i18n="p_m2">Șabloane social & email</li>
-          <li data-i18n="p_m3">Ghid setup rapid</li>
-        </ul>
-        <a class="btn" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener" data-i18n="buy_now">Cumpără</a>
-      </div>
-
-      <div class="card plan best" style="border-color:rgba(233,196,106,.4)">
-        <h3>MEDIUM</h3>
-        <div class="price"><span class="price-val" data-eur="29" data-plan="medium">€29</span></div>
-        <ul class="ul">
-          <li data-i18n="p_md1">Tot din Mini</li>
-          <li data-i18n="p_md2">Funnel complet MailerLite</li>
-          <li data-i18n="p_md3">Cover-uri & og-ready</li>
-        </ul>
-        <a class="btn" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener" data-i18n="buy_now">Cumpără</a>
-      </div>
-
-      <div class="card plan">
-        <h3>PRO — Scale Kit</h3>
-        <div class="price"><span class="price-val" data-eur="49.99" data-plan="pro">€49.99</span></div>
-        <ul class="ul">
-          <li data-i18n="p_p1">Tot din Medium</li>
-          <li data-i18n="p_p2">Landing premium complet</li>
-          <li data-i18n="p_p3">Consultanță 1:1 (30 min)</li>
-        </ul>
-        <a class="btn" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener" data-i18n="buy_now">Cumpără</a>
-      </div>
-    </div>
-    <p class="muted" style="margin-top:8px" data-i18n="guarantee">Plată securizată prin Gumroad • Acces instant • 14 zile garanție satisfacție</p>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="container">
-    <h2 class="section-title" data-i18n="t_title">Ce spun clienții</h2>
-    <div class="t-grid">
-      <div class="quote"><b>„Setup în 30 de minute.”</b><span class="muted">Interfață curată, promturi bune, landing-ul arată premium.</span></div>
-      <div class="quote"><b>„Funnelul chiar convertește.”</b><span class="muted">Am legat MailerLite + Gumroad fără bătăi de cap.</span></div>
-      <div class="quote"><b>„Designul vinde.”</b><span class="muted">Gold & mov + detaliile micro au făcut diferența la CTR.</span></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="container faq">
-    <h2 class="section-title" data-i18n="faq_t">Întrebări frecvente</h2>
-    <details><summary data-i18n="q1">Cum conectez Gumroad și MailerLite?</summary><p class="muted" data-i18n="a1">Primești ghid pas cu pas + linkuri și exemple; totul e mapat în 10–15 minute.</p></details>
-    <details><summary data-i18n="q2">Funcționează pe toate dispozitivele?</summary><p class="muted" data-i18n="a2">Da. Layout responsive, testat pe mobil, tabletă și desktop.</p></details>
-    <details><summary data-i18n="q3">Pot schimba culorile gold & mov?</summary><p class="muted" data-i18n="a3">Da — actualizezi variabilele din :root și se propagă global.</p></details>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <div>© <span id="year"></span> CashFlowLab</div>
-      <div>
-        <a href="#pricing" class="btn btn-ghost" style="padding:8px 12px" data-i18n="footer_view_pricing">Vezi pachete</a>
-        <a id="footerFree" href="https://cashflowlabai.gumroad.com/l/linjxk" class="btn" style="padding:8px 12px" target="_blank" rel="noopener" data-i18n="footer_free">Free Kit</a>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <span>© <span id="year"></span> CashFlowLab</span>
+      <div style="display:flex;gap:16px">
+        <a href="#pricing" data-i18n="footer.cta">Ia un kit</a>
+        <a href="#" data-i18n="footer.legal">Termeni & Politică</a>
       </div>
     </div>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-    <img class="lightbox-img" id="lightboxImg" alt="">
-  </div>
-
-  <!-- Sticky CTA (mobile) -->
-  <div class="sticky-cta" aria-hidden="true">
-    <div class="wrap">
-      <a class="btn" href="#pricing" data-i18n="cta_mobile_buy">Vezi pachete</a>
-      <a class="btn btn-ghost" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener" data-i18n="cta_mobile_free">Free Kit</a>
-    </div>
-  </div>
-
   <script>
-    // i18n dictionary (RO/EN)
-    const i18n={
-      ro:{nav_pricing:"Prețuri",nav_get_started:"Începe gratuit",hero_title:"AI care construiește cashflow în timp ce dormi.",hero_sub:"Conținut AI zilnic • Funnel automatizat • Produse digitale gata de vândut. Design premium gold & mov.",cta_free:"Descarcă Free Kit",cta_view_packages:"Vezi pachete",badge_secure:"Plată securizată via Gumroad",badge_support:"Suport rapid",badge_updates:"Update-uri incluse",countdown_label:"Ofertă limitată expiră în:",trust_badge:"100% no-BS • setup ghidat • design premium 2025",pill_funnel:"Funnel automatizat",funnel_title:"Structura: captare email → secvență funnel → ofertă finală → conversie",funnel_sub:"Optimizat pentru conversie. Integrare cu MailerLite. Email 5: ofertă limitată + P.S. testimoniale + FAQ.",f1:"Landing & Free Kit",f1d:"captare email + pixel",f2:"Secvență email",f2d:"nurture & educație",f3:"Ofertă",f3d:"Mini / Medium / PRO — Scale",f4:"Conversie",f4d:"checkout Gumroad",card1_t:"Content AI zilnic",card1_d:"Prompts & șabloane care livrează postări, emailuri și videoclipuri automat.",card2_t:"Design premium",card2_d:"Gold + mov, parallax, micro-animații, lightbox, optimizat pentru mobil.",card3_t:"Setup ghidat",card3_d:"Instrucțiuni clare, fără bătăi de cap. Integrare rapidă cu Gumroad & MailerLite.",gallery_t:"Previzualizări (click pentru lightbox)",gallery_d:"Imaginile sunt gata de înlocuit cu ale tale. Dacă un fișier lipsește, cardul rămâne curat.",pill_pricing:"Pachete",pricing_t:"Alege nivelul potrivit",pricing_d:"Toate pachetele includ update-uri și acces pe viață la resursele curente.",buy_now:"Cumpără",p_m1:"20+ prompts zilnice",p_m2:"Șabloane social & email",p_m3:"Ghid setup rapid",p_md1:"Tot din Mini",p_md2:"Funnel complet MailerLite",p_md3:"Cover-uri & og-ready",p_p1:"Tot din Medium",p_p2:"Landing premium complet (acesta)",p_p3:"Consultanță 1:1 (30 min)",t_title:"Ce spun clienții",faq_t:"Întrebări frecvente",q1:"Cum conectez Gumroad și MailerLite?",a1:"Primești ghid pas cu pas + linkuri și exemple; totul e mapat în 10–15 minute.",q2:"Funcționează pe toate dispozitivele?",a2:"Da. Layout responsive, testat pe mobil, tabletă și desktop.",q3:"Pot schimba culorile gold & mov?",a3:"Da — actualizezi variabilele din :root și se propagă global.",footer_view_pricing:"Vezi pachete",footer_free:"Free Kit",guarantee:"Plată securizată prin Gumroad • Acces instant • 14 zile garanție satisfacție",cta_mobile_buy:"Vezi pachete",cta_mobile_free:"Free Kit"},
-      en:{nav_pricing:"Pricing",nav_get_started:"Start free",hero_title:"AI that builds cashflow while you sleep.",hero_sub:"Daily AI content • Automated funnel • Ready-to-sell digital products. Premium gold & purple design.",cta_free:"Download Free Kit",cta_view_packages:"See packages",badge_secure:"Secure checkout via Gumroad",badge_support:"Fast support",badge_updates:"Updates included",countdown_label:"Limited offer ends in:",trust_badge:"100% no-BS • guided setup • premium 2025 design",pill_funnel:"Automated Funnel",funnel_title:"Flow: email capture → nurture sequence → final offer → conversion",funnel_sub:"Conversion-optimized. MailerLite integration. Email 5: limited offer + P.S. testimonials + FAQ.",f1:"Landing & Free Kit",f1d:"email capture + pixel",f2:"Email sequence",f2d:"nurture & education",f3:"Offer",f3d:"Mini / Medium / PRO — Scale",f4:"Conversion",f4d:"Gumroad checkout",card1_t:"Daily AI Content",card1_d:"Prompts & templates for auto posts, emails and videos.",card2_t:"Premium design",card2_d:"Gold & purple, parallax, micro-animations, lightbox, mobile-first.",card3_t:"Guided setup",card3_d:"Clear instructions, quick integration with Gumroad & MailerLite.",gallery_t:"Previews (click to open)",gallery_d:"Replace with your assets. If a file is missing, the card stays clean.",pill_pricing:"Packages",pricing_t:"Pick your level",pricing_d:"All packages include lifetime access and updates.",buy_now:"Buy now",p_m1:"20+ daily prompts",p_m2:"Social & email templates",p_m3:"Fast setup guide",p_md1:"Everything in Mini",p_md2:"Full MailerLite funnel",p_md3:"Covers & OG-ready",p_p1:"Everything in Medium",p_p2:"Full premium landing (this one)",p_p3:"1:1 consulting (30 min)",t_title:"What clients say",faq_t:"FAQ",q1:"How do I connect Gumroad & MailerLite?",a1:"You get a step-by-step guide with links and examples; done in 10–15 minutes.",q2:"Does it work on all devices?",a2:"Yes. Responsive layout tested on mobile, tablet and desktop.",q3:"Can I change gold & purple colors?",a3:"Yes — edit :root variables and it updates globally.",footer_view_pricing:"See packages",footer_free:"Free Kit",guarantee:"Secure Gumroad checkout • Instant access • 14-day satisfaction guarantee",cta_mobile_buy:"See packages",cta_mobile_free:"Free Kit"}
+    // ===== UTIL =====
+    const $ = (sel, el = document) => el.querySelector(sel);
+    const $$ = (sel, el = document) => Array.from(el.querySelectorAll(sel));
+
+    // ===== YEAR =====
+    $('#year').textContent = new Date().getFullYear();
+
+    // ===== COUNTDOWN (72h / vizitator) =====
+    (function initCountdown(){
+      const KEY = 'cf_countdown_end_v1';
+      const el = $('#countdown');
+      let end = localStorage.getItem(KEY);
+      if(!end){
+        end = Date.now() + 72*60*60*1000; // 72h
+        localStorage.setItem(KEY, String(end));
+      } else {
+        end = Number(end);
+      }
+      function tick(){
+        const diff = Math.max(0, end - Date.now());
+        const h = String(Math.floor(diff/3.6e6)).padStart(2,'0');
+        const m = String(Math.floor((diff%3.6e6)/6e4)).padStart(2,'0');
+        const s = String(Math.floor((diff%6e4)/1e3)).padStart(2,'0');
+        el.textContent = `${h}:${m}:${s}`;
+        if(diff<=0){ clearInterval(t); el.textContent = '00:00:00'; }
+      }
+      tick();
+      const t = setInterval(tick, 1000);
+    })();
+
+    // ===== SMOOTH SCROLL =====
+    $$('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          $(id)?.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // ===== I18N =====
+    const dict = {
+      ro: {
+        'nav.features':'Beneficii','nav.pricing':'Kiturile','nav.plan':'Plan vânzări','nav.faq':'Întrebări','nav.cta':'Vezi kiturile',
+        'hero.eyebrow':'AI Funnel • Gumroad • Email Kit',
+        'hero.title':'AI care îți construiește cashflow în timp ce dormi',
+        'hero.subtitle':'Lansezi în ore, nu în luni: site premium, funnel AI, template-uri de email și automatizări. Totul gata de vânzare.',
+        'hero.cta_primary':'Cumpără Premium','hero.cta_secondary':'Ia Free Kit','hero.trust':'Plată sigură pe Gumroad • Descărcare instant',
+        'countdown.label':'Ofertă limitată se închide în',
+        'features.title':'Tot ce-ți trebuie să lansezi repede','features.sub':'Design premium 2025 + tehnologie AI + integrare directă cu Gumroad.',
+        'features.f1.title':'Site premium + OG/SEO','features.f1.desc':'Single-file optimizat, responsive, încărcare rapidă, meta + preview social corect.',
+        'features.f2.title':'Countdown + urgență','features.f2.desc':'Timer 72h pe vizitator cu păstrare în browser (localStorage) pentru conversii mai bune.',
+        'features.f3.title':'Funnel & email kit','features.f3.desc':'Template-uri de email + structură de funnel RO/EN. Plug & play în MailerLite.',
+        'features.f4.title':'Gumroad ready','features.f4.desc':'Buton overlay + link direct pe fiecare kit, plăți sigure, livrare instant.',
+        'features.f5.title':'Design 2025 ultracurat','features.f5.desc':'Gold + mov, glassmorphism, shadow soft, grid aerisit. Arată scump. Vinde simplu.',
+        'features.f6.title':'Scalabil & ușor de editat','features.f6.desc':'Totul în același fișier: text, stil, script. Editare rapidă, fără dependențe.',
+        'pricing.title':'Alege kitul potrivit','pricing.sub':'Începe gratis. Upgrade când ești gata să scalezi.',
+        'pricing.badge_free':'Gratuit','pricing.badge_best':'Best value','pricing.badge_hot':'Premium',
+        'pricing.k1.title':'Free Kit','pricing.k1.desc':'Landing page + 3 emailuri + checklist lansare.','pricing.k1.price':'€0','pricing.k1.cta':'Descarcă',
+        'pricing.k2.title':'Mini Kit','pricing.k2.desc':'Tot din Free + 7 emailuri + 10 hook-uri video + 3 cover-uri.','pricing.k2.price':'€27','pricing.k2.cta':'Cumpără acum',
+        'pricing.k3.title':'Medium Kit','pricing.k3.desc':'+ site full RO/EN, 14 emailuri, 25 hook-uri video, 6 cover-uri, plan ads.','pricing.k3.price':'€47','pricing.k3.cta':'Cumpără Medium',
+        'pricing.k4.title':'Premium Kit','pricing.k4.desc':'+ template video TikTok, avatar AI, 21 emailuri, assets premium, tot setup-ul.','pricing.k4.price':'€97','pricing.k4.cta':'Cumpără Premium',
+        'plan.title':'Plan de vânzări în 5 pași','plan.sub':'Execută simplu. Optimizezi pe parcurs. Focus pe conversii.',
+        'plan.s1.t':'Instalare & brand','plan.s1.d':'Pui logo, culori, linkuri Gumroad. Verifici OG/SEO. Publici pe Netlify.',
+        'plan.s2.t':'Funnel + email','plan.s2.d':'Importi email kit în MailerLite. Setezi automatizări pentru Free → Mini → Premium.',
+        'plan.s3.t':'Conținut scurt','plan.s3.d':'3–5 clipuri/zi: hook + proof + CTA. Cover-uri incluse în kit. ',
+        'plan.s4.t':'Trafic','plan.s4.d':'Testezi 3 audiențe x 3 creații pe TikTok/IG. Buget mic, scalezi ce prinde.',
+        'plan.s5.t':'Optimizare','plan.s5.d':'Iterezi headline, thumbnails, email 1–3. Folosești heatmaps și UTM-uri.',
+        'proof.title':'Ce spun clienții','proof.p1':'“Am lansat în 48h. Designul vinde singur. Emailurile au 41% open rate.”','proof.p2':'“Gumroad + CashFlowLab = fără bătăi de cap. Am trecut la Medium în a 2-a săptămână.”','proof.p3':'“Countdown + ofertă limitată = conversii duble pe trafic rece.”',
+        'faq.title':'Întrebări frecvente','faq.q1':'Cum editez textele și imaginile?','faq.a1':'Direct în fișier: totul e într-un singur HTML (copy, stil, script). Cauți textul și editezi.',
+        'faq.q2':'Funcționează fără cont Gumroad?','faq.a2':'Ai nevoie de Gumroad pentru plăți și livrare. Linkurile și overlay-ul sunt deja integrate.',
+        'faq.q3':'Pot rula doar în română?','faq.a3':'Da. Poți lăsa doar RO. Comutatorul RO/EN e opțional și salvează alegerea vizitatorului.',
+        'footer.cta':'Ia un kit','footer.legal':'Termeni & Politică'
+      },
+      en: {
+        'nav.features':'Benefits','nav.pricing':'Kits','nav.plan':'Sales plan','nav.faq':'FAQ','nav.cta':'See the kits',
+        'hero.eyebrow':'AI Funnel • Gumroad • Email Kit',
+        'hero.title':'AI that builds your cashflow while you sleep',
+        'hero.subtitle':'Launch in hours, not months: premium site, AI funnel, email templates and automations. Ready to sell.',
+        'hero.cta_primary':'Get Premium','hero.cta_secondary':'Get Free Kit','hero.trust':'Secure checkout on Gumroad • Instant download',
+        'countdown.label':'Limited offer ends in',
+        'features.title':'Everything you need to launch fast','features.sub':'Premium 2025 design + AI tech + direct Gumroad integration.',
+        'features.f1.title':'Premium site + OG/SEO','features.f1.desc':'Optimized single-file, responsive, fast load, correct social preview.',
+        'features.f2.title':'Countdown + urgency','features.f2.desc':'72h per-visitor timer saved in browser (localStorage) to lift conversions.',
+        'features.f3.title':'Funnel & email kit','features.f3.desc':'Email templates + RO/EN funnel structure. Plug & play in MailerLite.',
+        'features.f4.title':'Gumroad ready','features.f4.desc':'Overlay button + direct link on each kit, secure payments, instant delivery.',
+        'features.f5.title':'Ultra-clean 2025 design','features.f5.desc':'Gold + purple, glassmorphism, soft shadows, tidy grid. Looks expensive.',
+        'features.f6.title':'Scalable & easy to edit','features.f6.desc':'Everything in one file: copy, style, script. Quick edits, no deps.',
+        'pricing.title':'Choose your kit','pricing.sub':'Start free. Upgrade when ready to scale.',
+        'pricing.badge_free':'Free','pricing.badge_best':'Best value','pricing.badge_hot':'Premium',
+        'pricing.k1.title':'Free Kit','pricing.k1.desc':'Landing page + 3 emails + launch checklist.','pricing.k1.price':'€0','pricing.k1.cta':'Download',
+        'pricing.k2.title':'Mini Kit','pricing.k2.desc':'All from Free + 7 emails + 10 video hooks + 3 covers.','pricing.k2.price':'€27','pricing.k2.cta':'Buy now',
+        'pricing.k3.title':'Medium Kit','pricing.k3.desc':'+ full RO/EN site, 14 emails, 25 video hooks, 6 covers, ads plan.','pricing.k3.price':'€47','pricing.k3.cta':'Buy Medium',
+        'pricing.k4.title':'Premium Kit','pricing.k4.desc':'+ TikTok video template, AI avatar, 21 emails, premium assets, full setup.','pricing.k4.price':'€97','pricing.k4.cta':'Buy Premium',
+        'plan.title':'5‑step sales plan','plan.sub':'Execute simply. Optimize on the way. Focus on conversions.',
+        'plan.s1.t':'Install & brand','plan.s1.d':'Add logo, colors, Gumroad links. Check OG/SEO. Publish to Netlify.',
+        'plan.s2.t':'Funnel + email','plan.s2.d':'Import email kit into MailerLite. Automations for Free → Mini → Premium.',
+        'plan.s3.t':'Short content','plan.s3.d':'Post 3–5 clips/day: hook + proof + CTA. Covers included.',
+        'plan.s4.t':'Traffic','plan.s4.d':'Test 3 audiences × 3 creatives on TikTok/IG. Small budget, scale what sticks.',
+        'plan.s5.t':'Optimization','plan.s5.d':'Iterate headline, thumbnails, emails 1–3. Use heatmaps & UTMs.',
+        'proof.title':'What customers say','proof.p1':'“Launched in 48h. Design sells itself. Emails at 41% open rate.”','proof.p2':'“Gumroad + CashFlowLab = zero hassle. Upgraded to Medium in week 2.”','proof.p3':'“Countdown + limited offer = 2× conversions on cold traffic.”',
+        'faq.title':'Frequently asked questions','faq.q1':'How do I edit text and images?','faq.a1':'Directly in the file: single HTML contains copy, style, and script. Search and edit.',
+        'faq.q2':'Does it work without Gumroad?','faq.a2':'You’ll need Gumroad for payments and delivery. Links and overlay are integrated.',
+        'faq.q3':'Can I run RO only?','faq.a3':'Yes. You can keep RO only. The RO/EN switch is optional and persists your choice.',
+        'footer.cta':'Get a kit','footer.legal':'Terms & Policy'
+      }
     };
 
-    const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
-    const langToggle=$("#langToggle"); let lang=localStorage.getItem("cfl_lang")||"ro";
-    function applyI18n(){const map=i18n[lang]; $$("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n"); if(map[k]) el.textContent=map[k];}); document.documentElement.lang=lang; langToggle.textContent=lang==="ro"?"EN":"RO";
-      const free="https://cashflowlabai.gumroad.com/l/linjxk"; $("#ctaFree").href=free; $("#footerFree").href=free;
-      document.title=lang==="ro"?"CashFlowLab — AI ce construiește cashflow în timp ce dormi":"CashFlowLab — AI that builds cashflow while you sleep";
+    let lang = localStorage.getItem('cf_lang') || 'ro';
+    function translatePage(l){
+      document.documentElement.setAttribute('lang', l);
+      $$('[data-i18n]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const value = dict[l][key];
+        if(value) el.textContent = value;
+      });
+      // update language switch visual
+      $('#lang-switch .ro').classList.toggle('active', l==='ro');
+      $('#lang-switch .en').classList.toggle('active', l==='en');
+      localStorage.setItem('cf_lang', l);
     }
-    langToggle.addEventListener("click",()=>{lang=(lang==="ro"?"en":"ro"); localStorage.setItem("cfl_lang",lang); applyI18n();}); applyI18n();
+    translatePage(lang);
 
-    // Currency toggle (EUR → USD → RON)
-    const currencyToggle=$("#currencyToggle"); let cur=localStorage.getItem("cfl_cur")||"EUR";
-    const rates={EUR:1, USD:1.08, RON:4.97};
-    function format(amount){return cur==="EUR"?`€${amount}`:cur==="USD"?`$${amount}`:`${(amount*rates.RON).toFixed(0)} RON`;}
-    function convertPrices(){$$('.price-val').forEach(el=>{const base=parseFloat(el.dataset.eur); let out; if(cur==='USD'){out=(base*rates.USD).toFixed(2); el.textContent=`$${out}`;} else if(cur==='RON'){out=(base*rates.RON).toFixed(0); el.textContent=`${out} RON`;} else {el.textContent=`€${base}`;}}); currencyToggle.textContent=cur+ (cur==='EUR'?' €':cur==='USD'?' $':' RON');}
-    currencyToggle.addEventListener('click',()=>{cur=cur==='EUR'?'USD':cur==='USD'?'RON':'EUR'; localStorage.setItem('cfl_cur',cur); convertPrices();});
-    convertPrices();
-
-    // Countdown (Europe/Berlin)
-    const deadline=new Date("2025-09-15T23:59:59+02:00"); const timerEl=$("#countdownTimer");
-    function pad(n){return n.toString().padStart(2,"0")} function tick(){const now=new Date(); const diff=deadline-now;
-      if(diff<=0){timerEl.textContent=(lang==="ro"?"Expirată":"Expired"); return;}
-      const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60;
-      timerEl.textContent=`${d}d ${pad(h)}h ${pad(m)}m ${pad(sec)}s`; requestAnimationFrame(()=>setTimeout(tick,500));}
-    tick();
-
-    // Parallax
-    const media=$("#heroMedia");
-    media?.addEventListener("mousemove",e=>{const r=media.getBoundingClientRect(); const cx=(e.clientX-r.left)/r.width-.5; const cy=(e.clientY-r.top)/r.height-.5;
-      media.querySelectorAll(".parallax-layer").forEach(l=>{const depth=parseFloat(l.dataset.depth||0.1); l.style.transform=`translate(${cx*depth*30}px, ${cy*depth*30}px)`;});});
-
-    // Lightbox
-    const lb=$("#lightbox"), lbImg=$("#lightboxImg"), lbClose=$("#lightboxClose");
-    $$(".gal-item").forEach(item=>{item.addEventListener("click",()=>{const src=item.getAttribute("data-large")||item.querySelector("img")?.src; if(!src) return; lbImg.src=src; lb.classList.add("open"); lbClose.focus();});});
-    lbClose.addEventListener("click",()=>lb.classList.remove("open")); lb.addEventListener("click",e=>{if(e.target===lb) lb.classList.remove("open");});
-    document.addEventListener("keydown",e=>{if(e.key==="Escape") lb.classList.remove("open");});
-
-    // Year
-    $("#year").textContent=new Date().getFullYear();
-
-    // Debug image 404s (console only)
-    document.querySelectorAll('.gal-item img').forEach(img=>{img.addEventListener('error',()=>{console.warn('[IMG 404]', img.getAttribute('src'));});});
+    $('#lang-switch').addEventListener('click', ()=>{
+      lang = (lang==='ro') ? 'en' : 'ro';
+      translatePage(lang);
+    });
   </script>
 </body>
 </html>
