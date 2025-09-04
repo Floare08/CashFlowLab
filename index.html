@@ -16,8 +16,7 @@
   <link rel="preload" as="image" href="/images/tech-orb-alt.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="/images/logo-mark.png" fetchpriority="high" />
   <link rel="preload" as="image" href="/images/hero-right-orb.webp" fetchpriority="high" />
-
-  <!-- Open Graph / Twitter -->
+  <link rel="preload" as="video" href="/images/hero-right-orb.mp4" type="video/mp4" /><!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="CashFlowLab — AI care îți construiește cashflow" />
   <meta property="og:description" content="Kiturile premium pentru lansare rapidă: template-uri, funnel & automate AI. RO/EN." />
@@ -105,7 +104,7 @@
     .hero-media { position: relative; }
     .frame { position: relative; border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); box-shadow: var(--shadow-1); overflow: hidden; }
     .aspect-4-5 { aspect-ratio: 4 / 5; }
-    .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
     .img-glow::after { content: ""; position: absolute; inset: -20%; background: radial-gradient(60% 40% at 70% 20%, rgba(255,209,102,0.25), rgba(138,95,255,0.15), transparent 70%); filter: blur(30px); z-index: -1; }
 
     /* Sections */
@@ -212,7 +211,11 @@
       <div class="hero-media img-glow">
         <div class="frame aspect-4-5">
           <!-- Imagine principală: /images/hero-right-orb.webp (1000x1250 recomandat) -->
-          <img src="/images/hero-right-orb.webp" alt="CashFlowLab — previzualizare produs" fetchpriority="high" />
+          <video class="hero-video" aria-label="Previzualizare video CashFlowLab" playsinline autoplay muted loop poster="/images/hero-right-orb.webp" preload="auto"><source src="/images/hero-right-orb.mp4" type="video/mp4" />
+          </video>
+          <noscript>
+            <img src="/images/hero-right-orb.webp" alt="CashFlowLab — previzualizare produs" />
+          </noscript>
         </div>
       </div>
     </div>
@@ -476,6 +479,21 @@
         el.textContent = `${fmt(days)}:${fmt(hrs)}:${fmt(mins)}:${fmt(secs)}`;
       }
       tick(); setInterval(tick, 1000);
+    })();
+
+    // Hero video pause when off-screen + reduced motion
+    (function(){
+      const v = document.querySelector('.hero-video');
+      if(!v) return;
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mediaQuery.matches) { v.removeAttribute('autoplay'); return; }
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting) { v.play().catch(()=>{}); }
+          else { v.pause(); }
+        });
+      }, { threshold: 0.25 });
+      io.observe(v);
     })();
 
     // Simple i18n (RO/EN)
