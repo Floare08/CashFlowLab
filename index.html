@@ -105,6 +105,9 @@
     .frame { position: relative; border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); box-shadow: var(--shadow-1); overflow: hidden; }
     .aspect-4-5 { aspect-ratio: 4 / 5; }
     .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Crossfade layering */
+    .hero-video { position: absolute; inset: 0; opacity: 0; transition: opacity .65s ease; }
+    .hero-video.active { opacity: 1; }
     .img-glow::after { content: ""; position: absolute; inset: -20%; background: radial-gradient(60% 40% at 70% 20%, rgba(255,209,102,0.25), rgba(138,95,255,0.15), transparent 70%); filter: blur(30px); z-index: -1; }
 
     /* Sections */
@@ -210,8 +213,12 @@
       <!-- RIGHT: Hero product image in frame -->
       <div class="hero-media img-glow">
         <div class="frame aspect-4-5">
-          <!-- Imagine principală: /images/hero-right-orb.webp (1000x1250 recomandat) -->
-          <video class="hero-video" aria-label="Previzualizare video CashFlowLab" playsinline autoplay muted loop poster="/images/hero-right-orb.webp" preload="auto"><source src="/images/hero-right-orb.mp4" type="video/mp4" />
+          <!-- Crossfade: două clipuri identice, alternând cu fade -->
+          <video class="hero-video vA" aria-label="Previzualizare video CashFlowLab A" playsinline autoplay muted preload="auto" loop poster="/images/hero-right-orb.webp">
+            <source src="/images/hero-right-orb.mp4" type="video/mp4" />
+          </video>
+          <video class="hero-video vB" aria-label="Previzualizare video CashFlowLab B" playsinline autoplay muted preload="auto" loop poster="/images/hero-right-orb.webp">
+            <source src="/images/hero-right-orb.mp4" type="video/mp4" />
           </video>
           <noscript>
             <img src="/images/hero-right-orb.webp" alt="CashFlowLab — previzualizare produs" />
@@ -481,19 +488,65 @@
       tick(); setInterval(tick, 1000);
     })();
 
-    // Hero video pause when off-screen + reduced motion
+    // Hero video crossfade (două clipuri alternate) + pauză când iese din ecran + respectă reduced motion
     (function(){
-      const v = document.querySelector('.hero-video');
-      if(!v) return;
-      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (mediaQuery.matches) { v.removeAttribute('autoplay'); return; }
+      const vA = document.querySelector('.hero-video.vA');
+      const vB = document.querySelector('.hero-video.vB');
+      if(!vA || !vB) return;
+
+      const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduce) {
+        [vA, vB].forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
+        return;
+      }
+
+      const vids = [vA, vB];
+      let active = vA, next = vB, switching = false;
+
+      // Pornește dintr-un offset aleator ca să nu prinzi cusătura mereu în același loc
+      function startVideo(v){
+        const onMeta = ()=>{
+          try {
+            const dur = v.duration || 0;
+            if (isFinite(dur) && dur > 1) v.currentTime = Math.random() * Math.max(0, dur - 0.5);
+            v.classList.add('active');
+            v.play().catch(()=>{});
+          } catch(_){}
+        };
+        if (isFinite(v.duration) && v.duration) onMeta(); else v.addEventListener('loadedmetadata', onMeta, { once:true });
+      }
+
+      function onTimeUpdate(){
+        if(switching || !isFinite(active.duration)) return;
+        const remaining = active.duration - active.currentTime;
+        if(remaining <= 0.7){ // prag crossfade (sec)
+          switching = true;
+          next.currentTime = 0;
+          next.play().catch(()=>{});
+          next.classList.add('active'); // fade-in CSS
+          setTimeout(()=>{
+            active.pause();
+            active.classList.remove('active');
+            try { active.currentTime = 0; } catch(_){}
+            const tmp = active; active = next; next = tmp;
+            switching = false;
+          }, 680);
+        }
+      }
+
+      // Observă vizibilitatea secțiunii hero
       const io = new IntersectionObserver((entries)=>{
         entries.forEach(e=>{
-          if(e.isIntersecting) { v.play().catch(()=>{}); }
-          else { v.pause(); }
+          if(e.isIntersecting){ active.play().catch(()=>{}); } else { vids.forEach(v=>v.pause()); }
         });
       }, { threshold: 0.25 });
-      io.observe(v);
+      io.observe(vA);
+
+      // evenimente
+      active.addEventListener('timeupdate', onTimeUpdate);
+
+      // start
+      startVideo(active);
     })();
 
     // Simple i18n (RO/EN)
