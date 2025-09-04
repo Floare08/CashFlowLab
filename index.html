@@ -12,6 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="/images/hero-tech.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/images/logo-cashflowlab.png" fetchpriority="high" />
+
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="CashFlowLab — AI care îți construiește cashflow" />
@@ -183,7 +187,7 @@
   <header>
     <div class="container nav">
       <a class="logo" href="#" aria-label="CashFlowLab Home">
-        <img src="/images/logo-cashflowlab.png" alt="CashFlowLab Logo" width="36" height="36" />
+        <img src="/images/logo-cashflowlab.png" alt="CashFlowLab Logo" width="36" height="36" decoding="async" fetchpriority="high" />
         <span>CashFlowLab</span>
         <span class="badge" id="beta">v1 • Premium</span>
       </a>
@@ -380,7 +384,7 @@
   <footer id="contact">
     <div class="container footer-grid">
       <div>
-        <div class="foot-logo"><img src="/images/logo-cashflowlab.png" alt="CashFlowLab" width="28" height="28"/>CashFlowLab</div>
+        <div class="foot-logo"><img src="/images/logo-cashflowlab.png" alt="CashFlowLab" width="28" height="28" loading="lazy" decoding="async"/>CashFlowLab</div>
         <p style="margin-top:8px;">© <span id="y"></span> CashFlowLab. Toate drepturile rezervate.</p>
       </div>
       <div>
