@@ -44,8 +44,8 @@
     :root {
       --bg: #07070a;
       --card: #0e0e14;
-      --muted: #9aa0a6;
-      --text: #EBECF0;
+      --muted: #C8CBD2;
+      --text: #EBECF0;         /* TEXT ALB-GRI ⇒ vizibil pe fundal */
       --accent-gold: #ffd166;
       --accent-gold-2: #f6c14f;
       --accent-purple: #8A5FFF;
@@ -60,21 +60,27 @@
       --radius-2xl: 28px;
       --container: 1120px;
     }
+
     * { box-sizing: border-box; }
     html, body { height: 100%; }
-   body {
-  background: url("images/Vrajitor.png") no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-    /* Fix iOS/Android pentru "fixed" */
-    @media (max-width: 980px) {
-      body { background-attachment: scroll; }
+    body {
+      margin: 0;
+      color: var(--text);              /* ← culoare globală pentru tot textul */
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: url("images/Vrajitor.png") no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
     }
+    @media (max-width: 980px) { body { background-attachment: scroll; } }
+
+    h1,h2,h3,h4,h5,h6 { color: var(--text); margin: 0 0 8px; font-weight: 800; }
+    p { color: var(--text); margin: 0 0 10px; }
+    .muted { color: var(--muted); }
+    .txt-shadow { text-shadow: 0 2px 14px rgba(0,0,0,.55); }
 
     a { color: inherit; text-decoration: none; }
     .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+
     header {
       position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
       background: linear-gradient(180deg, rgba(7,7,10,0.85), rgba(7,7,10,0.35) 70%, rgba(7,7,10,0));
@@ -92,65 +98,27 @@
     .btn:active { transform: translateY(0); filter: brightness(0.98); }
     .btn .shine { content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; background: linear-gradient(120deg, rgba(var(--grad-1),0.35), rgba(var(--grad-2),0.35)); filter: blur(16px); opacity: .45; }
     .btn-primary { background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)); color: #0b0b10; border: none; }
-    .btn-outline { background: transparent; color: var(--text); }
+    .btn-outline { background: rgba(12,12,16,.35); color: var(--text); }
     .btn-sm { padding: 10px 14px; font-size: 14px; }
 
-  /* ——— HERO: video full-bleed pe mobil & desktop ——— */
-.hero {
-  position: relative;
-  min-height: 96svh;          /* svh = corect pe mobil, fără bug-ul 100vh */
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  background: transparent !important;   /* elimină fundalul negru */
-}
+    /* ——— HERO: video mic în dreapta, text clar în stânga ——— */
+    .hero { padding: 92px 0 64px; background: transparent; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 28px; align-items: center; }
+    .eyebrow { color: var(--accent-gold); font-weight: 700; letter-spacing: .4px; margin-bottom: 10px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(34px, 5vw, 54px); line-height: 1.05; }
+    .hero .sub { color: var(--muted); margin: 12px 0 18px; max-width: 58ch; }
+    .hero .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 10px; }
+    .trust { margin-top: 10px; color: var(--muted); }
 
-.hero .video-wrap,
-.hero .video,
-.hero video {
-  position: absolute;
-  inset: 0;                   /* top/right/bottom/left: 0 */
-  width: 100%;
-  height: 100%;
-}
+    /* card de sticlă pentru countdown */
+    .glass.hero-card { background: rgba(15,15,20,0.55); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-xl); padding: 14px; box-shadow: var(--shadow-1); }
+    .countdown { font: 800 22px/1.2 Inter, system-ui, sans-serif; letter-spacing: .5px; }
 
-.hero .video-wrap,
-.hero .video {
-  background: transparent !important;   /* dacă există un wrapper */
-  box-shadow: none !important;
-  border: 0 !important;
-}
-
-.hero video {
-  display: block;             /* elimină spații fantomă sub elementele media */
-  object-fit: cover;          /* acoperă toată secțiunea fără benzi */
-  background: transparent !important;   /* unele browsere dau negru implicit */
-  z-index: -1;                /* sub conținutul text */
-}
-
-/* dacă există pseudo-elemente/overlays pe hero, le anulăm */
-.hero::before,
-.hero::after,
-.hero .overlay,
-.hero .backdrop {
-  content: none !important;
-  background: transparent !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-/* conținutul text rămâne deasupra video */
-.hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-
-    /* Hero media (RIGHT) */
     .hero-media { position: relative; }
     .frame { position: relative; border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); box-shadow: var(--shadow-1); overflow: hidden; }
     .aspect-4-5 { aspect-ratio: 4 / 5; }
     .frame img, .frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
     /* Crossfade layering */
     .hero-video { position: absolute; inset: 0; opacity: 0; transition: opacity .65s ease; }
     .hero-video.active { opacity: 1; }
@@ -164,17 +132,16 @@
     .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .feature { padding: 22px; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); }
     .feature h3 { margin: 10px 0 8px; font-size: 18px; }
-    .feature p { color: #C7C9D1; margin: 0; font-size: 15px; }
+    .feature p { color: #DEE0E6; margin: 0; font-size: 15px; }
 
     .kits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
     .kit { padding: 26px; border-radius: var(--radius-2xl); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; }
     .kit h3 { margin: 8px 0 6px; font-size: 20px; }
     .price { font-size: 34px; font-weight: 800; margin: 6px 0 16px; background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .kit ul { margin: 0; padding-left: 18px; color: #D9DBE3; }
+    .kit ul { margin: 0; padding-left: 18px; color: #E6E8EE; }
     .kit li { margin: 8px 0; }
     .kit .cta-row { margin-top: 16px; }
 
-    /* Showcase (3 images in frame + description) */
     .showcase { padding-top: 0; }
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .shot { background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-2xl); overflow: hidden; box-shadow: var(--shadow-1); }
@@ -182,7 +149,7 @@
     .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .shot .body { padding: 14px 16px 18px; }
     .shot .body h4 { margin: 0 0 6px; font-size: 18px; }
-    .shot .body p { margin: 0; color: #C7C9D1; font-size: 15px; }
+    .shot .body p { margin: 0; color: #D8DBE3; font-size: 15px; }
 
     .testimonials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .quote { padding: 20px; border-radius: var(--radius-xl); border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); font-size: 15px; }
@@ -202,7 +169,7 @@
       .features, .kits, .testimonials, .faq, .footer-grid { grid-template-columns: 1fr; }
       .gallery { grid-template-columns: 1fr; }
       header .nav .right { display: none; }
-      .hero { padding: 96px 0 64px; }
+      .hero { padding: 84px 0 40px; }
     }
 
     /* Sticky mobile CTA */
@@ -233,9 +200,9 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow" data-i18n="hero.eyebrow">Lansare rapidă • Funnel + AI</div>
-        <h1 data-i18n="hero.title">AI care îți construiește cashflow în timp ce dormi</h1>
-        <p class="sub" data-i18n="hero.sub">Kiturile CashFlowLab includ tot ce ai nevoie: pagini premium, copy, template-uri, automatizări, countdown, integrare Gumroad și email funnel. În română și engleză.</p>
+        <div class="eyebrow txt-shadow" data-i18n="hero.eyebrow">Lansare rapidă • Funnel + AI</div>
+        <h1 class="txt-shadow" data-i18n="hero.title">AI care îți construiește cashflow în timp ce dormi</h1>
+        <p class="sub txt-shadow" data-i18n="hero.sub">Kiturile CashFlowLab includ tot ce ai nevoie: pagini premium, copy, template-uri, automatizări, countdown, integrare Gumroad și email funnel. În română și engleză.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_primary">
             <span class="shine"></span> Cumpără PRO
@@ -243,7 +210,7 @@
           <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta_secondary">Descarcă Free Kit</a>
           <a class="btn btn-outline" href="#kits" data-i18n="hero.cta_third">Vezi toate kiturile</a>
         </div>
-        <div class="trust"><span>⭐️</span><span data-i18n="hero.trust">Design premium 2025 • Optimizat pentru mobil • SEO + OG gata</span></div>
+        <div class="trust txt-shadow"><span>⭐️</span><span data-i18n="hero.trust">Design premium 2025 • Optimizat pentru mobil • SEO + OG gata</span></div>
 
         <!-- Countdown under CTA -->
         <div class="glass hero-card" aria-live="polite" style="margin-top:18px;">
@@ -252,11 +219,11 @@
             <span class="badge" id="launchDateLabel"></span>
           </div>
           <div id="countdown" class="countdown" data-countdown="2025-09-15T18:00:00+02:00" aria-label="Time until launch">00:00:00:00</div>
-          <p style="color:var(--muted); margin-top:8px;" data-i18n="countdown.help">Poți modifica data de lansare în cod (atributul <code>data-countdown</code>).</p>
+          <p class="muted" style="margin-top:8px;" data-i18n="countdown.help">Poți modifica data de lansare în cod (atributul <code>data-countdown</code>).</p>
         </div>
       </div>
 
-      <!-- RIGHT: Hero product image in frame -->
+      <!-- RIGHT: Hero product video in a framed card (small) -->
       <div class="hero-media img-glow">
         <div class="frame aspect-4-5">
           <!-- Crossfade: două clipuri identice, alternând cu fade -->
@@ -277,29 +244,29 @@
   <!-- ===== Features ===== -->
   <section id="features">
     <div class="container">
-      <h2 class="section-title" data-i18n="features.title">Tot ce-ți trebuie pentru venit recurent</h2>
-      <p class="section-sub" data-i18n="features.sub">De la landing premium la emailuri, automatizări și livrare digitală – totul optimizat.</p>
+      <h2 class="section-title">Tot ce-ți trebuie pentru venit recurent</h2>
+      <p class="section-sub">De la landing premium la emailuri, automatizări și livrare digitală – totul optimizat.</p>
       <div class="features">
         <div class="feature">
           <div>🚀</div>
-          <h3 data-i18n="features.f1_t">Lansare ultra-rapidă</h3>
-          <p data-i18n="features.f1_d">Pagini premium + copy pre-scris. Publici azi, vinzi azi.</p>
+          <h3>Lansare ultra-rapidă</h3>
+          <p>Pagini premium + copy pre-scris. Publici azi, vinzi azi.</p>
         </div>
         <div class="feature">
           <div>🧠</div>
-          <h3 data-i18n="features.f2_t">Automate AI incluse</h3>
-          <p data-i18n="features.f2_d">Funnel, emailuri, workflow-uri gata, adaptabile brandului tău.</p>
+          <h3>Automate AI incluse</h3>
+          <p>Funnel, emailuri, workflow-uri gata, adaptabile brandului tău.</p>
         </div>
         <div class="feature">
           <div>🛡️</div>
-          <h3 data-i18n="features.f3_t">Design premium 2025</h3>
-          <p data-i18n="features.f3_d">Auriu + mov, animații fine, accesibilitate și SEO corect.</p>
+          <h3>Design premium 2025</h3>
+          <p>Auriu + mov, animații fine, accesibilitate și SEO corect.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Showcase (3 images in frame + description) ===== -->
+  <!-- ===== Showcase ===== -->
   <section id="showcase" class="showcase">
     <div class="container">
       <h2 class="section-title">Cum arată în practică</h2>
@@ -333,24 +300,22 @@
   <!-- ===== Kits / Pricing ===== -->
   <section id="kits">
     <div class="container">
-      <h2 class="section-title" data-i18n="kits.title">Alege kitul tău</h2>
-      <p class="section-sub" data-i18n="kits.sub">Începe cu Free Kit sau sari direct la Premium. Toate vin cu update-uri.</p>
+      <h2 class="section-title">Alege kitul tău</h2>
+      <p class="section-sub">Începe cu Free Kit sau sari direct la Premium. Toate vin cu update-uri.</p>
       <div class="kits">
-        <!-- Free Kit -->
         <div class="kit">
-          <span class="badge" data-i18n="kits.badge_free">Gratuit</span>
-          <h3 data-i18n="kits.free_t">Free Kit</h3>
+          <span class="badge">Gratuit</span>
+          <h3>Free Kit</h3>
           <div class="price">€0+</div>
           <ul>
-            <li data-i18n="kits.free_1">Landing de bază RO/EN</li>
-            <li data-i18n="kits.free_2">Copy starter + OG/SEO</li>
-            <li data-i18n="kits.free_3">Buton Gumroad integrat</li>
+            <li>Landing de bază RO/EN</li>
+            <li>Copy starter + OG/SEO</li>
+            <li>Buton Gumroad integrat</li>
           </ul>
           <div class="cta-row">
-            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer" data-i18n="kits.cta_free">Descarcă</a>
+            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer">Descarcă</a>
           </div>
         </div>
-        <!-- MINI — Starter Kit -->
         <div class="kit">
           <span class="badge">Nou</span>
           <h3>CashFlowLab MINI — Starter Kit</h3>
@@ -365,9 +330,8 @@
             <a class="btn btn" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener noreferrer">Cumpără</a>
           </div>
         </div>
-        <!-- MEDIUM Kit -->
         <div class="kit">
-          <span class="badge" data-i18n="kits.badge_best">Popular</span>
+          <span class="badge">Popular</span>
           <h3>CashFlowLab MEDIUM</h3>
           <div class="price">€27</div>
           <ul>
@@ -380,9 +344,8 @@
             <a class="btn btn" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener noreferrer">Cumpără</a>
           </div>
         </div>
-        <!-- PRO — Scale Kit -->
         <div class="kit">
-          <span class="badge" data-i18n="kits.badge_premium">Top</span>
+          <span class="badge">Top</span>
           <h3>CashFlowLab PRO — Scale Kit</h3>
           <div class="price">€49.99</div>
           <ul>
@@ -401,8 +364,8 @@
   <!-- ===== Social proof / Testimonials ===== -->
   <section id="testimonials">
     <div class="container">
-      <h2 class="section-title" data-i18n="testimonials.title">Oameni reali, rezultate reale</h2>
-      <p class="section-sub" data-i18n="testimonials.sub">Feedback din comunitate după instalare și primele vânzări.</p>
+      <h2 class="section-title">Oameni reali, rezultate reale</h2>
+      <p class="section-sub">Feedback din comunitate după instalare și primele vânzări.</p>
       <div class="testimonials">
         <div class="quote">„Într-o seară l-am pus live. Primele 3 vânzări au venit în 24h.”<div class="who">— Andrei, creator</div></div>
         <div class="quote">„Designul arată scump. Integrarea Gumroad a fost banală.”<div class="who">— Ioana, freelancer</div></div>
@@ -414,23 +377,23 @@
   <!-- ===== FAQ ===== -->
   <section id="faq">
     <div class="container">
-      <h2 class="section-title" data-i18n="faq.title">Întrebări frecvente</h2>
+      <h2 class="section-title">Întrebări frecvente</h2>
       <div class="faq">
         <div class="faq-item">
-          <h4 data-i18n="faq.q1_t">Cum instalez kitul?</h4>
-          <p data-i18n="faq.q1_d">Primești fișierul HTML/CSS/JS și ghidul. Îl urci pe Netlify/hostul tău și înlocuiești link-urile Gumroad.</p>
+          <h4>Cum instalez kitul?</h4>
+          <p>Primești fișierul HTML/CSS/JS și ghidul. Îl urci pe Netlify/hostul tău și înlocuiești link-urile Gumroad.</p>
         </div>
         <div class="faq-item">
-          <h4 data-i18n="faq.q2_t">Pot schimba culorile și imaginile?</h4>
-          <p data-i18n="faq.q2_d">Da. Totul e într-un singur fișier + folderul <code>/images</code>. Schimbi fundalul (<code>tech-orb-alt.webp</code>) și logo-ul.</p>
+          <h4>Pot schimba culorile și imaginile?</h4>
+          <p>Da. Totul e într-un singur fișier + folderul <code>/images</code>. Schimbi fundalul (<code>tech-orb-alt.webp</code>) și logo-ul.</p>
         </div>
         <div class="faq-item">
-          <h4 data-i18n="faq.q3_t">E compatibil cu Gumroad?</h4>
-          <p data-i18n="faq.q3_d">Da. Butoanele deschid direct paginile produselor. Poți adăuga și overlay Gumroad.</p>
+          <h4>E compatibil cu Gumroad?</h4>
+          <p>Da. Butoanele deschid direct paginile produselor. Poți adăuga și overlay Gumroad.</p>
         </div>
         <div class="faq-item">
-          <h4 data-i18n="faq.q4_t">Primesc update-uri?</h4>
-          <p data-i18n="faq.q4_d">Da, pentru versiunile Mini/Medium/Premium. Free Kit primește patch-uri critice.</p>
+          <h4>Primesc update-uri?</h4>
+          <p>Da, pentru versiunile Mini/Medium/Premium. Free Kit primește patch-uri critice.</p>
         </div>
       </div>
     </div>
@@ -444,15 +407,15 @@
         <p style="margin-top:8px;">© <span id="y"></span> CashFlowLab. Toate drepturile rezervate.</p>
       </div>
       <div>
-        <b data-i18n="foot.links">Linkuri</b>
+        <b>Linkuri</b>
         <ul style="list-style:none; padding:0; margin:10px 0 0;">
-          <li><a href="#kits" data-i18n="nav.kits">Kits</a></li>
-          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="#kits">Kits</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div>
-        <b data-i18n="foot.legal">Legal</b>
+        <b>Legal</b>
         <ul style="list-style:none; padding:0; margin:10px 0 0;">
           <li><a href="/privacy.html">Privacy</a></li>
           <li><a href="/terms.html">Terms</a></li>
@@ -460,7 +423,7 @@
         </ul>
       </div>
       <div>
-        <b data-i18n="foot.social">Social</b>
+        <b>Social</b>
         <ul style="list-style:none; padding:0; margin:10px 0 0;">
           <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
           <li><a href="https://tiktok.com/" target="_blank" rel="noopener noreferrer">TikTok</a></li>
@@ -472,8 +435,8 @@
 
   <!-- Sticky mobile CTA -->
   <div class="mobile-cta">
-    <a class="btn btn-primary" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" data-i18n="mobile.cta_buy">Cumpără PRO</a>
-    <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer" data-i18n="mobile.cta_free">Free Kit</a>
+    <a class="btn btn-primary" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer">Cumpără PRO</a>
+    <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/linjxk" target="_blank" rel="noopener noreferrer">Free Kit</a>
   </div>
 
   <!-- JSON-LD (Organization + Product) -->
@@ -549,7 +512,6 @@
       const vids = [vA, vB];
       let active = vA, next = vB, switching = false;
 
-      // Pornește dintr-un offset aleator ca să nu prinzi cusătura mereu în același loc
       function startVideo(v){
         const onMeta = ()=>{
           try {
@@ -565,11 +527,11 @@
       function onTimeUpdate(){
         if(switching || !isFinite(active.duration)) return;
         const remaining = active.duration - active.currentTime;
-        if(remaining <= 0.7){ // prag crossfade (sec)
+        if(remaining <= 0.7){
           switching = true;
           next.currentTime = 0;
           next.play().catch(()=>{});
-          next.classList.add('active'); // fade-in CSS
+          next.classList.add('active');
           setTimeout(()=>{
             active.pause();
             active.classList.remove('active');
@@ -580,18 +542,12 @@
         }
       }
 
-      // Observă vizibilitatea secțiunii hero
       const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){ active.play().catch(()=>{}); } else { vids.forEach(v=>v.pause()); }
-        });
+        entries.forEach(e=>{ if(e.isIntersecting){ active.play().catch(()=>{}); } else { vids.forEach(v=>v.pause()); } });
       }, { threshold: 0.25 });
       io.observe(vA);
 
-      // evenimente
       active.addEventListener('timeupdate', onTimeUpdate);
-
-      // start
       startVideo(active);
     })();
 
