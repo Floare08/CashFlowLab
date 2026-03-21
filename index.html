@@ -245,7 +245,7 @@
           <h1 class="txt-shadow">Construiește un cashflow real cu un sistem AI, pas cu pas.</h1>
           <p class="sub">CashFlowLab îți dă un plan complet: <b>de la idee → la pagină → la lead → la ofertă</b>. Fără improvizații, fără "prompturi la întâmplare".</p>
 
-          <form id="prefillForm" class="email-capture cfl-reveal cfl-d4" action="https://preview.mailerlite.io/forms/2002799/176693602287617412/share" method="GET" target="_blank">
+          <form id="prefillForm" class="email-capture cfl-reveal cfl-d4" action="https://preview.mailerlite.io/forms/2002799/176693602287617412/share" method="GET">
             <input type="email" name="fields[email]" id="userEmail" placeholder="Introdu emailul (primești Free Kit-ul imediat)" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" required />
             <button id="continueBtn" type="submit" class="btn btn-primary cfl-cta-glow"><span class="shine"></span>Primește Free Kit-ul</button>
           </form>
@@ -435,14 +435,10 @@
   (function(){
     var form = document.getElementById('prefillForm');
     var btn = document.getElementById('continueBtn');
-    var notice = document.getElementById('signupNotice');
     if(form && btn){
       form.addEventListener('submit', function(){
         btn.textContent = 'Se salvează…';
-        setTimeout(function(){
-          btn.textContent = 'Gata ✔';
-          if(notice) notice.style.display = 'block';
-        }, 1000);
+        btn.disabled = true;
       });
     }
   })();
