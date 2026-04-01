@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free Kit — CashFlowLab</title>
+  <meta name="description" content="Sistemul tău de cashflow în Notion. Template interactiv cu 4 secțiuni: claritate, ofertă, funnel și acțiuni." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root{--bg:#07070a;--card:#0e0e14;--muted:#C8CBD2;--text:#EBECF0;--accent-gold:#ffd166;--accent-purple:#8A5FFF;--radius-xl:20px;--radius-2xl:28px;--container:1120px}
+    *{box-sizing:border-box}
+    body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,Arial,sans-serif;background:var(--bg);min-height:100vh}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(1200px 800px at 80% 10%,rgba(255,209,102,.08),rgba(138,95,255,.08) 35%,rgba(7,7,10,.90));pointer-events:none}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:rgba(7,7,10,.85);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:inline-flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;text-decoration:none;color:inherit}
+    .logo img{width:36px;height:36px;border-radius:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;font-size:15px;font-weight:700;border-radius:999px;border:none;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));color:#0b0b10;text-decoration:none;transition:transform .22s ease,box-shadow .22s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 28px rgba(202,166,255,.22)}
+    .btn-outline{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .btn-outline:hover{background:rgba(255,255,255,.1)}
+    
+    /* Hero */
+    .hero{padding:80px 0 60px;text-align:center}
+    .hero .badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(255,209,102,.12);border:1px solid rgba(255,209,102,.25);border-radius:999px;color:var(--accent-gold);font-size:13px;font-weight:600;margin-bottom:20px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);line-height:1.1;margin:0 0 16px}
+    .hero h1 span{background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero .sub{color:var(--muted);font-size:18px;max-width:600px;margin:0 auto 32px;line-height:1.6}
+    
+    /* Preview Card */
+    .preview-card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-2xl);padding:40px;margin:40px auto;max-width:900px}
+    .preview-header{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .preview-header .dot{width:12px;height:12px;border-radius:50%;background:#ff5f57}
+    .preview-header .dot:nth-child(2){background:#febc2e}
+    .preview-header .dot:nth-child(3){background:#28c840}
+    .preview-title{font-weight:600;color:var(--muted)}
+    
+    .notion-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .notion-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;text-align:left;transition:transform .2s ease}
+    .notion-card:hover{transform:translateY(-4px);border-color:rgba(255,209,102,.3)}
+    .notion-card .icon{font-size:28px;margin-bottom:12px}
+    .notion-card h3{font-size:16px;margin:0 0 8px}
+    .notion-card p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
+    
+    /* Features */
+    .features{padding:60px 0}
+    .section-title{font-family:'Playfair Display',serif;font-size:32px;text-align:center;margin-bottom:40px}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .feature{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-xl);padding:28px}
+    .feature .num{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));color:#0b0b10;font-weight:800;border-radius:10px;margin-bottom:16px}
+    .feature h3{margin:0 0 10px;font-size:18px}
+    .feature p{margin:0;color:var(--muted);line-height:1.6}
+    
+    /* CTA Section */
+    .cta-section{padding:80px 0;text-align:center;background:linear-gradient(180deg,transparent,rgba(138,95,255,.05),transparent)}
+    .cta-box{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-2xl);padding:48px 40px;max-width:700px;margin:0 auto}
+    .cta-box h2{font-family:'Playfair Display',serif;font-size:28px;margin:0 0 12px}
+    .cta-box p{color:var(--muted);margin:0 0 28px}
+    .btn-large{padding:18px 36px;font-size:17px}
+    .btn-notion{background:linear-gradient(135deg,#000,#2d2d2d);color:#fff;border:1px solid rgba(255,255,255,.2)}
+    .btn-notion:hover{box-shadow:0 10px 30px rgba(0,0,0,.4)}
+    
+    /* Steps */
+    .steps{padding:40px 0 80px}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:800px;margin:0 auto}
+    .step{text-align:center;padding:24px}
+    .step-num{width:48px;height:48px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;background:rgba(255,209,102,.15);border:2px solid rgba(255,209,102,.4);border-radius:50%;font-weight:800;color:var(--accent-gold)}
+    .step h4{margin:0 0 8px;font-size:16px}
+    .step p{margin:0;font-size:14px;color:var(--muted)}
+    
+    /* Footer */
+    footer{padding:40px 0;border-top:1px solid rgba(255,255,255,.06);text-align:center}
+    footer p{color:var(--muted);font-size:14px;margin:0}
+    
+    @media(max-width:768px){
+      .notion-grid{grid-template-columns:repeat(2,1fr)}
+      .features-grid{grid-template-columns:1fr}
+      .steps-grid{grid-template-columns:1fr}
+      .preview-card{padding:24px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo">
+        <img src="/Images/logo-mark.png" alt="CashFlowLab" />
+        <span>CashFlowLab</span>
+      </a>
+      <a href="/" class="btn btn-outline">← Înapoi la site</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="badge">🎁 FREE KIT</div>
+      <h1>Sistemul tău de <span>cashflow</span> în Notion</h1>
+      <p class="sub">Template hibrid în Notion: <b>20 slide-uri vizuale</b> ca să înțelegi sistemul în 5 minute, plus <b>4 secțiuni interactive</b> unde execuți: claritate, ofertă, funnel și plan de acțiune. Zero teorie inutilă, doar structură și execuție.</p>
+      <a href="#template" class="btn btn-large">Descarcă template-ul →</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="preview-card">
+      <div class="preview-header">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <span class="preview-title">📊 CashFlowLab — Free Kit</span>
+      </div>
+      <div class="notion-grid">
+        <div class="notion-card">
+          <div class="icon">🎞️</div>
+          <h3>Ghid Vizual (Slides)</h3>
+          <p>20 slide-uri în Notion. Înțelege sistemul de cashflow în 5 minute, fără să completezi nimic.</p>
+        </div>
+        <div class="notion-card">
+          <div class="icon">🎯</div>
+          <h3>Claritate Personală</h3>
+          <p>Definești de ce vrei cashflow, cât timp ai, ce resurse. Fără claritate = haos.</p>
+        </div>
+        <div class="notion-card">
+          <div class="icon">💡</div>
+          <h3>Oferta Magnetică</h3>
+          <p>Cine e omul? Ce problemă rezolvi? Ce rezultat promiți? Template cu validare.</p>
+        </div>
+        <div class="notion-card">
+          <div class="icon">🔄</div>
+          <h3>Mini Funnel</h3>
+          <p>Cum circulă omul din trafic în client. Diagramă vizuală + pași concreți.</p>
+        </div>
+        <div class="notion-card">
+          <div class="icon">✅</div>
+          <h3>Plan de Acțiune</h3>
+          <p>Task-uri cu checkbox-uri, deadline-uri și prioritizare. Nu mai amâna.</p>
+        </div>
+        <div class="notion-card">
+          <div class="icon">📚</div>
+          <h3>Exemple Completate</h3>
+          <p>La fiecare secțiune ai exemple reale. Nu te bloca la spații goale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Ce primești exact</h2>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="num">1</div>
+          <h3>Ghid Vizual (Slides)</h3>
+          <p>20 de slide-uri în Notion care explică sistemul pas cu pas. Înțelegi conceptul în 5 minute înainte să execuți.</p>
+        </div>
+        <div class="feature">
+          <div class="num">2</div>
+          <h3>4 Secțiuni de Lucru</h3>
+          <p>Claritate, Ofertă, Funnel și Acțiuni — fiecare cu template-uri gata de completat.</p>
+        </div>
+        <div class="feature">
+          <div class="num">3</div>
+          <h3>Exemple Completate</h3>
+          <p>Nu te bloca la câmpuri goale. Vezi cum arată o ofertă bună, un funnel funcțional, un plan real.</p>
+        </div>
+        <div class="feature">
+          <div class="num">4</div>
+          <h3>Validare Integrată</h3>
+          <p>Checklist-uri care îți spun dacă oferta ta e suficient de clară sau mai ai de lucru.</p>
+        </div>
+        <div class="feature">
+          <div class="num">5</div>
+          <h3>Database pentru Task-uri</h3>
+          <p>Plan de acțiune cu status, priorități și deadline. Board view, calendar view — organizează cum vrei.</p>
+        </div>
+        <div class="feature">
+          <div class="num">6</div>
+          <h3>Gratis & Forever</h3>
+          <p>Nu expiră, nu cere cont Pro. Descarci și folosești cât vrei, pentru oricâte proiecte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="template">
+    <div class="container">
+      <div class="cta-box">
+        <h2>🚀 Gata să începi?</h2>
+        <p>Template-ul e gata în Notion. Un click și devine al tău.</p>
+        <a href="https://www.notion.so/templates/cashflowlab-free-kit" target="_blank" rel="noopener" class="btn btn-large btn-notion">
+          <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor"><path d="M6.017 4.313l55.333-4.087c6.797-.583 8.543-.19 12.817 2.917l17.663 12.443c2.913 2.14 3.883 2.723 3.883 5.053v68.243c0 4.277-1.553 6.807-6.99 7.193L24.467 99.967c-4.08.193-6.023-.39-8.16-3.113L3.3 79.94c-2.333-3.113-3.3-5.443-3.3-8.167V11.113c0-3.497 1.553-6.413 6.017-6.8z"/><path fill="#fff" d="M61.35 1.227l-55.333 4.087C1.553 5.7 0 8.617 0 12.113v60.66c0 2.723.967 5.053 3.3 8.167l13.007 16.913c2.137 2.723 4.08 3.307 8.16 3.113l64.257-3.89c5.433-.387 6.99-2.917 6.99-7.193V20.64c0-2.21-.873-2.847-3.443-4.733L74.167 3.147c-4.273-3.107-6.02-3.5-12.817-2.92zM25.92 19.523c-5.247.353-6.437.433-9.417-1.99L8.927 11.507c-.77-.78-.383-1.753 1.557-1.947l53.193-3.887c4.467-.39 6.793 1.167 8.54 2.527l9.123 6.61c.39.197.967 1.36-.193 1.36l-54.933 3.307-.293.047zM19.803 88.3V30.367c0-2.53.78-3.697 3.1-3.893L81 22.78c2.14-.193 3.107 1.167 3.107 3.693v57.547c0 2.53-.39 4.67-3.883 4.863l-60.377 3.5c-3.493.193-5.043-.97-5.043-4.083zm59.6-54.827c.387 1.75 0 3.5-1.75 3.7l-2.91.577v42.773c-2.527 1.36-4.853 2.137-6.797 2.137-3.107 0-3.883-.973-6.21-3.887l-19.03-29.94v28.967l6.02 1.363s0 3.5-4.857 3.5l-13.387.777c-.39-.777 0-2.723 1.357-3.11l3.497-.97v-38.3L30.48 40.667c-.39-1.75.58-4.277 4.277-4.473l14.367-.967 19.8 30.327v-26.83l-5.047-.58c-.39-2.143 1.163-3.7 3.103-3.89l13.4-.78z"/></svg>
+          Deschide în Notion
+        </a>
+        <p style="margin-top:20px;font-size:13px;color:var(--muted)">Gratis. Nu necesită cont Notion Pro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="container">
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Deschizi template-ul</h4>
+          <p>Un click și devine al tău</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Completezi secțiunile</h4>
+          <p>Claritate, ofertă, funnel</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Execuți planul</h4>
+          <p>Task-uri cu deadline-uri</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 CashFlowLab. Free Kit pentru comunitate.</p>
+    </div>
+  </footer>
+</body>
+</html>
+v>
+  </footer>
+</body>
+</html>
