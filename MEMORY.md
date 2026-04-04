@@ -5,8 +5,15 @@
 **Ultima activitate:** Iunie 2025  
 **Status:** Reactivat - în lucru activ
 
-### Ce avem până acum
-- Landing page principal în română (`cashflowlab_index_FIXED.html`)
+### Fișiere active (Workspace curățat)
+- **index.html** ← Versiunea RO principală (fost `cashflowlab_index_FIXED_CLEAN.html`)
+- **cashflowlab_index_EN.html** ← Versiunea engleză
+- **cashflowlab_index_DE.html** ← Versiunea germană
+
+### Archive (backup)
+- `cashflowlab_index.html` (vechi, feb 2025)
+- `cashflowlab_index_FIXED.html` (variantă intermediară)
+- `cashflowlab_combined.html`
 - SEO complet: Open Graph, Twitter Cards, JSON-LD Schema
 - Suport multilingv pregătit (RO/EN/DE) - hreflang tags + data-i18n attributes
 - Fonturi: Inter + Playfair Display
@@ -21,12 +28,22 @@
 ### FAZA 1: FUNDAMENT (Corecții critice)
 **Prioritate: MAXIMĂ**
 
-1. **CTA-uri și butoane** ✅ *În lucru - vezi `audit-cta-cashflowlab.md`*
-   - [x] FREE Kit - adăugat buton funcțional către Gumroad
-   - [ ] Verificare backend formular hero (unde merg emailurile?)
+1. **CTA-uri și butoane** ✅ *Completat*
+   - [x] FREE Kit - link corectat la `/l/jktsac` (era `/l/linjxk` - 404)
+   - [x] MINI Kit - `/l/bpsbou` ✅ verificat
+   - [x] MEDIUM Kit - `/l/divha` ✅ verificat  
+   - [x] PRO Kit - `/l/udxody` ✅ verificat
+   - [x] **Formular MailerLite fixat** — schimbat de la form ID `35810117` la `176693602287617412` (cel legat de automation)
+   - [x] **Fix ID container și callback** — corectat `mlb2-35810117` → `mlb2-176693602287617412` și funcția success
+   - [x] **Redirect corectat** — formularul duce acum la `/free-kit.html` (pagină proprie)
+   - [x] **Creată pagina Free Kit** — `/free-kit.html` cu design modern, preview Notion, CTA (actualizat pentru structură hibridă)
+   - [x] **Structură Notion hibrid gata** — salvată în `notion-template-structure.md`
+     - 20 slide-uri vizuale (ghid prezentare)
+     - 4 pagini de lucru (Claritate, Ofertă, Funnel, Acțiuni)
+     - Database pentru task-uri
+   - [ ] Creare efectivă template în Notion (Florin)
    - [x] Ascuns link-urile EN/DE până avem pagini traduse
    - [x] Ascuns link-urile legale (terms, privacy, imprint) până creăm paginile
-   - [ ] Verificare link-uri Gumroad funcționale (testare manuală)
 
 2. **Navigare și UX**
    - Header sticky - verificare comportament la scroll
