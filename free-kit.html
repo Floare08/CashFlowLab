@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FREE CashFlowLab Starter Kit — Instrumente gratuite pentru cashflow predictibil</title>
+  <meta name="description" content="Primește GRATUIT structura completă de landing page, logo-uri profesionale și brand guidelines. Primul pas către independența financiară.">
+  <link rel="canonical" href="https://cashflowlabai.com/free-kit/">
+  <meta property="og:title" content="FREE CashFlowLab Starter Kit — Instrumente gratuite pentru cashflow predictibil">
+  <meta property="og:description" content="Landing page template + Logo-uri + Brand guidelines. Gratis.">
+  <meta property="og:image" content="https://cashflowlabai.com/Images/og-free-kit.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#07070a;--card:#0e0e14;--muted:#C8CBD2;--text:#EBECF0;--gold:#ffd166;--gold-2:#f6c14f;--purple:#8A5FFF;--purple-2:#B794FF;--radius-xl:20px;--radius-2xl:28px;--container:1120px}
+    *{box-sizing:border-box}
+    html{height:100%;scroll-behavior:smooth}
+    body{min-height:100%;margin:0;color:var(--text);font-family:Inter,system-ui,sans-serif;background-color:#0b0b10;line-height:1.6}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background-image:url("/Images/Vrajitor.png");background-position:center;background-size:cover;background-repeat:no-repeat}
+    body::after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(1200px 800px at 80% 10%,rgba(255,209,102,.10),rgba(138,95,255,.10) 35%,rgba(7,7,10,.70));pointer-events:none}
+    .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(7,7,10,.85),rgba(7,7,10,.35) 70%,rgba(7,7,10,0));border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:inline-flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo img{width:36px;height:36px;border-radius:10px}
+    .btn{display:inline-block;font-weight:700;letter-spacing:.3px;border-radius:999px;transition:transform .22s ease,box-shadow .22s ease;padding:14px 22px;font-size:15px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,rgba(255,209,102,.12),rgba(138,95,255,.12));box-shadow:0 10px 30px rgba(0,0,0,.35);cursor:pointer}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35),0 20px 60px rgba(138,95,255,.25)}
+    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--purple));color:#0b0b10;border:none}
+    .hero{padding:80px 0 60px;position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+    .badge-free{display:inline-block;font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--purple));color:#0b0b10;margin-bottom:16px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,56px);line-height:1.05;margin-bottom:20px}
+    .hero .sub{color:var(--muted);margin:16px 0 24px;max-width:52ch;font-size:17px}
+    .hero .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}
+    .hero-visual{position:relative;border-radius:var(--radius-2xl);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .preview-stack{display:flex;flex-direction:column;gap:16px}
+    .preview-item{padding:20px;border-radius:var(--radius-xl);background:rgba(15,15,20,.8);border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:16px;transition:transform .3s ease}
+    .preview-item:hover{transform:translateX(-8px)}
+    .preview-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;font-size:24px}
+    .preview-text h4{margin:0 0 4px;font-size:16px}
+    .preview-text p{margin:0;color:var(--muted);font-size:14px}
+    section{padding:80px 0;scroll-margin-top:90px}
+    .section-header{text-align:center;margin-bottom:48px}
+    .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.4vw,40px);margin-bottom:12px}
+    .section-header p{color:var(--muted);max-width:600px;margin:0 auto}
+    .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .feature-card{padding:28px;border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));transition:transform .3s ease,border-color .3s ease}
+    .feature-card:hover{transform:translateY(-4px);border-color:rgba(255,209,102,.2)}
+    .feature-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(255,209,102,.2),rgba(138,95,255,.2));display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px}
+    .feature-card h3{margin:0 0 8px;font-size:18px}
+    .feature-card p{margin:0;color:var(--muted);font-size:15px}
+    .whats-inside{background:rgba(15,15,20,.4);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .content-list{margin:0;padding:0;list-style:none}
+    .content-list li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:16px}
+    .content-list li:last-child{border-bottom:none}
+    .check-icon{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;font-size:14px;color:#0b0b10;flex-shrink:0;margin-top:2px}
+    .content-list h4{margin:0 0 4px;font-size:16px}
+    .content-list p{margin:0;color:var(--muted);font-size:14px}
+    .cta-section{text-align:center;padding:100px 0}
+    .cta-box{max-width:700px;margin:0 auto;padding:48px;border-radius:var(--radius-2xl);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));box-shadow:0 20px 60px rgba(0,0,0,.4)}
+    .cta-box h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);margin-bottom:16px}
+    .cta-box p{color:var(--muted);margin-bottom:32px;font-size:17px}
+    .price-tag{font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+    .price-note{color:var(--muted);font-size:14px;margin-bottom:24px}
+    .trust-badges{display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap}
+    .trust-badge{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+    footer{padding:40px 0 60px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:24px}
+    .foot-logo{display:flex;align-items:center;gap:10px;font-weight:800}
+    .footer a{color:var(--muted);text-decoration:none;font-size:14px;display:block;padding:4px 0;transition:color .2s}
+    .footer a:hover{color:var(--gold)}
+    .mobile-cta{position:fixed;z-index:60;bottom:14px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 24px));padding:12px;border-radius:16px;background:rgba(15,15,20,.90);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);display:flex;justify-content:center}
+    @media (min-width:981px){.mobile-cta{display:none}}
+    @media (max-width:980px){.hero-grid,.content-grid,.features-grid{grid-template-columns:1fr}.hero{padding:60px 0 40px}.features-grid{gap:16px}.footer-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo">
+        <img src="/Images/logo-mark.png" alt="CashFlowLab">
+        <span>CashFlowLab</span>
+      </a>
+      <a href="#download" class="btn btn-primary">Descarcă Gratis →</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="badge-free">🎁 FREE KIT</span>
+        <h1>Primele tale instrumente pentru un <em style="color:var(--gold)">cashflow predictibil</em></h1>
+        <p class="sub">Începe călătoria către independența financiară cu kitul nostru gratuit. Primești structura completă de landing page, logo-uri profesionale și elementele vizuale esențiale pentru a construi o prezență online premium.</p>
+        <div class="cta-row">
+          <a href="https://cashflowlabai.gumroad.com/l/jktsac" class="btn btn-primary" style="padding:16px 32px;font-size:16px">Descarcă GRATUIT Kitul →</a>
+        </div>
+        <p style="color:var(--muted);font-size:14px;margin-top:16px">✓ Fără card de credit ✓ Instant download ✓ Folosește pentru totdeauna</p>
+      </div>
+      <div class="hero-visual">
+        <div class="preview-stack">
+          <div class="preview-item">
+            <div class="preview-icon">📄</div>
+            <div class="preview-text">
+              <h4>Landing Page Template</h4>
+              <p>HTML/CSS/JS complet responsive</p>
+            </div>
+          </div>
+          <div class="preview-item">
+            <div class="preview-icon">🎨</div>
+            <div class="preview-text">
+              <h4>Logo CashFlowLab</h4>
+              <p>SVG, PNG, EPS în multiple formate</p>
+            </div>
+          </div>
+          <div class="preview-item">
+            <div class="preview-icon">📱</div>
+            <div class="preview-text">
+              <h4>Social Media Covers</h4>
+              <p>Instagram, Facebook, LinkedIn</p>
+            </div>
+          </div>
+          <div class="preview-item">
+            <div class="preview-icon">📘</div>
+            <div class="preview-text">
+              <h4>Brand Guidelines</h4>
+              <p>Paletă culori și tipografie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="whats-inside">
+  <div class="container">
+    <div class="content-grid">
+      <div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:16px">Ce primești în FREE Kit</h2>
+        <p style="color:var(--muted);margin-bottom:32px">Tot ce ai nevoie pentru a construi fundația brandului tău digital. Calitate premium, zero cost.</p>
+        <ul class="content-list">
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <h4>Structură Landing Page</h4>
+              <p>Template HTML/CSS/JS complet, responsive, optimizat pentru conversie. Include hero section, features, CTA și footer.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <h4>Logo în Multiple Formate</h4>
+              <p>Varianta principală, icon-only, white version și monocrom. Toate în SVG, PNG și EPS pentru orice utilizare.</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <h4>Cover-uri Social Media</h4>
+              <p>Dimensiuni optimizate pentru Instagram (1080×1080), Facebook (1200×630) și LinkedIn (1584×396).</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <h4>OG Images</h4>
+              <p>Imagini optimizate pentru sharing pe social media, cu dimensiunile corecte (1200×630).</p>
+            </div>
+          </li>
+          <li>
+            <span class="check-icon">✓</span>
+            <div>
+              <h4>Brand Guidelines Basic</h4>
+              <p>Paletă de culori exactă (HEX, RGB, CMYK), tipografie recomandată și reguli de utilizare logo.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div style="border-radius:var(--radius-2xl);border:1px solid rgba(255,255,255,.08);padding:32px;background:rgba(15,15,20,.6)">
+        <div style="text-align:center;margin-bottom:24px">
+          <div style="width:80px;height:80px;border-radius:20px;background:linear-gradient(135deg,var(--gold),var(--purple));margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:40px">🎁</div>
+          <h3 style="margin:0 0 8px">FREE Starter Kit</h3>
+          <p style="color:var(--muted);margin:0;font-size:14px">Valoare reală: $27</p>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <span style="font-size:14px;color:var(--muted)">Landing Page Template</span>
+            <span style="font-size:14px;color:var(--gold)">✓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <span style="font-size:14px;color:var(--muted)">Logo Pack (5 variante)</span>
+            <span style="font-size:14px;color:var(--gold)">✓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <span style="font-size:14px;color:var(--muted)">Social Media Covers</span>
+            <span style="font-size:14px;color:var(--gold)">✓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <span style="font-size:14px;color:var(--muted)">Brand Guidelines</span>
+            <span style="font-size:14px;color:var(--gold)">✓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)">
+            <span style="font-size:18px;font-weight:700">Preț total</span>
+            <span style="font-size:28px;font-weight:800;color:var(--gold)">FREE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <h2>Pentru cine este FREE Kit?</h2>
+      <p>Perfect dacă te afli la început de drum sau vrei să testezi sistemul CashFlowLab</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Antreprenori la început</h3>
+        <p>Vrei să-ți lansezi prima prezență online dar nu știi de unde să începi? Aici ai fundația.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h3>Freelanceri</h3>
+        <p>Construiește-ți brandul personal cu elemente vizuale profesionale de la prima interacțiune.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Creatori de conținut financiar</h3>
+        <p>Blogeri, YouTuberi sau influenceri din nisa financiară care vor consistență vizuală.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🧪</div>
+        <h3>Curioși și testori</h3>
+        <p>Vrei să vezi ce poate CashFlowLab înainte să investești? Începe gratis.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>Studenți și autodidacți</h3>
+        <p>Învață prin practică. Descarcă kitul, studiază-l, aplică-l în proiectele tale.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💡</div>
+        <h3>Ideatori</h3>
+        <p>Ai o idee de business dar nu ai buget pentru branding? Aceasta e soluția.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="download">
+  <div class="container">
+    <div class="cta-box">
+      <div class="price-tag">FREE</div>
+      <p class="price-note">Valoare reală: $27 • Tu plătești: $0</p>
+      <h2>Gata să începi?</h2>
+      <p>Descarcă FREE Kitul acum și primește instant acces la toate resursele. Nu e nevoie de card de credit, nu există obligații.</p>
+      <a href="https://cashflowlabai.gumroad.com/l/jktsac" class="btn btn-primary" style="padding:18px 40px;font-size:18px">Descarcă GRATUIT Acum →</a>
+      <div class="trust-badges">
+        <span class="trust-badge">🔒 Secure Download</span>
+        <span class="trust-badge">⚡ Instant Access</span>
+        <span class="trust-badge">♾️ Lifetime Use</span>
+      </div>
+    </div>
+    <p style="color:var(--muted);margin-top:32px;font-size:15px">După ce descarci, verifică și emailul pentru confirmare și next steps.</p>
+  </div>
+</section>
+
+<section style="background:rgba(15,15,20,.4);border-top:1px solid rgba(255,255,255,.06)">
+  <div class="container">
+    <div class="section-header">
+      <h2>Vrei mai mult?</h2>
+      <p>FREE Kitul e doar începutul. Upgradează când ești gata.</p>
+    </div>
+    <div class="features-grid" style="max-width:800px;margin:0 auto">
+      <div class="feature-card" style="text-align:center">
+        <div class="feature-icon" style="margin:0 auto 16px">📦</div>
+        <h3>MINI Kit — $9</h3>
+        <p>3 landing variante + ghid 24h + branding complet</p>
+        <a href="/mini-kit/" style="color:var(--gold);font-weight:600">Află mai multe →</a>
+      </div>
+      <div class="feature-card" style="text-align:center;border-color:rgba(255,209,102,.3)">
+        <div class="feature-icon" style="margin:0 auto 16px;background:linear-gradient(135deg,rgba(255,209,102,.3),rgba(138,95,255,.3))">⭐</div>
+        <h3>PRO Kit — $39</h3>
+        <p>Sistem complet cu funnel, 10 emailuri, automatizări și suport</p>
+        <a href="/pro-kit/" style="color:var(--gold);font-weight:600">Află mai multe →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="foot-logo">
+          <img src="/Images/logo-mark.png" alt="CashFlowLab" width="28" height="28">
+          <span>CashFlowLab</span>
+        </div>
+        <p style="font-size:14px;margin-top:12px">Sistemul AI care îți construiește cashflow predictibil.</p>
+      </div>
+      <div class="footer">
+        <h4 style="font-size:14px;margin-bottom:12px">Kituri</h4>
+        <a href="/free-kit/">FREE Kit</a>
+        <a href="/mini-kit/">MINI Kit</a>
+        <a href="/medium-kit/">MEDIUM Kit</a>
+        <a href="/pro-kit/">PRO Kit</a>
+      </div>
+      <div class="footer">
+        <h4 style="font-size:14px;margin-bottom:12px">Resurse</h4>
+        <a href="/">Home</a>
+        <a href="/#kits">Toate kiturile</a>
+        <a href="mailto:support@cashflowlabai.com">Suport</a>
+      </div>
+      <div class="footer">
+        <h4 style="font-size:14px;margin-bottom:12px">Legal</h4>
+        <a href="/terms/">Termeni</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:40px;font-size:13px">© 2025 CashFlowLab. Toate drepturile rezervate.</p>
+  </div>
+</footer>
+
+<div class="mobile-cta">
+  <a href="https://cashflowlabai.gumroad.com/l/jktsac" class="btn btn-primary" style="width:100%;text-align:center">Descarcă GRATUIT →</a>
+</div>
+
+</body>
+</html>
