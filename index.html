@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://region1.google-analytics.com" />
 
   <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
+  <script type='text/javascript' src='https://www.kimi.com/EKgqnv5NFEwCiToAmB61y7wzp4Hd7EBnXwCKf1joDvshQMv5ErjjijPbEdtpIbFgZVFxbdth_5-OkGvMFy1gmrLUqNj-K6XZGwlf5lnwe32n_BNm8_NJUYJkWNQNk7OHWj44ucL3pE2l0Ww3CAyFarfIte7jrL5SbbaNlIio1KGbD94vONtp6J5y0KHCicrxqPEz87bKlsuqkUMBcAqSxSU-W61e7LiY1HXBtCVdQCX-7vBtPEvEkDyicRzViskY2Uv05k-CT4nOgdD-6LqxuHrV5xgLqKO38SmtnCZMg-rn4HjF7vYE9XewLO7ofPYqiyrmzvImFGJOVzfU8_rzksYyv9o76pouZRIYUa5jZnGLTMZCT2fr6rxaf7HEaa708H0DTEo1pRFYBGyjo9ggtZFt4hmnam0tVAkXNN3jPGM5ypTqInWouQneYXXd_OfD3M5O73h0kWFF3dYnEiQZCTTltwXxtUriqfBMefX1vy4LssbVxkDqPs7zMwmzDLf_lyQGvp7mN9o9He1Ge3vD08jl2a6chSiyv4Q8zs-Ex_ELrLPnzXxZfCIXqmqHUxEdWRqYrA2Dyys1H0Pc5nTaSWTV7i_8fit8kkeT7oKlH_i6POlRaqlEP04f4evCqAavweNhUAUI03oeqfyN_S7-XZlGGv0Vxv9D8oQ0IgMDfn4Ca_aaBeRDzRN6WFsUppbFRVAuQ4pIsHXV8ndAnsm7KxUx'></script><script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/Images/logo-mark.png","sameAs":[]}
   </script>
 
@@ -442,7 +442,7 @@
       </div>
       <div><h4>Resurse</h4><p><a href="#kits">Kits</a></p><p><a href="#faq">FAQ</a></p></div>
       <div><h4>Legal</h4><p><span style="color:var(--muted)">Termeni (în curând)</span></p><p><span style="color:var(--muted)">Privacy (în curând)</span></p><p><span style="color:var(--muted)">Imprint (în curând)</span></p></div>
-      <div><h4>Contact</h4><p><a href="mailto:contact@cashflowlabai.com">contact@cashflowlabai.com</a></p></div>
+      <div><h4>Contact</h4><p><a href="/cdn-cgi/l/email-protection#53303c3d27323027133032203b353f3c243f3231323a7d303c3e"><span class="__cf_email__" data-cfemail="d3b0bcbda7b2b0a793b0b2a0bbb5bfbca4bfb2b1b2bafdb0bcbe">[email&#160;protected]</span></a></p></div>
     </div>
   </footer>
 
@@ -465,7 +465,7 @@
   </div>
 
   <!-- Scripts -->
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Reveal on scroll
   (()=>{const els=document.querySelectorAll('.cfl-reveal');if(els.length){const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(el=>io.observe(el));}})();
 
@@ -475,11 +475,11 @@
   // Language toggle
   (()=>{const path=window.location.pathname.toLowerCase();let currentLang='ro';if(path.startsWith('/en/'))currentLang='en';else if(path.startsWith('/de/'))currentLang='de';const pill=document.querySelector('.lang-pill');if(pill){const buttons=pill.querySelectorAll('.lang-btn');buttons.forEach(btn=>{const isActive=btn.dataset.lang===currentLang;btn.classList.toggle('is-active',isActive);btn.setAttribute('aria-current',isActive?'page':'false');btn.addEventListener('click',()=>localStorage.setItem('language_selected','true'));});}document.documentElement.lang=currentLang==='ro'?'ro':currentLang;})();
 
-  // MailerLite success callback - redirect to Gumroad FREE Kit
+  // MailerLite success callback - redirect to FREE Kit page
   function ml_webform_success_176693602287617412() {
-    // Redirect to Gumroad FREE Kit after 1.5 seconds
+    // Redirect to FREE Kit download page after 1.5 seconds
     setTimeout(function() {
-      window.location.href = 'https://cashflowlabai.gumroad.com/l/jktsac';
+      window.location.href = '/free-kit.html';
     }, 1500);
   }
 
