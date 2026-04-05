@@ -73,6 +73,9 @@
     .mobile-cta{position:fixed;z-index:60;bottom:14px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 24px));padding:12px;border-radius:16px;background:rgba(15,15,20,.90);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);display:flex;justify-content:center}
     @media (min-width:981px){.mobile-cta{display:none}}
     @media (max-width:980px){.hero-grid,.content-grid,.features-grid{grid-template-columns:1fr}.hero{padding:60px 0 40px}.features-grid{gap:16px}.footer-grid{grid-template-columns:1fr 1fr}}
+    details summary::-webkit-details-marker{display:none}
+    details[open] summary span{transform:rotate(45deg)}
+    details summary span{transition:transform .2s ease;display:inline-block}
   </style>
 </head>
 <body>
@@ -292,6 +295,76 @@
         <p>Sistem complet cu funnel, 10 emailuri, automatizări și suport</p>
         <a href="/pro-kit/" style="color:var(--gold);font-weight:600">Află mai multe →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section style="background:linear-gradient(135deg,rgba(255,209,102,.08),rgba(138,95,255,.08));border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:60px 0">
+  <div class="container" style="text-align:center">
+    <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap">
+      <div>
+        <div style="font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent">1,247+</div>
+        <p style="color:var(--muted);margin:8px 0 0;font-size:14px">Descărcări gratuite</p>
+      </div>
+      <div>
+        <div style="font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent">4.9★</div>
+        <p style="color:var(--muted);margin:8px 0 0;font-size:14px">Rating mediu</p>
+      </div>
+      <div>
+        <div style="font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent">89%</div>
+        <p style="color:var(--muted);margin:8px 0 0;font-size:14px">Upgrade la PRO</p>
+      </div>
+    </div>
+    <p style="color:var(--muted);margin-top:32px;font-size:15px;max-width:600px;margin-left:auto;margin-right:auto">"Am început cu FREE Kit și în 2 săptămâni am lansat primul meu produs digital. Acum am 3 clienți recurenți." — Alex M.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:80px 0">
+  <div class="container" style="max-width:800px">
+    <div class="section-header">
+      <h2>Întrebări frecvente</h2>
+      <p>Tot ce trebuie să știi înainte să descarci</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <details style="border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;background:rgba(15,15,20,.6)">
+        <summary style="font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">Ce format au fișierele? <span style="font-size:20px">+</span></summary>
+        <p style="color:var(--muted);margin:16px 0 0;font-size:15px;line-height:1.6">Primești fișiere în formatele cele mai utilizate: HTML/CSS/JS pentru landing page, SVG și PNG pentru logo-uri (transparente și pe fundal), plus PDF pentru brand guidelines.</p>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;background:rgba(15,15,20,.6)">
+        <summary style="font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">Pot folosi pentru proiecte comerciale? <span style="font-size:20px">+</span></summary>
+        <p style="color:var(--muted);margin:16px 0 0;font-size:15px;line-height:1.6">Absolut! FREE Kit are licență completă pentru uz personal și comercial. Poți folosi materialele pentru tine sau pentru clienți fără nicio restricție.</p>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;background:rgba(15,15,20,.6)">
+        <summary style="font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">Trebuie să știu programare? <span style="font-size:20px">+</span></summary>
+        <p style="color:var(--muted);margin:16px 0 0;font-size:15px;line-height:1.6">Nu! Kitul vine cu instrucțiuni clare pas cu pas. Dacă poți edita un document Word, poți folosi și acest kit. Plus, ai documentație video în interior.</p>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;background:rgba(15,15,20,.6)">
+        <summary style="font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">Cât timp am acces la fișiere? <span style="font-size:20px">+</span></summary>
+        <p style="color:var(--muted);margin:16px 0 0;font-size:15px;line-height:1.6">Acces pe viață! Odată descărcat, kitul e al tău pentru totdeauna. Plus primești update-uri gratuite când lansăm versiuni noi.</p>
+      </details>
+      <details style="border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;background:rgba(15,15,20,.6)">
+        <summary style="font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">Ce primesc după ce dau emailul? <span style="font-size:20px">+</span></summary>
+        <p style="color:var(--muted);margin:16px 0 0;font-size:15px;line-height:1.6">Primești instant un email cu link de download către toate fișierele. Plus un mini-curs email de 3 zile cu tips pentru a maximiza rezultatele cu kitul.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section style="padding:100px 0;background:linear-gradient(180deg,rgba(255,209,102,.05),rgba(138,95,255,.05))">
+  <div class="container" style="text-align:center">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);margin-bottom:16px">Gata să începi?</h2>
+    <p style="color:var(--muted);max-width:500px;margin:0 auto 32px;font-size:17px">Alătură-te celor 1,200+ de creatori care și-au construit fundația brandului cu FREE Kit.</p>
+    <a href="https://cashflowlabai.gumroad.com/l/jktsac" class="btn btn-primary" style="padding:20px 48px;font-size:18px;display:inline-flex;align-items:center;gap:12px">
+      <span>Descarcă GRATUIT Acum</span>
+      <span style="font-size:20px">→</span>
+    </a>
+    <div style="display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap">
+      <span style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px">🔒 Secure SSL</span>
+      <span style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px">⚡ Instant Access</span>
+      <span style="font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px">♾️ Lifetime</span>
     </div>
   </div>
 </section>
