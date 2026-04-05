@@ -138,6 +138,8 @@
     .consent .btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,.1);padding:10px 16px;border-radius:999px;font-size:14px;cursor:pointer}
     .btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,.2)}
+    .notice-card{padding:14px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.10);background:rgba(15,15,20,.55);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .notice-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .cfl-reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
     .cfl-reveal.is-in{opacity:1;transform:none}
     .cfl-d1{transition-delay:.1s}
@@ -235,14 +237,21 @@
           </div>
         </div>
 
-        <div class="proof-row cfl-reveal cfl-d2">
-          <div class="avatars">
-            <img src="/Images/avatar-1.png" alt="" loading="lazy" decoding="async" width="28" height="28" />
-            <img src="/Images/avatar-2.png" alt="" loading="lazy" decoding="async" width="28" height="28" />
-            <img src="/Images/avatar-3.png" alt="" loading="lazy" decoding="async" width="28" height="28" />
-          </div>
-          <p><strong>1.200+</strong> Creators haben das Kit erhalten.</p>
+        <div class="trust txt-shadow cfl-reveal cfl-d5" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+          <span class="badge">✔ Keine Karte nötig</span>
+          <span class="badge">✔ Kein Spam</span>
+          <span class="badge">✔ Max. 1 E-Mail/Tag</span>
+          <span class="badge">⚡ Sofortiger Zugang</span>
         </div>
+
+        <div id="signupNotice" class="cfl-reveal cfl-d5" style="display:none;margin-top:12px;">
+          <div class="notice-card">
+            <div class="notice-head"><b style="letter-spacing:.2px;">Anmeldung bestätigt ✅</b><span class="badge">CashFlowLab</span></div>
+            <p class="muted" style="margin:8px 0 0;">Erste E-Mail kommt in 1–2 Minuten. Wenn du sie nicht siehst, prüfe <i>Werbung</i>.</p>
+          </div>
+        </div>
+
+        <p class="muted cfl-reveal cfl-d5" style="margin:8px 0 0;">Wir nutzen deine E-Mail nur, um dir das Kit und die CashFlowLab-Sequenz zu schicken. Jederzeit abmelden.</p>
       </div>
 
       <div class="hero-visual cfl-parallax">
