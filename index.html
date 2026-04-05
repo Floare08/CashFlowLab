@@ -186,6 +186,7 @@
     .preview-rapid .shot{display:flex;flex-direction:column}
     .preview-rapid .shot .media{position:relative;width:100%;overflow:hidden;border-radius:14px;background:#0a0a0f;border:1px solid rgba(255,255,255,.08);line-height:0}
     .preview-rapid .shot .media img{width:100%;height:auto;display:block;border-radius:14px}
+    @media(max-width:980px){.preview-rapid .gallery{grid-template-columns:1fr!important}}
     @media(max-width:768px){.preview-rapid .gallery{grid-template-columns:1fr;gap:20px}}
     .preview-rapid .shot .media::after{content:"";position:absolute;inset:-20%;background:radial-gradient(60% 40% at 70% 20%,rgba(255,209,102,.22),rgba(138,95,255,.18),transparent 70%);filter:blur(28px);opacity:0;transition:opacity .35s ease;pointer-events:none}
     .preview-rapid .shot:hover .media::after{opacity:1}
@@ -358,20 +359,23 @@
     <!-- Showcase -->
     <section id="showcase" class="showcase preview-rapid">
       <div class="container">
-        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="showcase.title">Preview rapid</h2>
-        <p class="section-sub cfl-reveal cfl-d2" data-i18n="showcase.sub">Trei cadre din kituri — făcute să arate premium în share, ads și OG previews.</p>
-        <div class="gallery">
-          <article class="shot cfl-card cfl-reveal cfl-d2">
-            <div class="media"><img src="/Images/shot-1.webp" alt="Landing premium" width="1200" height="750" loading="lazy" decoding="async" /></div>
-            <div class="body"><h4>Landing Premium</h4><p data-i18n="showcase.s1">Hero + CTA conectate la Gumroad, fără fricțiune.</p></div>
+        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="showcase.title">Ce primești în kituri</h2>
+        <p class="section-sub cfl-reveal cfl-d2" data-i18n="showcase.sub">Resurse pregătite profesional pentru a construi rapid și a scală.</p>
+        <div class="gallery" style="grid-template-columns:repeat(3,1fr);gap:24px">
+          <article class="shot cfl-card cfl-reveal cfl-d2" style="text-align:center;padding:32px 24px">
+            <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">🚀</div>
+            <h4 style="margin-bottom:10px">Landing Premium</h4>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Structură clară de landing page, conectată direct la Gumroad, fără fricțiune.</p>
           </article>
-          <article class="shot cfl-card cfl-reveal cfl-d3">
-            <div class="media"><img src="/Images/shot-2.webp" alt="Funnel email" width="1200" height="750" loading="lazy" decoding="async" /></div>
-            <div class="body"><h4>Funnel & Automate</h4><p data-i18n="showcase.s2">Captare → nurturing → ofertă — gata de rulare.</p></div>
+          <article class="shot cfl-card cfl-reveal cfl-d3" style="text-align:center;padding:32px 24px">
+            <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">⚡</div>
+            <h4 style="margin-bottom:10px">Funnel & Automate</h4>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Sistem complet: captare → nurturing → ofertă — gata de rulare.</p>
           </article>
-          <article class="shot cfl-card cfl-reveal cfl-d4">
-            <div class="media"><img src="/Images/shot-3.webp" alt="Stil vizual" width="1200" height="750" loading="lazy" decoding="async" /></div>
-            <div class="body"><h4>Stil vizual</h4><p data-i18n="showcase.s3">Tech orb, gold+purple, cover-uri incluse.</p></div>
+          <article class="shot cfl-card cfl-reveal cfl-d4" style="text-align:center;padding:32px 24px">
+            <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">🎨</div>
+            <h4 style="margin-bottom:10px">Stil vizual</h4>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Tech orb, gold+purple, brand guidelines și cover-uri incluse.</p>
           </article>
         </div>
       </div>
