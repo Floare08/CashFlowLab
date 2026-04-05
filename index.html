@@ -98,6 +98,8 @@
     .btn .shine{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;background:linear-gradient(120deg,rgba(var(--grad-1),.35),rgba(var(--grad-2),.35));filter:blur(16px);opacity:.45}
     .hero{padding:96px 0 56px;background:transparent!important;position:relative;overflow:hidden}
     .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .hero-visual{position:relative;min-height:360px;display:grid;place-items:center}
+    .hero-visual img{max-width:100%;height:auto;border-radius:var(--radius-xl);max-height:420px}
     .eyebrow{color:var(--accent-gold);font-weight:700;letter-spacing:.4px;margin-bottom:10px}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,54px);line-height:1.05;margin-bottom:16px}
     .hero .sub{color:var(--muted);margin:14px 0 18px;max-width:56ch}
@@ -148,7 +150,7 @@
     @keyframes pulse-glow{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.05);opacity:.15}}
     .mobile-cta{position:fixed;z-index:60;bottom:14px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 24px));display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;border-radius:16px;background:rgba(15,15,20,.80);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)}
     @media (min-width:981px){.mobile-cta{display:none}}
-    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.features,.kits,.testimonials,.faq,.footer-grid{grid-template-columns:1fr}header .nav .right{display:none}.hero{padding:84px 0 40px}.frame{border:0;box-shadow:none}.hero .frame img{position:static;width:100%;height:auto;object-fit:contain}.lang-pill.mobile-always-visible{display:flex!important;position:static;margin-left:auto;margin-right:10px}.logo span.badge{display:none}.lang-pill.mobile-always-visible .lang-btn{padding:4px 8px;font-size:12px}.lang-pill{position:absolute;top:16px;right:16px;z-index:100}}
+    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-visual{order:-1;min-height:auto;margin-bottom:18px}.features,.kits,.testimonials,.faq,.footer-grid{grid-template-columns:1fr}header .nav .right{display:none}.hero{padding:84px 0 40px}.frame{border:0;box-shadow:none}.hero .frame img{position:static;width:100%;height:auto;object-fit:contain}.lang-pill.mobile-always-visible{display:flex!important;position:static;margin-left:auto;margin-right:10px}.logo span.badge{display:none}.lang-pill.mobile-always-visible .lang-btn{padding:4px 8px;font-size:12px}.lang-pill{position:absolute;top:16px;right:16px;z-index:100}}
     @media (max-width:560px){.email-capture{flex-wrap:wrap}.email-capture input{width:100%}.email-capture button{width:100%}}
     .visually-hidden-focusable{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
     .visually-hidden-focusable:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:10px 14px;background:#111;color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;z-index:1000}
