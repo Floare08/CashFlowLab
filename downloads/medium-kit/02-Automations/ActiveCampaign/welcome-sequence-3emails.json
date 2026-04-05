@@ -1,0 +1,45 @@
+{
+  "automation_name": "CashFlowLab - Welcome Sequence",
+  "platform": "ActiveCampaign",
+  "version": "1.0",
+  "description": "Secvență de 3 emailuri de bun venit pentru noii abonați",
+  
+  "trigger": {
+    "type": "tag_added",
+    "tag": "NEW_SUBSCRIBER"
+  },
+
+  "emails": [
+    {
+      "order": 1,
+      "delay": "immediate",
+      "subject": "Bine ai venit! Iată primul tău cadou 🎁",
+      "preheader": "Resursele promise sunt atașate",
+      "from_name": "CashFlowLab",
+      "from_email": "hello@cashflowlabai.com",
+      "content": "EMAIL_1_WELCOME.html"
+    },
+    {
+      "order": 2,
+      "delay": "1_day",
+      "subject": "Secretul care schimbă totul",
+      "preheader": "Ce învață antreprenorii de 7 cifre",
+      "from_name": "CashFlowLab", 
+      "from_email": "hello@cashflowlabai.com",
+      "content": "EMAIL_2_STORY.html"
+    },
+    {
+      "order": 3,
+      "delay": "3_days",
+      "subject": "Cum să începi chiar azi",
+      "preheader": "Pașii concreți pentru primul tău funnel",
+      "from_name": "CashFlowLab",
+      "from_email": "hello@cashflowlabai.com",
+      "content": "EMAIL_3_ACTION.html"
+    }
+  ],
+
+  "tags_to_add": ["WELCOME_SEQUENCE_STARTED"],
+  "tags_on_complete": ["WELCOME_SEQUENCE_COMPLETE"],
+  "goals": ["PURCHASED_KIT", "CLICKED_UPGRADE"]
+}
