@@ -296,6 +296,47 @@
             </div>
           </div>
 
+          <script>
+          // Interceptează submitul formularului MailerLite și face redirect manual
+          (function() {
+            const form = document.querySelector('#mlb2-176693602287617412 form');
+            const successMsg = document.getElementById('ml-success-msg');
+            
+            if (form) {
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                  method: 'POST',
+                  body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                  // Arată mesajul de succes
+                  if (successMsg) {
+                    successMsg.style.display = 'block';
+                    successMsg.classList.add('is-in');
+                  }
+                  // Ascunde formularul
+                  form.style.display = 'none';
+                  
+                  // Redirect după 2 secunde
+                  setTimeout(function() {
+                    window.location.href = 'https://cashflowlabai.com/free-kit/';
+                  }, 2000);
+                })
+                .catch(error => {
+                  console.error('Error:', error);
+                  // Chiar dacă e eroare, încercăm redirect (MailerLite poate fi salvat)
+                  window.location.href = 'https://cashflowlabai.com/free-kit/';
+                });
+              });
+            }
+          })();
+          </script>
+
           <div class="trust txt-shadow cfl-reveal cfl-d5" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
             <span class="badge">✔ Fără card</span>
             <span class="badge">✔ Fără spam</span>
