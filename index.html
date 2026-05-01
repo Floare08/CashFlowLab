@@ -57,8 +57,17 @@
   <link rel="preconnect" href="https://static.hotjar.com" />
   <link rel="preconnect" href="https://region1.google-analytics.com" />
 
+  <!-- Google Analytics 4 — TODO: Replace G-XXXXXXXXXX with your actual Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5X8JNFFL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WL5X8JNFFL', {send_page_view: false});
+  </script>
+
   <!-- JSON-LD: Organization -->
-  <script type='text/javascript' src='https://www.kimi.com/EKgqnv5NFEwCiToAmB61y7wzp4Hd7EBnXwCKf1joDvshQMv5ErjjijPbEdtpIbFgZVFxbdth_5-OkGvMFy1gmrLUqNj-K6XZGwlf5lnwe32n_BNm8_NJUYJkWNQNk7OHWj44ucL3pE2l0Ww3CAyFarfIte7jrL5SbbaNlIio1KGbD94vONtp6J5y0KHCicrxqPEz87bKlsuqkUMBcAqSxSU-W61e7LiY1HXBtCVdQCX-7vBtPEvEkDyicRzViskY2Uv05k-CT4nOgdD-6LqxuHrV5xgLqKO38SmtnCZMg-rn4HjF7vYE9XewLO7ofPYqiyrmzvImFGJOVzfU8_rzksYyv9o76pouZRIYUa5jZnGLTMZCT2fr6rxaf7HEaa708H0DTEo1pRFYBGyjo9ggtZFt4hmnam0tVAkXNN3jPGM5ypTqInWouQneYXXd_OfD3M5O73h0kWFF3dYnEiQZCTTltwXxtUriqfBMefX1vy4LssbVxkDqPs7zMwmzDLf_lyQGvp7mN9o9He1Ge3vD08jl2a6chSiyv4Q8zs-Ex_ELrLPnzXxZfCIXqmqHUxEdWRqYrA2Dyys1H0Pc5nTaSWTV7i_8fit8kkeT7oKlH_i6POlRaqlEP04f4evCqAavweNhUAUI03oeqfyN_S7-XZlGGv0Vxv9D8oQ0IgMDfn4Ca_aaBeRDzRN6WFsUppbFRVAuQ4pIsHXV8ndAnsm7KxUx'></script><script type="application/ld+json">
+  <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/Images/logo-mark.png","sameAs":[]}
   </script>
 
@@ -162,9 +171,10 @@
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,.18);color:var(--text);padding:10px 14px;border-radius:999px;font-weight:700}
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
     @keyframes cflFadeUp{from{opacity:0;transform:translateY(18px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
-    .cfl-reveal{opacity:0;transform:translateY(18px);filter:blur(6px);will-change:transform,opacity,filter}
-    .cfl-reveal.is-in{animation:cflFadeUp .8s ease-out forwards}
-    .cfl-d1.is-in{animation-delay:.08s}.cfl-d2.is-in{animation-delay:.18s}.cfl-d3.is-in{animation-delay:.28s}.cfl-d4.is-in{animation-delay:.38s}.cfl-d5.is-in{animation-delay:.48s}
+    .cfl-reveal{opacity:1;transform:none;filter:none;will-change:transform,opacity,filter}
+    .cfl-reveal.cfl-animate{opacity:0;transform:translateY(18px);filter:blur(6px)}
+    .cfl-reveal.cfl-animate.is-in{animation:cflFadeUp .8s ease-out forwards}
+    .cfl-d1.cfl-animate.is-in{animation-delay:.08s}.cfl-d2.cfl-animate.is-in{animation-delay:.18s}.cfl-d3.cfl-animate.is-in{animation-delay:.28s}.cfl-d4.cfl-animate.is-in{animation-delay:.38s}.cfl-d5.cfl-animate.is-in{animation-delay:.48s}
     .cfl-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;will-change:transform}
     .cfl-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.35)}
     .cfl-cta-glow{box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
@@ -235,7 +245,7 @@
       <div class="lang-pill mobile-always-visible">
         <a class="lang-btn is-active" href="/" data-lang="ro">RO</a>
         <a class="lang-btn" href="/en/" data-lang="en">EN</a>
-        <a class="lang-btn" href="/De/" data-lang="de">DE</a>
+        <a class="lang-btn" href="/de/" data-lang="de">DE</a>
       </div>
     </div>
   </header>
@@ -492,7 +502,7 @@
         <p class="muted">© <span id="y"></span> CashFlowLab. All rights reserved.</p>
       </div>
       <div><h4>Resurse</h4><p><a href="#kits">Kits</a></p><p><a href="#faq">FAQ</a></p></div>
-      <div><h4>Legal</h4><p><span style="color:var(--muted)">Termeni (în curând)</span></p><p><span style="color:var(--muted)">Privacy (în curând)</span></p><p><span style="color:var(--muted)">Imprint (în curând)</span></p></div>
+      <div><h4>Legal</h4><p><a href="/terms.html">Termeni și Condiții</a></p><p><a href="/privacy.html">Politica de Confidențialitate</a></p><p><a href="/imprint.html">Imprint</a></p></div>
       <div><h4>Contact</h4><p><a href="/cdn-cgi/l/email-protection#53303c3d27323027133032203b353f3c243f3231323a7d303c3e"><span class="__cf_email__" data-cfemail="d3b0bcbda7b2b0a793b0b2a0bbb5bfbca4bfb2b1b2bafdb0bcbe">[email&#160;protected]</span></a></p></div>
     </div>
   </footer>
@@ -517,8 +527,32 @@
 
   <!-- Scripts -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Reveal on scroll
-  (()=>{const els=document.querySelectorAll('.cfl-reveal');if(els.length){const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(el=>io.observe(el));}})();
+  // Reveal on scroll - animatii pentru elemente care intra in viewport
+  (() => {
+    const els = document.querySelectorAll('.cfl-reveal');
+    if (!els.length) return;
+    
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    
+    els.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      const isBelowFold = rect.top > window.innerHeight;
+      
+      if (isBelowFold) {
+        // Elementele de sub fold - ascunde si asteapta scroll
+        el.classList.add('cfl-animate');
+        io.observe(el);
+      }
+      // Elementele deja vizibile raman asa (fara animatie)
+    });
+  })();
 
   // Parallax effect
   (()=>{const box=document.querySelector('.cfl-parallax');if(box&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){let cx=window.innerWidth/2,cy=window.innerHeight/2;window.addEventListener('resize',()=>{cx=window.innerWidth/2;cy=window.innerHeight/2;});window.addEventListener('mousemove',(e)=>{const dx=(e.clientX-cx)/cx,dy=(e.clientY-cy)/cy;box.style.transform=`translate3d(${dx*6}px,${dy*6}px,0)`;},{passive:true});}})();
