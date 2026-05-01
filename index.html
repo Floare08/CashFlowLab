@@ -172,9 +172,8 @@
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
     @keyframes cflFadeUp{from{opacity:0;transform:translateY(18px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
     .cfl-reveal{opacity:1;transform:none;filter:none;will-change:transform,opacity,filter}
-    .cfl-reveal.cfl-animate{opacity:0;transform:translateY(18px);filter:blur(6px)}
-    .cfl-reveal.cfl-animate.is-in{animation:cflFadeUp .8s ease-out forwards}
-    .cfl-d1.cfl-animate.is-in{animation-delay:.08s}.cfl-d2.cfl-animate.is-in{animation-delay:.18s}.cfl-d3.cfl-animate.is-in{animation-delay:.28s}.cfl-d4.cfl-animate.is-in{animation-delay:.38s}.cfl-d5.cfl-animate.is-in{animation-delay:.48s}
+    .cfl-reveal.is-in{animation:cflFadeUp .8s ease-out forwards}
+    .cfl-d1{animation-delay:.08s}.cfl-d2{animation-delay:.18s}.cfl-d3{animation-delay:.28s}.cfl-d4{animation-delay:.38s}.cfl-d5{animation-delay:.48s}
     .cfl-card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;will-change:transform}
     .cfl-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.35)}
     .cfl-cta-glow{box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}
@@ -527,32 +526,8 @@
 
   <!-- Scripts -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Reveal on scroll - animatii pentru elemente care intra in viewport
-  (() => {
-    const els = document.querySelectorAll('.cfl-reveal');
-    if (!els.length) return;
-    
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    
-    els.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const isBelowFold = rect.top > window.innerHeight;
-      
-      if (isBelowFold) {
-        // Elementele de sub fold - ascunde si asteapta scroll
-        el.classList.add('cfl-animate');
-        io.observe(el);
-      }
-      // Elementele deja vizibile raman asa (fara animatie)
-    });
-  })();
+  // Reveal on scroll (optional animation - elements visible by default)
+  (()=>{const els=document.querySelectorAll('.cfl-reveal');if(els.length){const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}});},{threshold:0.12});els.forEach(el=>io.observe(el));}})();
 
   // Parallax effect
   (()=>{const box=document.querySelector('.cfl-parallax');if(box&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){let cx=window.innerWidth/2,cy=window.innerHeight/2;window.addEventListener('resize',()=>{cx=window.innerWidth/2;cy=window.innerHeight/2;});window.addEventListener('mousemove',(e)=>{const dx=(e.clientX-cx)/cx,dy=(e.clientY-cy)/cy;box.style.transform=`translate3d(${dx*6}px,${dy*6}px,0)`;},{passive:true});}})();
