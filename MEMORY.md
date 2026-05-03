@@ -2,8 +2,8 @@
 
 ## Proiect: CashFlowLab AI Website
 **URL:** https://cashflowlabai.com  
-**Ultima activitate:** 28 Aprilie 2026  
-**Status:** Impecabil — pregătit pentru lansare 🚀
+**Ultima activitate:** 2 Mai 2026  
+**Status:** Impecabil — live, sincronizat, verificat pe mobil ✅🚀
 
 ### Fișiere active (Workspace curățat)
 - **index.html** ← Versiunea RO principală (live)
@@ -52,16 +52,20 @@
    - [x] **Preconnect** la GTM, Facebook, Hotjar, GA region
 
 ### FAZA 2: MULTILINGV (Extindere)
-**Prioritate: RIDICATĂ**
+**Prioritate: RIDICATĂ — ✅ COMPLETAT**
 
 4. **Switcher limbă (UI)** ✅
    - [x] Dropdown sau flag-uri în header — activ în toate 3 limbile
 
-5. **Traducere EN** ✅
+5. **Traducere EN** ✅ *Resincronizat 02.05.2026*
    - [x] Traducere completă — verificat, body complet în engleză
+   - [x] **CSS sincronizat cu RO** — structură identică, layout identic
+   - [x] `max-height:420px` pe hero visual — fixat
 
-6. **Traducere DE** ✅
+6. **Traducere DE** ✅ *Resincronizat 02.05.2026*
    - [x] Traducere completă — verificat, body complet în germană
+   - [x] **CSS sincronizat cu RO** — structură identică, layout identic
+   - [x] `max-height:420px` pe hero visual — fixat
 
 ### FAZA 3: PRODUSE (Conversie)
 **Prioritate: RIDICATĂ**
@@ -72,11 +76,16 @@
    - [ ] Pagină dedicată Medium Kit
    - [ ] Pagină dedicată PRO Kit
 
-8. **Redesign showcase produse** — ⏳ Nefinalizat
-   - [ ] Card-uri mai informative
-   - [ ] Prețuri vizibile
-   - [ ] Feature comparison table
-   - [ ] "Best value" badge pe Medium/PRO
+8. **Redesign showcase produse** — ✅ COMPLETAT 02.05.2026
+   - [x] Card-uri mai informative — gradient borders animate, hover glow
+   - [x] Prețuri vizibile — font 36px bold, gradient gold→purple
+   - [x] Feature lists cu checkmark icons (✓) în loc de bullet-uri
+   - [x] "Best Value" badge pe PRO Kit (banner gradient gold+purple)
+   - [x] Iconițe decorative pentru fiecare kit (🎁 🚀 ⚡ 👑)
+   - [x] Card PRO highlighted — border auriu, glow, scale on hover
+   - [x] Card FREE stil distinct — fundal subtil, border discret
+   - [x] Butoane CTA redesign — primary (gradient) + outline premium
+   - [x] Aplicat pe toate 3 limbile: RO, EN, DE
 
 9. **Checkout flow** ✅
    - [x] Link-uri directe Gumroad verificate (manual — toate 4 funcționale)
@@ -104,15 +113,22 @@
 ## 📋 STATUS ACTIV
 
 **Lucrăm la:** Faza 4 — Polish final înainte de lansare  
-**Ultimele modificări (28.04.2026):**
-1. ✅ Pagini legale sincronizate din `kit/` în root (privacy, terms, imprint)
-2. ✅ Canonical URLs actualizate pentru root
-3. ✅ Footer RO — link-uri legale activate (nu mai sunt "în curând")
-4. ✅ Footer EN — link-uri legale activate (Terms, Privacy, Imprint)
-5. ✅ Footer DE — link-uri legale activate (AGB, Datenschutz, Impressum)
-6. ✅ Script suspect kimi.com eliminat din `index.html`
-7. ✅ Google Analytics 4 placeholder adăugat în head
-8. ✅ Cookie consent management compatibil cu GA4
+**Ultimele modificări (02.05.2026):**
+1. ✅ Redesign premium secțiune Kits — toate 3 limbile (RO, EN, DE)
+   - Gradient borders animate on hover, glow effects
+   - Checkmark icons (✓) pentru feature lists
+   - Badge "Best Value" pe PRO Kit
+   - Iconițe decorative 🎁 🚀 ⚡ 👑
+   - Card PRO highlighted cu border auriu și scale hover
+   - Butoane CTA redesign (primary gradient + outline premium)
+2. ✅ Pagini legale sincronizate din `kit/` în root (privacy, terms, imprint)
+3. ✅ Canonical URLs actualizate pentru root
+4. ✅ Footer RO — link-uri legale activate (nu mai sunt "în curând")
+5. ✅ Footer EN — link-uri legale activate (Terms, Privacy, Imprint)
+6. ✅ Footer DE — link-uri legale activate (AGB, Datenschutz, Impressum)
+7. ✅ Script suspect kimi.com eliminat din `index.html`
+8. ✅ Google Analytics 4 placeholder adăugat în head
+9. ✅ Cookie consent management compatibil cu GA4
 
 **TODO înainte de lansare:**
 - [ ] Înlocuiește `G-PLACEHOLDER` în index.html cu Measurement ID real GA4

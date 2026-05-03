@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ro" data-lang="ro">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>CashFlowLab — Sistemul AI care îți construiește cashflow predictibil</title>
-  <meta name="description" content="CashFlowLab îți oferă un sistem complet: kituri, funnel și automatizări AI pentru a lansa rapid și a scala un cashflow predictibil, fără improvizații." />
+  <title>CashFlowLab — The AI system that builds you predictable cashflow</title>
+  <meta name="description" content="CashFlowLab gives you a complete system: kits, funnel and AI automations to launch quickly and scale predictable cashflow, without improvisation." />
 
-  <link rel="canonical" href="https://cashflowlabai.com/" />
-  <link rel="alternate" href="https://cashflowlabai.com/" hreflang="ro" />
+  <link rel="canonical" href="https://cashflowlabai.com/en/" />
+  <link rel="alternate" href="https://cashflowlabai.com/en/" hreflang="en" />
   <link rel="alternate" href="https://cashflowlabai.com/en/" hreflang="en" />
   <link rel="alternate" href="https://cashflowlabai.com/De/" hreflang="de" />
 
@@ -30,18 +30,18 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CashFlowLab" />
-  <meta property="og:url" content="https://cashflowlabai.com/" />
-  <meta property="og:locale" content="ro_RO" />
-  <meta property="og:title" content="CashFlowLab — Sistemul AI care îți construiește cashflow predictibil" />
-  <meta property="og:description" content="Kiturile, funnelul și automatizările AI care îți scot primul cashflow și îl transformă într-un sistem predictibil." />
+  <meta property="og:url" content="https://cashflowlabai.com/en/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="CashFlowLab — The AI system that builds you predictable cashflow" />
+  <meta property="og:description" content="The kits, funnel and AI automations that get you your first cashflow and turn it into a predictable system." />
   <meta property="og:image" content="https://cashflowlabai.com/Images/og-hero-cover.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CashFlowLab — Sistemul AI care îți construiește cashflow predictibil" />
-  <meta name="twitter:description" content="Kiturile, funnelul și automatizările AI care îți scot primul cashflow și îl transformă într-un sistem predictibil." />
+  <meta name="twitter:title" content="CashFlowLab — The AI system that builds you predictable cashflow" />
+  <meta name="twitter:description" content="The kits, funnel and AI automations that get you your first cashflow and turn it into a predictable system." />
   <meta name="twitter:image" content="https://cashflowlabai.com/Images/og-hero-cover.webp" />
 
   <!-- Favicon -->
@@ -68,12 +68,12 @@
 
   <!-- JSON-LD: Organization -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/Images/logo-mark.png","sameAs":[]}
+  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab","url":"https://cashflowlabai.com/en/","logo":"https://cashflowlabai.com/Images/logo-mark.png","sameAs":[]}
   </script>
 
   <!-- JSON-LD: Product (PRO Kit) -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Product","name":"CashFlowLab — Scale / PRO Kit","image":"https://cashflowlabai.com/Images/og-hero-cover.webp","description":"Funnel complet + 5 emailuri, automatizări avansate și suport.","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"69.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://cashflowlabai.gumroad.com/l/udxody"}}
+  {"@context":"https://schema.org","@type":"Product","name":"CashFlowLab — Scale / PRO Kit","image":"https://cashflowlabai.com/Images/og-hero-cover.webp","description":"Complete funnel + 5 emails, advanced automations and support.","brand":{"@type":"Brand","name":"CashFlowLab"},"offers":{"@type":"Offer","price":"69.99","priceCurrency":"USD","availability":"https://schema.org/InStock","url":"https://cashflowlabai.gumroad.com/l/udxody"}}
   </script>
 
   <!-- CSS -->
@@ -134,33 +134,12 @@
     .feature img{width:100%;height:auto;border-radius:var(--radius-xl);margin-bottom:12px;display:block}
     .feature h3{margin:10px 0 8px;font-size:18px}
     .feature p{color:#DEE0E6;margin:0;font-size:15px}
-    .kits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
-    .kit{padding:30px;border-radius:var(--radius-2xl);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease}
-    .kit::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(135deg,rgba(255,209,102,.35),rgba(138,95,255,.35),rgba(255,209,102,.15));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s ease;pointer-events:none}
-    .kit:hover::before{opacity:1}
-    .kit:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(0,0,0,.40),0 0 40px rgba(138,95,255,.12);border-color:rgba(255,255,255,.18)}
-    .kit.kit-pro{background:linear-gradient(180deg,rgba(255,209,102,.08),rgba(138,95,255,.06),rgba(255,255,255,.02));border:1.5px solid rgba(255,209,102,.22);box-shadow:0 12px 40px rgba(255,209,102,.06),0 0 60px rgba(138,95,255,.05)}
-    .kit.kit-pro:hover{border-color:rgba(255,209,102,.45);box-shadow:0 28px 60px rgba(0,0,0,.40),0 0 50px rgba(255,209,102,.15),0 0 80px rgba(138,95,255,.10);transform:translateY(-10px) scale(1.01)}
-    .kit.kit-free{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06)}
-    .kit.kit-free:hover{border-color:rgba(255,255,255,.14)}
-    .kit h3{margin:10px 0 6px;font-size:22px;font-weight:800}
-    .kit-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);color:var(--muted);margin-bottom:14px;width:fit-content}
-    .kit-badge.pro{background:linear-gradient(135deg,rgba(255,209,102,.20),rgba(138,95,255,.20));border:1px solid rgba(255,209,102,.30);color:var(--accent-gold);box-shadow:0 2px 12px rgba(255,209,102,.15)}
-    .kit-badge.best-value{position:absolute;top:-1px;right:20px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));color:#0b0b10;font-size:10px;font-weight:800;padding:6px 14px;border-radius:0 0 10px 10px;letter-spacing:.5px;box-shadow:0 4px 12px rgba(255,209,102,.30)}
-    .kit-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px;background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(138,95,255,.15));border:1px solid rgba(255,255,255,.10)}
-    .price{font-size:36px;font-weight:900;margin:6px 0 18px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px}
-    .price .old{text-decoration:line-through;color:var(--muted);font-size:22px;font-weight:600;margin-right:8px;background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--muted)}
-    .price .tax{font-size:13px;font-weight:500;color:var(--muted);background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--muted)}
-    .kit ul{margin:0;padding:0;list-style:none;flex:1}
-    .kit li{margin:11px 0;padding-left:28px;position:relative;color:#DEE0E6;font-size:14.5px;line-height:1.5}
-    .kit li::before{content:"✓";position:absolute;left:0;top:-1px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,rgba(255,209,102,.18),rgba(138,95,255,.18));border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--accent-gold);font-weight:700}
-    .kit .kit-cta{display:block;width:100%;text-align:center;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:all .25s ease;margin-top:auto}
-    .kit .kit-cta-primary{background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));color:#0b0b10;border:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .kit .kit-cta-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,0,0,.35),0 0 28px rgba(202,166,255,.22)}
-    .kit .kit-cta-outline{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1.5px solid rgba(255,255,255,.18);color:var(--text)}
-    .kit .kit-cta-outline:hover{border-color:rgba(255,209,102,.40);background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(138,95,255,.08));transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.20)}
-    .kit .learn-more{display:block;text-align:center;margin-top:12px;color:var(--accent-gold);font-size:13.5px;font-weight:600;opacity:.85;transition:opacity .2s ease}
-    .kit .learn-more:hover{opacity:1}
+    .kits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .kit{padding:26px;border-radius:var(--radius-2xl);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
+    .kit h3{margin:8px 0 6px;font-size:20px}
+    .price{font-size:34px;font-weight:800;margin:6px 0 16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .kit ul{margin:0;padding-left:18px;color:#E6E8EE}
+    .kit li{margin:8px 0}
     .kit .cta-row{margin-top:16px}
     .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .quote{padding:20px;border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));font-size:15px}
@@ -244,7 +223,7 @@
   </script>
 </head>
 <body>
-  <a href="#main" class="visually-hidden-focusable">Sari la conținut</a>
+  <a href="#main" class="visually-hidden-focusable">Skip to content</a>
 
   <!-- Header -->
   <header>
@@ -263,7 +242,7 @@
       </nav>
 
       <div class="lang-pill mobile-always-visible">
-        <a class="lang-btn is-active" href="/" data-lang="ro">RO</a>
+        <a class="lang-btn is-active" href="/" data-lang="en">RO</a>
         <a class="lang-btn" href="/en/" data-lang="en">EN</a>
         <a class="lang-btn" href="/de/" data-lang="de">DE</a>
       </div>
@@ -275,9 +254,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow txt-shadow cfl-reveal cfl-d1" data-i18n="hero.eyebrow">Lansare rapidă • Kituri + Funnel + Automatizări</div>
-          <h1 class="txt-shadow">Construiește un cashflow real cu un sistem AI, pas cu pas.</h1>
-          <p class="sub">CashFlowLab îți dă un plan complet: <b>de la idee → la pagină → la lead → la ofertă</b>. Fără improvizații, fără "prompturi la întâmplare".</p>
+          <div class="eyebrow txt-shadow cfl-reveal cfl-d1" data-i18n="hero.eyebrow">Quick Launch • Kits + Funnel + Automations</div>
+          <h1 class="txt-shadow">Build real cashflow with an AI system, step by step.</h1>
+          <p class="sub">CashFlowLab gives you a complete plan: <b>from idea → to page → to lead → to offer</b>. No guesswork, no random prompts.</p>
 
           <!-- MailerLite Embed Form -->
           <style>
@@ -306,11 +285,11 @@
                     <div class="ml-form-horizontalRow">
                       <div class="ml-input-horizontal">
                         <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                          <input type="email" name="fields[email]" placeholder="Introdu emailul (primești Free Kit-ul imediat)" autocomplete="email" required>
+                          <input type="email" name="fields[email]" placeholder="Enter your email (get the Free Kit instantly)" autocomplete="email" required>
                         </div>
                       </div>
                       <div class="ml-button-horizontal">
-                        <button type="submit" class="btn btn-primary cfl-cta-glow"><span class="shine"></span>Primește Free Kit-ul</button>
+                        <button type="submit" class="btn btn-primary cfl-cta-glow"><span class="shine"></span>Get Free Kit</button>
                       </div>
                     </div>
                   </div>
@@ -320,16 +299,16 @@
               </div>
               <div class="ml-form-successBody" id="ml-success-msg">
                 <div class="ml-form-successContent">
-                  <h4>✅ Email confirmat!</h4>
-                  <p><strong>Te redirecționăm acum către pagina de download... 🚀</strong></p>
-                  <p style="font-size:13px;color:var(--muted);">Dacă nu ești redirectat automat, <a href="/free-kit/" style="color:var(--accent-gold)">click aici</a>.</p>
+                  <h4>✅ Email confirmed!</h4>
+                  <p><strong>Redirecting you now to the download page... 🚀</strong></p>
+                  <p style="font-size:13px;color:var(--muted);">If you are not redirected automatically, <a href="/free-kit/" style="color:var(--accent-gold)">click here</a>.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <script>
-          // Interceptează submitul formularului MailerLite și face redirect manual
+          // Intercept MailerLite form submission and do manual redirect
           (function() {
             const form = document.querySelector('#mlb2-176693602287617412 form');
             const successMsg = document.getElementById('ml-success-msg');
@@ -346,22 +325,22 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                  // Arată mesajul de succes
+                  // Show success message
                   if (successMsg) {
                     successMsg.style.display = 'block';
                     successMsg.classList.add('is-in');
                   }
-                  // Ascunde formularul
+                  // Hide form
                   form.style.display = 'none';
                   
-                  // Redirect după 2 secunde
+                  // Redirect after 2 seconds
                   setTimeout(function() {
                     window.location.href = 'https://cashflowlabai.com/free-kit/';
                   }, 2000);
                 })
                 .catch(error => {
                   console.error('Error:', error);
-                  // Chiar dacă e eroare, încercăm redirect (MailerLite poate fi salvat)
+                  // Even if there's an error, try redirect (MailerLite may have saved it)
                   window.location.href = 'https://cashflowlabai.com/free-kit/';
                 });
               });
@@ -370,29 +349,29 @@
           </script>
 
           <div class="trust txt-shadow cfl-reveal cfl-d5" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
-            <span class="badge">✔ Fără card</span>
-            <span class="badge">✔ Fără spam</span>
-            <span class="badge">✔ 1 email/zi max</span>
-            <span class="badge">⚡ Acces instant</span>
+            <span class="badge">✔ No card</span>
+            <span class="badge">✔ No spam</span>
+            <span class="badge">✔ 1 email/day max</span>
+            <span class="badge">⚡ Instant access</span>
           </div>
 
           <div id="signupNotice" class="cfl-reveal cfl-d5" style="display:none;margin-top:12px;">
             <div class="notice-card">
-              <div class="notice-head"><b style="letter-spacing:.2px;">Înscriere confirmată ✅</b><span class="badge">CashFlowLab</span></div>
-              <p class="muted" style="margin:8px 0 0;">Primul email ajunge în 1–2 minute. Dacă nu-l vezi, verifică <i>Promotions</i>.</p>
+              <div class="notice-head"><b style="letter-spacing:.2px;">Signup confirmed ✅</b><span class="badge">CashFlowLab</span></div>
+              <p class="muted" style="margin:8px 0 0;">First email arrives in 1–2 minutes. If you don't see it, check <i>Promotions</i>.</p>
             </div>
           </div>
 
-          <p class="muted cfl-reveal cfl-d5" style="margin:8px 0 0;">Folosim emailul doar ca să-ți trimitem kitul și secvența CashFlowLab. Te poți dezabona oricând.</p>
+          <p class="muted cfl-reveal cfl-d5" style="margin:8px 0 0;">We only use your email to send you the kit and the CashFlowLab sequence. You can unsubscribe anytime.</p>
 
           <div class="cta-row" style="margin-top:14px;">
-            <a href="#showcase" class="btn btn-outline cfl-cta-ghost">Vezi preview (3 cadre)</a>
-            <a href="#pro-kit" class="btn btn-outline cfl-cta-ghost">Vezi kiturile PRO</a>
+            <a href="#showcase" class="btn btn-outline cfl-cta-ghost">See preview (3 frames)</a>
+            <a href="#pro-kit" class="btn btn-outline cfl-cta-ghost">See PRO kits</a>
           </div>
 
           <div class="glass hero-card cfl-card cfl-reveal cfl-d5" aria-live="polite" style="margin-top:18px;">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;"><b>Disponibil acum</b><span class="badge">💫 Live</span></div>
-            <p class="muted" style="margin:0;">Kiturile sunt gata de folosit. Primești acces instant după înscriere / cumpărare.</p>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;"><b>Available now</b><span class="badge">💫 Live</span></div>
+            <p class="muted" style="margin:0;">Kits are ready to use. You get instant access after signup / purchase.</p>
           </div>
         </div>
 
@@ -405,23 +384,23 @@
     <!-- Features -->
     <section id="features">
       <div class="container">
-        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="features.title">De ce CashFlowLab</h2>
-        <p class="section-sub cfl-reveal cfl-d2" data-i18n="features.sub">Nu-ți vând „promisiuni". Îți dau un sistem clar: design + funnel + automate — ca să lansezi în ore, nu în săptămâni.</p>
+        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="features.title">Why CashFlowLab</h2>
+        <p class="section-sub cfl-reveal cfl-d2" data-i18n="features.sub">We don't sell you "promises". We give you a clear system: design + funnel + automations — to launch in hours, not weeks.</p>
         <div class="features">
           <div class="feature cfl-card cfl-reveal cfl-d2">
-            <img class="cfl-media" src="/Images/funnel-diagram.webp" alt="Structură funnel + landing" loading="lazy" decoding="async" width="1200" height="750" />
-            <h3 data-i18n="features.f1.t">Landing premium</h3>
-            <p data-i18n="features.f1.d">Hero strategic, secțiuni clare, SEO/OG, responsive și performanță.</p>
+            <img class="cfl-media" src="/Images/funnel-diagram.webp" alt="Funnel structure + landing" loading="lazy" decoding="async" width="1200" height="750" />
+            <h3 data-i18n="features.f1.t">Premium Landing</h3>
+            <p data-i18n="features.f1.d">Strategic hero, clear sections, SEO/OG, responsive and performance.</p>
           </div>
           <div class="feature cfl-card cfl-reveal cfl-d3">
             <img class="cfl-media" src="/Images/og-hero-cover.webp" alt="Preview OG cover pentru share" loading="lazy" decoding="async" width="1200" height="630" />
-            <h3 data-i18n="features.f2.t">Funnel + automate</h3>
-            <p data-i18n="features.f2.d">Workflow-uri preconfigurate + 5 emailuri PRO (Scale) — plug & play.</p>
+            <h3 data-i18n="features.f2.t">Funnel + Automations</h3>
+            <p data-i18n="features.f2.d">Preconfigured workflows + 5 PRO emails (Scale) — plug & play.</p>
           </div>
           <div class="feature cfl-card cfl-reveal cfl-d4">
-            <img class="cfl-media" src="/Images/tech-orb-alt.webp" alt="Identitate vizuală CashFlowLab" loading="lazy" decoding="async" width="1200" height="750" />
-            <h3 data-i18n="features.f3.t">Stil vizual</h3>
-            <p data-i18n="features.f3.d">Gold + Purple + Tech Orb, cover & og-image incluse — arată scump din prima.</p>
+            <img class="cfl-media" src="/Images/tech-orb-alt.webp" alt="CashFlowLab visual identity" loading="lazy" decoding="async" width="1200" height="750" />
+            <h3 data-i18n="features.f3.t">Visual Style</h3>
+            <p data-i18n="features.f3.d">Gold + Purple + Tech Orb, cover & og-image included — looks premium from the start.</p>
           </div>
         </div>
       </div>
@@ -430,23 +409,23 @@
     <!-- Showcase -->
     <section id="showcase" class="showcase preview-rapid">
       <div class="container">
-        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="showcase.title">Ce primești în kituri</h2>
-        <p class="section-sub cfl-reveal cfl-d2" data-i18n="showcase.sub">Resurse pregătite profesional pentru a construi rapid și a scală.</p>
+        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="showcase.title">What you get in the kits</h2>
+        <p class="section-sub cfl-reveal cfl-d2" data-i18n="showcase.sub">Professionally prepared resources to build quickly and scale.</p>
         <div class="gallery" style="grid-template-columns:repeat(3,1fr);gap:24px">
           <article class="shot cfl-card cfl-reveal cfl-d2" style="text-align:center;padding:32px 24px">
             <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">🚀</div>
             <h4 style="margin-bottom:10px">Landing Premium</h4>
-            <p style="color:var(--muted);font-size:14px;line-height:1.6">Structură clară de landing page, conectată direct la Gumroad, fără fricțiune.</p>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Clear landing page structure, connected directly to Gumroad, without friction.</p>
           </article>
           <article class="shot cfl-card cfl-reveal cfl-d3" style="text-align:center;padding:32px 24px">
             <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">⚡</div>
             <h4 style="margin-bottom:10px">Funnel & Automate</h4>
-            <p style="color:var(--muted);font-size:14px;line-height:1.6">Sistem complet: captare → nurturing → ofertă — gata de rulare.</p>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Complete system: capture → nurturing → offer — ready to run.</p>
           </article>
           <article class="shot cfl-card cfl-reveal cfl-d4" style="text-align:center;padding:32px 24px">
             <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">🎨</div>
-            <h4 style="margin-bottom:10px">Stil vizual</h4>
-            <p style="color:var(--muted);font-size:14px;line-height:1.6">Tech orb, gold+purple, brand guidelines și cover-uri incluse.</p>
+            <h4 style="margin-bottom:10px">Visual Style</h4>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Tech orb, gold+purple, brand guidelines and covers included.</p>
           </article>
         </div>
       </div>
@@ -455,63 +434,41 @@
     <!-- Kits -->
     <section id="kits">
       <div class="container">
-        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="kits.title">Alege nivelul potrivit pentru tine</h2>
-        <p class="section-sub cfl-reveal cfl-d2" data-i18n="kits.sub">Începe simplu. Când vrei să construiești și să lansezi, treci pe PRO — fără să refaci totul.</p>
+        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="kits.title">Choose the right level for you</h2>
+        <p class="section-sub cfl-reveal cfl-d2" data-i18n="kits.sub">Start simple. When you want to build and launch, switch to PRO — without redoing everything.</p>
         <div class="kits">
-          <div class="kit cfl-card kit-free" id="free-kit">
-            <span class="kit-badge">FREE</span>
-            <div class="kit-icon">🎁</div>
+          <div class="kit cfl-card" id="free-kit">
+            <span class="badge">FREE</span>
             <h3>Free Kit</h3>
             <div class="price">0€</div>
-            <ul>
-              <li>Landing page de bază (structură clară)</li>
-              <li>Logo + cover vizual</li>
-              <li>OG image pentru share & preview</li>
-            </ul>
-            <div style="padding:14px 0;background:rgba(255,209,102,.08);border-radius:999px;text-align:center;margin-top:auto">
-              <span style="color:var(--accent-gold);font-size:14px;font-weight:600">👆 Completează emailul în hero</span>
+            <ul><li>Basic landing page (clear structure)</li><li>Logo + visual cover</li><li>OG image for share & preview</li></ul>
+            <div class="cta-row" style="padding:14px 0;background:rgba(255,209,102,.1);border-radius:999px;text-align:center">
+              <span style="color:var(--accent-gold);font-size:14px;font-weight:600">👆 Enter your email in the hero</span>
             </div>
           </div>
           <div class="kit cfl-card">
-            <span class="kit-badge">MINI</span>
-            <div class="kit-icon">🚀</div>
+            <span class="badge">MINI</span>
             <h3>Mini Kit</h3>
-            <div class="price">9$ <span class="tax">(TVA inclus)</span></div>
-            <ul>
-              <li>Landing premium (copy + structură îmbunătățită)</li>
-              <li>Branding coerent, gata de folosit</li>
-              <li>Ghid rapid: de la idee la online</li>
-            </ul>
-            <a class="kit-cta kit-cta-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener" data-evt="mini">Ia MINI Kit — 9$ →</a>
-            <a href="/mini-kit/" class="learn-more">Află mai multe →</a>
+            <div class="price">9$ <span class="muted" style="font-size:14px;">(TVA inclus)</span></div>
+            <ul><li>Premium Landing (copy + improved structure)</li><li>Coherent branding, ready to use</li><li>Quick guide: from idea to online</li></ul>
+            <div class="cta-row"><a class="btn btn-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener" data-evt="mini" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);width:100%;text-align:center">Get MINI Kit — $9 →</a></div>
+            <p style="text-align:center;margin-top:12px"><a href="/mini-kit/" style="color:var(--accent-gold);font-size:14px;text-decoration:none">Learn more →</a></p>
           </div>
           <div class="kit cfl-card">
-            <span class="kit-badge">MEDIUM</span>
-            <div class="kit-icon">⚡</div>
+            <span class="badge">MEDIUM</span>
             <h3>Medium Kit</h3>
-            <div class="price">27$ <span class="tax">(TVA inclus)</span></div>
-            <ul>
-              <li>Structură completă de funnel (clar, logic)</li>
-              <li>Automatizări de bază explicate pas cu pas</li>
-              <li>Template-uri pregătite pentru execuție</li>
-            </ul>
-            <a class="kit-cta kit-cta-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener" data-evt="medium">Ia MEDIUM Kit — 27$ →</a>
-            <a href="/medium-kit/" class="learn-more">Află mai multe →</a>
+            <div class="price">27$ <span class="muted" style="font-size:14px;">(TVA inclus)</span></div>
+            <ul><li>Complete funnel structure (clear, logical)</li><li>Basic automations explained step by step</li><li>Templates ready for execution</li></ul>
+            <div class="cta-row"><a class="btn btn-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener" data-evt="medium" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);width:100%;text-align:center">Get MEDIUM Kit — $27 →</a></div>
+            <p style="text-align:center;margin-top:12px"><a href="/medium-kit/" style="color:var(--accent-gold);font-size:14px;text-decoration:none">Learn more →</a></p>
           </div>
-          <div class="kit cfl-card kit-pro" id="pro-kit">
-            <span class="kit-badge best-value">Best Value</span>
-            <span class="kit-badge pro">PRO • Recomandat</span>
-            <div class="kit-icon">👑</div>
+          <div class="kit cfl-card" id="pro-kit">
+            <span class="badge">PRO • Recomandat</span>
             <h3>PRO Kit</h3>
-            <div class="price"><span class="old">97$</span>69,99$ <span class="tax">(TVA inclus)</span></div>
-            <ul>
-              <li>Sistem complet: funnel + landing + ofertă</li>
-              <li>Secvență de 5 emailuri (copy inclus)</li>
-              <li>Automatizări clare, gata de folosit</li>
-              <li>Checklist de lansare + actualizări viitoare</li>
-            </ul>
-            <a class="kit-cta kit-cta-primary gumroad-link cfl-cta-glow" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener" data-evt="pro"><span class="shine"></span>Acces PRO – 69,99$</a>
-            <a href="/pro-kit/" class="learn-more">Află mai multe →</a>
+            <div class="price"><span style="text-decoration:line-through;color:var(--muted);font-size:20px">97$</span> 69,99$ <span class="muted" style="font-size:14px;">(TVA inclus)</span></div>
+            <ul><li>Complete system: funnel + landing + offer</li><li>Sequence of 5 emails (copy included)</li><li>Clear automations, ready to use</li><li>Launch checklist + future updates</li></ul>
+            <div class="cta-row"><a class="btn btn-primary gumroad-link cfl-cta-glow" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener" data-evt="pro"><span class="shine"></span>PRO Access – $69.99</a></div>
+            <p style="text-align:center;margin-top:12px"><a href="/pro-kit/" style="color:var(--accent-gold);font-size:14px;text-decoration:none">Learn more →</a></p>
           </div>
         </div>
       </div>
@@ -520,16 +477,16 @@
     <!-- Proof -->
     <section id="proof">
       <div class="container">
-        <h2 class="section-title cfl-reveal cfl-d1">De ce funcționează</h2>
-        <p class="section-sub cfl-reveal cfl-d2">Nu promitem „bani peste noapte". Îți dăm un sistem executabil — ca să obții rezultate prin pași clari.</p>
+        <h2 class="section-title cfl-reveal cfl-d1">Why it works</h2>
+        <p class="section-sub cfl-reveal cfl-d2">We don't promise "overnight money". We give you an executable system — so you get results through clear steps.</p>
         <div class="testimonials">
-          <div class="quote cfl-card cfl-reveal cfl-d2"><b>✔ Sistem complet, nu „prompturi"</b><p class="muted" style="margin:10px 0 0;">Primești pagină + structură funnel + automate — ca să nu reconstruiești de la zero.</p></div>
-          <div class="quote cfl-card cfl-reveal cfl-d3"><b>✔ Rapid de implementat</b><p class="muted" style="margin:10px 0 0;">Totul e gândit pentru "copypaste + adaptare". Începi cu Free, treci pe PRO când vrei să scalezi.</p></div>
-          <div class="quote cfl-card cfl-reveal cfl-d4"><b>✔ Fără fricțiune la vânzare</b><p class="muted" style="margin:10px 0 0;">CTA-uri, OG preview, assets și flow-uri clare — făcute să arate premium în share și ads.</p></div>
+          <div class="quote cfl-card cfl-reveal cfl-d2"><b>✔ Complete system, not "prompts"</b><p class="muted" style="margin:10px 0 0;">You get page + funnel structure + automations — so you don't rebuild from scratch.</p></div>
+          <div class="quote cfl-card cfl-reveal cfl-d3"><b>✔ Quick to implement</b><p class="muted" style="margin:10px 0 0;">Everything is designed for "copy-paste + adaptation". Start with Free, switch to PRO when you want to scale.</p></div>
+          <div class="quote cfl-card cfl-reveal cfl-d4"><b>✔ Frictionless selling</b><p class="muted" style="margin:10px 0 0;">CTAs, OG preview, assets and clear flows — made to look premium in shares and ads.</p></div>
         </div>
         <div class="faq" style="margin-top:18px;">
-          <div class="faq-item cfl-card cfl-reveal cfl-d2"><h4>Este pentru mine dacă…</h4><p class="muted" style="margin:0;">vrei să lansezi rapid un produs digital / serviciu și ai nevoie de structură + execuție fără improvizații.</p></div>
-          <div class="faq-item cfl-card cfl-reveal cfl-d3"><h4>Nu e pentru mine dacă…</h4><p class="muted" style="margin:0;">cauți „schema de îmbogățire rapidă" sau vrei rezultate fără să aplici nimic.</p></div>
+          <div class="faq-item cfl-card cfl-reveal cfl-d2"><h4>It's for me if…</h4><p class="muted" style="margin:0;">you want to quickly launch a digital product / service and need structure + execution without improvisation.</p></div>
+          <div class="faq-item cfl-card cfl-reveal cfl-d3"><h4>It's not for me if…</h4><p class="muted" style="margin:0;">you're looking for a "get rich quick scheme" or want results without applying anything.</p></div>
         </div>
       </div>
     </section>
@@ -540,11 +497,11 @@
     <div class="container footer-grid">
       <div>
         <div class="foot-logo"><img src="/Images/logo-mark.png" width="28" height="28" alt="CashFlowLab" />CashFlowLab</div>
-        <p class="muted" style="margin-top:10px;">Un sistem mic. O execuție curată. Un cashflow predictibil.</p>
+        <p class="muted" style="margin-top:10px;">A small system. Clean execution. Predictable cashflow.</p>
         <p class="muted">© <span id="y"></span> CashFlowLab. All rights reserved.</p>
       </div>
-      <div><h4>Resurse</h4><p><a href="#kits">Kits</a></p><p><a href="#faq">FAQ</a></p></div>
-      <div><h4>Legal</h4><p><a href="/terms.html">Termeni și Condiții</a></p><p><a href="/privacy.html">Politica de Confidențialitate</a></p><p><a href="/imprint.html">Imprint</a></p></div>
+      <div><h4>Resources</h4><p><a href="#kits">Kits</a></p><p><a href="#faq">FAQ</a></p></div>
+      <div><h4>Legal</h4><p><a href="/terms.html">Terms and Conditions</a></p><p><a href="/privacy.html">Privacy Policy</a></p><p><a href="/imprint.html">Imprint</a></p></div>
       <div><h4>Contact</h4><p><a href="/cdn-cgi/l/email-protection#53303c3d27323027133032203b353f3c243f3231323a7d303c3e"><span class="__cf_email__" data-cfemail="d3b0bcbda7b2b0a793b0b2a0bbb5bfbca4bfb2b1b2bafdb0bcbe">[email&#160;protected]</span></a></p></div>
     </div>
   </footer>
@@ -556,13 +513,13 @@
   </div>
 
   <!-- Consent Banner -->
-  <div id="consentWrap" class="consent-wrap" role="region" aria-label="Consimțământ cookies" hidden>
+  <div id="consentWrap" class="consent-wrap" role="region" aria-label="Cookie consents" hidden>
     <div class="consent">
-      <p>Folosim cookie-uri pentru analytics și marketing. Poți alege ce accepți.</p>
+      <p>We use cookies for analytics and marketing. You can choose what you accept.</p>
       <div class="btns">
-        <button class="btn-ghost" data-consent="deny">Respinge</button>
-        <button class="btn-ghost" data-consent="analytics">Acceptă analytics</button>
-        <button class="btn btn-primary" data-consent="all">Acceptă tot</button>
+        <button class="btn-ghost" data-consent="deny">Deny</button>
+        <button class="btn-ghost" data-consent="analytics">Accept analytics</button>
+        <button class="btn btn-primary" data-consent="all">Accept all</button>
       </div>
     </div>
   </div>

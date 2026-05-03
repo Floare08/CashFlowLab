@@ -12,79 +12,145 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#07070a;--card:#0e0e14;--muted:#C8CBD2;--text:#EBECF0;--gold:#ffd166;--gold-2:#f6c14f;--purple:#8A5FFF;--purple-2:#B794FF;--radius-xl:20px;--radius-2xl:28px;--container:1120px}
+    :root{--bg:#07070a;--card:#0e0e14;--muted:#9BA1B0;--text:#F0F1F5;--gold:#ffd166;--gold-2:#f6c14f;--purple:#8A5FFF;--purple-2:#B794FF;--radius-xl:20px;--radius-2xl:28px;--container:1120px}
     *{box-sizing:border-box}
     html{height:100%;scroll-behavior:smooth}
     body{min-height:100%;margin:0;color:var(--text);font-family:Inter,system-ui,sans-serif;background-color:#0b0b10;line-height:1.6}
-    body::before{content:"";position:fixed;inset:0;z-index:-2;background-image:url("/Images/Vrajitor.png");background-position:center;background-size:cover;background-repeat:no-repeat}
-    body::after{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(1200px 800px at 80% 10%,rgba(255,209,102,.10),rgba(138,95,255,.10) 35%,rgba(7,7,10,.70));pointer-events:none}
+    body::before{content:"";position:fixed;inset:0;z-index:-3;background-image:url("/Images/Vrajitor.png");background-position:center;background-size:cover;background-repeat:no-repeat}
+    body::after{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(1200px 800px at 80% 10%,rgba(255,209,102,.10),rgba(138,95,255,.10) 35%,rgba(7,7,10,.70));pointer-events:none}
+    .noise{position:fixed;inset:0;z-index:-1;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
     .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 20px}
-    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(7,7,10,.85),rgba(7,7,10,.35) 70%,rgba(7,7,10,0));border-bottom:1px solid rgba(255,255,255,.06)}
+
+    /* === PREMIUM EFFECTS === */
+    @property --border-angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+
+    .glass{position:relative;background:rgba(15,15,22,.6);backdrop-filter:blur(24px) saturate(1.2);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius-2xl)}
+    .glass-strong{position:relative;background:rgba(12,12,18,.75);backdrop-filter:blur(40px) saturate(1.3);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-2xl)}
+
+    .border-glow{position:relative}
+    .border-glow::before{content:"";position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;background:conic-gradient(from var(--border-angle),transparent 0%,rgba(255,209,102,.5) 15%,rgba(138,95,255,.5) 35%,transparent 50%,rgba(255,209,102,.3) 65%,rgba(138,95,255,.4) 80%,transparent 100%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:border-rotate 4s linear infinite;opacity:0;transition:opacity .4s ease}
+    .border-glow:hover::before{opacity:1}
+    @keyframes border-rotate{to{--border-angle:360deg}}
+
+    .border-static{position:relative}
+    .border-static::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(135deg,rgba(255,209,102,.25),rgba(138,95,255,.25),rgba(255,209,102,.1));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:-1}
+
+    .spotlight{position:relative;overflow:hidden}
+    .spotlight::after{content:"";position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(255,209,102,.10) 0%,rgba(138,95,255,.06) 40%,transparent 70%);transform:translate(-50%,-50%);pointer-events:none;opacity:0;transition:opacity .3s ease;left:var(--mouse-x,50%);top:var(--mouse-y,50%)}
+    .spotlight:hover::after{opacity:1}
+
+    .tilt-3d{transform-style:preserve-3d;transition:transform .15s ease-out}
+
+    .shimmer{background:linear-gradient(90deg,var(--gold),var(--purple),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 3s linear infinite}
+    @keyframes shimmer{to{background-position:200% center}}
+
+    .glow-pulse{position:relative}
+    .glow-pulse::before{content:"";position:absolute;inset:-15%;background:radial-gradient(ellipse,rgba(255,209,102,.12),rgba(138,95,255,.08),transparent 70%);filter:blur(50px);z-index:-1;animation:pulse-glow 4s ease-in-out infinite}
+    @keyframes pulse-glow{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:.7;transform:scale(1.03)}}
+
+    .strike-anim{position:relative;display:inline-block;color:var(--muted)}
+    .strike-anim::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1.5px;background:linear-gradient(90deg,var(--gold),var(--purple));transform:scaleX(0);transform-origin:left;animation:strike-in .8s ease .3s forwards}
+    @keyframes strike-in{to{transform:scaleX(1)}}
+
+    .reveal-up{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+    .reveal-up.visible{opacity:1;transform:translateY(0)}
+    .delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.delay-5{transition-delay:.5s}
+
+    .magnetic-btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:18px 36px;font-size:16px;font-weight:700;border-radius:999px;border:none;background:linear-gradient(135deg,var(--gold),var(--purple));color:#0b0b10;text-decoration:none;transition:transform .2s ease,box-shadow .3s ease;cursor:pointer;overflow:hidden}
+    .magnetic-btn::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.2),transparent);opacity:0;transition:opacity .3s}
+    .magnetic-btn:hover{transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 40px rgba(255,209,102,.2),0 0 80px rgba(138,95,255,.1)}
+    .magnetic-btn:hover::before{opacity:1}
+    .magnetic-btn:active{transform:translateY(-1px) scale(.98)}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(24px) saturate(1.2);background:linear-gradient(180deg,rgba(7,7,10,.9),rgba(7,7,10,.5) 70%,rgba(7,7,10,0));border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-    .logo{display:inline-flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;text-decoration:none;color:var(--text)}
+    .logo{display:inline-flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;text-decoration:none;color:var(--text);transition:opacity .3s}
+    .logo:hover{opacity:.8}
     .logo img{width:36px;height:36px;border-radius:10px}
-    .btn{display:inline-block;font-weight:700;letter-spacing:.3px;border-radius:999px;transition:transform .22s ease,box-shadow .22s ease;padding:14px 22px;font-size:15px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,rgba(255,209,102,.12),rgba(138,95,255,.12));box-shadow:0 10px 30px rgba(0,0,0,.35);cursor:pointer;text-decoration:none;color:var(--text)}
-    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(0,0,0,.35),0 20px 60px rgba(138,95,255,.25)}
-    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--purple));color:#0b0b10;border:none}
-    .btn-large{padding:18px 40px;font-size:18px}
-    .hero{padding:100px 0 80px;position:relative;overflow:hidden;text-align:center}
-    .badge-pro{display:inline-block;font-size:12px;font-weight:700;padding:8px 16px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--purple));color:#0b0b10;margin-bottom:20px}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,64px);line-height:1.05;margin-bottom:24px;max-width:800px;margin-left:auto;margin-right:auto}
-    .hero .sub{color:var(--muted);margin:0 auto 32px;max-width:600px;font-size:18px}
-    .price-box{display:inline-block;padding:32px 48px;border-radius:var(--radius-2xl);border:1px solid rgba(255,255,255,.08);background:rgba(15,15,20,.8);margin:24px 0}
-    .price-tag{font-size:56px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .price-note{color:var(--muted);font-size:14px;margin-top:8px}
-    section{padding:80px 0;scroll-margin-top:90px}
-    .section-header{text-align:center;margin-bottom:56px}
-    .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,44px);margin-bottom:16px}
-    .section-header p{color:var(--muted);max-width:600px;margin:0 auto;font-size:17px}
+    .btn-sm{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;font-size:14px;font-weight:700;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:var(--text);text-decoration:none;transition:all .3s ease}
+    .btn-sm:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);transform:translateY(-1px)}
+
+    /* Hero */
+    .hero{padding:120px 0 100px;position:relative;overflow:hidden;text-align:center}
+    .badge-pro{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;padding:8px 18px;border-radius:999px;background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(138,95,255,.15));color:var(--gold);margin-bottom:24px;border:1px solid rgba(255,209,102,.2);letter-spacing:.3px}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(42px,6vw,68px);line-height:1.05;margin-bottom:24px;max-width:850px;margin-left:auto;margin-right:auto;letter-spacing:-.02em}
+    .hero .sub{color:var(--muted);margin:0 auto 36px;max-width:580px;font-size:18px;line-height:1.7}
+    .price-hero{display:inline-block;padding:40px 56px;border-radius:var(--radius-2xl);background:rgba(15,15,22,.7);border:1px solid rgba(255,255,255,.08);margin:28px 0;position:relative}
+    .price-hero .old-price{font-size:28px;font-weight:700;margin-bottom:8px}
+    .price-hero .new-price{font-size:64px;font-weight:800;line-height:1;letter-spacing:-.03em}
+    .price-hero .price-note{color:var(--muted);font-size:14px;margin-top:12px;letter-spacing:.3px}
+    .trust-line{display:flex;justify-content:center;gap:32px;margin-top:28px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);letter-spacing:.2px}
+    .trust-item svg{width:16px;height:16px;color:var(--gold)}
+
+    /* Sections */
+    section{padding:100px 0;scroll-margin-top:90px}
+    .section-header{text-align:center;margin-bottom:64px}
+    .section-header h2{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,48px);margin-bottom:16px;letter-spacing:-.02em}
+    .section-header p{color:var(--muted);max-width:560px;margin:0 auto;font-size:17px;line-height:1.7}
     .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .feature-card{padding:32px;border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));transition:transform .3s ease,border-color .3s ease}
-    .feature-card:hover{transform:translateY(-6px);border-color:rgba(255,209,102,.25)}
-    .feature-icon{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;font-size:32px;margin-bottom:20px}
-    .feature-card h3{margin:0 0 12px;font-size:20px}
-    .feature-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
-    .includes{background:rgba(15,15,20,.4);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06)}
-    .includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .feature-card{padding:36px 32px;border-radius:var(--radius-xl);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06);transition:border-color .3s,transform .3s;position:relative}
+    .feature-card:hover{border-color:rgba(255,209,102,.15)}
+    .feature-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,rgba(255,209,102,.12),rgba(138,95,255,.12));display:flex;align-items:center;justify-content:center;margin-bottom:24px;color:var(--gold)}
+    .feature-card h3{margin:0 0 12px;font-size:19px;font-weight:700}
+    .feature-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+
+    .includes{background:linear-gradient(180deg,transparent,rgba(138,95,255,.03),transparent)}
+    .includes-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
     .includes-list{margin:0;padding:0;list-style:none}
-    .includes-list li{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:flex-start;gap:16px}
+    .includes-list li{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:18px}
     .includes-list li:last-child{border-bottom:none}
-    .check-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;font-size:16px;color:#0b0b10;flex-shrink:0}
-    .includes-list h4{margin:0 0 6px;font-size:17px}
-    .includes-list p{margin:0;color:var(--muted);font-size:14px}
-    .comparison{background:linear-gradient(135deg,rgba(255,209,102,.05),rgba(138,95,255,.05))}
-    .comparison-table{width:100%;border-collapse:collapse;margin-top:32px}
-    .comparison-table th{padding:20px;text-align:left;font-weight:600;border-bottom:1px solid rgba(255,255,255,.1)}
-    .comparison-table td{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.05)}
-    .comparison-table .feature-col{width:40%}
-    .comparison-table .check{text-align:center;color:var(--gold);font-size:20px}
-    .comparison-table .x{text-align:center;color:#666}
+    .check-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--purple));display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .check-icon svg{width:14px;height:14px;color:#0b0b10}
+    .includes-list h4{margin:0 0 6px;font-size:17px;font-weight:600}
+    .includes-list p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    .comparison{background:linear-gradient(135deg,rgba(255,209,102,.03),rgba(138,95,255,.03))}
+    .comparison-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:32px;font-size:15px}
+    .comparison-table th{padding:20px 24px;text-align:left;font-weight:600;border-bottom:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:13px;letter-spacing:.5px;text-transform:uppercase}
+    .comparison-table td{padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.04)}
+    .comparison-table .feature-col{width:42%;font-weight:500}
+    .comparison-table .check{text-align:center;color:var(--gold);font-size:18px;font-weight:700}
+    .comparison-table .x{text-align:center;color:rgba(255,255,255,.15);font-size:18px}
     .comparison-table tr:hover td{background:rgba(255,255,255,.02)}
-    .guarantee{padding:80px 0;text-align:center}
-    .guarantee-box{max-width:700px;margin:0 auto;padding:48px;border-radius:var(--radius-2xl);border:2px solid rgba(255,209,102,.3);background:linear-gradient(180deg,rgba(255,209,102,.08),rgba(138,95,255,.08))}
-    .guarantee-icon{font-size:64px;margin-bottom:20px}
-    .guarantee h3{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:16px}
-    .guarantee p{color:var(--muted);font-size:16px;line-height:1.7}
-    .faq details{border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;background:rgba(15,15,20,.6);margin-bottom:16px}
-    .faq summary{font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+    .comparison-table tr.pro-row td{background:rgba(255,209,102,.04)}
+    .comparison-table tr.pro-row .feature-col{color:var(--gold);font-weight:600}
+
+    .guarantee{padding:100px 0;text-align:center}
+    .guarantee-box{max-width:720px;margin:0 auto;padding:56px 48px}
+    .guarantee h3{font-family:'Playfair Display',serif;font-size:32px;margin-bottom:20px}
+    .guarantee p{color:var(--muted);font-size:16px;line-height:1.8;max-width:560px;margin:0 auto}
+
+    .faq details{border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:24px 28px;background:rgba(15,15,22,.5);margin-bottom:14px;transition:border-color .3s,background .3s}
+    .faq details:hover{border-color:rgba(255,255,255,.1)}
+    .faq summary{font-weight:600;font-size:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;letter-spacing:.2px}
     .faq summary::-webkit-details-marker{display:none}
-    .faq details[open] summary span{transform:rotate(45deg)}
-    .faq summary span{transition:transform .2s ease;font-size:24px}
-    .faq p{color:var(--muted);margin:16px 0 0;font-size:15px;line-height:1.6}
-    .final-cta{padding:100px 0;background:linear-gradient(180deg,rgba(255,209,102,.08),rgba(138,95,255,.08))}
-    .final-cta-box{max-width:800px;margin:0 auto;text-align:center;padding:48px;border-radius:var(--radius-2xl);border:1px solid rgba(255,255,255,.1);background:rgba(15,15,20,.8)}
-    footer{padding:40px 0 60px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
-    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:24px}
-    .foot-logo{display:flex;align-items:center;gap:10px;font-weight:800}
-    .footer a{color:var(--muted);text-decoration:none;font-size:14px;display:block;padding:4px 0;transition:color .2s}
+    .faq summary span{transition:transform .3s cubic-bezier(.16,1,.3,1);font-size:22px;color:var(--muted);font-weight:300}
+    .faq details[open] summary span{transform:rotate(45deg);color:var(--gold)}
+    .faq p{color:var(--muted);margin:18px 0 0;font-size:15px;line-height:1.7;max-width:680px}
+
+    .final-cta{padding:120px 0;background:linear-gradient(180deg,rgba(255,209,102,.06),rgba(138,95,255,.06),transparent)}
+    .final-cta-box{max-width:780px;margin:0 auto;text-align:center;padding:56px 48px}
+
+    footer{padding:48px 0 80px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+    .foot-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px}
+    .footer a{color:var(--muted);text-decoration:none;font-size:14px;display:block;padding:5px 0;transition:color .2s}
     .footer a:hover{color:var(--gold)}
-    .mobile-cta{position:fixed;z-index:60;bottom:14px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 24px));padding:12px;border-radius:16px;background:rgba(15,15,20,.95);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);display:flex;justify-content:center}
+    .footer h4{font-size:13px;margin-bottom:16px;letter-spacing:.8px;text-transform:uppercase;color:var(--text);font-weight:600}
+
+    .mobile-cta{position:fixed;z-index:60;bottom:14px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 24px));padding:12px;border-radius:16px;background:rgba(12,12,18,.95);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);display:flex;justify-content:center}
     @media (min-width:981px){.mobile-cta{display:none}}
-    @media (max-width:980px){.includes-grid,.features-grid{grid-template-columns:1fr}.hero{padding:80px 0 60px}.footer-grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.comparison-table{font-size:14px}.comparison-table th,.comparison-table td{padding:12px 8px}}
+    @media (max-width:980px){.includes-grid,.features-grid{grid-template-columns:1fr}.hero{padding:90px 0 70px}.footer-grid{grid-template-columns:1fr 1fr}.comparison-table{font-size:14px}.comparison-table th,.comparison-table td{padding:14px 12px}.price-hero{padding:28px 32px}.price-hero .new-price{font-size:48px}}
+    @media (max-width:640px){.comparison-table{display:block;overflow-x:auto}.comparison-table thead,.comparison-table tbody,.comparison-table th,.comparison-table td,.comparison-table tr{display:block}.comparison-table thead tr{position:absolute;top:-9999px;left:-9999px}.comparison-table td{border:none;border-bottom:1px solid rgba(255,255,255,.04);position:relative;padding-left:50%;text-align:right}.comparison-table td:before{position:absolute;left:12px;width:45%;text-align:left;font-weight:600;color:var(--muted);content:attr(data-label)}.comparison-table .feature-col{text-align:right;padding-left:50%}.comparison-table .feature-col:before{content:"Feature"}.comparison-table tr.pro-row td{background:transparent}}}
+
+    /* Icon SVGs inline styles */
+    .icon-wrap{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
   </style>
 </head>
 <body>
+<div class="noise"></div>
 
 <header>
   <div class="container">
@@ -93,68 +159,96 @@
         <img src="/Images/logo-mark.png" alt="CashFlowLab">
         <span>CashFlowLab</span>
       </a>
-      <a href="https://cashflowlabai.gumroad.com/l/udxody" class="btn btn-primary">Ia PRO Kit →</a>
+      <a href="https://cashflowlabai.gumroad.com/l/udxody" class="btn-sm">Ia PRO Kit →</a>
     </nav>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <span class="badge-pro">⭐ PRO KIT</span>
-    <h1>Sistemul complet care transformă ideea în <em style="color:var(--gold)">cashflow predictibil</em></h1>
-    <p class="sub">Funnel gata de lansare. 10 emailuri automate. Suport real. Tot ce ai nevoie pentru a construi un business digital profitabil — fără să pierzi luni încercând să înveți singur.</p>
-    
-    <div class="price-box">
-      <div class="price-tag">$69.99</div>
-      <p class="price-note">Plată unică • Acces pe viață • Include toate update-urile</p>
+    <div class="badge-pro reveal-up">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      PRO KIT
     </div>
-    
-    <a href="https://cashflowlabai.gumroad.com/l/udxody" class="btn btn-primary btn-large" style="display:inline-flex;align-items:center;gap:12px">
-      <span>Ia PRO Kit Acum</span>
-      <span style="font-size:20px">→</span>
-    </a>
-    
-    <div style="display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap">
-      <span style="font-size:13px;color:var(--muted)">🔒 Plată securizată</span>
-      <span style="font-size:13px;color:var(--muted)">⚡ Acces instant</span>
+    <h1 class="reveal-up delay-1">Sistemul complet care transformă ideea în <span style="color:var(--gold)">cashflow predictibil</span></h1>
+    <p class="sub reveal-up delay-2">Funnel gata de lansare. 10 emailuri automate. Suport real. Tot ce ai nevoie pentru a construi un business digital profitabil — fără să pierzi luni încercând să înveți singur.</p>
+
+    <div class="price-hero glass border-static glow-pulse reveal-up delay-3">
+      <div class="old-price strike-anim">$350+</div>
+      <div class="new-price shimmer">$69.99</div>
+      <p class="price-note">Plată unică · Acces pe viață · Toate update-urile</p>
+    </div>
+
+    <div class="reveal-up delay-4">
+      <a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" target="_blank" rel="noopener noreferrer">
+        <span>Ia PRO Kit Acum</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="trust-line reveal-up delay-5">
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Plată securizată
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Acces instant
+      </span>
+      <span class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Garanție 14 zile
+      </span>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal-up">
       <h2>Tot ce primești în PRO Kit</h2>
       <p>Resurse profesionale care ar costa mii de dolari dacă le-ai cumpăra separat</p>
     </div>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🚀</div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 3 0 3 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-3 0-3"/></svg>
+        </div>
         <h3>Funnel Complet</h3>
         <p>Structură de funnel gata de implementat: landing page, thank you page, upsell logic. Doar copy-paste și personalizează.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📧</div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
         <h3>10 Emailuri Automate</h3>
         <p>Sequence complete de nurture și sell. Copy testat, subiecte cu high open-rate, CTA-uri optimizate.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
         <h3>Automatizări Setup</h3>
         <p>Workflow-uri gata în Zapier și Make. Conectează totul fără să scrii cod.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎨</div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
         <h3>Brand Assets Complete</h3>
         <p>Logo-uri, cover-uri, OG images, template-uri Canva. Totul consistent și profesional.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
         <h3>Analytics & Tracking</h3>
         <p>Dashboard de urmărire, pixel setup, evenimente de conversie. Știi exact ce funcționează.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="18" x2="12" y2="12"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/></svg>
+        </div>
         <h3>Suport 1-on-1</h3>
         <p>30 minute de consultanță privată. Întrebări, clarificări, feedback personalizat pentru tine.</p>
       </div>
@@ -165,47 +259,47 @@
 <section class="includes">
   <div class="container">
     <div class="includes-grid">
-      <div>
-        <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:16px">Lista completă de fișiere</h2>
-        <p style="color:var(--muted);margin-bottom:32px">Fiecare element e gata de folosit sau ușor de personalizat</p>
+      <div class="reveal-up">
+        <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:12px;letter-spacing:-.02em">Lista completă de fișiere</h2>
+        <p style="color:var(--muted);margin-bottom:40px;font-size:16px;line-height:1.7">Fiecare element e gata de folosit sau ușor de personalizat</p>
         <ul class="includes-list">
           <li>
-            <span class="check-icon">✓</span>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
               <h4>Funnel Kit (3 pagini HTML)</h4>
               <p>Landing, Thank You, Upsell — responsive, animat, optimizat pentru conversie</p>
             </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
               <h4>Email Sequence (10 emailuri)</h4>
               <p>Copy pentru welcome series, nurture sequence, pitch sequence și follow-up</p>
             </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
               <h4>Brand Identity Pack</h4>
               <p>Logo-uri (5 variante), 20+ iconițe, pattern-uri, gradient assets</p>
             </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
               <h4>Social Media Templates</h4>
               <p>30+ template-uri Canva pentru Instagram, Facebook, LinkedIn, Twitter</p>
             </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
               <h4>Automation Blueprints</h4>
               <p>Zapier workflows, Make scenarios, integrări cu MailerLite, Gumroad</p>
             </div>
           </li>
           <li>
-            <span class="check-icon">✓</span>
+            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
             <div>
               <h4>Analytics Setup Guide</h4>
               <p>Google Analytics 4, Facebook Pixel, TikTok Pixel — setup complet pas cu pas</p>
@@ -213,21 +307,23 @@
           </li>
         </ul>
       </div>
-      <div style="border-radius:var(--radius-2xl);border:1px solid rgba(255,255,255,.08);padding:40px;background:rgba(15,15,20,.6);position:sticky;top:100px;text-align:center">
-        <div style="margin-bottom:32px">
-          <div style="font-size:14px;color:var(--muted);margin-bottom:8px">Valoare reală</div>
-          <div style="font-size:32px;font-weight:800;color:var(--muted);text-decoration:line-through">$350+</div>
+      <div class="glass-strong border-static reveal-up delay-2" style="position:sticky;top:100px;text-align:center;padding:44px 36px">
+        <div style="margin-bottom:36px">
+          <div style="font-size:13px;color:var(--muted);margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase">Valoare reală</div>
+          <div style="font-size:32px;font-weight:700;color:var(--muted)" class="strike-anim">$350+</div>
         </div>
-        
-        <div style="margin-bottom:32px;padding:32px 24px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(138,95,255,.15))">
-          <div style="font-size:14px;color:var(--muted);margin-bottom:8px">Preț PRO Kit</div>
-          <div style="font-size:64px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1">$69.99</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:16px">Plată unică • Acces pe viață</div>
+        <div style="margin-bottom:36px;padding:36px 28px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(255,209,102,.1),rgba(138,95,255,.1));border:1px solid rgba(255,209,102,.1)">
+          <div style="font-size:13px;color:var(--muted);margin-bottom:10px;letter-spacing:.5px;text-transform:uppercase">Preț PRO Kit</div>
+          <div style="font-size:68px;font-weight:800;letter-spacing:-.03em;line-height:1" class="shimmer">$69.99</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:16px">Plată unică · Acces pe viață</div>
         </div>
-        
-        <div style="text-align:center">
-          <p style="font-size:13px;color:var(--muted);margin:0 0 8px">✓ Plăți securizate prin Gumroad</p>
-          <p style="font-size:13px;color:var(--muted);margin:0">✓ Acces instant la toate fișierele</p>
+        <a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" style="width:100%;justify-content:center" target="_blank" rel="noopener noreferrer">
+          <span>Ia PRO Kit Acum</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <div style="margin-top:24px">
+          <p style="font-size:12px;color:var(--muted);margin:0 0 6px">Plăți securizate prin Gumroad</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">Acces instant la toate fișierele</p>
         </div>
       </div>
     </div>
@@ -236,137 +332,102 @@
 
 <section class="comparison">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header reveal-up">
       <h2>Comparație Kituri</h2>
       <p>Vezi exact ce primești la fiecare nivel</p>
     </div>
-    
     <div style="overflow-x:auto">
       <table class="comparison-table">
         <thead>
           <tr>
             <th class="feature-col">Caracteristică</th>
-            <th>FREE</th>
-            <th>MINI</th>
+            <th>Free</th>
+            <th>Mini</th>
             <th style="color:var(--gold)">PRO</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Landing Page Template</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓✓</td>
-          </tr>
-          <tr>
-            <td>Logo-uri & Brand Assets</td>
-            <td class="check">Basic</td>
-            <td class="check">Complete</td>
-            <td class="check">Premium+</td>
-          </tr>
-          <tr>
-            <td>Funnel Complet (3 pagini)</td>
-            <td class="x">—</td>
-            <td class="x">—</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Email Sequence (10 emailuri)</td>
-            <td class="x">—</td>
-            <td class="x">—</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Automatizări & Workflows</td>
-            <td class="x">—</td>
-            <td class="x">—</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Social Media Templates (30+)</td>
-            <td class="x">—</td>
-            <td class="check">10</td>
-            <td class="check">30+</td>
-          </tr>
-          <tr>
-            <td>Analytics & Tracking Setup</td>
-            <td class="x">—</td>
-            <td class="x">—</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Suport 1-on-1 (30 min)</td>
-            <td class="x">—</td>
-            <td class="x">—</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Acces pe viață + Update-uri</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
+          <tr><td class="feature-col">Landing Page Template</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓✓</td></tr>
+          <tr><td class="feature-col">Logo-uri & Brand Assets</td><td class="check">Basic</td><td class="check">Complete</td><td class="check">Premium+</td></tr>
+          <tr class="pro-row"><td class="feature-col">Funnel Complet (3 pagini)</td><td class="x">—</td><td class="x">—</td><td class="check">✓</td></tr>
+          <tr class="pro-row"><td class="feature-col">Email Sequence (10 emailuri)</td><td class="x">—</td><td class="x">—</td><td class="check">✓</td></tr>
+          <tr class="pro-row"><td class="feature-col">Automatizări & Workflows</td><td class="x">—</td><td class="x">—</td><td class="check">✓</td></tr>
+          <tr><td class="feature-col">Social Media Templates</td><td class="x">—</td><td class="check">10</td><td class="check">30+</td></tr>
+          <tr class="pro-row"><td class="feature-col">Analytics & Tracking Setup</td><td class="x">—</td><td class="x">—</td><td class="check">✓</td></tr>
+          <tr class="pro-row"><td class="feature-col">Suport 1-on-1 (30 min)</td><td class="x">—</td><td class="x">—</td><td class="check">✓</td></tr>
+          <tr><td class="feature-col">Acces pe viață + Update-uri</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-box glass border-glow reveal-up">
+      <div style="width:64px;height:64px;margin:0 auto 24px;border-radius:20px;background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(138,95,255,.15));display:flex;align-items:center;justify-content:center">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Garanție 14 zile</h3>
+      <p>Dacă nu ești 100% mulțumit, îți returnez banii. Fără întrebări, fără condiții. Testează kitul, vezi dacă funcționează pentru tine. Dacă nu, un email și primești banii înapoi în 48h.</p>
+    </div>
+  </div>
+</section>
+
 <section class="faq">
   <div class="container" style="max-width:800px">
-    <div class="section-header">
+    <div class="section-header reveal-up">
       <h2>Întrebări frecvente</h2>
       <p>Tot ce trebuie să știi înainte de achiziție</p>
     </div>
-    
-    <details>
-      <summary>Ce format au fișierele? <span>+</span></summary>
-      <p>Primești fișiere în formatele cele mai utilizate: HTML/CSS/JS pentru pagini, SVG și PNG pentru logo-uri, PDF pentru documentație, și template-uri Canva editabile. Totul este organizat clar în foldere pentru a găsi rapid ce ai nevoie.</p>
-    </details>
-    
-    <details>
-      <summary>Trebuie să știu programare? <span>+</span></summary>
-      <p>Nu! Kitul vine cu instrucțiuni detaliate pas cu pas. Dacă poți edita un document Word, poți folosi acest kit. Plus, template-urile HTML sunt comentate și vin cu ghid vizual. Pentru automatizări, ai video tutoriale care te duc prin întregul proces.</p>
-    </details>
-    
-    <details>
-      <summary>Pot folosi pentru clienți sau doar pentru mine? <span>+</span></summary>
-      <p>Poți folosi pentru ambele! Licența îți permite să folosești kitul pentru proiecte personale și pentru clienți. Singura restricție: nu poți revinde kitul ca atare sau pune fișierele pe site-uri de download publice.</p>
-    </details>
-    
-    <details>
-      <summary>Cât timp am acces la fișiere? <span>+</span></summary>
-      <p>Acces pe viață! Odată achiziționat, kitul e al tău pentru totdeauna. Primești și toate update-urile viitoare gratuit. Dacă lansăm versiuni noi sau adăugăm resurse, le primești automat.</p>
-    </details>
-    
-
-    
-    <details>
-      <summary>Ce primesc imediat după plată? <span>+</span></summary>
-      <p>Imediat după plată primești acces la pagina de download cu toate fișierele. Plus un email de bun venit cu link-uri, instrucțiuni de început rapid, și calendar pentru a programa sesiunea de suport 1-on-1 de 30 minute.</p>
-    </details>
+    <div class="reveal-up delay-1">
+      <details>
+        <summary>Ce format au fișierele? <span>+</span></summary>
+        <p>Primești fișiere în formatele cele mai utilizate: HTML/CSS/JS pentru pagini, SVG și PNG pentru logo-uri, PDF pentru documentație, și template-uri Canva editabile. Totul este organizat clar în foldere pentru a găsi rapid ce ai nevoie.</p>
+      </details>
+      <details>
+        <summary>Trebuie să știu programare? <span>+</span></summary>
+        <p>Nu! Kitul vine cu instrucțiuni detaliate pas cu pas. Dacă poți edita un document Word, poți folosi acest kit. Plus, template-urile HTML sunt comentate și vin cu ghid vizual. Pentru automatizări, ai video tutoriale care te duc prin întregul proces.</p>
+      </details>
+      <details>
+        <summary>Pot folosi pentru clienți sau doar pentru mine? <span>+</span></summary>
+        <p>Poți folosi pentru ambele! Licența îți permite să folosești kitul pentru proiecte personale și pentru clienți. Singura restricție: nu poți revinde kitul ca atare sau pune fișierele pe site-uri de download publice.</p>
+      </details>
+      <details>
+        <summary>Cât timp am acces la fișiere? <span>+</span></summary>
+        <p>Acces pe viață! Odată achiziționat, kitul e al tău pentru totdeauna. Primești și toate update-urile viitoare gratuit. Dacă lansăm versiuni noi sau adăugăm resurse, le primești automat.</p>
+      </details>
+      <details>
+        <summary>Ce primesc imediat după plată? <span>+</span></summary>
+        <p>Imediat după plată primești acces la pagina de download cu toate fișierele. Plus un email de bun venit cu link-uri, instrucțiuni de început rapid, și calendar pentru a programa sesiunea de suport 1-on-1 de 30 minute.</p>
+      </details>
+    </div>
   </div>
 </section>
 
 <section class="final-cta">
   <div class="container">
-    <div class="final-cta-box">
-      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);margin-bottom:16px">Gata să lansezi?</h2>
-      <p style="color:var(--muted);max-width:500px;margin:0 auto 32px;font-size:17px">Alătură-te creatorilor care transformă ideile în business-uri profitabile. Începe cu sistemul care funcționează.</p>
-      
-      <div style="margin-bottom:24px">
-        <span style="font-size:48px;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent">$69.99</span>
-        <p style="color:var(--muted);margin:8px 0 0">Plată unică • Fără abonament</p>
+    <div class="final-cta-box glass-strong border-static glow-pulse reveal-up">
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,44px);margin-bottom:16px;letter-spacing:-.02em">Gata să lansezi?</h2>
+      <p style="color:var(--muted);max-width:500px;margin:0 auto 36px;font-size:17px;line-height:1.7">Alătură-te creatorilor care transformă ideile în business-uri profitabile. Începe cu sistemul care funcționează.</p>
+      <div style="margin-bottom:28px">
+        <div style="font-size:20px;color:var(--muted);margin-bottom:8px" class="strike-anim">$350+</div>
+        <div style="font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1" class="shimmer">$69.99</div>
+        <p style="color:var(--muted);margin:10px 0 0;font-size:14px">Plată unică · Fără abonament</p>
       </div>
-      
-      <a href="https://cashflowlabai.gumroad.com/l/udxody" class="btn btn-primary btn-large" style="display:inline-flex;align-items:center;gap:12px">
+      <a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" style="padding:20px 44px;font-size:17px" target="_blank" rel="noopener noreferrer">
         <span>Ia PRO Kit Acum</span>
-        <span style="font-size:20px">→</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
       </a>
-      
-      <div style="display:flex;justify-content:center;gap:24px;margin-top:24px;flex-wrap:wrap">
-        <span style="font-size:13px;color:var(--muted)">⚡ Acces instant</span>
-        <span style="font-size:13px;color:var(--muted)">♾️ Update-uri gratuite</span>
+      <div class="trust-line" style="margin-top:28px">
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Acces instant
+        </span>
+        <span class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Update-uri gratuite
+        </span>
       </div>
     </div>
   </div>
@@ -380,33 +441,80 @@
           <img src="/Images/logo-mark.png" alt="CashFlowLab" width="28" height="28">
           <span>CashFlowLab</span>
         </div>
-        <p style="font-size:14px;margin-top:12px">Sistemul AI care îți construiește cashflow predictibil.</p>
+        <p style="font-size:14px;margin-top:12px;color:var(--muted);line-height:1.6">Sistemul AI care îți construiește cashflow predictibil.</p>
       </div>
       <div class="footer">
-        <h4 style="font-size:14px;margin-bottom:12px">Kituri</h4>
+        <h4>Kituri</h4>
         <a href="/free-kit/">FREE Kit</a>
         <a href="/mini-kit/">MINI Kit</a>
+        <a href="/medium-kit/">MEDIUM Kit</a>
         <a href="/pro-kit/">PRO Kit</a>
       </div>
       <div class="footer">
-        <h4 style="font-size:14px;margin-bottom:12px">Resurse</h4>
+        <h4>Resurse</h4>
         <a href="/">Home</a>
         <a href="/#kits">Toate kiturile</a>
         <a href="mailto:support@cashflowlabai.com">Suport</a>
       </div>
       <div class="footer">
-        <h4 style="font-size:14px;margin-bottom:12px">Legal</h4>
-        <a href="/terms/">Termeni</a>
-        <a href="/privacy/">Privacy</a>
+        <h4>Legal</h4>
+        <a href="/terms.html">Termeni</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/imprint.html">Imprint</a>
       </div>
     </div>
-    <p style="text-align:center;margin-top:40px;font-size:13px">© 2025 CashFlowLab. Toate drepturile rezervate.</p>
+    <p style="text-align:center;margin-top:48px;font-size:13px;color:var(--muted)">© <span id="year"></span> CashFlowLab. Toate drepturile rezervate.</p>
   </div>
 </footer>
 
 <div class="mobile-cta">
-  <a href="https://cashflowlabai.gumroad.com/l/udxody" class="btn btn-primary" style="width:100%;text-align:center">Ia PRO Kit — $69.99 →</a>
+  <a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" style="width:100%;justify-content:center;font-size:15px;padding:14px 24px" target="_blank" rel="noopener noreferrer">
+    <span>Ia PRO Kit</span>
+    <span style="font-size:18px">$69.99</span>
+  </a>
 </div>
 
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Spotlight mouse tracking
+  document.querySelectorAll('.spotlight').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    });
+  });
+
+  // 3D Tilt
+  document.querySelectorAll('.tilt-3d').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+    });
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

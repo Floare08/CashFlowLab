@@ -134,12 +134,33 @@
     .feature img{width:100%;height:auto;border-radius:var(--radius-xl);margin-bottom:12px;display:block}
     .feature h3{margin:10px 0 8px;font-size:18px}
     .feature p{color:#DEE0E6;margin:0;font-size:15px}
-    .kits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-    .kit{padding:26px;border-radius:var(--radius-2xl);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
-    .kit h3{margin:8px 0 6px;font-size:20px}
-    .price{font-size:34px;font-weight:800;margin:6px 0 16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .kit ul{margin:0;padding-left:18px;color:#E6E8EE}
-    .kit li{margin:8px 0}
+    .kits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+    .kit{padding:30px;border-radius:var(--radius-2xl);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.09);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s ease,box-shadow .4s ease,border-color .4s ease}
+    .kit::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(135deg,rgba(255,209,102,.35),rgba(138,95,255,.35),rgba(255,209,102,.15));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s ease;pointer-events:none}
+    .kit:hover::before{opacity:1}
+    .kit:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(0,0,0,.40),0 0 40px rgba(138,95,255,.12);border-color:rgba(255,255,255,.18)}
+    .kit.kit-pro{background:linear-gradient(180deg,rgba(255,209,102,.08),rgba(138,95,255,.06),rgba(255,255,255,.02));border:1.5px solid rgba(255,209,102,.22);box-shadow:0 12px 40px rgba(255,209,102,.06),0 0 60px rgba(138,95,255,.05)}
+    .kit.kit-pro:hover{border-color:rgba(255,209,102,.45);box-shadow:0 28px 60px rgba(0,0,0,.40),0 0 50px rgba(255,209,102,.15),0 0 80px rgba(138,95,255,.10);transform:translateY(-10px) scale(1.01)}
+    .kit.kit-free{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.06)}
+    .kit.kit-free:hover{border-color:rgba(255,255,255,.14)}
+    .kit h3{margin:10px 0 6px;font-size:22px;font-weight:800}
+    .kit-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);color:var(--muted);margin-bottom:14px;width:fit-content}
+    .kit-badge.pro{background:linear-gradient(135deg,rgba(255,209,102,.20),rgba(138,95,255,.20));border:1px solid rgba(255,209,102,.30);color:var(--accent-gold);box-shadow:0 2px 12px rgba(255,209,102,.15)}
+    .kit-badge.best-value{position:absolute;top:-1px;right:20px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));color:#0b0b10;font-size:10px;font-weight:800;padding:6px 14px;border-radius:0 0 10px 10px;letter-spacing:.5px;box-shadow:0 4px 12px rgba(255,209,102,.30)}
+    .kit-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:12px;background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(138,95,255,.15));border:1px solid rgba(255,255,255,.10)}
+    .price{font-size:36px;font-weight:900;margin:6px 0 18px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px}
+    .price .old{text-decoration:line-through;color:var(--muted);font-size:22px;font-weight:600;margin-right:8px;background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--muted)}
+    .price .tax{font-size:13px;font-weight:500;color:var(--muted);background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--muted)}
+    .kit ul{margin:0;padding:0;list-style:none;flex:1}
+    .kit li{margin:11px 0;padding-left:28px;position:relative;color:#DEE0E6;font-size:14.5px;line-height:1.5}
+    .kit li::before{content:"✓";position:absolute;left:0;top:-1px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,rgba(255,209,102,.18),rgba(138,95,255,.18));border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--accent-gold);font-weight:700}
+    .kit .kit-cta{display:block;width:100%;text-align:center;padding:14px 22px;border-radius:999px;font-weight:700;font-size:15px;transition:all .25s ease;margin-top:auto}
+    .kit .kit-cta-primary{background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));color:#0b0b10;border:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .kit .kit-cta-primary:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(0,0,0,.35),0 0 28px rgba(202,166,255,.22)}
+    .kit .kit-cta-outline{background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1.5px solid rgba(255,255,255,.18);color:var(--text)}
+    .kit .kit-cta-outline:hover{border-color:rgba(255,209,102,.40);background:linear-gradient(135deg,rgba(255,209,102,.10),rgba(138,95,255,.08));transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.20)}
+    .kit .learn-more{display:block;text-align:center;margin-top:12px;color:var(--accent-gold);font-size:13.5px;font-weight:600;opacity:.85;transition:opacity .2s ease}
+    .kit .learn-more:hover{opacity:1}
     .kit .cta-row{margin-top:16px}
     .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .quote{padding:20px;border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));font-size:15px}
@@ -242,9 +263,9 @@
       </nav>
 
       <div class="lang-pill mobile-always-visible">
-        <a class="lang-btn is-active" href="/" data-lang="de">RO</a>
+        <a class="lang-btn" href="/" data-lang="ro">RO</a>
         <a class="lang-btn" href="/en/" data-lang="en">EN</a>
-        <a class="lang-btn" href="/de/" data-lang="de">DE</a>
+        <a class="lang-btn is-active" href="/de/" data-lang="de">DE</a>
       </div>
     </div>
   </header>
@@ -437,38 +458,60 @@
         <h2 class="section-title cfl-reveal cfl-d1" data-i18n="kits.title">Wähle das richtige Level für dich</h2>
         <p class="section-sub cfl-reveal cfl-d2" data-i18n="kits.sub">Starte einfach. Wenn du bauen und starten willst, upgrade auf PRO — ohne alles neu zu machen.</p>
         <div class="kits">
-          <div class="kit cfl-card" id="free-kit">
-            <span class="badge">FREE</span>
+          <div class="kit cfl-card kit-free" id="free-kit">
+            <span class="kit-badge">FREE</span>
+            <div class="kit-icon">🎁</div>
             <h3>Free Kit</h3>
             <div class="price">0€</div>
-            <ul><li>Landing page de bază (structură clară)</li><li>Logo + visuelles Cover</li><li>OG image pentru share & preview</li></ul>
-            <div class="cta-row" style="padding:14px 0;background:rgba(255,209,102,.1);border-radius:999px;text-align:center">
+            <ul>
+              <li>Landing page de bază (structură clară)</li>
+              <li>Logo + visuelles Cover</li>
+              <li>OG image pentru share & preview</li>
+            </ul>
+            <div style="padding:14px 0;background:rgba(255,209,102,.08);border-radius:999px;text-align:center;margin-top:auto">
               <span style="color:var(--accent-gold);font-size:14px;font-weight:600">👆 Completează emailul în hero</span>
             </div>
           </div>
           <div class="kit cfl-card">
-            <span class="badge">MINI</span>
+            <span class="kit-badge">MINI</span>
+            <div class="kit-icon">🚀</div>
             <h3>Mini Kit</h3>
-            <div class="price">9$ <span class="muted" style="font-size:14px;">(TVA inclus)</span></div>
-            <ul><li>Premium-Landing (copy + structură îmbunătățită)</li><li>Kohärentes Branding, sofort einsatzbereit</li><li>Schnellstart-Anleitung: von Idee zu Online</li></ul>
-            <div class="cta-row"><a class="btn btn-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener" data-evt="mini" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);width:100%;text-align:center">Ia MINI Kit — 9$ →</a></div>
-            <p style="text-align:center;margin-top:12px"><a href="/mini-kit/" style="color:var(--accent-gold);font-size:14px;text-decoration:none">Mehr erfahren →</a></p>
+            <div class="price">9$ <span class="tax">(TVA inclus)</span></div>
+            <ul>
+              <li>Premium-Landing (copy + structură îmbunătățită)</li>
+              <li>Kohärentes Branding, sofort einsatzbereit</li>
+              <li>Schnellstart-Anleitung: von Idee zu Online</li>
+            </ul>
+            <a class="kit-cta kit-cta-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener" data-evt="mini">MINI Kit holen — 9$ →</a>
+            <a href="/mini-kit/" class="learn-more">Mehr erfahren →</a>
           </div>
           <div class="kit cfl-card">
-            <span class="badge">MEDIUM</span>
+            <span class="kit-badge">MEDIUM</span>
+            <div class="kit-icon">⚡</div>
             <h3>Medium Kit</h3>
-            <div class="price">27$ <span class="muted" style="font-size:14px;">(TVA inclus)</span></div>
-            <ul><li>Komplette Funnel-Struktur (klar, logisch)</li><li>Grundlegende Automatisierungen Schritt für Schritt erklärt</li><li>Vorbereitete Templates zur Ausführung</li></ul>
-            <div class="cta-row"><a class="btn btn-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener" data-evt="medium" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.15);width:100%;text-align:center">Ia MEDIUM Kit — 27$ →</a></div>
-            <p style="text-align:center;margin-top:12px"><a href="/medium-kit/" style="color:var(--accent-gold);font-size:14px;text-decoration:none">Mehr erfahren →</a></p>
+            <div class="price">27$ <span class="tax">(TVA inclus)</span></div>
+            <ul>
+              <li>Komplette Funnel-Struktur (klar, logisch)</li>
+              <li>Grundlegende Automatisierungen Schritt für Schritt erklärt</li>
+              <li>Vorbereitete Templates zur Ausführung</li>
+            </ul>
+            <a class="kit-cta kit-cta-outline gumroad-link" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener" data-evt="medium">MEDIUM Kit holen — 27$ →</a>
+            <a href="/medium-kit/" class="learn-more">Mehr erfahren →</a>
           </div>
-          <div class="kit cfl-card" id="pro-kit">
-            <span class="badge">PRO • Recomandat</span>
+          <div class="kit cfl-card kit-pro" id="pro-kit">
+            <span class="kit-badge best-value">Best Value</span>
+            <span class="kit-badge pro">PRO • Empfohlen</span>
+            <div class="kit-icon">👑</div>
             <h3>PRO Kit</h3>
-            <div class="price"><span style="text-decoration:line-through;color:var(--muted);font-size:20px">97$</span> 69,99$ <span class="muted" style="font-size:14px;">(TVA inclus)</span></div>
-            <ul><li>Komplettes System: Funnel + Landing + Angebot</li><li>5-E-Mail-Sequenz (Copy inklusive)</li><li>Klare Automatisierungen, sofort einsatzbereit</li><li>Launch-Checkliste + zukünftige Updates</li></ul>
-            <div class="cta-row"><a class="btn btn-primary gumroad-link cfl-cta-glow" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener" data-evt="pro"><span class="shine"></span>PRO-Zugang – 69,99€</a></div>
-            <p style="text-align:center;margin-top:12px"><a href="/pro-kit/" style="color:var(--accent-gold);font-size:14px;text-decoration:none">Mehr erfahren →</a></p>
+            <div class="price"><span class="old">97$</span>69,99$ <span class="tax">(TVA inclus)</span></div>
+            <ul>
+              <li>Komplettes System: Funnel + Landing + Angebot</li>
+              <li>5-E-Mail-Sequenz (Copy inklusive)</li>
+              <li>Klare Automatisierungen, sofort einsatzbereit</li>
+              <li>Launch-Checkliste + zukünftige Updates</li>
+            </ul>
+            <a class="kit-cta kit-cta-primary gumroad-link cfl-cta-glow" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener" data-evt="pro"><span class="shine"></span>PRO-Zugang – 69,99$</a>
+            <a href="/pro-kit/" class="learn-more">Mehr erfahren →</a>
           </div>
         </div>
       </div>
