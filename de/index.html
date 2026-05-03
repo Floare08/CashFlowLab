@@ -329,7 +329,7 @@
           </div>
 
           <script>
-          // Interceptează submitul formularului MailerLite și face redirect manual
+          // MailerLite-Formular absenden abfangen und manueller Redirect
           (function() {
             const form = document.querySelector('#mlb2-176693602287617412 form');
             const successMsg = document.getElementById('ml-success-msg');
@@ -346,7 +346,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                  // Arată mesajul de succes
+                  // Erfolgsmeldung anzeigen
                   if (successMsg) {
                     successMsg.style.display = 'block';
                     successMsg.classList.add('is-in');
@@ -354,14 +354,14 @@
                   // Ascunde formularul
                   form.style.display = 'none';
                   
-                  // Redirect după 2 secunde
+                  // Redirect nach 2 Sekunden
                   setTimeout(function() {
                     window.location.href = 'https://cashflowlabai.com/free-kit/';
                   }, 2000);
                 })
                 .catch(error => {
                   console.error('Error:', error);
-                  // Chiar dacă e eroare, încercăm redirect (MailerLite poate fi salvat)
+                  // Auch bei Fehler Redirect versuchen (MailerLite könnte gespeichert haben)
                   window.location.href = 'https://cashflowlabai.com/free-kit/';
                 });
               });
@@ -409,9 +409,9 @@
         <p class="section-sub cfl-reveal cfl-d2" data-i18n="features.sub">Wir verkaufen keine „Versprechen". Wir geben dir ein klares System: Design + Funnel + Automatisierungen — damit du in Stunden, nicht in Wochen, startest.</p>
         <div class="features">
           <div class="feature cfl-card cfl-reveal cfl-d2">
-            <img class="cfl-media" src="/Images/funnel-diagram.webp" alt="Structură funnel + landing" loading="lazy" decoding="async" width="1200" height="750" />
+            <img class="cfl-media" src="/Images/funnel-diagram.webp" alt="Funnel-Struktur + Landing" loading="lazy" decoding="async" width="1200" height="750" />
             <h3 data-i18n="features.f1.t">Premium-Landing</h3>
-            <p data-i18n="features.f1.d">Hero strategic, secțiuni clare, SEO/OG, responsive și performanță.</p>
+            <p data-i18n="features.f1.d">Strategischer Hero, klare Abschnitte, SEO/OG, responsiv und leistungsstark.</p>
           </div>
           <div class="feature cfl-card cfl-reveal cfl-d3">
             <img class="cfl-media" src="/Images/og-hero-cover.webp" alt="Preview OG cover pentru share" loading="lazy" decoding="async" width="1200" height="630" />
@@ -421,7 +421,7 @@
           <div class="feature cfl-card cfl-reveal cfl-d4">
             <img class="cfl-media" src="/Images/tech-orb-alt.webp" alt="Identitate vizuală CashFlowLab" loading="lazy" decoding="async" width="1200" height="750" />
             <h3 data-i18n="features.f3.t">Visueller Stil</h3>
-            <p data-i18n="features.f3.d">Gold + Purple + Tech Orb, cover & og-image incluse — arată scump din prima.</p>
+            <p data-i18n="features.f3.d">Gold + Purple + Tech Orb, cover & og-image inklusive — sieht von Anfang an premium aus.</p>
           </div>
         </div>
       </div>
@@ -430,13 +430,13 @@
     <!-- Showcase -->
     <section id="showcase" class="showcase preview-rapid">
       <div class="container">
-        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="showcase.title">Ce primești în kituri</h2>
-        <p class="section-sub cfl-reveal cfl-d2" data-i18n="showcase.sub">Ressourcen pregătite profesional pentru a construi rapid și a scală.</p>
+        <h2 class="section-title cfl-reveal cfl-d1" data-i18n="showcase.title">Was du in den Kits bekommst</h2>
+        <p class="section-sub cfl-reveal cfl-d2" data-i18n="showcase.sub">Professionell vorbereitete Ressourcen zum schnellen Bauen und Skalieren.</p>
         <div class="gallery" style="grid-template-columns:repeat(3,1fr);gap:24px">
           <article class="shot cfl-card cfl-reveal cfl-d2" style="text-align:center;padding:32px 24px">
             <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">🚀</div>
             <h4 style="margin-bottom:10px">Landing Premium</h4>
-            <p style="color:var(--muted);font-size:14px;line-height:1.6">Structură clară de landing page, conectată direct la Gumroad, fără fricțiune.</p>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Klare Landing-Page-Struktur, direkt mit Gumroad verbunden, ohne Reibung.</p>
           </article>
           <article class="shot cfl-card cfl-reveal cfl-d3" style="text-align:center;padding:32px 24px">
             <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">⚡</div>
@@ -446,7 +446,7 @@
           <article class="shot cfl-card cfl-reveal cfl-d4" style="text-align:center;padding:32px 24px">
             <div style="width:64px;height:64px;margin:0 auto 20px;border-radius:16px;background:linear-gradient(135deg,var(--accent-gold),var(--accent-purple));display:flex;align-items:center;justify-content:center;font-size:32px">🎨</div>
             <h4 style="margin-bottom:10px">Visueller Stil</h4>
-            <p style="color:var(--muted);font-size:14px;line-height:1.6">Tech orb, gold+purple, brand guidelines și cover-uri incluse.</p>
+            <p style="color:var(--muted);font-size:14px;line-height:1.6">Tech orb, gold+purple, Brand-Guidelines und Cover inklusive.</p>
           </article>
         </div>
       </div>
@@ -464,7 +464,7 @@
             <h3>Free Kit</h3>
             <div class="price">0€</div>
             <ul>
-              <li>Landing page de bază (structură clară)</li>
+              <li>Basis-Landing-Page (klare Struktur)</li>
               <li>Logo + visuelles Cover</li>
               <li>OG image pentru share & preview</li>
             </ul>
@@ -478,7 +478,7 @@
             <h3>Mini Kit</h3>
             <div class="price">9$ <span class="tax">(TVA inclus)</span></div>
             <ul>
-              <li>Premium-Landing (copy + structură îmbunătățită)</li>
+              <li>Premium-Landing (copy + verbesserte Struktur)</li>
               <li>Kohärentes Branding, sofort einsatzbereit</li>
               <li>Schnellstart-Anleitung: von Idee zu Online</li>
             </ul>
@@ -529,7 +529,7 @@
         </div>
         <div class="faq" style="margin-top:18px;">
           <div class="faq-item cfl-card cfl-reveal cfl-d2"><h4>Es ist für mich, wenn…</h4><p class="muted" style="margin:0;">du schnell ein digitales Produkt / Service starten willst und Struktur + Ausführung ohne Rätselraten brauchst.</p></div>
-          <div class="faq-item cfl-card cfl-reveal cfl-d3"><h4>Nu e pentru mine dacă…</h4><p class="muted" style="margin:0;">cauți „schema de îmbogățire rapidă" sau vrei rezultate fără să aplici nimic.</p></div>
+          <div class="faq-item cfl-card cfl-reveal cfl-d3"><h4>Nichts für mich, wenn…</h4><p class="muted" style="margin:0;">du nach einem „schnellen Reichwerdenschema" suchst oder Ergebnisse willst, ohne etwas anzuwenden.</p></div>
         </div>
       </div>
     </section>
