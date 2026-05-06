@@ -259,7 +259,7 @@
         <a href="#kits" class="btn-sm btn-outline" data-i18n="nav.kits">Kits</a>
         <a href="#faq" class="btn-sm btn-outline" data-i18n="nav.faq">FAQ</a>
         <a href="#contact" class="btn-sm btn-outline" data-i18n="nav.contact">Kontakt</a>
-        <a href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary gumroad-link" data-i18n="nav.buy">PRO Kit — $69.99</a>
+        <a href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary gumroad-link" data-i18n="nav.buy" data-evt="nav_pro">PRO Kit — $69.99</a>
       </nav>
 
       <div class="lang-pill mobile-always-visible">
@@ -578,8 +578,15 @@
   // Language toggle
   (()=>{const path=window.location.pathname.toLowerCase();let currentLang='ro';if(path.startsWith('/en/'))currentLang='en';else if(path.startsWith('/de/'))currentLang='de';const pill=document.querySelector('.lang-pill');if(pill){const buttons=pill.querySelectorAll('.lang-btn');buttons.forEach(btn=>{const isActive=btn.dataset.lang===currentLang;btn.classList.toggle('is-active',isActive);btn.setAttribute('aria-current',isActive?'page':'false');btn.addEventListener('click',()=>localStorage.setItem('language_selected','true'));});}document.documentElement.lang=currentLang==='ro'?'ro':currentLang;})();
 
-  // MailerLite success callback - redirect to FREE Kit page
+  // MailerLite success callback - redirect to FREE Kit page + GA4 lead tracking
   function ml_webform_success_176693602287617412() {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        currency: 'USD',
+        value: 0,
+        kit: 'free'
+      });
+    }
     // Redirect to FREE Kit download page after 1.5 seconds
     setTimeout(function() {
       window.location.href = 'https://cashflowlabai.com/free-kit/';
@@ -598,6 +605,38 @@
 
   // Consent banner
   (()=>{const wrap=document.getElementById('consentWrap'),consent=localStorage.getItem('cfl_consent');if(!consent&&wrap)wrap.hidden=false;document.querySelectorAll('[data-consent]').forEach(b=>b.addEventListener('click',()=>{const c=b.dataset.consent;localStorage.setItem('cfl_consent',c);if(wrap)wrap.hidden=true;if(c==='all'||c==='analytics'){if(typeof gtag!=='undefined')gtag('consent','update',{analytics_storage:'granted'});}}));})();
+
+  // GA4 Event Tracking — Kit CTA clicks & "Learn more" views
+  (()=>{
+    const kitPrices={free:{value:0,currency:'USD'},mini:{value:9,currency:'USD'},medium:{value:27,currency:'USD'},pro:{value:69.99,currency:'USD'},nav_pro:{value:69.99,currency:'USD'}};
+    document.querySelectorAll('[data-evt]').forEach(el=>{
+      el.addEventListener('click',()=>{
+        const kit=el.dataset.evt;
+        const price=kitPrices[kit]||{value:0,currency:'USD'};
+        if(typeof gtag!=='undefined'){
+          gtag('event','select_content',{
+            content_type:'kit_cta',
+            item_id:kit,
+            value:price.value,
+            currency:price.currency
+          });
+        }
+      });
+    });
+    document.querySelectorAll('a.learn-more').forEach(el=>{
+      el.addEventListener('click',()=>{
+        const match=el.href.match(/\/(mini|medium|pro|free)-kit\//);
+        const kit=match?match[1]:'unknown';
+        if(typeof gtag!=='undefined'){
+          gtag('event','view_item',{
+            content_type:'kit_page',
+            item_id:kit+'_kit',
+            item_name:kit.charAt(0).toUpperCase()+kit.slice(1)+' Kit'
+          });
+        }
+      });
+    });
+  })();
   </script>
 </body>
 </html>
