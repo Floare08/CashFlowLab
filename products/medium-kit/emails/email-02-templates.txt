@@ -1,0 +1,85 @@
+SUBIECT: Template-ul de email care convertește (și cum să-l folosești)
+
+Preview text: Copy-paste friendly. Doar schimbă [VARIABILELE] cu ale tale.
+
+---
+
+Salut [Nume],
+
+Ieri ai primit MEDIUM Kitul. Azi îți arăt cum să folosești cel mai valoros template: **email-ul de launch**.
+
+**Template-ul din kit (pagina 2):**
+
+```
+1. Hook personal (nu generic)
+2. Ce primesc exact (lista)
+3. CTA singular + deadline
+```
+
+**De ce funcționează:**
+
+• **Hook personal** = atenția. „Am lucrat 6 luni la asta"
+
+Preview text: Copy-paste friendly. Doar schimbă [VARIABILELE] cu ale tale.
+
+---
+
+Salut [Nume],
+
+Ieri ai primit MEDIUM Kitul. Azi îți arăt cum să folosești cel mai valoros template: **email-ul de launch**.
+
+**Template-ul din kit (pagina 2):**
+
+```
+1. Hook personal (nu generic)
+2. Ce primesc exact (lista)
+3. CTA singular + deadline
+```
+
+**De ce funcționează:**
+
+• **Hook personal** = atenția. „Am lucrat 6 luni la asta" 
+> e mai bun decât „Nou lansare!"
+• **Lista exactă** = claritate. Oamenii cumpără când știu EXACT ce primesc
+• **CTA singular** = decizia. Un singur buton = un singur gând = acțiune
+
+**Exemplu concret:**
+
+```
+Salut [Nume],
+
+Am lucrat 6 luni la un sistem care m-a scăpat de 
+5 ore de muncă repetitivă pe săptămână.
+
+Ce conține:
+✓ Template Notion (organizat, gata de folosit)
+✓ 5 video-uri scurte (cum să configurezi)
+✓ Checklist de implementare (15 minute)
+
+Preț: $19 (doar în primele 48h)
+
+[Ia sistemul acum →]
+
+— Floare
+```
+
+**Observă:** Niciun „vei învăța", niciun „poate te ajută". Doar 
+ ce primești, cât costă, și ce să faci.
+
+---
+
+💡 Sfat: Deschide kitul, copiază template-ul, schimbă [VARIABILELE] 
+cu ale tale. Gata în 10 minute.
+
+În 2 zile îți trimit povestea lui Andrei. A aplicat exact template-ul 
+ăsta și a făcut $500 în prima lună.
+
+Acțiune acum? 🚀
+
+— Floare
+CashFlowLab
+
+P.S. Răspunde cu „DONE" când termini primul email. Aștept.
+
+---
+🔗 cashflowlabai.com
