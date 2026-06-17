@@ -240,7 +240,7 @@
 
   <!-- Auto language redirect (first visit only) -->
   <script>
-  (function(){try{if(localStorage.getItem("language_selected"))return;var p=window.location.pathname;if(p.startsWith('/en/')||p.startsWith('/De/'))return;var l=(navigator.language||navigator.userLanguage||"").toLowerCase();if(!l)return;function g(u){if(p===u)return;window.location.href=u}if(l.startsWith("de"))g("/De/");else if(l.startsWith("en"))g("/en/");}catch(e){}})();
+  (function(){try{if(localStorage.getItem("language_selected"))return;var p=window.location.pathname;if(p.startsWith('/en/')||p.startsWith('/De/'))return;var l=(navigator.language||navigator.userLanguage||"").toLowerCase();if(!l)return;function g(u){if(p===u)return;window.location.href=u}if(l.startsWith("de"))g("/de/");else if(l.startsWith("en"))g("/en/");}catch(e){}})();
   </script>
 </head>
 <body>
