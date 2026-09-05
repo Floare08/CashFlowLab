@@ -1,0 +1,259 @@
+name: Jarvis one-time product copy repair
+
+on:
+  push:
+    branches:
+      - jarvis/repo-cleanup-2026-09-05
+
+permissions:
+  contents: write
+
+jobs:
+  repair-product-copy:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: jarvis/repo-cleanup-2026-09-05
+          fetch-depth: 0
+
+      - name: Align sales pages with verified repository deliverables
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import re
+
+          def replace_once(text, old, new, label):
+              if old not in text:
+                  raise SystemExit(f'Missing expected text for {label}: {old[:100]}')
+              return text.replace(old, new, 1)
+
+          def replace_pattern(text, pattern, replacement, label):
+              out, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+              if count != 1:
+                  raise SystemExit(f'Expected one {label}, found {count}')
+              return out
+
+          # ---------- MINI ----------
+          p = Path('mini-kit/index.html')
+          mini = p.read_text(encoding='utf-8')
+          mini = replace_once(mini, '<title>MINI CashFlowLab Kit — Brand-ul tău în 24h</title>', '<title>MINI CashFlowLab Kit — Checklist de lansare în 15 minute</title>', 'MINI title')
+          mini = replace_once(mini, '<meta name="description" content="Kitul rapid pentru antreprenori care vor să lanseze fără să piardă luni în design și branding. $9.">', '<meta name="description" content="Checklist PDF de lansare + template Notion + 4 emailuri de follow-up. Verifică o lansare în aproximativ 15 minute. $9.">', 'MINI description')
+          mini = replace_once(mini, '<meta property="og:title" content="MINI CashFlowLab Kit — Brand-ul tău în 24h">', '<meta property="og:title" content="MINI CashFlowLab Kit — Checklist de lansare în 15 minute">', 'MINI og title')
+          mini = replace_once(mini, '<meta property="og:description" content="3 landing variante + ghid 24h + branding complet. Tot ce ai nevoie pentru a arăta profesionist.">', '<meta property="og:description" content="PDF Quick Launch Checklist + template Notion + 4 emailuri. Un kit mic pentru o lansare mai curată.">\n  <meta property="og:image" content="https://cashflowlabai.com/Images/og-hero-cover.webp">', 'MINI og description')
+          if '<link rel="icon" href="/favicon/favicon.png">' not in mini:
+              mini = replace_once(mini, '<link rel="canonical" href="https://cashflowlabai.com/mini-kit/">', '<link rel="canonical" href="https://cashflowlabai.com/mini-kit/">\n  <link rel="icon" href="/favicon/favicon.png">', 'MINI favicon')
+
+          mini_hero = '''<section class="hero">
+  <div class="container">
+    <div class="badge-mini reveal-up">🚀 MINI KIT</div>
+    <h1 class="reveal-up delay-1">Verifică lansarea înainte să apeși <span style="color:var(--gold)">Publish</span></h1>
+    <p class="sub reveal-up delay-2">Un kit scurt și practic: checklist PDF de 2 pagini, template Notion și o secvență de 4 emailuri pentru primele zile după lansare.</p>
+    <div class="price-hero glass border-static glow-pulse reveal-up delay-3">
+      <div class="new-price shimmer">$9</div>
+      <p class="price-note">Plată unică · Livrare digitală</p>
+    </div>
+    <div class="reveal-up delay-4">
+      <a href="https://cashflowlabai.gumroad.com/l/bpsbou" class="magnetic-btn" target="_blank" rel="noopener noreferrer"><span>Ia MINI Kit Acum</span><span>→</span></a>
+    </div>
+    <div class="trust-line reveal-up delay-5">
+      <span class="trust-item">🔒 Plată securizată</span>
+      <span class="trust-item">⚡ Acces digital</span>
+      <span class="trust-item">📄 PDF + Notion + 4 emailuri</span>
+    </div>
+  </div>
+</section>'''
+          mini_features = '''<section>
+  <div class="container">
+    <div class="section-header reveal-up">
+      <h2>Ce primești în MINI Kit</h2>
+      <p>Doar livrabilele verificate în pachetul curent.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1"><div class="feature-icon">📄</div><h3>Quick Launch Checklist</h3><p>PDF de 2 pagini cu verificări pre-launch, quick wins post-launch și greșeli de evitat.</p></div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2"><div class="feature-icon">✅</div><h3>Template Notion</h3><p>Checklist digital pentru task-uri pre/post-launch, metrici și lecții învățate.</p></div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3"><div class="feature-icon">✉️</div><h3>4 Emailuri</h3><p>Welcome, quick-start, story și upsell — texte gata de adaptat în platforma ta de email.</p></div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1"><div class="feature-icon">⏱️</div><h3>Focus pe 15 minute</h3><p>Checklist-ul este construit ca să identifici rapid erorile evitabile înainte de lansare.</p></div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2"><div class="feature-icon">📊</div><h3>Metrici esențiale</h3><p>Views, click-uri și conversii — suficient cât să vezi unde merită să intervii.</p></div>
+      <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3"><div class="feature-icon">🧩</div><h3>Ușor de adaptat</h3><p>Conținut simplu, editabil, fără dependență de un anumit builder sau stack tehnic.</p></div>
+    </div>
+  </div>
+</section>'''
+          mini_includes = '''<section class="includes">
+  <div class="container">
+    <div class="includes-grid">
+      <div class="reveal-up">
+        <h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:12px;letter-spacing:-.02em">Fișierele pachetului</h2>
+        <p style="color:var(--muted);margin-bottom:40px;font-size:16px;line-height:1.7">Lista este aliniată cu livrabilele curente din repository.</p>
+        <ul class="includes-list">
+          <li><span class="check-icon">✓</span><div><h4>mini-kit.pdf</h4><p>Quick Launch Checklist — 2 pagini.</p></div></li>
+          <li><span class="check-icon">✓</span><div><h4>mini-kit-checklist.md</h4><p>Template pentru import/adaptare în Notion.</p></div></li>
+          <li><span class="check-icon">✓</span><div><h4>email-01-welcome.txt</h4><p>Email de bun venit și livrare.</p></div></li>
+          <li><span class="check-icon">✓</span><div><h4>email-02-quickstart.txt</h4><p>Pașii rapizi de implementare.</p></div></li>
+          <li><span class="check-icon">✓</span><div><h4>email-03-story.txt + email-04-upsell.txt</h4><p>Story/follow-up și ofertă de upgrade.</p></div></li>
+        </ul>
+      </div>
+      <div class="glass-strong border-static reveal-up delay-2" style="position:sticky;top:100px;text-align:center;padding:44px 36px">
+        <div style="margin-bottom:28px"><div style="font-size:13px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase">Preț MINI Kit</div></div>
+        <div style="margin-bottom:36px;padding:36px 28px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(255,209,102,.1),rgba(138,95,255,.1));border:1px solid rgba(255,209,102,.1)"><div style="font-size:68px;font-weight:800;letter-spacing:-.03em;line-height:1" class="shimmer">$9</div><div style="font-size:13px;color:var(--muted);margin-top:16px">Plată unică · Livrare digitală</div></div>
+        <a href="https://cashflowlabai.gumroad.com/l/bpsbou" class="magnetic-btn" style="width:100%;justify-content:center" target="_blank" rel="noopener noreferrer"><span>Ia MINI Kit Acum</span><span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>'''
+          mini_scope = '''<section class="guarantee">
+  <div class="container"><div class="guarantee-box glass border-glow reveal-up"><div style="font-size:36px;margin-bottom:18px">📦</div><h3>Conținut clar</h3><p>MINI este un pachet digital compact: PDF, template Notion și patru emailuri. Nu îl prezentăm ca pachet de branding, logo-uri sau landing pages, pentru că acestea nu fac parte din livrabilele curente verificate.</p></div></div>
+</section>'''
+          mini_faq = '''<section class="faq">
+  <div class="container" style="max-width:800px"><div class="section-header reveal-up"><h2>Întrebări frecvente</h2></div><div class="reveal-up delay-1">
+    <details><summary>Ce format au fișierele? <span>+</span></summary><p>Primești un PDF, un fișier Markdown pentru Notion și patru fișiere text pentru emailuri.</p></details>
+    <details><summary>Trebuie să știu programare? <span>+</span></summary><p>Nu. MINI este un checklist și un set de texte/template-uri, nu un proiect de programare.</p></details>
+    <details><summary>Cât durează să-l folosesc? <span>+</span></summary><p>Checklist-ul principal este gândit pentru o verificare rapidă, de aproximativ 15 minute. Implementarea corecțiilor depinde de proiectul tău.</p></details>
+    <details><summary>Cum primesc kitul? <span>+</span></summary><p>Achiziția se face prin Gumroad, iar livrarea este digitală conform checkout-ului produsului.</p></details>
+  </div></div>
+</section>'''
+          mini_final = '''<section class="final-cta">
+  <div class="container"><div class="final-cta-box glass-strong border-static glow-pulse reveal-up"><h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,44px);margin-bottom:16px;letter-spacing:-.02em">Fă verificarea înainte de lansare</h2><p style="color:var(--muted);max-width:520px;margin:0 auto 30px;font-size:17px;line-height:1.7">Un checklist mic poate evita erori mari: linkuri rupte, CTA-uri confuze și follow-up uitat.</p><div style="font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:28px" class="shimmer">$9</div><a href="https://cashflowlabai.gumroad.com/l/bpsbou" class="magnetic-btn" style="padding:20px 44px;font-size:17px" target="_blank" rel="noopener noreferrer"><span>Ia MINI Kit Acum</span><span>→</span></a></div></div>
+</section>'''
+          mini = replace_pattern(mini, r'<section class="hero">.*?</section>', mini_hero, 'MINI hero')
+          mini = replace_pattern(mini, r'<section>\s*<div class="container">\s*<div class="section-header.*?</section>', mini_features, 'MINI features')
+          mini = replace_pattern(mini, r'<section class="includes">.*?</section>', mini_includes, 'MINI includes')
+          mini = replace_pattern(mini, r'<section class="guarantee">.*?</section>', mini_scope, 'MINI scope')
+          mini = replace_pattern(mini, r'<section class="faq">.*?</section>', mini_faq, 'MINI faq')
+          mini = replace_pattern(mini, r'<section class="final-cta">.*?</section>', mini_final, 'MINI final CTA')
+          p.write_text(mini, encoding='utf-8')
+
+          # ---------- MEDIUM ----------
+          p = Path('medium-kit/index.html')
+          med = p.read_text(encoding='utf-8')
+          med = replace_once(med, '<title>MEDIUM CashFlowLab Kit — Funnel complet + Automatizări</title>', '<title>MEDIUM CashFlowLab Kit — Launch Essentials + Notion + Emailuri</title>', 'MEDIUM title')
+          med = replace_once(med, '<meta name="description" content="Structura completă de funnel + automatizări esențiale + template-uri ready-to-use. $27.">', '<meta name="description" content="Launch Essentials PDF + template Notion + 4 emailuri și framework-ul CashFlowLab pentru o lansare structurată. $27.">', 'MEDIUM description')
+          med = replace_once(med, '<meta property="og:title" content="MEDIUM CashFlowLab Kit — Funnel complet + Automatizări">', '<meta property="og:title" content="MEDIUM CashFlowLab Kit — Launch Essentials + Notion + Emailuri">', 'MEDIUM og title')
+          med = replace_once(med, '<meta property="og:description" content="5 pagini de funnel, workflow-uri automate, 20+ template-uri business. Scalează fără să lucrezi mai mult.">', '<meta property="og:description" content="PDF Launch Essentials, template Notion și 4 emailuri pentru o lansare organizată, fără promisiuni umflate.">\n  <meta property="og:image" content="https://cashflowlabai.com/Images/og-hero-cover.webp">', 'MEDIUM og description')
+          if '<link rel="icon" href="/favicon/favicon.png">' not in med:
+              med = replace_once(med, '<link rel="canonical" href="https://cashflowlabai.com/medium-kit/">', '<link rel="canonical" href="https://cashflowlabai.com/medium-kit/">\n  <link rel="icon" href="/favicon/favicon.png">', 'MEDIUM favicon')
+
+          med_hero = '''<section class="hero">
+  <div class="container"><div class="badge-medium reveal-up">⚡ MEDIUM KIT</div><h1 class="reveal-up delay-1">Pune lansarea pe un <span style="color:var(--purple-2)">sistem clar</span></h1><p class="sub reveal-up delay-2">Launch Essentials adună framework-ul CashFlowLab, checklist-urile, template-ul Notion și patru emailuri într-un singur flux de lucru.</p><div class="price-hero glass border-static glow-pulse reveal-up delay-3"><div class="new-price shimmer">$27</div><p class="price-note">Plată unică · Livrare digitală</p></div><div class="reveal-up delay-4"><a href="https://cashflowlabai.gumroad.com/l/divha" class="magnetic-btn" target="_blank" rel="noopener noreferrer"><span>Ia MEDIUM Kit Acum</span><span>→</span></a></div><div class="trust-line reveal-up delay-5"><span class="trust-item">🔒 Plată securizată</span><span class="trust-item">⚡ Acces digital</span><span class="trust-item">📄 PDF + Notion + 4 emailuri</span></div></div>
+</section>'''
+          med_features = '''<section>
+  <div class="container"><div class="section-header reveal-up"><h2>Ce primești în MEDIUM Kit</h2><p>Livrabilele curente verificate în repository.</p></div><div class="features-grid">
+    <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1"><div class="feature-icon">📄</div><h3>Launch Essentials PDF</h3><p>PDF de 4 pagini cu framework, checklist-uri, anti-patterns și template-uri de lansare.</p></div>
+    <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2"><div class="feature-icon">🧠</div><h3>Framework CashFlowLab</h3><p>Problemă → Promisiune → Dovadă → CTA, explicat cu structură simplă și exemple.</p></div>
+    <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3"><div class="feature-icon">✅</div><h3>Launch System în Notion</h3><p>Checklist-uri pre/post-launch, anti-patterns, template-uri și tracker de metrici.</p></div>
+    <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1"><div class="feature-icon">✉️</div><h3>4 Emailuri</h3><p>Welcome, template guidance, case-study follow-up și upsell — gata de adaptat.</p></div>
+    <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2"><div class="feature-icon">📣</div><h3>Template-uri de mesaj</h3><p>Structuri pentru landing page, email și social media incluse în materialele kitului.</p></div>
+    <div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3"><div class="feature-icon">📊</div><h3>Metrici de urmărit</h3><p>Views, clicks, conversions și revenue — suficient pentru un ciclu simplu de îmbunătățire.</p></div>
+  </div></div>
+</section>'''
+          med_includes = '''<section class="includes">
+  <div class="container"><div class="includes-grid"><div class="reveal-up"><h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:12px;letter-spacing:-.02em">Fișierele pachetului</h2><p style="color:var(--muted);margin-bottom:40px;font-size:16px;line-height:1.7">Structura curentă a livrabilelor MEDIUM.</p><ul class="includes-list">
+    <li><span class="check-icon">✓</span><div><h4>medium-kit.pdf</h4><p>Launch Essentials — 4 pagini.</p></div></li>
+    <li><span class="check-icon">✓</span><div><h4>medium-kit-template.md</h4><p>Template pentru sistemul de lansare în Notion.</p></div></li>
+    <li><span class="check-icon">✓</span><div><h4>email-01-welcome.txt</h4><p>Welcome + overview.</p></div></li>
+    <li><span class="check-icon">✓</span><div><h4>email-02-templates.txt</h4><p>Ghid de folosire a template-urilor.</p></div></li>
+    <li><span class="check-icon">✓</span><div><h4>email-03-casestudy.txt + email-04-upsell.txt</h4><p>Follow-up și upgrade sequence.</p></div></li>
+  </ul></div><div class="glass-strong border-static reveal-up delay-2" style="position:sticky;top:100px;text-align:center;padding:44px 36px"><div style="font-size:13px;color:var(--muted);margin-bottom:28px;letter-spacing:.5px;text-transform:uppercase">Preț MEDIUM Kit</div><div style="margin-bottom:36px;padding:36px 28px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(138,95,255,.1),rgba(255,209,102,.1));border:1px solid rgba(138,95,255,.1)"><div style="font-size:68px;font-weight:800;letter-spacing:-.03em;line-height:1" class="shimmer">$27</div><div style="font-size:13px;color:var(--muted);margin-top:16px">Plată unică · Livrare digitală</div></div><a href="https://cashflowlabai.gumroad.com/l/divha" class="magnetic-btn" style="width:100%;justify-content:center" target="_blank" rel="noopener noreferrer"><span>Ia MEDIUM Kit Acum</span><span>→</span></a></div></div></div>
+</section>'''
+          med_scope = '''<section class="guarantee"><div class="container"><div class="guarantee-box glass border-glow reveal-up"><div style="font-size:36px;margin-bottom:18px">🧭</div><h3>Scope verificat</h3><p>MEDIUM este un pachet de lansare cu PDF, Notion și patru emailuri. Nu îl prezentăm ca bibliotecă de 20+ Canva templates sau ca set de automatizări preconfigurate, deoarece aceste livrabile nu apar în pachetul curent verificat.</p></div></div></section>'''
+          med_faq = '''<section class="faq"><div class="container" style="max-width:800px"><div class="section-header reveal-up"><h2>Întrebări frecvente</h2></div><div class="reveal-up delay-1"><details><summary>Ce format au fișierele? <span>+</span></summary><p>PDF, Markdown pentru Notion și patru fișiere text pentru emailuri.</p></details><details><summary>Care e diferența față de MINI? <span>+</span></summary><p>MINI este un checklist rapid. MEDIUM adaugă framework-ul CashFlowLab, un sistem Notion mai complet, template-uri de mesaj și un flux de follow-up mai amplu.</p></details><details><summary>Include automatizări gata configurate? <span>+</span></summary><p>Nu în pachetul curent verificat. Primești emailurile și structura de lucru, pe care le poți configura în platforma ta.</p></details><details><summary>Cum primesc kitul? <span>+</span></summary><p>Achiziția se face prin Gumroad, iar livrarea este digitală conform checkout-ului produsului.</p></details></div></div></section>'''
+          med_final = '''<section class="final-cta"><div class="container"><div class="final-cta-box glass-strong border-static glow-pulse reveal-up"><h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,44px);margin-bottom:16px;letter-spacing:-.02em">Construiește o lansare mai ordonată</h2><p style="color:var(--muted);max-width:520px;margin:0 auto 30px;font-size:17px;line-height:1.7">Framework, checklist-uri, Notion și emailuri — într-un pachet compact pentru execuție.</p><div style="font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:28px" class="shimmer">$27</div><a href="https://cashflowlabai.gumroad.com/l/divha" class="magnetic-btn" style="padding:20px 44px;font-size:17px" target="_blank" rel="noopener noreferrer"><span>Ia MEDIUM Kit Acum</span><span>→</span></a></div></div></section>'''
+          med = replace_pattern(med, r'<section class="hero">.*?</section>', med_hero, 'MEDIUM hero')
+          med = replace_pattern(med, r'<section>\s*<div class="container">\s*<div class="section-header.*?</section>', med_features, 'MEDIUM features')
+          med = replace_pattern(med, r'<section class="includes">.*?</section>', med_includes, 'MEDIUM includes')
+          med = replace_pattern(med, r'<section class="guarantee">.*?</section>', med_scope, 'MEDIUM scope')
+          med = replace_pattern(med, r'<section class="faq">.*?</section>', med_faq, 'MEDIUM faq')
+          med = replace_pattern(med, r'<section class="final-cta">.*?</section>', med_final, 'MEDIUM final CTA')
+          p.write_text(med, encoding='utf-8')
+
+          # ---------- PRO ----------
+          p = Path('pro-kit/index.html')
+          pro = p.read_text(encoding='utf-8')
+          pro = replace_once(pro, '<meta name="description" content="Sistemul complet cu funnel, 10 emailuri, automatizări și suport. Transformă ideea în business profitabil.">', '<meta name="description" content="Blueprint PRO cu arhitectură de funnel, 10 emailuri template, master checklist și structură Plan → Build → Test → Launch → Scale.">', 'PRO description')
+          pro = replace_once(pro, '<meta property="og:description" content="Funnel complet + 10 emailuri + Automatizări + Suport. Tot ce ai nevoie pentru a lansa și scala.">', '<meta property="og:description" content="Arhitectură de funnel + 10 emailuri template + master checklist pentru un sistem de lansare mai riguros.">', 'PRO og description')
+          pro = replace_once(pro, '<meta property="og:image" content="https://cashflowlabai.com/Images/og-pro-kit.webp">', '<meta property="og:image" content="https://cashflowlabai.com/Images/og-hero-cover.webp">', 'PRO og image')
+          if '<link rel="icon" href="/favicon/favicon.png">' not in pro:
+              pro = replace_once(pro, '<link rel="canonical" href="https://cashflowlabai.com/pro-kit/">', '<link rel="canonical" href="https://cashflowlabai.com/pro-kit/">\n  <link rel="icon" href="/favicon/favicon.png">', 'PRO favicon')
+
+          pro_hero = '''<section class="hero"><div class="container"><div class="badge-pro reveal-up">⭐ PRO KIT</div><h1 class="reveal-up delay-1">Blueprint-ul pentru <span style="color:var(--gold)">Plan → Build → Test → Launch → Scale</span></h1><p class="sub reveal-up delay-2">PRO adună arhitectura de funnel, zece emailuri template și master checklist-ul într-un sistem de lansare pe care îl poți adapta la produsul tău.</p><div class="price-hero glass border-static glow-pulse reveal-up delay-3"><div class="new-price shimmer">$69.99</div><p class="price-note">Plată unică · Conținut digital</p></div><div class="reveal-up delay-4"><a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" target="_blank" rel="noopener noreferrer"><span>Ia PRO Kit Acum</span><span>→</span></a></div><div class="trust-line reveal-up delay-5"><span class="trust-item">🔒 Plată securizată</span><span class="trust-item">🏗️ Funnel blueprint</span><span class="trust-item">📋 Master checklist + 10 emailuri</span></div></div></section>'''
+          pro_features = '''<section><div class="container"><div class="section-header reveal-up"><h2>Ce conține PRO</h2><p>Conținutul pe care îl putem verifica direct în materialele repository-ului.</p></div><div class="features-grid"><div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1"><div class="feature-icon">🏗️</div><h3>Arhitectură de Funnel</h3><p>Structură pentru landing, thank-you, checkout, upsell și confirmation page.</p></div><div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2"><div class="feature-icon">✉️</div><h3>10 Emailuri Template</h3><p>Welcome, nurture, sales și re-engagement — copy framework gata de adaptat.</p></div><div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3"><div class="feature-icon">📋</div><h3>Master Checklist</h3><p>Checklist extins organizat pe Plan, Build, Test, Launch și Scale.</p></div><div class="feature-card spotlight tilt-3d border-glow reveal-up delay-1"><div class="feature-icon">🧪</div><h3>QA de Lansare</h3><p>Verificări pentru pagini, checkout, emailuri, formulare și dispozitive.</p></div><div class="feature-card spotlight tilt-3d border-glow reveal-up delay-2"><div class="feature-icon">🧰</div><h3>Toolkit de Implementare</h3><p>Recomandări de instrumente și structură pentru organizarea procesului.</p></div><div class="feature-card spotlight tilt-3d border-glow reveal-up delay-3"><div class="feature-icon">📈</div><h3>Fază de Scale</h3><p>Pași pentru analiză, A/B testing, retargeting și următorul ciclu de creștere.</p></div></div></div></section>'''
+          pro_includes = '''<section class="includes"><div class="container"><div class="includes-grid"><div class="reveal-up"><h2 style="font-family:'Playfair Display',serif;font-size:32px;margin-bottom:12px;letter-spacing:-.02em">Materiale verificate</h2><p style="color:var(--muted);margin-bottom:40px;font-size:16px;line-height:1.7">Am eliminat din pagină serviciile și bonusurile care nu pot fi confirmate din repository.</p><ul class="includes-list"><li><span class="check-icon">✓</span><div><h4>pro-kit-deliverables.md</h4><p>Blueprint complet cu funnel, email templates și fazele de lansare.</p></div></li><li><span class="check-icon">✓</span><div><h4>zero-to-launch-master-checklist.md</h4><p>Master checklist pentru execuția lansării.</p></div></li><li><span class="check-icon">✓</span><div><h4>Funnel templates în blueprint</h4><p>Structuri și copy placeholders pentru paginile principale.</p></div></li><li><span class="check-icon">✓</span><div><h4>10-email sequence în blueprint</h4><p>Welcome, nurture, sales și re-engagement.</p></div></li><li><span class="check-icon">✓</span><div><h4>Implementation guidance</h4><p>Tool-uri recomandate și checklist-uri de QA/scale.</p></div></li></ul></div><div class="glass-strong border-static reveal-up delay-2" style="position:sticky;top:100px;text-align:center;padding:44px 36px"><div style="font-size:13px;color:var(--muted);margin-bottom:28px;letter-spacing:.5px;text-transform:uppercase">Preț PRO Kit</div><div style="margin-bottom:36px;padding:36px 28px;border-radius:var(--radius-xl);background:linear-gradient(135deg,rgba(255,209,102,.1),rgba(138,95,255,.1));border:1px solid rgba(255,209,102,.1)"><div style="font-size:68px;font-weight:800;letter-spacing:-.03em;line-height:1" class="shimmer">$69.99</div><div style="font-size:13px;color:var(--muted);margin-top:16px">Plată unică · Conținut digital</div></div><a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" style="width:100%;justify-content:center" target="_blank" rel="noopener noreferrer"><span>Ia PRO Kit Acum</span><span>→</span></a></div></div></div></section>'''
+          pro_comparison = '''<section class="comparison"><div class="container"><div class="section-header reveal-up"><h2>Când are sens PRO</h2><p>Pentru cine vrea un sistem mai amplu decât un checklist sau un launch template.</p></div><div class="features-grid"><div class="feature-card reveal-up delay-1"><h3>Ai deja o ofertă</h3><p>PRO te ajută să-i pui în ordine funnel-ul și secvența de comunicare.</p></div><div class="feature-card reveal-up delay-2"><h3>Vrei proces repetabil</h3><p>Checklist-ul pe faze reduce improvizația între idee și lansare.</p></div><div class="feature-card reveal-up delay-3"><h3>Vrei să optimizezi</h3><p>Faza Scale include analiză, A/B tests și pași pentru următorul ciclu.</p></div></div></div></section>'''
+          pro_scope = '''<section class="guarantee"><div class="container"><div class="guarantee-box glass border-glow reveal-up"><div style="font-size:36px;margin-bottom:18px">🔎</div><h3>Scope verificat</h3><p>Am scos din descriere promisiuni despre suport 1-on-1, comunitate privată, workflow-uri Zapier/Make preconfigurate și brand assets complete, deoarece aceste livrabile nu pot fi confirmate în versiunea curentă a repository-ului.</p></div></div></section>'''
+          pro_faq = '''<section class="faq"><div class="container" style="max-width:800px"><div class="section-header reveal-up"><h2>Întrebări frecvente</h2></div><div class="reveal-up delay-1"><details><summary>Ce este PRO în forma verificată? <span>+</span></summary><p>Un blueprint de lansare cu arhitectură de funnel, 10 emailuri template și master checklist.</p></details><details><summary>Include automatizări Zapier/Make gata configurate? <span>+</span></summary><p>Nu le afirmăm ca livrabil în versiunea verificată a repository-ului.</p></details><details><summary>Include consultanță 1-on-1 sau comunitate privată? <span>+</span></summary><p>Nu le afirmăm ca parte a pachetului până când acestea nu sunt documentate și confirmate separat.</p></details><details><summary>Trebuie să știu programare? <span>+</span></summary><p>Nu pentru a folosi blueprint-ul. Implementarea tehnică a propriului funnel depinde de platforma pe care o alegi.</p></details></div></div></section>'''
+          pro_final = '''<section class="final-cta"><div class="container"><div class="final-cta-box glass-strong border-static glow-pulse reveal-up"><h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,44px);margin-bottom:16px;letter-spacing:-.02em">Construiește procesul, nu doar pagina</h2><p style="color:var(--muted);max-width:540px;margin:0 auto 30px;font-size:17px;line-height:1.7">Funnel architecture, email sequence și master checklist într-un singur blueprint de lansare.</p><div style="font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1;margin-bottom:28px" class="shimmer">$69.99</div><a href="https://cashflowlabai.gumroad.com/l/udxody" class="magnetic-btn" style="padding:20px 44px;font-size:17px" target="_blank" rel="noopener noreferrer"><span>Ia PRO Kit Acum</span><span>→</span></a></div></div></section>'''
+          pro = replace_pattern(pro, r'<section class="hero">.*?</section>', pro_hero, 'PRO hero')
+          pro = replace_pattern(pro, r'<section>\s*<div class="container">\s*<div class="section-header.*?</section>', pro_features, 'PRO features')
+          pro = replace_pattern(pro, r'<section class="includes">.*?</section>', pro_includes, 'PRO includes')
+          pro = replace_pattern(pro, r'<section class="comparison">.*?</section>', pro_comparison, 'PRO comparison')
+          pro = replace_pattern(pro, r'<section class="guarantee">.*?</section>', pro_scope, 'PRO scope')
+          pro = replace_pattern(pro, r'<section class="faq">.*?</section>', pro_faq, 'PRO faq')
+          pro = replace_pattern(pro, r'<section class="final-cta">.*?</section>', pro_final, 'PRO final CTA')
+          p.write_text(pro, encoding='utf-8')
+
+          # ---------- HOME CARDS ----------
+          p = Path('index.html')
+          home = p.read_text(encoding='utf-8')
+          replacements = [
+              ('<li>Landing premium (copy + structură îmbunătățită)</li>', '<li>Checklist PDF de lansare (2 pagini)</li>'),
+              ('<li>Branding coerent, gata de folosit</li>', '<li>Template Notion pentru pre/post-launch</li>'),
+              ('<li>Ghid rapid: de la idee la online</li>', '<li>Secvență de 4 emailuri gata de adaptat</li>'),
+              ('<li>Structură completă de funnel (clar, logic)</li>', '<li>PDF Launch Essentials + framework CashFlowLab</li>'),
+              ('<li>Automatizări de bază explicate pas cu pas</li>', '<li>Template Notion cu checklist-uri și metrici</li>'),
+              ('<li>Template-uri pregătite pentru execuție</li>', '<li>4 emailuri + template-uri de landing/social</li>'),
+              ('<li>Sistem complet: funnel + landing + ofertă</li>', '<li>Blueprint funnel: landing → checkout → upsell</li>'),
+              ('<li>Secvență de 5 emailuri (copy inclus)</li>', '<li>Secvență de 10 emailuri template</li>'),
+              ('<li>Automatizări clare, gata de folosit</li>', '<li>Master checklist Plan → Build → Test → Launch → Scale</li>'),
+              ('<li>Checklist de lansare + actualizări viitoare</li>', '<li>Toolkit de implementare și template-uri de copy</li>'),
+          ]
+          for old, new in replacements:
+              home = replace_once(home, old, new, f'home card {old[:35]}')
+          p.write_text(home, encoding='utf-8')
+
+          # ---------- VALIDATION ----------
+          forbidden = {
+              'mini-kit/index.html': ['3 Landing Variante', 'Logo Pack (5 variațiuni)', 'Garanție 14 zile', 'CashFlow Brand în 24h'],
+              'medium-kit/index.html': ['5 Pagini de Funnel', '20+ Canva Templates', 'Garanție 14 zile', 'Automatizări Gata Configurate'],
+              'pro-kit/index.html': ['Suport 1-on-1', 'Garanție 14 zile', 'Automatizări Setup', 'Brand Assets Complete'],
+          }
+          for filename, needles in forbidden.items():
+              text = Path(filename).read_text(encoding='utf-8')
+              for needle in needles:
+                  if needle in text:
+                      raise SystemExit(f'Stale claim remains in {filename}: {needle}')
+
+          for jf in Path('.').rglob('*.json'):
+              if '.git' not in jf.parts:
+                  json.loads(jf.read_text(encoding='utf-8'))
+
+          for page in ('index.html','mini-kit/index.html','medium-kit/index.html','pro-kit/index.html'):
+              text = Path(page).read_text(encoding='utf-8')
+              if '<html' not in text or '</html>' not in text or '<body' not in text:
+                  raise SystemExit(f'HTML sanity failure: {page}')
+
+          # Known OG image references must exist.
+          for page in ('mini-kit/index.html','medium-kit/index.html','pro-kit/index.html'):
+              text = Path(page).read_text(encoding='utf-8')
+              for url in re.findall(r'<meta property="og:image" content="https://cashflowlabai\.com/([^"?]+)"', text):
+                  if not Path(url).exists():
+                      raise SystemExit(f'Missing OG asset in {page}: {url}')
+
+          print('Product copy aligned with verified repository deliverables.')
+          PY
+
+      - name: Commit product accuracy repairs
+        shell: bash
+        run: |
+          rm -f .github/workflows/jarvis-product-copy-repair.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "fix: align product pages with verified deliverables [jarvis-auto]"
+            git push origin HEAD:jarvis/repo-cleanup-2026-09-05
+          fi
