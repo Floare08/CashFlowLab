@@ -18,3 +18,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+*.new
+EOF
+
+# Local archives / generated bundles
+*.bak
+*.backup
