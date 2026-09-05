@@ -216,6 +216,31 @@ for rel, markers in homepage_rules.items():
         if needle in text:
             fail(f'{rel}: stale homepage claim returned: {needle}')
 
+
+# Homepage localization invariants (2026).
+localization_rules = {
+    'index.html': {
+        'required': ('Template HTML pentru landing page', '10 emailuri template', 'QA + ghid de implementare, măsurare și optimizare'),
+        'forbidden': ('Main logo in SVG format', '2-page Quick Launch Checklist PDF', 'Best Value'),
+    },
+    'en/index.html': {
+        'required': ('Email confirmed!', '10 email templates', 'QA + implementation, measurement and optimization guide'),
+        'forbidden': ('Email confirmat!', 'TVA inclus'),
+    },
+    'de/index.html': {
+        'required': ('HTML-Landing-Page-Template', '10 E-Mail-Templates', 'QA + Leitfaden für Implementierung, Messung und Optimierung'),
+        'forbidden': ('Main logo in SVG format', '2-page Quick Launch Checklist PDF', 'Email confirmat!', 'TVA inclus'),
+    },
+}
+for rel, rules in localization_rules.items():
+    text = read(rel)
+    for needle in rules['required']:
+        if needle not in text:
+            fail(f'{rel}: localization marker missing: {needle}')
+    for needle in rules['forbidden']:
+        if needle in text:
+            fail(f'{rel}: mixed/stale localization returned: {needle}')
+
 # Canonical package files that must remain available.
 for rel in [
     'downloads/free-kit.zip',
