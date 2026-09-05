@@ -200,6 +200,22 @@ for rel, forbidden in {
         if needle in text:
             fail(f'{rel}: stale/unverified claim returned: {needle}')
 
+
+# Homepage canonical invariants (2026).
+homepage_rules = {
+    'index.html': ('2026 • Verificat',),
+    'en/index.html': ('2026 • Verified',),
+    'de/index.html': ('2026 • Geprüft',),
+}
+for rel, markers in homepage_rules.items():
+    text = read(rel)
+    for needle in markers + ('$0', '$9', '$27', '$69.99', '10 email templates'):
+        if needle not in text:
+            fail(f'{rel}: canonical homepage marker missing: {needle}')
+    for needle in ('TVA inclus','97$','Logo + visual cover','Logo + cover vizual','Logo + visuelles Cover','5 email sequence','5 emailuri PRO','5-E-Mail-Sequenz','advanced automations','automatizări avansate','erweiterte Automatisierungen'):
+        if needle in text:
+            fail(f'{rel}: stale homepage claim returned: {needle}')
+
 # Canonical package files that must remain available.
 for rel in [
     'downloads/free-kit.zip',
