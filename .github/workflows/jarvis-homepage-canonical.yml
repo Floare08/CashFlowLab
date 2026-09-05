@@ -17,24 +17,6 @@ jobs:
         with:
           ref: jarvis/repo-cleanup-2026-09-05
           fetch-depth: 0
-      - name: Normalize only conflicting replacement targets
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('scripts/jarvis_homepage_canonical.py')
-          s = p.read_text(encoding='utf-8')
-          fixes = [
-              ('<h4 style="margin-bottom:10px">Stil vizual</h4>', '<h4 style="margin-bottom:10px">Implementare pas cu pas</h4>'),
-              ('<h4 style="margin-bottom:10px">Visual Style</h4>', '<h4 style="margin-bottom:10px">Step-by-Step Implementation</h4>'),
-              ('<h4 style="margin-bottom:10px">Visueller Stil</h4>', '<h4 style="margin-bottom:10px">Schrittweise Umsetzung</h4>'),
-          ]
-          for old, new in fixes:
-              if old not in s:
-                  raise SystemExit(f'Expected conflicting token missing: {old}')
-              s = s.replace(old, new, 1)
-          p.write_text(s, encoding='utf-8')
-          PY
       - name: Align RO EN DE homepages to canonical products
         run: python scripts/jarvis_homepage_canonical.py
       - name: Validate repository after homepage repair
