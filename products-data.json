@@ -49,7 +49,6 @@
         "pages": 2,
         "instant": true
       },
-      "promise": "Dacă folosești checklist-ul și tot lansezi cu erori evitabile, primești banii înapoi",
       "updated_at": "2026-09-05"
     },
     "medium_kit": {
@@ -76,7 +75,6 @@
         "pages": 20,
         "instant": true
       },
-      "promise": "Dacă aplici framework-ul și nu vezi îmbunătățiri în 30 de zile, primești banii înapoi",
       "updated_at": "2026-09-05"
     },
     "pro_kit": {
@@ -105,7 +103,6 @@
         "format": "Notion + Google Sheets",
         "instant": true
       },
-      "promise": "Dacă nu crești conversiile cu cel puțin 20% în 30 de zile, primești banii înapoi. Fără întrebări.",
       "updated_at": "2026-09-05"
     }
   },
@@ -131,10 +128,10 @@
     }
   },
   "meta": {
-    "version": "2.1",
+    "version": "2.2",
     "last_updated": "2026-09-05",
     "updated_by": "Jarvis",
     "runtime_source": false,
-    "notes": "Reference data only. The current static HTML pages still contain hard-coded product copy, prices and URLs, so updates here do not propagate automatically. PRO price aligned to $69.99."
+    "notes": "Reference data only. Current static HTML pages still contain hard-coded product copy, prices and URLs. Guarantee/refund promises were intentionally removed from this reference file until the live policy is standardized across all product pages."
   }
 }
