@@ -22,13 +22,14 @@ jobs:
         run: |
           python - <<'RUNNER'
           from pathlib import Path
-          import textwrap
           source = Path('.github/workflows/jarvis-product-copy-repair.yml').read_text(encoding='utf-8')
           start = "          python - <<'PY'\n"
           end = "\n          PY\n"
           if start not in source or end not in source:
               raise SystemExit('Embedded Python program not found')
-          program = textwrap.dedent(source.split(start, 1)[1].split(end, 1)[0])
+          raw = source.split(start, 1)[1].split(end, 1)[0]
+          prefix = '          '
+          program = '\n'.join(line[len(prefix):] if line.startswith(prefix) else line for line in raw.splitlines())
           exec(compile(program, 'jarvis_product_repair.py', 'exec'), {'__name__': '__main__'})
           RUNNER
       - name: Commit repair and remove temporary runners
