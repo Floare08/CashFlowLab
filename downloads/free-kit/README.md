@@ -1,67 +1,63 @@
 # FREE CashFlowLab Starter Kit
 
-## 🎁 Ce ai primit
+**Preț:** $0  
+**Format:** template HTML + logo SVG + README  
+**Status:** pachet verificat în repository
 
-Acest kit conține elementele esențiale pentru a construi fundația brandului tău digital.
+## Ce conține versiunea curentă
 
-## 📁 Conținut
+### 1. Landing Page Template
+- `landing-template/index.html`
+- pagină HTML responsive
+- structură simplă: hero, beneficii, CTA și footer
+- poate fi personalizată într-un editor de text
 
-### 1. Landing Page Template (`landing-template/`)
-- **Fișier:** `index.html`
-- **Descriere:** Template responsive, modern, gata de personalizat
-- **Cum folosești:** Deschide în editor, înlocuiește textele, adaugă detaliile tale
+### 2. Logo principal
+- `logos/logo-main.svg`
+- format vectorial SVG
+- scalabil fără pierdere de calitate
 
-### 2. Logo-uri (`logos/`)
-- **logo-main.svg** — Logo principal în format vectorial
-- **Utilizare:** scalabil la orice dimensiune fără pierdere calitate
+### 3. README
+- instrucțiuni de bază pentru folosirea fișierelor
 
-### 3. Social Media Covers (`social-covers/`)
-- Dimensiuni optimizate pentru fiecare platformă
-- Format: PNG/SVG
+## Structura reală a folderului
 
-### 4. Brand Guidelines (`brand-guidelines/`)
-- Paleta de culori (HEX, RGB, CMYK)
-- Tipografie recomandată
-- Reguli de utilizare logo
+```text
+downloads/free-kit/
+├── README.md
+├── landing-template/
+│   └── index.html
+└── logos/
+    └── logo-main.svg
+```
 
-## 🚀 Cum folosești kitul
+Arhiva publică folosită de pagina FREE este:
 
-1. **Personalizează landing page-ul**
-   - Deschide `landing-template/index.html`
-   - Modifică titlul, descrierea, beneficiile
-   - Adaugă link-ul tău de CTA
+```text
+downloads/free-kit.zip
+```
 
-2. **Folosește logo-ul**
-   - Încarcă `logo-main.svg` pe site
-   - Folosește pentru avatar social media
+## Ce NU este inclus în versiunea verificată
 
-3. **Setează brand-ul**
-   - Aplică culorile și fonturile din guidelines
-   - Fii consistent peste toate canalele
+Nu sunt prezente în pachetul curent:
 
-## 🎨 Culorile brandului
+- cover-uri social media;
+- PNG/EPS pentru logo;
+- multiple variante de logo;
+- brand guidelines PDF;
+- curs video;
+- licență comercială specială documentată;
+- promisiuni de update-uri viitoare.
 
-| Culoare | HEX | Utilizare |
-|---------|-----|-----------|
-| Gold | `#D4AF37` | Accent, CTA-uri premium |
-| Deep Purple | `#6B2D5C` | Brand principal |
-| Dark Charcoal | `#1A1A2E` | Text, backgrounds |
-| Soft Cream | `#FAF8F5` | Background light |
+Dacă vrem să oferim aceste elemente în refresh-ul 2026, trebuie create efectiv și adăugate în pachet înainte să fie promovate.
 
-## 💡 Next Steps
+## Utilizare
 
-1. ✅ Customizează template-ul
-2. ✅ Configurează domeniul
-3. ✅ Setează analytics
-4. 🚀 Lansează!
-
-## 📞 Suport
-
-Ai întrebări? Scrie-ne la: support@cashflowlabai.com
+1. Deschide `landing-template/index.html` într-un editor.
+2. Înlocuiește textele și linkurile cu cele ale proiectului tău.
+3. Folosește `logos/logo-main.svg` unde ai nevoie de logo-ul exemplu.
+4. Testează pagina pe desktop și mobil înainte de publicare.
 
 ---
 
-**Valoare reală:** $27  
-**Tu ai plătit:** $0  
-
-🎁 Bucură-te de kit și construiește ceva extraordinar!
+© 2026 CashFlowLab. Repository documentation.
