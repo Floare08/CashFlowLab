@@ -42,7 +42,10 @@ def read(rel: Path | str) -> str:
 
 def resolve_local_url(url: str) -> Path | None:
     url = url.strip()
-    if not url or url.startswith(('#', 'http://', 'https://', 'mailto:', 'tel:', 'data:', 'javascript:')):
+    if not url or url.startswith(('#', '//', 'http://', 'https://', 'mailto:', 'tel:', 'data:', 'javascript:')):
+        return None
+    # Cloudflare generates /cdn-cgi routes at runtime; they are not repository files.
+    if url.startswith('/cdn-cgi/'):
         return None
     clean = url.split('#', 1)[0].split('?', 1)[0]
     if not clean:
@@ -142,8 +145,9 @@ for rel in ACTIVE_HTML:
         fail(f'Missing active page: {rel}')
         continue
     text = read(rel)
+    lower = text.lower()
     for marker in ('<html', '<head', '<body', '</html>'):
-        if marker not in text.lower():
+        if marker not in lower:
             fail(f'{rel}: missing {marker}')
     for url in attr_re.findall(text):
         target = resolve_local_url(url)
