@@ -1,0 +1,33 @@
+name: Jarvis canonical homepage repair
+
+on:
+  push:
+    branches:
+      - jarvis/repo-cleanup-2026-09-05
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: jarvis/repo-cleanup-2026-09-05
+          fetch-depth: 0
+      - name: Align RO EN DE homepages to canonical products
+        run: python scripts/jarvis_homepage_canonical.py
+      - name: Validate repository after homepage repair
+        run: python scripts/validate_repo.py
+      - name: Commit canonical homepage repair and remove one-time files
+        shell: bash
+        run: |
+          rm -f scripts/jarvis_homepage_canonical.py
+          rm -f .github/workflows/jarvis-homepage-canonical.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: align RO EN DE homepages with canonical 2026 products [jarvis-auto]"
+          git push origin HEAD:jarvis/repo-cleanup-2026-09-05
