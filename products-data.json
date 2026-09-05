@@ -3,135 +3,119 @@
     "name": "CashFlowLab",
     "url": "https://cashflowlabai.com",
     "tagline": "Sisteme de lansare pentru creatori digitali",
-    "email": "floare@cashflowlabai.com"
+    "contact_email": "floare@cashflowlabai.com"
   },
   "products": {
     "free_kit": {
       "id": "free-kit",
       "name": "FREE Kit",
-      "tagline": "Primele tale 100 de lead-uri gratuite",
       "price": 0,
       "currency": "USD",
-      "gumroad_url": "https://cashflowlabai.gumroad.com/l/jktsac",
       "status": "active",
-      "description": "Ghid complet pentru captarea primelor 100 de lead-uri fără să cheltuiești pe ads. Include framework de clarity, sistem de ofertă, funnel vizual și plan de acțiune.",
-      "features": [
-        "Framework de Claritate (20 slide-uri vizuale)",
-        "4 pagini de lucru interactive (Notion)",
-        "Database pentru task-uri și urmărire",
-        "Fără fluff, doar acțiune"
+      "public_url": "https://cashflowlabai.com/free-kit/",
+      "download_path": "/downloads/free-kit.zip",
+      "description": "Starter kit gratuit cu un template de landing page responsive și logo-ul principal în format SVG.",
+      "verified_features": [
+        "Landing page template HTML",
+        "Logo principal SVG",
+        "README cu instrucțiuni de bază"
       ],
-      "target_audience": "Creatori digitali la început care vor să-și construiască primii 100 de subscriberi",
       "delivery": {
-        "format": "Notion template",
-        "instant": true
+        "format": "HTML + SVG + README",
+        "verified_package_path": "downloads/free-kit/"
       },
+      "verification_status": "verified",
       "updated_at": "2026-09-05"
     },
     "mini_kit": {
       "id": "mini-kit",
       "name": "MINI Kit",
-      "tagline": "De la idee la live în 15 minute",
       "price": 9,
       "currency": "USD",
-      "gumroad_url": "https://cashflowlabai.gumroad.com/l/bpsbou",
       "status": "active",
-      "description": "Checklist-ul esențial care te scapă de 90% din greșelile de lansare. 2 pagini, zero fluff, rezultate imediate.",
-      "features": [
-        "Pre-Launch Checklist (15 minute)",
-        "Post-Launch Quick Wins (24 ore)",
-        "Top 3 greșeli costisitoare și fix-uri",
-        "Format PDF + Notion"
+      "public_url": "https://cashflowlabai.com/mini-kit/",
+      "checkout_url": "https://cashflowlabai.gumroad.com/l/bpsbou",
+      "description": "Quick Launch Checklist pentru verificarea unei lansări, cu PDF, template Notion și patru emailuri de follow-up.",
+      "verified_features": [
+        "Quick Launch Checklist PDF — 2 pagini",
+        "Template Notion pentru pre/post-launch",
+        "4 emailuri: welcome, quick-start, story și upsell",
+        "Metrici și verificări esențiale de lansare"
       ],
-      "target_audience": "Creatori care vor să lanseze ACUM, nu 'cândva'",
       "delivery": {
-        "format": "PDF + Notion",
+        "format": "PDF + Notion + 4 emailuri",
         "pages": 2,
-        "instant": true
+        "verified_package_path": "products/mini-kit/"
       },
+      "verification_status": "verified",
       "updated_at": "2026-09-05"
     },
     "medium_kit": {
       "id": "medium-kit",
       "name": "MEDIUM Kit",
-      "tagline": "Lansează corect de la prima încercare",
       "price": 27,
       "currency": "USD",
-      "gumroad_url": "https://cashflowlabai.gumroad.com/l/divha",
       "status": "active",
-      "description": "Sistemul esențial pentru creatori digitali care vor să evite greșelile comune. Framework testat, checklist-uri complete și template-uri gata de folosit.",
-      "features": [
-        "The CashFlowLab Framework (Problemă → Promisiune → Dovadă → CTA)",
-        "Pre-Launch Checklist complet (15 minute)",
-        "Post-Launch Checklist (24 ore + 7 zile)",
-        "Anti-Patterns Guide (Top 5 greșeli)",
-        "Case Study mini (rezultate reale)",
-        "Email templates (3 variante)",
-        "Landing page template"
+      "public_url": "https://cashflowlabai.com/medium-kit/",
+      "checkout_url": "https://cashflowlabai.gumroad.com/l/divha",
+      "description": "Launch Essentials cu framework-ul CashFlowLab, checklist-uri, template Notion și patru emailuri.",
+      "verified_features": [
+        "Launch Essentials PDF — 4 pagini",
+        "Framework Problemă → Promisiune → Dovadă → CTA",
+        "Template Notion pentru launch system și metrici",
+        "4 emailuri: welcome, templates, case-study și upsell",
+        "Template-uri de mesaj pentru landing, email și social"
       ],
-      "target_audience": "Creatori la început de drum cu un produs gata care vor un sistem simplu",
       "delivery": {
-        "format": "PDF bundle",
-        "pages": 20,
-        "instant": true
+        "format": "PDF + Notion + 4 emailuri",
+        "pages": 4,
+        "verified_package_path": "products/medium-kit/"
       },
+      "verification_status": "verified",
       "updated_at": "2026-09-05"
     },
     "pro_kit": {
       "id": "pro-kit",
       "name": "PRO Kit",
-      "tagline": "Launch System - Scalează cu un sistem testat",
       "price": 69.99,
       "old_price": 97,
       "currency": "USD",
-      "gumroad_url": "https://cashflowlabai.gumroad.com/l/udxody",
-      "status": "active",
-      "description": "Sistemul complet pentru creatori digitali care vor să scaleze. 5 email-uri gata de folosit, framework avansat, case studies complete și tool-uri de tracking.",
-      "features": [
-        "Email Launch Sequence (5 email-uri template)",
-        "The CashFlowLab Method (framework detaliat)",
-        "Pre-Launch Checklist (15 minute)",
-        "Post-Launch Checklist (7 zile)",
-        "Anti-Patterns Toolkit complet",
-        "3 Case Studies cu numere reale",
-        "A/B Testing Tracker (Notion)",
-        "Revenue Projection Calculator (Google Sheets)",
-        "Suport email direct (24h)"
+      "status": "packaging_review",
+      "public_url": "https://cashflowlabai.com/pro-kit/",
+      "checkout_url": "https://cashflowlabai.gumroad.com/l/udxody",
+      "description": "Launch System Blueprint cu arhitectură de funnel, zece emailuri template și master checklist Plan → Build → Test → Launch → Scale.",
+      "verified_features": [
+        "Arhitectură de funnel: landing → thank-you → checkout → upsell → confirmation",
+        "10 emailuri template: welcome, nurture, sales și re-engagement",
+        "Master checklist Plan → Build → Test → Launch → Scale",
+        "QA pentru pagini, checkout, formulare și emailuri",
+        "Ghid de implementare, măsurare și optimizare"
       ],
-      "target_audience": "Creatori digitali care vor să scaleze un sistem existent și să dubleze conversiile",
       "delivery": {
-        "format": "Notion + Google Sheets",
-        "instant": true
+        "format": "Digital blueprint + master checklist",
+        "verified_sources": [
+          "pro-kit-deliverables.md",
+          "downloads/pro-kit/05-Checklists/zero-to-launch-master-checklist.md"
+        ]
       },
+      "verification_status": "blueprint_verified_packaging_review_required",
+      "unverified_claims_not_to_publish": [
+        "Consultanță 1-on-1",
+        "Comunitate privată",
+        "Curs video",
+        "Workflow-uri Zapier/Make/ActiveCampaign gata configurate",
+        "Brand assets complete",
+        "Revenue calculator sau A/B tracker neambalat în livrabil",
+        "Suport email 24h neconfirmat"
+      ],
       "updated_at": "2026-09-05"
     }
   },
-  "pricing_strategy": {
-    "free": {
-      "purpose": "Lead magnet",
-      "upsell_to": "mini_kit"
-    },
-    "mini": {
-      "purpose": "Impulse buy",
-      "price_anchor": "mai puțin decât un prânz",
-      "upsell_to": "medium_kit"
-    },
-    "medium": {
-      "purpose": "Core offer entry",
-      "price_anchor": "prețul unei cărți",
-      "upsell_to": "pro_kit"
-    },
-    "pro": {
-      "purpose": "Premium positioning",
-      "price_anchor": "investiție, nu cost",
-      "value_proposition": "1 vânzare în plus = ROI pozitiv"
-    }
-  },
   "meta": {
-    "version": "2.2",
+    "version": "3.0",
     "last_updated": "2026-09-05",
     "updated_by": "Jarvis",
     "runtime_source": false,
-    "notes": "Reference data only. Current static HTML pages still contain hard-coded product copy, prices and URLs. Guarantee/refund promises were intentionally removed from this reference file until the live policy is standardized across all product pages."
+    "notes": "Registru de referință pentru conținutul verificat în repository. Paginile statice încă au copy hardcodat; checkout-ul și prețurile live de pe platforma de plată trebuie verificate separat înainte de refresh-ul comercial 2026."
   }
 }
