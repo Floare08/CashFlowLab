@@ -1,1 +1,4 @@
-x
+User-agent: *
+Allow: /
+
+Sitemap: https://cashflowlabai.com/sitemap.xml
