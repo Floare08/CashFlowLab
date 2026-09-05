@@ -1,0 +1,44 @@
+name: Jarvis run product repair
+
+on:
+  push:
+    branches:
+      - jarvis/repo-cleanup-2026-09-05
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: jarvis/repo-cleanup-2026-09-05
+          fetch-depth: 0
+      - name: Execute embedded repair script
+        shell: bash
+        run: |
+          python - <<'RUNNER'
+          from pathlib import Path
+          import textwrap
+          source = Path('.github/workflows/jarvis-product-copy-repair.yml').read_text(encoding='utf-8')
+          start_marker = "          python - <<'PY'\n"
+          end_marker = "\n          PY\n"
+          if start_marker not in source or end_marker not in source:
+              raise SystemExit('Could not locate embedded repair script')
+          body = source.split(start_marker, 1)[1].split(end_marker, 1)[0]
+          body = textwrap.dedent(body)
+          exec(compile(body, 'jarvis_product_repair.py', 'exec'), {'__name__': '__main__'})
+          RUNNER
+      - name: Commit repaired site and remove temporary workflows
+        shell: bash
+        run: |
+          rm -f .github/workflows/jarvis-product-copy-repair.yml
+          rm -f .github/workflows/jarvis-run-product-repair.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: align product pages with verified deliverables [jarvis-auto]"
+          git push origin HEAD:jarvis/repo-cleanup-2026-09-05
