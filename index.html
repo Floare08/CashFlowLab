@@ -5,327 +5,1412 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CashFlowLab AI — Sisteme AI practice pentru business</title>
   <meta name="description" content="Transformă AI-ul într-un sistem practic pentru afacerea ta: clienți, lansare, marketing, follow-up și execuție pas cu pas." />
-  <link rel="canonical" href="https://cashflowlabai.com/" />
-  <link rel="alternate" href="https://cashflowlabai.com/" hreflang="ro" />
-  <link rel="alternate" href="https://cashflowlabai.com/en/" hreflang="en" />
-  <link rel="alternate" href="https://cashflowlabai.com/de/" hreflang="de" />
-  <link rel="alternate" href="https://cashflowlabai.com/" hreflang="x-default" />
-  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#050714" />
   <meta name="color-scheme" content="dark" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="/Images/cashflowlab-fixed-bg.webp" fetchpriority="high" />
-  <link rel="preload" as="image" href="/Images/logo-mark.png" fetchpriority="high" />
-  <link rel="icon" href="/favicon/favicon.png" />
-  <link rel="apple-touch-icon" href="/Images/logo-mark.png" />
-  <link rel="manifest" href="/favicon/site.webmanifest" />
-  <script src="/analytics-consent.js" defer></script>
-
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="CashFlowLab AI" />
-  <meta property="og:url" content="https://cashflowlabai.com/" />
-  <meta property="og:title" content="CashFlowLab AI — Mai mult decât prompturi. Progres real." />
-  <meta property="og:description" content="Sisteme AI practice pentru business: de la obiectiv la execuție și rezultat." />
-  <meta property="og:image" content="https://cashflowlabai.com/Images/og-hero-cover.webp" />
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"CashFlowLab AI","url":"https://cashflowlabai.com/","logo":"https://cashflowlabai.com/Images/logo-mark.png"}
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔮%3C/text%3E%3C/svg%3E" />
 
   <style>
     :root{
       --bg:#02040d;
+      --bg-deep:#050714;
       --text:#f8f5ff;
-      --muted:#c3c8da;
+      --muted:#b8bdd0;
       --gold:#ffd166;
       --gold2:#ffb703;
+      --gold3:#ffe094;
       --purple:#d84cff;
       --violet:#8d35ff;
+      --violet2:#b744ff;
       --blue:#41adff;
-      --glass:rgba(4,7,20,.50);
-      --glass-strong:rgba(4,7,20,.68);
+      --blue2:#3aa9ff;
       --line:rgba(186,77,255,.44);
-      --max:1180px;
+      --max:1280px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth;background:var(--bg);scroll-snap-type:y proximity}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;background:var(--bg);}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden;min-height:100vh}
 
-    .fixed-bg{position:fixed;inset:0;z-index:-4;background:#02040d url('/Images/cashflowlab-fixed-bg.webp') 69% center/cover no-repeat;transform:translateZ(0)}
-    .fixed-shade{position:fixed;inset:0;z-index:-3;pointer-events:none;background:
-      linear-gradient(90deg,rgba(2,4,13,.90) 0%,rgba(2,4,13,.69) 34%,rgba(2,4,13,.19) 62%,rgba(2,4,13,.11) 100%),
-      linear-gradient(180deg,rgba(2,4,13,.10),rgba(2,4,13,.19) 68%,rgba(2,4,13,.48));}
+    /* ===== COSMIC BACKGROUND ===== */
+    .cosmic-bg{
+      position:fixed;
+      inset:0;
+      z-index:-5;
+      background:
+        radial-gradient(ellipse 120% 80% at 80% 20%, rgba(139,41,255,0.25) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 70% 40%, rgba(255,182,0,0.12) 0%, transparent 40%),
+        radial-gradient(ellipse 100% 100% at 50% 100%, rgba(65,173,255,0.08) 0%, transparent 50%),
+        linear-gradient(180deg, #0d0520 0%, #080520 15%, #050714 40%, #02040d 70%, #0a0520 100%);
+    }
+    .cosmic-bg::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 75% 25%, rgba(212,76,255,0.15) 0%, transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(65,173,255,0.06) 0%, transparent 30%),
+        radial-gradient(circle at 90% 60%, rgba(255,182,0,0.08) 0%, transparent 25%);
+    }
+    .stars{
+      position:fixed;
+      inset:0;
+      z-index:-4;
+      pointer-events:none;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.25), transparent),
+        radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 200px 50px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(2px 2px at 250px 90px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 300px 20px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 350px 60px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 400px 100px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(2px 2px at 450px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 500px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 550px 110px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 600px 40px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(2px 2px at 650px 80px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 700px 20px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 750px 60px, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 800px 100px, rgba(255,255,255,0.15), transparent),
+        radial-gradient(2px 2px at 850px 30px, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 900px 70px, rgba(255,255,255,0.2), transparent),
+        radial-gradient(2px 2px at 950px 110px, rgba(255,255,255,0.35), transparent),
+        radial-gradient(1px 1px at 1000px 40px, rgba(255,255,255,0.15), transparent);
+      background-size: 1020px 140px;
+    }
+    .mountains{
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      height:45vh;
+      z-index:-3;
+      pointer-events:none;
+      background:
+        /* Mountain silhouettes */
+        linear-gradient(175deg, transparent 60%, rgba(20,5,40,0.9) 60.5%, rgba(30,8,60,0.8) 62%, transparent 63%),
+        linear-gradient(170deg, transparent 55%, rgba(25,6,50,0.85) 55.5%, rgba(35,10,65,0.7) 57%, transparent 58%),
+        linear-gradient(165deg, transparent 50%, rgba(30,8,55,0.8) 50.5%, rgba(40,12,70,0.6) 52%, transparent 53%),
+        linear-gradient(160deg, transparent 45%, rgba(35,10,60,0.75) 45.5%, rgba(45,15,75,0.5) 47%, transparent 48%);
+      opacity:0.7;
+    }
+    .portal-glow{
+      position:fixed;
+      top:15%;
+      right:15%;
+      width:300px;
+      height:300px;
+      z-index:-3;
+      pointer-events:none;
+      background:radial-gradient(circle, rgba(255,198,63,0.15) 0%, rgba(139,41,255,0.1) 30%, transparent 70%);
+      border-radius:50%;
+      animation:pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{transform:scale(1);opacity:0.8}
+      50%{transform:scale(1.1);opacity:1}
+    }
 
     a{color:inherit;text-decoration:none}
     button,input{font:inherit}
-    .wrap{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin-inline:auto}
 
-    header{position:fixed;top:0;left:0;right:0;z-index:100;padding:12px 0;background:linear-gradient(180deg,rgba(2,4,13,.93),rgba(2,4,13,.42),transparent);pointer-events:none}
-    .nav{pointer-events:auto;height:58px;border:1px solid rgba(145,70,255,.64);border-radius:14px;background:rgba(3,6,17,.76);backdrop-filter:blur(14px);display:flex;align-items:center;padding:0 14px;box-shadow:0 0 28px rgba(113,32,255,.13)}
-    .brand{display:flex;align-items:center;gap:10px;min-width:250px}
-    .brand img{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 0 12px rgba(210,67,255,.65))}
-    .brand-title{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:800;color:#ffe6a8;line-height:1}
+    /* ===== NAVBAR ===== */
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+      padding:12px 16px;
+    }
+    .nav{
+      height:60px;
+      border:1px solid rgba(145,70,255,.45);
+      border-radius:14px;
+      background:rgba(3,6,17,.85);
+      backdrop-filter:blur(16px);
+      display:flex;
+      align-items:center;
+      padding:0 16px;
+      box-shadow:0 0 32px rgba(113,32,255,.15), inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-icon{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background:linear-gradient(135deg, #1a0a2e, #2d1b4e);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      box-shadow:0 0 16px rgba(210,67,255,.4);
+    }
+    .brand-text{line-height:1}
+    .brand-title{
+      font-family:'Playfair Display',serif;
+      font-size:1.3rem;
+      font-weight:800;
+      color:#ffe6a8;
+      letter-spacing:-0.01em;
+    }
     .brand-title span{color:var(--purple)}
-    .brand-sub{display:block;margin-top:4px;color:#9fa6c4;font-size:.52rem;letter-spacing:.15em;text-transform:uppercase}
-    .navlinks{margin-left:auto;display:flex;align-items:center;gap:24px}
-    .navlinks a{font-size:.78rem;color:#e6e8f2;padding:20px 0;position:relative}
-    .navlinks a:hover{color:var(--gold)}
-    .langs{display:flex;gap:7px;margin-left:22px;color:#8992b4;font-size:.68rem}
-    .langs a:first-child{color:var(--gold);font-weight:900}
-    .nav-cta{margin-left:18px;padding:10px 16px;border-radius:9px;border:1px solid var(--gold);background:linear-gradient(110deg,rgba(255,182,0,.20),rgba(139,41,255,.26));font-size:.72rem;font-weight:900;color:#ffe7a8}
-    .menu{display:none;margin-left:auto;border:1px solid rgba(255,255,255,.18);background:#080b1d;color:#fff;border-radius:9px;padding:8px 10px}
+    .brand-sub{
+      display:block;
+      color:#9fa6c4;
+      font-size:.5rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-top:2px;
+    }
+    .nav-center{
+      margin-left:auto;
+      margin-right:auto;
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+    .nav-center a{
+      font-size:.75rem;
+      color:#c0c5dc;
+      padding:6px 2px;
+      position:relative;
+      font-weight:500;
+      transition:color .2s;
+    }
+    .nav-center a:hover{color:var(--gold)}
+    .nav-center a.active{color:var(--gold);font-weight:700}
+    .nav-center a.active::after{
+      content:'';
+      position:absolute;
+      bottom:-2px;
+      left:0;
+      right:0;
+      height:2px;
+      background:var(--gold);
+      border-radius:1px;
+    }
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-left:auto;
+    }
+    .langs{display:flex;gap:5px;color:#8992b4;font-size:.65rem;align-items:center}
+    .langs a{color:#8992b4;padding:2px 4px;font-weight:500}
+    .langs a:first-child{color:var(--gold);font-weight:700}
+    .nav-cta{
+      padding:9px 18px;
+      border-radius:10px;
+      border:1px solid var(--gold);
+      background:linear-gradient(110deg,rgba(255,182,0,.22),rgba(139,41,255,.28));
+      font-size:.72rem;
+      font-weight:800;
+      color:#ffe7a8;
+      transition:all .2s;
+      white-space:nowrap;
+    }
+    .nav-cta:hover{
+      box-shadow:0 0 20px rgba(255,184,28,.3);
+      transform:translateY(-1px);
+    }
+    .menu{display:none;border:1px solid rgba(255,255,255,.15);background:rgba(8,11,29,.8);color:#fff;border-radius:10px;padding:8px 11px;cursor:pointer;font-size:18px}
 
     main{position:relative;z-index:1}
-    .stage{min-height:100svh;display:flex;align-items:center;scroll-snap-align:start;padding:110px 0 56px;position:relative}
-    .stage-inner{width:100%}
-    .content{max-width:650px;position:relative}
-    .content.right{margin-left:auto;max-width:760px}
-    .content.soft{padding:26px 28px;border-radius:18px;background:linear-gradient(180deg,rgba(4,7,20,.49),rgba(4,7,20,.26));border:1px solid rgba(183,76,255,.24);backdrop-filter:blur(8px);box-shadow:0 20px 60px rgba(0,0,0,.18)}
 
-    .kicker{font-size:.72rem;font-weight:900;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
-    h1,h2{font-family:'Playfair Display',serif;margin:0;text-shadow:0 4px 30px rgba(0,0,0,.66)}
-    h1{font-size:clamp(3rem,5.4vw,5rem);line-height:.96;letter-spacing:-.04em;max-width:760px}
-    h1 .purple{display:block;color:var(--purple);text-shadow:0 0 28px rgba(215,71,255,.28)}
-    h2{font-size:clamp(2.3rem,4vw,3.8rem);line-height:1;color:#ffe3a0}
-    .lead{font-size:1rem;line-height:1.65;color:#e8e9f2;margin:18px 0 24px;max-width:60ch;text-shadow:0 2px 18px rgba(0,0,0,.7)}
-    .lead strong{color:#fff;font-size:1.08rem}
-    .section-sub{color:var(--muted);margin:10px 0 18px;line-height:1.55}
+    /* ===== HERO ===== */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:100px 0 40px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-inner{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .hero-left{
+      max-width:600px;
+      flex:1;
+    }
+    .hero-right{
+      flex:1;
+      max-width:420px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
 
-    .actions{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{min-height:48px;padding:0 22px;border-radius:10px;border:1px solid rgba(255,255,255,.17);display:inline-flex;align-items:center;justify-content:center;font-weight:900;transition:transform .22s ease,box-shadow .22s ease}
+    .kicker{
+      font-size:.68rem;
+      font-weight:900;
+      letter-spacing:.22em;
+      color:var(--gold);
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    h1,h2,h3{font-family:'Playfair Display',serif;margin:0}
+    h1{
+      font-size:clamp(2.6rem,4.8vw,4.2rem);
+      line-height:.98;
+      letter-spacing:-.02em;
+      color:var(--text);
+      font-weight:700;
+    }
+    h1 .gold{color:var(--gold3);}
+    h1 .purple{display:inline;color:var(--purple);text-shadow:0 0 30px rgba(215,71,255,.3)}
+    .hero-sub{
+      font-size:.95rem;
+      font-weight:700;
+      color:#fff;
+      margin:16px 0 6px;
+    }
+    .hero-desc{
+      font-size:.9rem;
+      line-height:1.6;
+      color:#b8bdd0;
+      margin:0 0 24px;
+      max-width:50ch;
+    }
+
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      min-height:48px;
+      padding:0 22px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,.15);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-weight:800;
+      font-size:.85rem;
+      transition:transform .22s ease,box-shadow .22s ease;
+      cursor:pointer;
+      color:var(--text);
+    }
     .btn:hover{transform:translateY(-2px)}
-    .btn-gold{border-color:#ffc84f;background:linear-gradient(115deg,rgba(255,177,0,.38),rgba(117,28,222,.30));box-shadow:0 0 24px rgba(255,184,28,.24)}
-    .btn-purple{border-color:#b744ff;background:rgba(53,16,103,.38);box-shadow:0 0 18px rgba(176,54,255,.19)}
-
-    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px;max-width:650px}
-    .benefit{display:flex;align-items:center;gap:8px;font-size:.72rem;line-height:1.3;color:#f1f2f7}
-    .benefit i{font-style:normal;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;border:1px solid rgba(210,72,255,.68);background:rgba(80,21,138,.38);box-shadow:0 0 16px rgba(194,49,255,.22)}
-
-    .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .use-card,.step,.kit,.why,details{background:rgba(4,7,20,.54);backdrop-filter:blur(8px);border:1px solid rgba(184,72,255,.42);border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.16)}
-    .use-card{padding:18px;min-height:165px}
-    .use-card:nth-child(n+4){border-color:rgba(65,173,255,.48)}
-    .big{font-size:1.45rem;margin-bottom:13px;color:#d85bff}.use-card:nth-child(n+4) .big{color:#64baff}
-    .use-card h3,.step h3,.why h3{margin:0 0 7px;font-size:.94rem}.use-card p,.step p,.why p{margin:0;color:#c9cedd;font-size:.76rem;line-height:1.5}
-
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .step{padding:18px;display:flex;align-items:center;gap:14px;min-height:126px}.step:nth-child(2){border-color:rgba(255,198,63,.56)}.step:nth-child(3){border-color:rgba(65,173,255,.54)}
-    .step-num{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;border:2px solid #c34cff;font-weight:900}.step:nth-child(2) .step-num{border-color:var(--gold)}.step:nth-child(3) .step-num{border-color:var(--blue)}
-
-    .kits{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .kit{padding:20px;display:flex;flex-direction:column;min-height:330px}.kit.medium{border-color:#ffc63f;box-shadow:0 0 24px rgba(255,190,32,.16)}.kit.pro{border-color:#3aa9ff}
-    .kit-label{font-size:.82rem;font-weight:900}.price{font-family:'Playfair Display',serif;color:#ffe094;font-size:2.6rem;font-weight:800;margin:5px 0}.kit-tag{color:#aeb6d1;font-size:.75rem;margin-bottom:13px}.kit ul{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}.kit li{font-size:.76rem;color:#dde1ef;line-height:1.4;padding-left:18px;position:relative}.kit li::before{content:'✓';position:absolute;left:0}.kit .btn{margin-top:auto;width:100%;min-height:42px;font-size:.76rem}
-
-    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.why{padding:18px;display:flex;gap:12px;align-items:center}.why:nth-child(2){border-color:rgba(255,197,56,.55)}.why:nth-child(3){border-color:rgba(65,173,255,.55)}
-    .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}details{padding:15px 16px}summary{cursor:pointer;font-weight:800;font-size:.85rem}details p{font-size:.77rem;color:#c0c5d6;line-height:1.55}
-
-    .reveal{opacity:0;transform:translateY(38px);filter:blur(5px);transition:opacity .78s ease,transform .78s cubic-bezier(.2,.75,.25,1),filter .78s ease}
-    .reveal.in{opacity:1;transform:none;filter:none}
-    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
-
-    footer{position:relative;z-index:2;padding:28px 0 36px;background:rgba(2,4,12,.68);backdrop-filter:blur(10px);border-top:1px solid rgba(145,68,255,.22)}
-    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#9ca5c3;font-size:.72rem}.footer-row nav{display:flex;gap:14px;flex-wrap:wrap}
-
-    .consent-wrap{position:fixed;z-index:1000;left:0;right:0;bottom:0;background:rgba(4,6,17,.96);border-top:1px solid rgba(165,68,255,.32);backdrop-filter:blur(12px)}
-    .consent{width:min(var(--max),calc(100% - 30px));margin:auto;padding:12px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.consent p{margin:0;color:#b9bfd4;font-size:.74rem}.consent-actions{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}.consent button{border:1px solid rgba(255,255,255,.16);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;padding:8px 12px}.consent button:last-child{border-color:var(--gold);color:#ffe5a0}
-
-    @media(max-width:1050px){
-      .navlinks{display:none}.langs,.nav-cta{display:none}.menu{display:block}
-      .nav.open .navlinks{display:flex;position:absolute;top:77px;left:20px;right:20px;flex-direction:column;align-items:stretch;padding:16px;background:#080b1b;border:1px solid rgba(166,69,255,.45);border-radius:12px}
-      .content,.content.right{max-width:640px;margin-left:0}.grid6{grid-template-columns:repeat(2,1fr)}.kits{grid-template-columns:repeat(2,1fr)}
+    .btn-gold{
+      border-color:#ffc84f;
+      background:linear-gradient(115deg,rgba(255,177,0,.35),rgba(117,28,222,.28));
+      box-shadow:0 0 24px rgba(255,184,28,.22);
+      color:#ffe7a8;
+    }
+    .btn-outline{
+      border-color:rgba(255,255,255,.22);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
     }
 
-    @media(max-width:820px){
-      .fixed-bg{background-position:72% center}
-      .fixed-shade{background:linear-gradient(90deg,rgba(2,4,13,.87) 0%,rgba(2,4,13,.62) 48%,rgba(2,4,13,.18) 100%),linear-gradient(180deg,rgba(2,4,13,.08),rgba(2,4,13,.30) 76%,rgba(2,4,13,.60))}
-      .wrap{width:min(var(--max),calc(100% - 28px))}
-      .stage{padding-top:104px;padding-bottom:44px}
-      .content,.content.right{max-width:560px}
-      .content.soft{padding:22px 20px;background:linear-gradient(180deg,rgba(4,7,20,.50),rgba(4,7,20,.24))}
-      h1{font-size:clamp(2.65rem,7vw,4.1rem)}
-      h2{font-size:clamp(2.1rem,6vw,3.15rem)}
-      .benefits{grid-template-columns:repeat(2,1fr);max-width:520px}
-      .steps{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.faq{grid-template-columns:1fr}
+    .hero-note{
+      font-size:.65rem;
+      color:#8088a0;
+      margin-top:6px;
     }
 
-    @media(max-width:560px){
-      .fixed-bg{background-position:74% center}
-      .wrap{width:calc(100% - 20px)}
-      .nav{height:54px;padding:0 10px}.brand{min-width:0}.brand img{width:34px;height:34px}.brand-title{font-size:1.08rem}.brand-sub{display:none}
-      .stage{min-height:100svh;padding:92px 0 38px}
-      .content,.content.right{max-width:none}.content.soft{padding:18px 15px;border-radius:15px}
-      h1{font-size:clamp(2.25rem,11vw,3.35rem);line-height:.98}
-      h2{font-size:clamp(1.95rem,9vw,2.7rem)}
-      .lead{font-size:.92rem}.actions{flex-direction:column}.actions .btn{width:100%}
-      .benefits{grid-template-columns:repeat(2,1fr);gap:10px}.benefit{font-size:.67rem}.benefit i{width:34px;height:34px}
-      .grid6,.kits{grid-template-columns:1fr}.use-card{min-height:0}.kit{min-height:0}.footer-row{flex-direction:column}
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:28px;
+      max-width:600px;
+    }
+    .benefit{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:.7rem;
+      line-height:1.3;
+      color:#d0d4e4;
+    }
+    .benefit-icon{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      border:1px solid rgba(210,72,255,.55);
+      background:rgba(80,21,138,.3);
+      box-shadow:0 0 14px rgba(194,49,255,.18);
+      font-size:14px;
     }
 
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;filter:none;transition:none}}
+    /* Wizard */
+    .wizard-wrap{
+      position:relative;
+      width:100%;
+      max-width:360px;
+      aspect-ratio:1/1.15;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    .wizard-star{
+      font-size:42px;
+      margin-bottom:8px;
+      filter:drop-shadow(0 0 20px rgba(255,198,63,.6));
+      animation:twinkle 3s ease-in-out infinite;
+    }
+    @keyframes twinkle{
+      0%,100%{opacity:1;transform:scale(1)}
+      50%{opacity:0.7;transform:scale(0.95)}
+    }
+    .wizard-title{
+      font-family:'Cinzel',serif;
+      font-size:1rem;
+      color:var(--gold);
+      letter-spacing:.18em;
+      margin-bottom:4px;
+    }
+    .wizard-name{
+      font-family:'Cinzel',serif;
+      font-size:1.4rem;
+      font-weight:700;
+      color:var(--gold3);
+      letter-spacing:.08em;
+    }
+    .wizard-year{
+      font-family:'Cinzel',serif;
+      font-size:1.2rem;
+      color:var(--gold);
+      margin-top:4px;
+    }
+    .hero-labels{
+      position:absolute;
+      right:-30px;
+      top:18%;
+      text-align:right;
+      font-size:.6rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:rgba(200,200,220,.55);
+      line-height:2;
+    }
+    .hero-bottom-label{
+      position:absolute;
+      right:-10px;
+      bottom:12%;
+      text-align:right;
+      font-size:.6rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:rgba(200,200,220,.45);
+      line-height:1.6;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section{
+      padding:50px 0;
+      position:relative;
+    }
+    .section-header{
+      margin-bottom:24px;
+    }
+    .section-header-flex{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      margin-bottom:24px;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    h2{
+      font-size:clamp(1.8rem,3.5vw,2.8rem);
+      line-height:1.05;
+      color:#ffe3a0;
+      font-weight:700;
+    }
+    .section-sub{
+      color:var(--muted);
+      margin:8px 0 0;
+      line-height:1.5;
+      font-size:.9rem;
+    }
+    .section-path{
+      font-size:.6rem;
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      color:rgba(200,200,220,.5);
+      display:flex;
+      align-items:center;
+      gap:10px;
+      white-space:nowrap;
+    }
+    .section-path span{display:inline-block;width:20px;height:1px;background:rgba(200,200,220,.25)}
+
+    /* ===== USE CASES ===== */
+    .grid6{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    .use-card{
+      background:rgba(4,7,20,.45);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(184,72,255,.32);
+      border-radius:14px;
+      padding:20px 18px;
+      min-height:170px;
+      display:flex;
+      flex-direction:column;
+      transition:transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .use-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 20px 40px rgba(0,0,0,.25);
+      border-color:rgba(184,72,255,.5);
+    }
+    .use-card:nth-child(n+4){border-color:rgba(65,173,255,.35)}
+    .use-card:nth-child(n+4):hover{border-color:rgba(65,173,255,.5)}
+    .use-card-icon{
+      width:48px;
+      height:48px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:14px;
+      font-size:22px;
+      background:rgba(139,41,255,.12);
+      border:1px solid rgba(210,72,255,.35);
+    }
+    .use-card:nth-child(n+4) .use-card-icon{
+      background:rgba(65,173,255,.1);
+      border-color:rgba(65,173,255,.35);
+    }
+    .use-card h3{
+      font-family:Inter,sans-serif;
+      margin:0 0 8px;
+      font-size:.9rem;
+      font-weight:700;
+      color:var(--text);
+    }
+    .use-card p{
+      margin:0 0 auto;
+      color:#a0a8c0;
+      font-size:.75rem;
+      line-height:1.55;
+      flex:1;
+    }
+    .use-card-arrow{
+      display:flex;
+      justify-content:flex-end;
+      margin-top:14px;
+    }
+    .use-card-arrow span{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      border:1px solid rgba(210,72,255,.5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      color:var(--purple);
+      background:rgba(139,41,255,.1);
+      transition:all .2s;
+    }
+    .use-card:hover .use-card-arrow span{
+      background:rgba(139,41,255,.2);
+      transform:translateX(2px);
+    }
+    .use-card:nth-child(n+4) .use-card-arrow span{
+      border-color:rgba(65,173,255,.5);
+      color:var(--blue);
+      background:rgba(65,173,255,.1);
+    }
+    .use-card:nth-child(n+4):hover .use-card-arrow span{
+      background:rgba(65,173,255,.2);
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .step{
+      background:rgba(4,7,20,.45);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(184,72,255,.32);
+      border-radius:14px;
+      padding:20px;
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      min-height:130px;
+      position:relative;
+    }
+    .step:nth-child(2){border-color:rgba(255,198,63,.4)}
+    .step:nth-child(3){border-color:rgba(65,173,255,.4)}
+    .step-arrow{
+      position:absolute;
+      right:-18px;
+      top:50%;
+      transform:translateY(-50%);
+      color:rgba(255,255,255,.25);
+      font-size:16px;
+      z-index:2;
+    }
+    .step:last-child .step-arrow{display:none}
+    .step-num{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      flex:0 0 auto;
+      border:2px solid #c34cff;
+      font-weight:900;
+      font-size:.85rem;
+      color:var(--purple);
+      background:rgba(139,41,255,.1);
+    }
+    .step:nth-child(2) .step-num{border-color:var(--gold);color:var(--gold);background:rgba(255,182,0,.1)}
+    .step:nth-child(3) .step-num{border-color:var(--blue);color:var(--blue);background:rgba(65,173,255,.1)}
+    .step h3{
+      font-family:Inter,sans-serif;
+      margin:0 0 5px;
+      font-size:.88rem;
+      font-weight:700;
+      color:var(--text);
+    }
+    .step p{
+      margin:0;
+      color:#a0a8c0;
+      font-size:.74rem;
+      line-height:1.5;
+    }
+
+    /* ===== PRICING ===== */
+    .kits{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+    .kit{
+      background:rgba(4,7,20,.45);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(184,72,255,.32);
+      border-radius:14px;
+      padding:22px 18px 18px;
+      display:flex;
+      flex-direction:column;
+      min-height:400px;
+      position:relative;
+      transition:transform .2s, box-shadow .2s;
+    }
+    .kit:hover{transform:translateY(-3px)}
+    .kit.medium{
+      border-color:#ffc63f;
+      box-shadow:0 0 28px rgba(255,190,32,.1), 0 14px 34px rgba(0,0,0,.16);
+    }
+    .kit.pro{border-color:rgba(65,173,255,.4)}
+    .kit-badge{
+      position:absolute;
+      top:0;
+      left:50%;
+      transform:translateX(-50%) translateY(-50%);
+      background:linear-gradient(180deg, #ffc63f, #ff9d00);
+      color:#1a0a00;
+      font-size:.58rem;
+      font-weight:900;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:4px 14px;
+      border-radius:20px;
+      white-space:nowrap;
+    }
+    .kit-label{
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.05em;
+      color:var(--text);
+      margin-bottom:2px;
+    }
+    .price{
+      font-family:'Playfair Display',serif;
+      color:var(--gold3);
+      font-size:2.2rem;
+      font-weight:800;
+      margin:4px 0;
+      line-height:1;
+    }
+    .kit-tag{
+      color:#aeb6d1;
+      font-size:.76rem;
+      margin-bottom:14px;
+      font-weight:600;
+    }
+    .kit ul{
+      list-style:none;
+      padding:0;
+      margin:0 0 14px;
+      display:grid;
+      gap:8px;
+      flex:1;
+    }
+    .kit li{
+      font-size:.72rem;
+      color:#c0c5d8;
+      line-height:1.45;
+      padding-left:18px;
+      position:relative;
+    }
+    .kit li::before{
+      content:'✓';
+      position:absolute;
+      left:0;
+      color:#4ade80;
+      font-weight:700;
+    }
+    .kit .btn{
+      margin-top:auto;
+      width:100%;
+      min-height:42px;
+      font-size:.76rem;
+    }
+    .kit-footer{
+      text-align:center;
+      font-size:.58rem;
+      color:rgba(180,185,205,.5);
+      margin-top:10px;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    /* Quote card for PRO */
+    .pro-quote{
+      margin-top:14px;
+      padding:12px;
+      border-radius:10px;
+      background:rgba(65,173,255,.08);
+      border:1px solid rgba(65,173,255,.2);
+    }
+    .pro-quote p{
+      font-family:'Playfair Display',serif;
+      font-size:.78rem;
+      font-style:italic;
+      color:#b8d4ff;
+      line-height:1.5;
+      margin:0;
+    }
+    .pro-quote .author{
+      font-size:.6rem;
+      color:var(--gold);
+      margin-top:6px;
+      font-style:normal;
+      font-weight:700;
+      letter-spacing:.1em;
+    }
+
+    /* ===== TOOLS BAR ===== */
+    .tools-bar{
+      margin:20px 0 0;
+      padding:14px 22px;
+      border-radius:12px;
+      background:rgba(4,7,20,.5);
+      border:1px solid rgba(184,72,255,.22);
+      backdrop-filter:blur(8px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .tools-text{
+      font-size:.78rem;
+      color:#a0a8c0;
+      max-width:260px;
+      line-height:1.4;
+    }
+    .tools-text strong{color:var(--text);display:block;margin-bottom:2px;font-size:.82rem}
+    .tools-logos{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .tool-logo{
+      display:flex;
+      align-items:center;
+      gap:5px;
+      font-size:.72rem;
+      color:#9098b0;
+      font-weight:600;
+    }
+    .tool-logo .icon{
+      width:22px;
+      height:22px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+    }
+    .tool-more{
+      font-size:.65rem;
+      color:#707890;
+      letter-spacing:.05em;
+    }
+
+    /* ===== WHY ===== */
+    .why-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+    .why{
+      background:rgba(4,7,20,.45);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(184,72,255,.32);
+      border-radius:14px;
+      padding:20px;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      transition:transform .2s;
+    }
+    .why:hover{transform:translateY(-3px)}
+    .why:nth-child(2){border-color:rgba(255,197,56,.4)}
+    .why:nth-child(3){border-color:rgba(65,173,255,.4)}
+    .why-icon{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      font-size:20px;
+      background:rgba(139,41,255,.1);
+      border:1px solid rgba(210,72,255,.3);
+    }
+    .why:nth-child(2) .why-icon{background:rgba(255,182,0,.1);border-color:rgba(255,198,63,.35)}
+    .why:nth-child(3) .why-icon{background:rgba(65,173,255,.1);border-color:rgba(65,173,255,.35)}
+    .why h3{
+      font-family:Inter,sans-serif;
+      margin:0 0 5px;
+      font-size:.88rem;
+      font-weight:700;
+      color:var(--text);
+    }
+    .why p{
+      margin:0;
+      color:#a0a8c0;
+      font-size:.74rem;
+      line-height:1.5;
+    }
+
+    /* ===== FAQ ===== */
+    .faq{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+    details{
+      background:rgba(4,7,20,.45);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(184,72,255,.25);
+      border-radius:12px;
+      padding:14px 16px;
+      transition:border-color .2s;
+    }
+    details:hover{border-color:rgba(184,72,255,.4)}
+    summary{
+      cursor:pointer;
+      font-weight:700;
+      font-size:.82rem;
+      color:var(--text);
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    summary::after{
+      content:'+';
+      font-size:1.1rem;
+      color:var(--purple);
+      font-weight:300;
+      transition:transform .2s;
+    }
+    details[open] summary::after{content:'−'}
+    details p{
+      font-size:.76rem;
+      color:#a0a8c0;
+      line-height:1.6;
+      margin:10px 0 0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      position:relative;
+      z-index:2;
+      padding:28px 0 36px;
+      background:rgba(2,4,12,.75);
+      backdrop-filter:blur(10px);
+      border-top:1px solid rgba(145,68,255,.18);
+      margin-top:30px;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      color:#9ca5c3;
+      font-size:.72rem;
+    }
+    .footer-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .footer-brand{
+      font-family:'Playfair Display',serif;
+      font-weight:700;
+      color:var(--gold3);
+      font-size:.88rem;
+    }
+    .footer-nav{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .footer-nav a{color:#9ca5c3;transition:color .2s;font-size:.7rem}
+    .footer-nav a:hover{color:var(--gold)}
+    .footer-social{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .footer-social a{
+      width:26px;
+      height:26px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.12);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:11px;
+      color:#9ca5c3;
+      transition:all .2s;
+    }
+    .footer-social a:hover{
+      border-color:var(--gold);
+      color:var(--gold);
+      background:rgba(255,182,0,.1);
+    }
+    .footer-right{
+      text-align:right;
+      font-size:.68rem;
+      color:#8088a0;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.75,.25,1)}
+    .reveal.in{opacity:1;transform:none}
+    .d1{transition-delay:.1s}
+    .d2{transition-delay:.2s}
+    .d3{transition-delay:.3s}
+    .d4{transition-delay:.4s}
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1100px){
+      .nav-center{gap:16px}
+      .nav-center a{font-size:.7rem}
+      .kits{grid-template-columns:repeat(2,1fr)}
+      .hero-inner{flex-direction:column;text-align:center;padding-top:20px}
+      .hero-left{max-width:100%}
+      .hero-right{order:-1;max-width:280px;margin-bottom:20px}
+      .benefits{max-width:100%;justify-content:center}
+      .hero-desc{margin-inline:auto}
+      .actions{justify-content:center}
+      .hero-labels,.hero-bottom-label{display:none}
+    }
+
+    @media(max-width:900px){
+      .nav-center,.langs,.nav-cta{display:none}
+      .menu{display:block;margin-left:auto}
+      .nav.open .nav-center{
+        display:flex;
+        position:absolute;
+        top:72px;
+        left:16px;
+        right:16px;
+        flex-direction:column;
+        align-items:stretch;
+        padding:16px;
+        background:#080b1b;
+        border:1px solid rgba(166,69,255,.45);
+        border-radius:12px;
+        gap:4px;
+        z-index:101;
+      }
+      .nav.open .nav-center a{padding:10px 12px;border-radius:6px}
+      .nav.open .nav-center a:hover{background:rgba(255,255,255,.05)}
+      .grid6{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:1fr}
+      .step-arrow{display:none}
+      .why-grid{grid-template-columns:1fr}
+      .faq{grid-template-columns:1fr}
+      .tools-bar{flex-direction:column;align-items:flex-start}
+      .section-header-flex{flex-direction:column;align-items:flex-start;gap:8px}
+      .hero-right{max-width:240px}
+    }
+
+    @media(max-width:600px){
+      .wrap{width:calc(100% - 24px)}
+      .nav{height:54px;padding:0 12px}
+      .brand-title{font-size:1.1rem}
+      .brand-sub{display:none}
+      .hero{padding:90px 0 30px}
+      .benefits{grid-template-columns:repeat(2,1fr);gap:10px}
+      .benefit{font-size:.65rem}
+      .benefit-icon{width:32px;height:32px;font-size:13px}
+      .grid6,.kits{grid-template-columns:1fr}
+      .use-card{min-height:0}
+      .kit{min-height:0}
+      h1{font-size:clamp(2.2rem,10vw,3.2rem)}
+      h2{font-size:clamp(1.7rem,8vw,2.5rem)}
+      .actions{flex-direction:column}
+      .actions .btn{width:100%}
+      .footer-row{flex-direction:column;text-align:center;gap:10px}
+      .footer-right{text-align:center}
+      .wizard-wrap{max-width:220px}
+      .wizard-name{font-size:1.1rem}
+      .wizard-title{font-size:.85rem}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .reveal{opacity:1;transform:none;transition:none}
+      .wizard-star{animation:none}
+      .portal-glow{animation:none}
+    }
   </style>
 </head>
 <body>
-  <div class="fixed-bg" aria-hidden="true"></div>
-  <div class="fixed-shade" aria-hidden="true"></div>
+  <div class="cosmic-bg" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="mountains" aria-hidden="true"></div>
+  <div class="portal-glow" aria-hidden="true"></div>
 
+  <!-- ===== NAVBAR ===== -->
   <header>
     <div class="wrap nav" id="nav">
       <a class="brand" href="#top" aria-label="CashFlowLab AI Home">
-        <img src="/Images/logo-mark.png" alt="CashFlowLab AI" width="40" height="40" />
-        <span><span class="brand-title">CashFlowLab <span>AI</span></span><span class="brand-sub">More than prompts. Real progress.</span></span>
+        <div class="brand-icon">🔮</div>
+        <div class="brand-text">
+          <span class="brand-title">CashFlowLab <span>AI</span></span>
+          <span class="brand-sub">MORE THAN PROMPTS. REAL PROGRESS.</span>
+        </div>
       </a>
-      <nav class="navlinks" aria-label="Navigație principală">
-        <a href="#top">Home</a><a href="#use-cases">Ce poți face</a><a href="#how">Cum funcționează</a><a href="#kits">Kits</a><a href="#why">De ce noi</a><a href="#faq">FAQ</a>
+      <nav class="nav-center" aria-label="Navigație principală">
+        <a href="#top" class="active">Home</a>
+        <a href="#kits">Kits</a>
+        <a href="#how">How it works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <div class="langs"><a href="/">RO</a><span>|</span><a href="/en/">EN</a><span>|</span><a href="/de/">DE</a></div>
-      <a class="nav-cta" href="#free-kit">Începe Gratuit →</a>
+      <div class="nav-right">
+        <div class="langs">
+          <a href="/">RO</a><span>|</span><a href="/en/">EN</a><span>|</span><a href="/de/">DE</a>
+        </div>
+        <a class="nav-cta" href="#free-kit">Începe Gratuit →</a>
+      </div>
       <button class="menu" id="menu" aria-label="Deschide meniul">☰</button>
     </div>
   </header>
 
   <main id="top">
-    <section class="stage">
-      <div class="wrap stage-inner">
-        <div class="content reveal">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-left">
           <div class="kicker">AI practic. Business real.</div>
           <h1>Transformă AI-ul într-un sistem practic pentru <span class="purple">afacerea ta.</span></h1>
-          <p class="lead"><strong>Mai mult decât prompturi. Progres real.</strong><br>Workflow-uri clare. Execuție practică. Fără complexitate ascunsă.</p>
+          <p class="hero-sub">Mai mult decât prompturi. Progres real.</p>
+          <p class="hero-desc">Workflow-uri clare. Execuție practică. Fără complexitate ascunsă.</p>
           <div class="actions">
-            <a class="btn btn-gold reveal d1" href="#free-kit">Începe Gratuit →</a>
-            <a class="btn btn-purple reveal d2" href="#how">▶ Vezi Sistemul</a>
+            <a class="btn btn-gold" href="#free-kit">Începe Gratuit →</a>
+            <a class="btn btn-outline" href="#how">▶ Vezi Sistemul</a>
           </div>
+          <p class="hero-note">Acces imediat · Fără card de credit &nbsp;&nbsp;&nbsp;&nbsp; Descoperă cum funcționează</p>
           <div class="benefits">
-            <div class="benefit reveal d1"><i>✦</i><span>Claritate<br>în direcție</span></div>
-            <div class="benefit reveal d2"><i>⚙</i><span>Execuție<br>pas cu pas</span></div>
-            <div class="benefit reveal d3"><i>▥</i><span>Mai mulți clienți<br>și vânzări</span></div>
-            <div class="benefit reveal d4"><i>∞</i><span>Mai multă<br>libertate</span></div>
+            <div class="benefit"><div class="benefit-icon">✦</div><span>Claritate<br>în direcție</span></div>
+            <div class="benefit"><div class="benefit-icon">⚙</div><span>Execuție<br>pas cu pas</span></div>
+            <div class="benefit"><div class="benefit-icon">📊</div><span>Mai mulți clienți<br>și vânzări</span></div>
+            <div class="benefit"><div class="benefit-icon">∞</div><span>Mai multă<br>libertate</span></div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="wizard-wrap">
+            <div class="wizard-star">✦</div>
+            <div class="wizard-title">WHITE SPACE</div>
+            <div class="wizard-name">CASHFLOWLAB AI</div>
+            <div class="wizard-year">2026</div>
+          </div>
+          <div class="hero-labels">
+            Ideas<br>Systems<br>Automation<br>Freedom
+          </div>
+          <div class="hero-bottom-label">
+            Same people.<br>A smarter<br>tomorrow.
           </div>
         </div>
       </div>
     </section>
 
-    <section class="stage" id="use-cases">
-      <div class="wrap stage-inner"><div class="content right soft reveal">
-        <h2>Ce poți face cu CashFlowLab AI</h2>
-        <p class="section-sub">Sisteme și tool-uri practice pentru rezultate reale în business.</p>
+    <!-- ===== USE CASES ===== -->
+    <section class="section" id="use-cases">
+      <div class="wrap">
+        <div class="section-header-flex">
+          <div>
+            <h2>Ce poți face cu CashFlowLab AI</h2>
+            <p class="section-sub">Sisteme și tool-uri practice pentru rezultate reale în business.</p>
+          </div>
+          <div class="section-path">
+            De la idee <span></span> La execuție <span></span> La rezultate
+          </div>
+        </div>
         <div class="grid6">
-          <article class="use-card reveal"><div class="big">♟</div><h3>Găsește clienți</h3><p>Identifică și atrage clienții potriviți cu AI și outreach structurat.</p></article>
-          <article class="use-card reveal d1"><div class="big">🚀</div><h3>Lansează un produs</h3><p>De la idee la lansare rapidă, cu workflow-uri gata de aplicat.</p></article>
-          <article class="use-card reveal d2"><div class="big">▥</div><h3>Marketing & Content</h3><p>Creează conținut care atrage, educă și vinde mai repede.</p></article>
-          <article class="use-card reveal"><div class="big">✉</div><h3>Email & Follow-up</h3><p>Organizează comunicarea și menține follow-up-ul consecvent.</p></article>
-          <article class="use-card reveal d1"><div class="big">◷</div><h3>Economisește timp</h3><p>Fă mai mult în mai puțin timp cu sisteme clare și ușor de aplicat.</p></article>
-          <article class="use-card reveal d2"><div class="big">◎</div><h3>Claritate în business</h3><p>Obține direcție, structură și un plan concret pentru următorul pas.</p></article>
+          <article class="use-card reveal">
+            <div class="use-card-icon">👥</div>
+            <h3>Găsește clienți</h3>
+            <p>Identifică și atrage clienții potriviți cu AI și outreach inteligent.</p>
+            <div class="use-card-arrow"><span>→</span></div>
+          </article>
+          <article class="use-card reveal d1">
+            <div class="use-card-icon">🚀</div>
+            <h3>Lansează un produs</h3>
+            <p>De la idee la lansare rapidă, cu workflow-uri gata de folosit.</p>
+            <div class="use-card-arrow"><span>→</span></div>
+          </article>
+          <article class="use-card reveal d2">
+            <div class="use-card-icon">📊</div>
+            <h3>Marketing & Content</h3>
+            <p>Creează conținut care atrage, educă și vinde mai repede.</p>
+            <div class="use-card-arrow"><span>→</span></div>
+          </article>
+          <article class="use-card reveal">
+            <div class="use-card-icon">✉</div>
+            <h3>Email & Follow-up</h3>
+            <p>Automatizează comunicarea și crește rata de conversie.</p>
+            <div class="use-card-arrow"><span>→</span></div>
+          </article>
+          <article class="use-card reveal d1">
+            <div class="use-card-icon">⏱</div>
+            <h3>Economisește timp</h3>
+            <p>Fă mai mult în mai puțin timp, cu sisteme testate și gata de aplicat.</p>
+            <div class="use-card-arrow"><span>→</span></div>
+          </article>
+          <article class="use-card reveal d2">
+            <div class="use-card-icon">🎯</div>
+            <h3>Claritate în business</h3>
+            <p>Obține direcție, structură și un plan concret pentru creștere.</p>
+            <div class="use-card-arrow"><span>→</span></div>
+          </article>
         </div>
-      </div></div>
+      </div>
     </section>
 
-    <section class="stage" id="how">
-      <div class="wrap stage-inner"><div class="content soft reveal">
-        <h2>Cum funcționează</h2>
-        <p class="section-sub">De la obiectiv la rezultat, în doar câțiva pași simpli.</p>
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <div class="section-header-flex">
+          <div>
+            <h2>Cum funcționează</h2>
+            <p class="section-sub">De la obiectiv la rezultat, în doar câțiva pași simpli.</p>
+          </div>
+          <div class="section-path">
+            Sisteme practice <span></span> Rezultate reale
+          </div>
+        </div>
         <div class="steps">
-          <article class="step reveal"><div class="step-num">1</div><div><h3>Spune-ne obiectivul</h3><p>Alege ce vrei să realizezi în business-ul tău.</p></div></article>
-          <article class="step reveal d1"><div class="step-num">2</div><div><h3>Primești workflow + context + prompturi</h3><p>Obții un sistem complet, adaptat obiectivului tău.</p></div></article>
-          <article class="step reveal d2"><div class="step-num">3</div><div><h3>Execuți și verifici rezultatul</h3><p>Aplici pas cu pas și urmărești rezultate măsurabile.</p></div></article>
+          <article class="step reveal">
+            <div class="step-arrow">→</div>
+            <div class="step-num">1</div>
+            <div>
+              <h3>Spune-ne obiectivul</h3>
+              <p>Alege ce vrei să realizezi în business-ul tău.</p>
+            </div>
+          </article>
+          <article class="step reveal d1">
+            <div class="step-arrow">→</div>
+            <div class="step-num">2</div>
+            <div>
+              <h3>Primești workflow + context + prompturi</h3>
+              <p>Obții un sistem complet, adaptat obiectivului tău.</p>
+            </div>
+          </article>
+          <article class="step reveal d2">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Execuți și verifici rezultatul</h3>
+              <p>Aplici pas cu pas și obții rezultate măsurabile.</p>
+            </div>
+          </article>
         </div>
-      </div></div>
+      </div>
     </section>
 
-    <section class="stage" id="kits">
-      <div class="wrap stage-inner"><div class="content right soft reveal">
-        <h2>Alege kitul potrivit</h2>
-        <p class="section-sub">Instrumente practice. Valoare reală. Pentru fiecare etapă a călătoriei tale.</p>
+    <!-- ===== PRICING ===== -->
+    <section class="section" id="kits">
+      <div class="wrap">
+        <div class="section-header-flex">
+          <div>
+            <h2>Alege kitul potrivit</h2>
+            <p class="section-sub">Instrumente practice. Valoare reală. Pentru fiecare etapă a călătoriei tale.</p>
+          </div>
+          <div class="section-path">
+            Investește în progresul tău
+          </div>
+        </div>
         <div class="kits">
-          <article class="kit" id="free-kit">
-            <div class="kit-label">FREE</div><div class="price">$0</div><div class="kit-tag">Intrare rapidă</div>
-            <ul><li>Template landing page HTML responsive</li><li>Logo principal SVG</li><li>README cu instrucțiuni de bază</li></ul>
+          <article class="kit reveal" id="free-kit">
+            <div class="kit-label">FREE</div>
+            <div class="price">$0</div>
+            <div class="kit-tag">Intrare rapidă</div>
+            <ul>
+              <li>Template landing page HTML responsive</li>
+              <li>Logo principal SVG</li>
+              <li>README cu instrucțiuni de bază</li>
+            </ul>
             <form action="https://assets.mailerlite.com/jsonp/2002799/forms/176693602287617412/subscribe" method="post" id="freeForm" style="margin-top:auto">
-              <input required type="email" name="fields[email]" placeholder="Emailul tău" aria-label="Email" style="width:100%;height:42px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:#080b1c;color:#fff;padding:0 11px;margin-bottom:8px" />
-              <input type="hidden" name="ml-submit" value="1" /><input type="hidden" name="anticsrf" value="true" />
-              <button class="btn btn-purple" type="submit">Descarcă FREE</button>
+              <input required type="email" name="fields[email]" placeholder="Emailul tău" aria-label="Email" style="width:100%;height:40px;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:#080b1c;color:#fff;padding:0 12px;margin-bottom:10px;font-size:.78rem" />
+              <input type="hidden" name="ml-submit" value="1" />
+              <input type="hidden" name="anticsrf" value="true" />
+              <button class="btn btn-outline" type="submit">Descarcă FREE</button>
             </form>
+            <div class="kit-footer">Ideal pentru primul pas</div>
           </article>
-          <article class="kit">
-            <div class="kit-label">MINI</div><div class="price">$9</div><div class="kit-tag">Execuție rapidă</div>
-            <ul><li>Quick Launch Checklist PDF — 2 pagini</li><li>Template Notion pre/post-launch</li><li>4 emailuri template</li><li>Metrici și verificări esențiale</li></ul>
-            <a class="btn btn-purple" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener">Alege MINI</a>
+
+          <article class="kit reveal d1">
+            <div class="kit-label">MINI</div>
+            <div class="price">$9</div>
+            <div class="kit-tag">Execuție rapidă</div>
+            <ul>
+              <li>Quick Launch Checklist PDF (2 pagini)</li>
+              <li>Template Notion pre/post-launch</li>
+              <li>4 emailuri template</li>
+              <li>Metrici și verificări esențiale</li>
+            </ul>
+            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener">Alege MINI</a>
+            <div class="kit-footer">Ideal pentru primul upgrade</div>
           </article>
-          <article class="kit medium">
-            <div class="kit-label">MEDIUM</div><div class="price">$27</div><div class="kit-tag">Sistem mai complet</div>
-            <ul><li>Launch Essentials PDF — 4 pagini</li><li>Framework Problemă → Promisiune → Dovadă → CTA</li><li>Template Notion + metrici</li><li>4 emailuri template</li></ul>
+
+          <article class="kit medium reveal d2">
+            <div class="kit-badge">Cel mai popular</div>
+            <div class="kit-label">MEDIUM</div>
+            <div class="price">$27</div>
+            <div class="kit-tag">Sistem mai complet</div>
+            <ul>
+              <li>Launch Essentials PDF (4 pagini)</li>
+              <li>Framework Problemă → Promisiune → Dovadă → CTA</li>
+              <li>Template Notion pentru launch system + metrici</li>
+              <li>4 emailuri template</li>
+              <li>Mesaje pentru landing, email și social</li>
+            </ul>
             <a class="btn btn-gold" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener">Alege MEDIUM</a>
+            <div class="kit-footer">Pentru creștere reală</div>
           </article>
-          <article class="kit pro">
-            <div class="kit-label">PRO</div><div class="price">$69.99</div><div class="kit-tag">Blueprint complet</div>
-            <ul><li>Arhitectură funnel end-to-end</li><li>10 emailuri template</li><li>Master checklist Plan → Build → Test → Launch → Scale</li><li>QA + ghid de optimizare</li></ul>
-            <a class="btn btn-purple" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener">Alege PRO</a>
+
+          <article class="kit pro reveal d3">
+            <div class="kit-label">PRO</div>
+            <div class="price">$69.99</div>
+            <div class="kit-tag">Blueprint complet</div>
+            <ul>
+              <li>Arhitectură funnel end-to-end</li>
+              <li>10 emailuri template</li>
+              <li>Master checklist Plan → Build → Test → Launch → Scale</li>
+              <li>QA pentru pagini, checkout, formulare și emailuri</li>
+              <li>Ghid de implementare și optimizare</li>
+            </ul>
+            <a class="btn btn-outline" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener">Alege PRO</a>
+            <div class="pro-quote">
+              <p>„Nu este o cheltuială. Este un multiplicator pentru viitorul tău."</p>
+              <div class="author">CASHFLOWLAB AI</div>
+            </div>
+            <div class="kit-footer">Pentru implementare serioasă</div>
           </article>
         </div>
-      </div></div>
+
+        <!-- Tools Bar -->
+        <div class="tools-bar reveal">
+          <div class="tools-text">
+            <strong>Folosește AI-ul pe care îl ai deja.</strong>
+            Noi ți-l dăm sistemul.
+          </div>
+          <div class="tools-logos">
+            <div class="tool-logo"><div class="icon" style="background:#10a37f;color:#fff">C</div>ChatGPT</div>
+            <div class="tool-logo"><div class="icon" style="background:#d4a574;color:#1a0a00">✦</div>Claude</div>
+            <div class="tool-logo"><div class="icon" style="background:#4285f4;color:#fff">G</div>Gemini</div>
+            <div class="tool-logo"><div class="icon" style="background:#fff;color:#000;font-size:9px;font-weight:900">N</div>Notion</div>
+            <div class="tool-logo"><div class="icon" style="background:#ff6b00;color:#fff;font-size:9px;font-weight:900">//</div>Make</div>
+            <div class="tool-logo"><div class="icon" style="background:#ff4a00;color:#fff;font-size:10px">⚡</div>Zapier</div>
+            <div class="tool-more">și multe altele...</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="stage" id="why">
-      <div class="wrap stage-inner"><div class="content soft reveal">
-        <h2>De ce CashFlowLab AI</h2>
-        <p class="section-sub">Mai mult decât un set de prompturi. Un avantaj real în business.</p>
+    <!-- ===== WHY ===== -->
+    <section class="section" id="why">
+      <div class="wrap">
+        <div class="section-header-flex">
+          <div>
+            <h2>De ce CashFlowLab AI</h2>
+            <p class="section-sub">Mai mult decât un set de prompturi. Un avantaj real în business.</p>
+          </div>
+          <div class="section-path">
+            Same people. A smarter tomorrow.
+          </div>
+        </div>
         <div class="why-grid">
-          <article class="why reveal"><div>▤</div><div><h3>Mai simplu decât un PDF</h3><p>Sisteme practice și workflow-uri, nu doar teorie.</p></div></article>
-          <article class="why reveal d1"><div>⚡</div><div><h3>Mai clar decât 500 de prompturi</h3><p>Primești exact workflow-ul necesar pentru obiectivul ales.</p></div></article>
-          <article class="why reveal d2"><div>♟</div><div><h3>Mai accesibil decât un AI-employee SaaS</h3><p>Folosești AI-ul pe care îl ai deja și păstrezi controlul.</p></div></article>
+          <article class="why reveal">
+            <div class="why-icon">📄</div>
+            <div>
+              <h3>Mai simplu decât un PDF</h3>
+              <p>Sisteme interactive, gata de folosit. Nu doar teorie.</p>
+            </div>
+          </article>
+          <article class="why reveal d1">
+            <div class="why-icon">⚡</div>
+            <div>
+              <h3>Mai clar decât 500 de prompturi</h3>
+              <p>Workflow-uri structurate pentru rezultate rapide și consistente.</p>
+            </div>
+          </article>
+          <article class="why reveal d2">
+            <div class="why-icon">👥</div>
+            <div>
+              <h3>Mai accesibil decât un AI-employee SaaS</h3>
+              <p>Valoare reală, la un preț corect. Fără costuri uriașe, fără complexitate.</p>
+            </div>
+          </article>
         </div>
-      </div></div>
+      </div>
     </section>
 
-    <section class="stage" id="faq">
-      <div class="wrap stage-inner"><div class="content right soft reveal">
-        <h2>FAQ</h2>
-        <p class="section-sub">Răspunsuri rapide înainte să începi.</p>
-        <div class="faq">
-          <details><summary>Trebuie să plătesc pentru ChatGPT?</summary><p>Nu neapărat. CashFlowLab este gândit să funcționeze cu instrumentele AI pe care le ai deja.</p></details>
-          <details><summary>CashFlowLab este un chatbot?</summary><p>Nu. Este un sistem practic: context, workflow-uri, template-uri și verificare pentru obiective concrete de business.</p></details>
-          <details><summary>Primesc rezultate garantate?</summary><p>Nu. Primești procese și materiale care îți pot îmbunătăți execuția, dar rezultatele depind de produs, piață, ofertă și implementare.</p></details>
-          <details><summary>Pot începe gratis?</summary><p>Da. FREE Kit este punctul de intrare și nu necesită card de credit.</p></details>
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-header">
+          <h2>FAQ</h2>
+          <p class="section-sub">Răspunsuri rapide înainte să începi.</p>
         </div>
-      </div></div>
+        <div class="faq">
+          <details class="reveal">
+            <summary>Trebuie să plătesc pentru ChatGPT?</summary>
+            <p>Nu neapărat. CashFlowLab este gândit să funcționeze cu instrumentele AI pe care le ai deja.</p>
+          </details>
+          <details class="reveal d1">
+            <summary>CashFlowLab este un chatbot?</summary>
+            <p>Nu. Este un sistem practic: context, workflow-uri, template-uri și verificare pentru obiective concrete de business.</p>
+          </details>
+          <details class="reveal d2">
+            <summary>Primesc rezultate garantate?</summary>
+            <p>Nu. Primești procese și materiale care îți pot îmbunătăți execuția, dar rezultatele depind de produs, piață, ofertă și implementare.</p>
+          </details>
+          <details class="reveal d3">
+            <summary>Pot începe gratis?</summary>
+            <p>Da. FREE Kit este punctul de intrare și nu necesită card de credit.</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer id="contact">
     <div class="wrap footer-row">
-      <div><strong style="color:#ffe29a">CashFlowLab AI 2026</strong> &nbsp; | &nbsp; Opportunity lives here.</div>
-      <nav><a href="#top">Home</a><a href="#kits">Kits</a><a href="#how">Cum funcționează</a><a href="#faq">FAQ</a><a href="/terms.html">Termeni</a><a href="/privacy.html">Confidențialitate</a><a href="/imprint.html">Imprint</a></nav>
-      <div>Construim împreună un viitor mai liber. © <span id="year"></span></div>
+      <div class="footer-left">
+        <span class="footer-brand">CashFlowLab AI 2026</span>
+        <span style="color:#606880">|</span>
+        <span>Opportunity Lives Here.</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#top">Home</a>
+        <a href="#kits">Kits</a>
+        <a href="#how">How it works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="YouTube">▶</a>
+        <a href="#" aria-label="X">𝕏</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+      <div class="footer-right">
+        Construim împreună un viitor mai liber. © <span id="year"></span>
+      </div>
     </div>
   </footer>
 
-  <div id="consentWrap" class="consent-wrap" role="region" aria-label="Consimțământ cookies" hidden>
-    <div class="consent"><p>Folosim cookie-uri pentru analytics și marketing. Poți alege ce accepți.</p><div class="consent-actions"><button data-consent="deny">Respinge</button><button data-consent="analytics">Acceptă analytics</button><button data-consent="all">Acceptă tot</button></div></div>
-  </div>
-
   <script>
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
     const nav = document.getElementById('nav');
-    document.getElementById('menu').addEventListener('click',()=>nav.classList.toggle('open'));
-    document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+    document.getElementById('menu').addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.nav-center a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){entry.target.classList.add('in');io.unobserve(entry.target);}
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
       });
-    },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    }, {threshold:.1, rootMargin:'0px 0px -5% 0px'});
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    const freeForm=document.getElementById('freeForm');
-    if(freeForm){freeForm.addEventListener('submit',async(e)=>{
-      e.preventDefault();
-      const fd=new FormData(freeForm);
-      try{await fetch(freeForm.action,{method:'POST',body:fd,mode:'no-cors'});}catch(err){}
-      window.location.href='/free-kit/';
-    });}
+    // Free form
+    const freeForm = document.getElementById('freeForm');
+    if(freeForm){
+      freeForm.addEventListener('submit', async(e) => {
+        e.preventDefault();
+        const fd = new FormData(freeForm);
+        try{ await fetch(freeForm.action, {method:'POST', body:fd, mode:'no-cors'}); }catch(err){}
+        window.location.href = '/free-kit/';
+      });
+    }
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-center a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if(scrollY >= sectionTop - 200) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if(link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
