@@ -17,8 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="preload" as="image" href="/Images/Hero.png" fetchpriority="high" />
-  <link rel="preload" as="image" href="/Images/Vrajitor.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="/Images/cashflowlab-fixed-bg.webp" fetchpriority="high" />
   <link rel="preload" as="image" href="/Images/logo-mark.png" fetchpriority="high" />
 
   <meta property="og:type" content="website" />
@@ -48,45 +47,25 @@
       --ink:#f9f6ff;
       --muted:#b8bfd5;
       --gold:#ffd166;
-      --gold2:#ffb40a;
       --purple:#d34cff;
-      --violet:#8c35ff;
       --blue:#39aaff;
-      --panel:rgba(5,8,24,.86);
-      --panel2:rgba(11,8,30,.82);
-      --purple-line:rgba(192,62,255,.64);
-      --blue-line:rgba(57,170,255,.58);
-      --gold-line:rgba(255,197,56,.72);
+      --panel:rgba(3,6,18,.46);
+      --panel-strong:rgba(4,7,22,.66);
       --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:#03050e}
     body{margin:0;color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#03050e;overflow-x:hidden}
-    body::before{
-      content:"";position:fixed;inset:0;z-index:-4;
-      background:
-        linear-gradient(180deg,rgba(2,4,13,.18),rgba(2,4,13,.78) 50%,rgba(2,4,13,.96)),
-        url('/Images/Vrajitor.webp') center top/cover no-repeat;
-      filter:saturate(1.26) contrast(1.08);
-    }
-    body::after{
-      content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;
-      background:
-        radial-gradient(700px 460px at 77% 15%,rgba(183,49,255,.20),transparent 68%),
-        radial-gradient(620px 420px at 58% 24%,rgba(255,180,20,.14),transparent 65%),
-        linear-gradient(90deg,rgba(2,4,13,.80) 0%,rgba(2,4,13,.18) 45%,rgba(2,4,13,.30) 100%);
-    }
+    body::before{content:"";position:fixed;inset:0;z-index:-3;background:url('/Images/cashflowlab-fixed-bg.webp') center center/cover no-repeat;transform:translateZ(0)}
+    body::after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(90deg,rgba(2,4,12,.83) 0%,rgba(2,4,12,.55) 34%,rgba(2,4,12,.10) 63%,rgba(2,4,12,.16) 100%),linear-gradient(180deg,rgba(2,4,12,.18),rgba(2,4,12,.34) 62%,rgba(2,4,12,.62))}
     a{color:inherit;text-decoration:none}
     button,input{font:inherit}
     .wrap{width:min(var(--max),calc(100% - 28px));margin:auto}
-    .serif{font-family:'Playfair Display',serif}
-    .gold{color:var(--gold)}
     .purple{color:var(--purple)}
     .muted{color:var(--muted)}
 
-    /* HEADER — proportional to the approved mock-up */
-    header{position:sticky;top:0;z-index:100;padding:9px 0 5px;background:linear-gradient(180deg,rgba(2,4,13,.94),rgba(2,4,13,.52),transparent);backdrop-filter:blur(11px)}
-    .navbox{height:47px;border:1px solid rgba(138,74,255,.72);border-radius:10px;background:rgba(3,6,17,.90);display:flex;align-items:center;padding:0 12px;box-shadow:0 0 20px rgba(114,31,255,.16),inset 0 0 20px rgba(29,15,78,.20)}
+    header{position:sticky;top:0;z-index:100;padding:9px 0 5px;background:linear-gradient(180deg,rgba(2,4,13,.93),rgba(2,4,13,.64),transparent);backdrop-filter:blur(13px)}
+    .navbox{height:48px;border:1px solid rgba(138,74,255,.72);border-radius:10px;background:rgba(3,6,17,.84);display:flex;align-items:center;padding:0 12px;box-shadow:0 0 20px rgba(114,31,255,.16)}
     .brand{display:flex;align-items:center;gap:8px;min-width:295px}
     .brand img{width:37px;height:37px;object-fit:contain;filter:drop-shadow(0 0 9px rgba(210,67,255,.8))}
     .brand-name{font-family:'Playfair Display',serif;font-size:1.36rem;font-weight:800;line-height:1;color:#ffe5a3;white-space:nowrap}
@@ -101,222 +80,102 @@
     .top-cta{margin-left:20px;min-width:141px;height:31px;border-radius:8px;border:1px solid #ffc84f;display:grid;place-items:center;font-size:.68rem;font-weight:900;color:#ffe6a5;background:linear-gradient(100deg,rgba(255,179,0,.20),rgba(147,35,255,.28));box-shadow:0 0 16px rgba(255,185,28,.24),0 0 18px rgba(181,45,255,.18)}
     .hamb{display:none;margin-left:auto;border:1px solid rgba(255,255,255,.2);background:#090c1d;color:#fff;border-radius:7px;padding:7px 9px}
 
-    /* HERO */
-    .hero{position:relative;min-height:333px;padding:22px 0 14px;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:-20px 0 0 46%;z-index:-2;background:linear-gradient(90deg,rgba(3,5,14,.18),rgba(3,5,14,.02)),url('/Images/Hero.png') center/cover no-repeat;opacity:.68;filter:saturate(1.35) contrast(1.12);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 100%)}
-    .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(2,4,13,.96) 0%,rgba(2,4,13,.78) 38%,rgba(2,4,13,.10) 64%,rgba(2,4,13,.12) 100%)}
-    .hero-grid{display:grid;grid-template-columns:50% 50%;align-items:center;min-height:308px}
-    .hero-copy{position:relative;z-index:4;padding:8px 0 0 18px}
-    .kicker{font-size:.62rem;font-weight:900;letter-spacing:.20em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(2.35rem,4.4vw,3.55rem);line-height:.94;letter-spacing:-.035em;margin:0 0 10px;max-width:530px;text-shadow:0 4px 20px rgba(0,0,0,.72)}
-    h1 .purple{display:block;text-shadow:0 0 24px rgba(210,64,255,.32)}
-    .hero-sub{font-size:.82rem;line-height:1.45;color:#e6e8f2;margin:0 0 13px;max-width:520px}
-    .hero-sub strong{font-size:1rem;color:#fff}
-    .hero-actions{display:flex;gap:16px;align-items:flex-start;margin:0 0 15px}
-    .cta-stack{display:flex;flex-direction:column;align-items:center;gap:3px}
-    .hero-btn{height:43px;min-width:214px;border-radius:8px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;gap:10px;font-size:.78rem;font-weight:900;background:linear-gradient(115deg,rgba(255,176,0,.34),rgba(113,24,204,.29));box-shadow:0 0 22px rgba(255,184,30,.26),inset 0 0 18px rgba(255,184,30,.07)}
-    .hero-btn.alt{min-width:202px;border-color:#b744ff;background:rgba(53,16,103,.34);box-shadow:0 0 17px rgba(176,54,255,.22)}
-    .tiny{font-size:.53rem;color:#aeb6d1}
-    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:520px}
-    .benefit{display:flex;align-items:center;gap:7px;font-size:.59rem;line-height:1.25;color:#eef0f8}
-    .benefit i{font-style:normal;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(210,72,255,.72);background:rgba(84,22,139,.42);box-shadow:0 0 13px rgba(194,49,255,.28);font-size:.86rem}
+    main{position:relative;z-index:1}
+    .scroll-stage{min-height:100vh;display:flex;align-items:center;padding:90px 0 55px}
+    .scroll-stage:first-of-type{padding-top:70px}
+    .stage-card{width:min(720px,100%);padding:28px;border:1px solid rgba(173,72,255,.34);border-radius:18px;background:linear-gradient(180deg,rgba(4,7,22,.58),rgba(4,7,22,.38));backdrop-filter:blur(11px);box-shadow:0 18px 55px rgba(0,0,0,.28),inset 0 0 30px rgba(130,44,255,.05)}
+    .stage-card.right{margin-left:auto}
+    .kicker{font-size:.66rem;font-weight:900;letter-spacing:.20em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+    h1,h2{font-family:'Playfair Display',serif;margin:0}
+    h1{font-size:clamp(2.7rem,5.4vw,4.8rem);line-height:.96;letter-spacing:-.035em;text-shadow:0 4px 26px rgba(0,0,0,.68)}
+    h2{font-size:clamp(2rem,4vw,3.3rem);color:#ffe19a;line-height:1}
+    .hero-sub{font-size:1rem;line-height:1.6;color:#e7e8f1;margin:16px 0 22px;max-width:58ch}
+    .hero-sub strong{font-size:1.08rem;color:#fff}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{min-height:47px;padding:0 20px;border-radius:9px;border:1px solid rgba(255,255,255,.16);display:inline-flex;align-items:center;justify-content:center;font-weight:900;transition:.22s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-gold{border-color:#ffc84f;background:linear-gradient(115deg,rgba(255,177,0,.38),rgba(117,28,222,.31));box-shadow:0 0 24px rgba(255,184,28,.24)}
+    .btn-purple{border-color:#b744ff;background:rgba(53,16,103,.39);box-shadow:0 0 18px rgba(176,54,255,.2)}
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+    .benefit{display:flex;align-items:center;gap:7px;font-size:.67rem;color:#eef0f8}
+    .benefit i{font-style:normal;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(210,72,255,.72);background:rgba(84,22,139,.42);box-shadow:0 0 13px rgba(194,49,255,.28)}
 
-    .hero-art{position:relative;height:292px;overflow:visible}
-    .orb{position:absolute;left:19%;top:26px;width:217px;height:217px;border-radius:50%;display:grid;place-items:center;text-align:center;color:#ffe6a0;font-family:'Playfair Display',serif;font-weight:700;font-size:1.25rem;line-height:1.22;background:radial-gradient(circle at 50% 48%,rgba(84,24,116,.76),rgba(19,12,45,.56) 58%,rgba(0,0,0,0) 72%);border:2px solid #ffd052;box-shadow:0 0 16px #ffca38,0 0 47px rgba(211,64,255,.72),inset 0 0 34px rgba(191,50,255,.38);text-shadow:0 0 10px #ffc93f}
-    .orb::before{content:"✦ WHITE SPACE";position:absolute;top:53px;font-family:Inter,sans-serif;font-size:.55rem;letter-spacing:.18em;color:#ffdd7d}
-    .orb span{margin-top:20px}.orb b{color:#d951ff}
-    .wizard{position:absolute;right:-14px;top:-21px;width:280px;height:320px;background:url('/Images/Vrajitor.webp') 78% 17%/cover no-repeat;mask-image:linear-gradient(90deg,transparent 0,#000 30%,#000 100%);filter:saturate(1.25) contrast(1.1) drop-shadow(0 0 18px rgba(137,53,255,.58));opacity:.98}
-    .path{position:absolute;left:35%;right:14%;bottom:28px;height:95px;border-bottom:5px solid #ffc735;border-radius:0 0 58% 28%;transform:rotate(-10deg);filter:drop-shadow(0 0 7px #ffb800);opacity:.95}
-    .path::before{content:"";position:absolute;right:6%;bottom:-7px;width:8px;height:8px;border-radius:50%;background:#fff7bd;box-shadow:0 0 14px #ffd22c,0 0 30px #ffb900}
-    .hero-words{position:absolute;right:8px;top:32px;font-size:.52rem;line-height:1.55;letter-spacing:.18em;text-transform:uppercase;color:#a8b5e8;text-align:left}
-    .hero-quote{position:absolute;right:7px;bottom:8px;font-size:.52rem;line-height:1.45;letter-spacing:.17em;color:#9ca9df;text-transform:uppercase;text-align:right}
+    .section-lead{color:#c1c7da;margin:8px 0 18px;line-height:1.55}
+    .use-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .use-card,.step,.kit,.why,details{border:1px solid rgba(184,72,255,.42);background:rgba(5,8,24,.50);backdrop-filter:blur(10px);border-radius:12px}
+    .use-card{min-height:170px;padding:18px;position:relative}
+    .use-card:nth-child(n+4){border-color:rgba(57,170,255,.5)}
+    .use-card .big{font-size:1.5rem;color:#d75cff;margin-bottom:14px}.use-card:nth-child(n+4) .big{color:#5eb5ff}
+    .use-card h3{margin:0 0 8px;font-size:.92rem}.use-card p{margin:0;color:#c8ccdb;font-size:.74rem;line-height:1.5}
 
-    /* BLOCKS */
-    .panel{width:min(var(--max),calc(100% - 20px));margin:0 auto 8px;border-radius:10px;background:linear-gradient(180deg,rgba(7,8,25,.92),rgba(4,7,20,.86));border:1px solid rgba(164,58,255,.50);box-shadow:inset 0 0 24px rgba(43,17,92,.12),0 12px 36px rgba(0,0,0,.23);backdrop-filter:blur(8px);overflow:hidden}
-    .panel-inner{padding:11px 17px 13px}
-    .heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:9px}
-    .heading-row h2{font-family:'Playfair Display',serif;color:#ffe19a;font-size:2.05rem;line-height:.98;margin:0 0 2px;text-shadow:0 0 18px rgba(255,193,56,.11)}
-    .heading-row p{font-size:.68rem;color:#c0c6da;margin:0}
-    .route{font-size:.50rem;letter-spacing:.09em;color:#a8b3d6;white-space:nowrap;margin-bottom:3px}.route b{color:var(--gold)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .step{padding:18px;display:flex;gap:12px;align-items:center}.step:nth-child(2){border-color:rgba(255,197,56,.58)}.step:nth-child(3){border-color:rgba(57,170,255,.56)}
+    .step-num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:2px solid #c14cff;font-weight:900}.step:nth-child(2) .step-num{border-color:var(--gold)}.step:nth-child(3) .step-num{border-color:var(--blue)}
+    .step h3{margin:0 0 4px;font-size:.88rem}.step p{margin:0;color:#c4c9da;font-size:.72rem;line-height:1.45}
 
-    /* USE CASES */
-    .use-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
-    .use{min-height:158px;padding:16px 14px 11px;border-radius:8px;border:1px solid rgba(190,63,255,.64);background:linear-gradient(180deg,rgba(21,8,43,.82),rgba(7,9,25,.92));position:relative}
-    .use:nth-child(n+4){border-color:rgba(60,169,255,.64);background:linear-gradient(180deg,rgba(5,29,53,.80),rgba(6,9,25,.92))}
-    .use .ico{font-size:1.35rem;color:#db56ff;margin-bottom:11px}.use:nth-child(n+4) .ico{color:#56b6ff}
-    .use h3{font-size:.72rem;margin:0 0 7px}.use p{font-size:.57rem;line-height:1.5;color:#cbd0df;margin:0 0 18px}.use .arrow{position:absolute;right:9px;bottom:8px;width:21px;height:21px;border-radius:50%;border:1px solid rgba(255,255,255,.30);display:grid;place-items:center;font-size:.63rem;color:#d34dff}
+    .kits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .kit{padding:18px;min-height:390px;display:flex;flex-direction:column;position:relative}.kit.medium{border-color:#ffc63f;box-shadow:0 0 24px rgba(255,190,32,.18)}.kit.pro{border-color:#3aa9ff}
+    .kit-label{font-size:.8rem;font-weight:900}.price{font-family:'Playfair Display',serif;color:#ffe094;font-size:2.5rem;font-weight:800;margin:6px 0}.kit-tag{color:#aeb6d1;font-size:.72rem;margin-bottom:12px}.kit ul{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:8px}.kit li{font-size:.72rem;color:#dde1ef;line-height:1.35;padding-left:17px;position:relative}.kit li::before{content:'✓';position:absolute;left:0}.kit .btn{margin-top:auto;width:100%;min-height:39px;font-size:.72rem}
 
-    /* HOW */
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;position:relative}.steps::before{content:"";position:absolute;top:48%;left:30%;right:30%;height:1px;background:linear-gradient(90deg,#c448ff,#ffd166,#48abff);box-shadow:0 0 10px rgba(208,63,255,.35)}
-    .step{min-height:86px;border:1px solid rgba(189,62,255,.55);border-radius:8px;background:rgba(10,8,30,.88);padding:13px 15px;display:flex;align-items:center;gap:12px;position:relative;z-index:2}.step:nth-child(2){border-color:rgba(255,198,61,.62)}.step:nth-child(3){border-color:rgba(58,171,255,.62)}
-    .n{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;border:2px solid #cb49ff;box-shadow:0 0 12px rgba(199,62,255,.35);font-weight:900;font-size:.72rem;flex:none}.step:nth-child(2) .n{border-color:var(--gold)}.step:nth-child(3) .n{border-color:#49adff}
-    .step h3{font-size:.70rem;margin:0 0 4px}.step p{font-size:.56rem;line-height:1.42;color:#c0c6d9;margin:0}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.why{padding:18px;display:flex;gap:12px;align-items:center}.why:nth-child(2){border-color:rgba(255,197,56,.55)}.why:nth-child(3){border-color:rgba(57,170,255,.55)}.why h3{margin:0 0 4px;font-size:.86rem}.why p{margin:0;color:#c3c8d9;font-size:.72rem;line-height:1.45}
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}details{padding:14px 16px}summary{cursor:pointer;font-weight:800;font-size:.82rem}details p{font-size:.75rem;color:#c0c5d6;line-height:1.5}
 
-    /* PRICING */
-    .kits{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-    .kit{min-height:321px;border:1px solid rgba(147,99,183,.62);border-radius:7px;background:linear-gradient(180deg,rgba(6,10,27,.95),rgba(4,8,19,.94));padding:13px 14px 10px;display:flex;flex-direction:column;position:relative;overflow:visible}.kit:nth-child(2){border-color:rgba(210,68,255,.75)}.kit.medium{border-color:#ffc83f;box-shadow:0 0 18px rgba(255,190,26,.26),inset 0 0 18px rgba(255,171,0,.07)}.kit.pro{border-color:#39aaff}
-    .recommend{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#ffc437,#ffe28b);color:#492b00;border-radius:7px;padding:3px 12px;font-size:.48rem;font-weight:900;text-transform:uppercase;white-space:nowrap}
-    .kit-name{font-size:.69rem;font-weight:900;letter-spacing:.05em}.price{font-family:'Playfair Display',serif;color:#ffe097;font-size:2.05rem;font-weight:800;line-height:1;margin:5px 0 2px}.tag{font-size:.59rem;color:#aeb7d1;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid rgba(255,255,255,.13)}.kit.medium .tag{color:#ffd15b}.kit.pro .tag{color:#55baff}.kit:nth-child(2) .tag{color:#e457ff}
-    .kit ul{list-style:none;padding:0;margin:0 0 10px;display:grid;gap:6px}.kit li{position:relative;padding-left:16px;color:#e2e5ef;font-size:.54rem;line-height:1.35}.kit li::before{content:"✓";position:absolute;left:0;color:white;font-weight:900}.buy{height:30px;border-radius:6px;border:1px solid rgba(255,255,255,.33);display:grid;place-items:center;margin-top:auto;font-size:.56rem;font-weight:800;background:rgba(7,11,26,.8)}.kit:nth-child(2) .buy{border-color:#d94bff}.kit.medium .buy{border-color:#ffc838;background:linear-gradient(90deg,rgba(255,180,0,.16),rgba(139,49,18,.12))}.kit.pro .buy{border-color:#2fa9ff}.note{text-align:center;margin-top:5px;font-size:.44rem;letter-spacing:.09em;text-transform:uppercase;color:#8993b7}
-    .integrations{display:flex;align-items:center;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:9px;border:1px solid rgba(57,170,255,.40);border-radius:7px;background:rgba(4,15,29,.79);padding:7px 12px}.integrations strong{font-size:.57rem;line-height:1.35}.tool{display:flex;align-items:center;gap:6px;font-size:.55rem;color:#d2d7e7}.tool i{font-style:normal;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#20d6a7,#6b42ff);font-size:.55rem;color:white}
+    .reveal{opacity:0;transform:translateY(34px) scale(.985);filter:blur(5px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.75,.25,1),filter .75s ease}
+    .reveal.in{opacity:1;transform:none;filter:none}
+    .reveal-delay-1{transition-delay:.08s}.reveal-delay-2{transition-delay:.16s}.reveal-delay-3{transition-delay:.24s}.reveal-delay-4{transition-delay:.32s}
 
-    /* WHY */
-    .whygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.why{min-height:69px;border:1px solid rgba(203,72,255,.58);border-radius:8px;background:rgba(18,8,39,.82);padding:10px 13px;display:flex;align-items:center;gap:12px}.why:nth-child(2){border-color:rgba(255,196,52,.66);background:rgba(36,24,8,.72)}.why:nth-child(3){border-color:rgba(55,171,255,.66);background:rgba(5,24,43,.77)}.why .sym{font-size:1.35rem}.why h3{font-size:.64rem;margin:0 0 3px}.why p{font-size:.52rem;line-height:1.35;color:#c3cada;margin:0}
+    footer{position:relative;z-index:2;padding:24px 0 34px;background:rgba(2,4,12,.62);backdrop-filter:blur(10px);border-top:1px solid rgba(145,68,255,.22)}
+    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#9ca5c3;font-size:.72rem}.footer-row nav{display:flex;gap:14px;flex-wrap:wrap}
+    .consent-wrap{position:fixed;z-index:1000;left:0;right:0;bottom:0;background:rgba(4,6,17,.96);border-top:1px solid rgba(165,68,255,.32);backdrop-filter:blur(12px)}
+    .consent{width:min(var(--max),calc(100% - 30px));margin:auto;padding:12px 0;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.consent p{margin:0;color:#b9bfd4;font-size:.74rem}.consent-actions{display:flex;gap:8px;margin-left:auto;flex-wrap:wrap}.consent button{border:1px solid rgba(255,255,255,.16);border-radius:8px;background:rgba(255,255,255,.04);color:#fff;padding:8px 12px}.consent button:last-child{border-color:var(--gold);color:#ffe5a0}
 
-    /* FOOTER */
-    footer{width:min(var(--max),calc(100% - 20px));margin:0 auto;padding:10px 0 20px;color:#9ca5c3;font-size:.50rem}.footerbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(141,70,255,.22);padding-top:10px}.footerbar nav{display:flex;gap:18px;flex-wrap:wrap}.footerbar a:hover{color:var(--gold)}
-
-    /* modal */
-    dialog{border:1px solid rgba(202,73,255,.70);border-radius:13px;background:linear-gradient(180deg,#0a0b20,#050814);color:#fff;width:min(470px,calc(100% - 28px));padding:0;box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 40px rgba(176,57,255,.22)}
-    dialog::backdrop{background:rgba(1,3,10,.82);backdrop-filter:blur(4px)}.modal{padding:22px}.modal h3{font-family:'Playfair Display',serif;color:#ffe09a;font-size:1.65rem;margin:0 0 8px}.modal p{color:#bdc4d9;font-size:.78rem;line-height:1.5}.modal input{width:100%;height:45px;border-radius:8px;border:1px solid rgba(255,255,255,.18);background:#080b1c;color:#fff;padding:0 12px;margin:8px 0 10px}.modal-actions{display:flex;gap:9px}.modal button{height:40px;border-radius:8px;border:1px solid rgba(255,255,255,.18);padding:0 15px;color:#fff;background:#0d1125;cursor:pointer}.modal button.primary{flex:1;border-color:#ffc83f;background:linear-gradient(100deg,rgba(255,179,0,.28),rgba(129,31,222,.35));font-weight:900;color:#ffe8ac}
-
-    .consent-wrap{position:fixed;z-index:1000;left:0;right:0;bottom:0;background:rgba(5,7,17,.96);border-top:1px solid rgba(176,74,255,.35);backdrop-filter:blur(12px)}.consent{width:min(var(--max),calc(100% - 28px));margin:auto;padding:10px 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.consent p{margin:0;color:#b9bfd4;font-size:.65rem}.consent-actions{display:flex;gap:7px;margin-left:auto}.consent button{border:1px solid rgba(255,255,255,.15);border-radius:7px;background:rgba(255,255,255,.04);color:#fff;padding:7px 10px;font-size:.60rem}.consent button:last-child{border-color:var(--gold);color:#ffe5a0}
-
-    @media(max-width:980px){
-      .navlinks,.langs,.top-cta{display:none}.hamb{display:block}.navbox.open{height:auto;min-height:47px;flex-wrap:wrap;padding-bottom:10px}.navbox.open .navlinks{display:flex;order:5;width:100%;flex-direction:column;align-items:flex-start;gap:4px;padding:8px 6px}.navbox.open .navlinks a{height:30px}.brand{min-width:0}
-      .hero{min-height:auto}.hero-grid{grid-template-columns:1fr}.hero-copy{padding-left:8px}.hero-art{height:300px}.hero::before{inset:auto 0 0 0;height:52%;mask-image:linear-gradient(180deg,transparent,#000 20%)}.use-grid{grid-template-columns:repeat(3,1fr)}.kits{grid-template-columns:repeat(2,1fr)}
-    }
-    @media(max-width:650px){
-      .wrap,.panel,footer{width:calc(100% - 14px)}header{padding-top:5px}.navbox{height:45px}.brand img{width:32px;height:32px}.brand-name{font-size:1.06rem}.brand-sub{display:none}
-      .hero{padding-top:8px}.hero-grid{min-height:0}.hero-copy{padding:8px 4px}.kicker{font-size:.52rem}h1{font-size:2.35rem;line-height:.94}.hero-sub{font-size:.72rem}.hero-sub strong{font-size:.85rem}.hero-actions{gap:8px}.hero-btn{min-width:0;flex:1;height:42px;font-size:.69rem}.hero-btn.alt{min-width:0}.benefits{grid-template-columns:repeat(2,1fr);gap:6px}.hero-art{height:260px}.orb{width:170px;height:170px;left:3%;top:30px;font-size:1rem}.orb::before{top:42px;font-size:.43rem}.wizard{right:-68px;width:260px;height:290px}.path{left:30%;right:14%;bottom:30px}.hero-words{font-size:.43rem;right:2px}.hero-quote{display:none}
-      .panel-inner{padding:10px}.heading-row{align-items:flex-start;flex-direction:column;gap:4px}.heading-row h2{font-size:1.72rem}.route{white-space:normal}.use-grid{grid-template-columns:repeat(2,1fr)}.use{min-height:142px}.steps{grid-template-columns:1fr;gap:7px}.steps::before{display:none}.kits{grid-template-columns:1fr}.kit{min-height:285px}.integrations{gap:12px;justify-content:flex-start}.whygrid{grid-template-columns:1fr}.footerbar{align-items:flex-start;flex-direction:column}
-    }
-    @media(max-width:390px){.use-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column}.cta-stack{width:100%}.hero-btn{width:100%}.hero-art{height:240px}.wizard{right:-84px}.orb{width:155px;height:155px}.orb::before{top:38px}}
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+    @media(max-width:1000px){.navlinks{display:none}.hamb{display:block}.langs,.top-cta{display:none}.navbox.open .navlinks{display:flex;position:absolute;top:66px;left:14px;right:14px;flex-direction:column;align-items:stretch;height:auto;padding:14px;background:#080b1b;border:1px solid rgba(166,69,255,.45);border-radius:12px}.use-grid{grid-template-columns:repeat(2,1fr)}.kits-grid{grid-template-columns:repeat(2,1fr)}.stage-card{width:100%}}
+    @media(max-width:720px){body::before{background-position:62% center}.wrap{width:min(var(--max),calc(100% - 20px))}.scroll-stage{min-height:100svh;padding:86px 0 42px}.stage-card{padding:19px 16px}.brand{min-width:0}.brand-name{font-size:1.12rem}.brand-sub{display:none}.brand img{width:34px;height:34px}h1{font-size:clamp(2.4rem,11vw,3.9rem)}h2{font-size:clamp(1.9rem,9vw,3rem)}.hero-actions .btn{width:100%}.benefits{grid-template-columns:repeat(2,1fr)}.use-grid,.steps,.kits-grid,.why-grid,.faq-grid{grid-template-columns:1fr}.use-card{min-height:auto}.kit{min-height:0}.stage-card.right{margin-left:0}.footer-row{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;filter:none;transition:none}}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap navbox" id="navbox">
-      <a class="brand" href="#top" aria-label="CashFlowLab AI Home">
-        <img src="/Images/logo-mark.png" alt="CashFlowLab AI" width="37" height="37" />
-        <span><span class="brand-name">CashFlowLab <b>AI</b></span><span class="brand-sub">More than prompts. Real progress.</span></span>
-      </a>
-      <nav class="navlinks" aria-label="Navigație principală">
-        <a class="active" href="#top">Home</a>
-        <a href="#kits">Kits</a>
-        <a href="#how">How it works</a>
-        <a href="#why">Reviews</a>
-        <a href="#faqTrigger" id="faqTrigger">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="brand" href="#top" aria-label="CashFlowLab AI Home"><img src="/Images/logo-mark.png" alt="CashFlowLab AI" width="37" height="37"><span><span class="brand-name">CashFlowLab <b>AI</b></span><span class="brand-sub">More than prompts. Real progress.</span></span></a>
+      <nav class="navlinks"><a class="active" href="#top">Home</a><a href="#use-cases">Kits</a><a href="#how">Cum funcționează</a><a href="#why">De ce noi</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
       <div class="langs"><a href="/">RO</a><span>|</span><a href="/en/">EN</a><span>|</span><a href="/de/">DE</a></div>
-      <a class="top-cta open-free" href="#free">Începe Gratuit →</a>
+      <a class="top-cta" href="#free-kit">Începe Gratuit →</a>
       <button class="hamb" id="hamb" aria-label="Deschide meniul">☰</button>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <div class="kicker">AI practic. Business real.</div>
-          <h1>Transformă AI-ul într-un sistem practic pentru <span class="purple">afacerea ta.</span></h1>
-          <p class="hero-sub"><strong>Mai mult decât prompturi. Progres real.</strong><br />Workflows clare. Execuție practică. Fără complexitate ascunsă.</p>
-          <div class="hero-actions">
-            <div class="cta-stack"><a class="hero-btn open-free" href="#free">Începe Gratuit →</a><span class="tiny">Acces imediat • Fără card de credit</span></div>
-            <div class="cta-stack"><a class="hero-btn alt" href="#how">▷ &nbsp; Vezi Sistemul</a><span class="tiny">Descoperă cum funcționează</span></div>
-          </div>
-          <div class="benefits">
-            <div class="benefit"><i>✦</i><span>Claritate<br />în direcție</span></div>
-            <div class="benefit"><i>⚙</i><span>Execuție<br />pas cu pas</span></div>
-            <div class="benefit"><i>▥</i><span>Mai mulți clienți<br />și vânzări</span></div>
-            <div class="benefit"><i>∞</i><span>Mai multă<br />libertate</span></div>
-          </div>
-        </div>
-        <div class="hero-art" aria-label="Peisaj CashFlowLab AI cu portal, drum luminos și vrăjitor">
-          <div class="orb"><span>CASHFLOWLAB AI<br /><b>2026</b></span></div>
-          <div class="path"></div>
-          <div class="wizard"></div>
-          <div class="hero-words">IDEAS<br />SYSTEMS<br />AUTOMATION<br />FREEDOM</div>
-          <div class="hero-quote">SAME PEOPLE.<br />A SMARTER TOMORROW.</div>
-        </div>
-      </div>
+    <section class="scroll-stage">
+      <div class="wrap"><div class="stage-card reveal">
+        <div class="kicker">AI practic. Business real.</div>
+        <h1>Transformă AI-ul într-un sistem practic pentru <span class="purple">afacerea ta.</span></h1>
+        <p class="hero-sub"><strong>Mai mult decât prompturi. Progres real.</strong><br>Workflow-uri clare. Execuție practică. Fără complexitate ascunsă.</p>
+        <div class="hero-actions"><a class="btn btn-gold reveal reveal-delay-1" href="#free-kit">Începe Gratuit →</a><a class="btn btn-purple reveal reveal-delay-2" href="#how">▶ Vezi Sistemul</a></div>
+        <div class="benefits"><div class="benefit reveal reveal-delay-1"><i>✦</i><span>Claritate<br>în direcție</span></div><div class="benefit reveal reveal-delay-2"><i>⚙</i><span>Execuție<br>pas cu pas</span></div><div class="benefit reveal reveal-delay-3"><i>▥</i><span>Mai mulți clienți<br>și vânzări</span></div><div class="benefit reveal reveal-delay-4"><i>∞</i><span>Mai multă<br>libertate</span></div></div>
+      </div></div>
     </section>
 
-    <section class="panel" id="use-cases">
-      <div class="panel-inner">
-        <div class="heading-row">
-          <div><h2>Ce poți face cu CashFlowLab AI</h2><p>Sisteme și tool-uri practice pentru rezultate reale în business.</p></div>
-          <div class="route"><b>—</b> &nbsp; DE LA IDEE &nbsp;›&nbsp; LA EXECUȚIE &nbsp;›&nbsp; LA REZULTATE</div>
-        </div>
-        <div class="use-grid">
-          <article class="use"><div class="ico">♟</div><h3>Găsește clienți</h3><p>Identifică și atrage clienții potriviți cu AI și outreach structurat.</p><span class="arrow">→</span></article>
-          <article class="use"><div class="ico">🚀</div><h3>Lansează un produs</h3><p>De la idee la lansare rapidă, cu workflow-uri gata de folosit.</p><span class="arrow">→</span></article>
-          <article class="use"><div class="ico">▥</div><h3>Marketing &amp; Content</h3><p>Creează conținut care atrage, educă și vinde mai repede.</p><span class="arrow">→</span></article>
-          <article class="use"><div class="ico">✉</div><h3>Email &amp; Follow-up</h3><p>Organizează comunicarea și menține follow-up-ul consecvent.</p><span class="arrow">→</span></article>
-          <article class="use"><div class="ico">◷</div><h3>Economisește timp</h3><p>Fă mai mult în mai puțin timp cu sisteme clare și ușor de aplicat.</p><span class="arrow">→</span></article>
-          <article class="use"><div class="ico">◎</div><h3>Claritate în business</h3><p>Obține direcție, structură și un plan concret pentru următorul pas.</p><span class="arrow">→</span></article>
-        </div>
-      </div>
-    </section>
+    <section class="scroll-stage" id="use-cases"><div class="wrap"><div class="stage-card right reveal"><h2>Ce poți face cu CashFlowLab AI</h2><p class="section-lead">Sisteme și tool-uri practice pentru rezultate reale în business.</p><div class="use-grid"><article class="use-card reveal"><div class="big">♟</div><h3>Găsește clienți</h3><p>Identifică și atrage clienții potriviți cu AI și outreach structurat.</p></article><article class="use-card reveal reveal-delay-1"><div class="big">🚀</div><h3>Lansează un produs</h3><p>De la idee la lansare rapidă, cu workflow-uri gata de aplicat.</p></article><article class="use-card reveal reveal-delay-2"><div class="big">▥</div><h3>Marketing & Content</h3><p>Creează conținut care atrage, educă și vinde mai repede.</p></article><article class="use-card reveal"><div class="big">✉</div><h3>Email & Follow-up</h3><p>Organizează comunicarea și menține follow-up-ul consecvent.</p></article><article class="use-card reveal reveal-delay-1"><div class="big">◷</div><h3>Economisește timp</h3><p>Fă mai mult în mai puțin timp cu sisteme clare și ușor de aplicat.</p></article><article class="use-card reveal reveal-delay-2"><div class="big">◎</div><h3>Claritate în business</h3><p>Obține direcție, structură și un plan concret pentru următorul pas.</p></article></div></div></div></section>
 
-    <section class="panel" id="how">
-      <div class="panel-inner">
-        <div class="heading-row"><div><h2>Cum funcționează</h2><p>De la obiectiv la rezultat, în doar câțiva pași simpli.</p></div><div class="route"><b>—</b> &nbsp; SISTEME PRACTICE &nbsp;›&nbsp; REZULTATE REALE</div></div>
-        <div class="steps">
-          <article class="step"><div class="n">1</div><div><h3>Spune-ne obiectivul</h3><p>Alege ce vrei să realizezi în business-ul tău.</p></div></article>
-          <article class="step"><div class="n">2</div><div><h3>Primești workflow + context + prompturi</h3><p>Obții un sistem complet, adaptat obiectivului tău.</p></div></article>
-          <article class="step"><div class="n">3</div><div><h3>Execuți și verifici rezultatul</h3><p>Aplici pas cu pas și urmărești rezultatele măsurabile.</p></div></article>
-        </div>
-      </div>
-    </section>
+    <section class="scroll-stage" id="how"><div class="wrap"><div class="stage-card reveal"><h2>Cum funcționează</h2><p class="section-lead">De la obiectiv la rezultat, în doar câțiva pași simpli.</p><div class="steps"><article class="step reveal"><div class="step-num">1</div><div><h3>Spune-ne obiectivul</h3><p>Alege ce vrei să realizezi în business-ul tău.</p></div></article><article class="step reveal reveal-delay-1"><div class="step-num">2</div><div><h3>Primești workflow + context + prompturi</h3><p>Obții un sistem complet, adaptat obiectivului tău.</p></div></article><article class="step reveal reveal-delay-2"><div class="step-num">3</div><div><h3>Execuți și verifici rezultatul</h3><p>Aplici pas cu pas și urmărești rezultate măsurabile.</p></div></article></div></div></div></section>
 
-    <section class="panel" id="kits">
-      <div class="panel-inner">
-        <div class="heading-row"><div><h2>Alege kitul potrivit</h2><p>Instrumente practice. Valoare reală. Pentru fiecare etapă a călătoriei tale.</p></div><div class="route"><b>—</b> &nbsp; INVESTEȘTE ÎN PROGRESUL TĂU</div></div>
-        <div class="kits">
-          <article class="kit" id="free"><div class="kit-name">FREE</div><div class="price">$0</div><div class="tag">Intrare rapidă</div><ul><li>Template landing page HTML responsive</li><li>Logo principal SVG</li><li>README cu instrucțiuni de bază</li></ul><a class="buy open-free" href="#free">Descarcă FREE</a><div class="note">Perfect pentru primul pas</div></article>
-          <article class="kit"><div class="kit-name">MINI</div><div class="price">$9</div><div class="tag">Execuție rapidă</div><ul><li>Quick Launch Checklist PDF — 2 pagini</li><li>Template Notion pre/post-launch</li><li>4 emailuri template</li><li>Metrici și verificări esențiale</li></ul><a class="buy" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener">Alege MINI</a><div class="note">Ideal pentru primul upgrade</div></article>
-          <article class="kit medium"><div class="recommend">Recomandat</div><div class="kit-name">MEDIUM</div><div class="price">$27</div><div class="tag">Sistem mai complet</div><ul><li>Launch Essentials PDF — 4 pagini</li><li>Framework Problemă → Promisiune → Dovadă → CTA</li><li>Template Notion pentru launch system + metrici</li><li>4 emailuri template</li><li>Mesaje pentru landing, email și social</li></ul><a class="buy" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener">Alege MEDIUM</a><div class="note">Pentru creștere reală</div></article>
-          <article class="kit pro"><div class="kit-name">PRO</div><div class="price">$69.99</div><div class="tag">Blueprint complet</div><ul><li>Arhitectură funnel end-to-end</li><li>10 emailuri template</li><li>Master checklist Plan → Build → Test → Launch → Scale</li><li>QA pentru pagini, checkout, formulare și emailuri</li><li>Ghid de implementare și optimizare</li></ul><a class="buy" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener">Alege PRO</a><div class="note">Pentru implementare serioasă</div></article>
-        </div>
-        <div class="integrations"><strong>Folosește AI-ul pe care îl ai deja.<br /><span class="muted">Noi îți dăm sistemul.</span></strong><span class="tool"><i>◎</i>ChatGPT</span><span class="tool"><i>✹</i>Claude</span><span class="tool"><i>✦</i>Gemini</span><span class="tool"><i>N</i>Notion</span><span class="tool"><i>M</i>Make</span><span class="tool"><i>Z</i>Zapier</span><span class="tool"><i>∞</i>și multe altele</span></div>
-      </div>
-    </section>
+    <section class="scroll-stage" id="kits"><div class="wrap"><div class="stage-card right reveal"><h2>Alege kitul potrivit</h2><p class="section-lead">Instrumente practice. Valoare reală. Pentru fiecare etapă a călătoriei tale.</p><div class="kits-grid"><article class="kit" id="free-kit"><div class="kit-label">FREE</div><div class="price">$0</div><div class="kit-tag">Intrare rapidă</div><ul><li>Template landing page HTML responsive</li><li>Logo principal SVG</li><li>README cu instrucțiuni de bază</li></ul><form action="https://assets.mailerlite.com/jsonp/2002799/forms/176693602287617412/subscribe" method="post" id="freeForm" style="margin-top:auto"><input required type="email" name="fields[email]" placeholder="Emailul tău" aria-label="Email" style="width:100%;height:39px;border:1px solid rgba(255,255,255,.16);border-radius:8px;background:#080b1c;color:#fff;padding:0 11px;margin-bottom:8px"><input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true"><button class="btn btn-purple" type="submit">Descarcă FREE</button></form></article><article class="kit"><div class="kit-label">MINI</div><div class="price">$9</div><div class="kit-tag">Execuție rapidă</div><ul><li>Quick Launch Checklist PDF — 2 pagini</li><li>Template Notion pre/post-launch</li><li>4 emailuri template</li><li>Metrici și verificări esențiale</li></ul><a class="btn btn-purple" href="https://cashflowlabai.gumroad.com/l/bpsbou" target="_blank" rel="noopener">Alege MINI</a></article><article class="kit medium"><div class="kit-label">MEDIUM</div><div class="price">$27</div><div class="kit-tag">Sistem mai complet</div><ul><li>Launch Essentials PDF — 4 pagini</li><li>Framework Problemă → Promisiune → Dovadă → CTA</li><li>Template Notion + metrici</li><li>4 emailuri template</li></ul><a class="btn btn-gold" href="https://cashflowlabai.gumroad.com/l/divha" target="_blank" rel="noopener">Alege MEDIUM</a></article><article class="kit pro"><div class="kit-label">PRO</div><div class="price">$69.99</div><div class="kit-tag">Blueprint complet</div><ul><li>Arhitectură funnel end-to-end</li><li>10 emailuri template</li><li>Master checklist Plan → Build → Test → Launch → Scale</li><li>QA + ghid de optimizare</li></ul><a class="btn btn-purple" href="https://cashflowlabai.gumroad.com/l/udxody" target="_blank" rel="noopener">Alege PRO</a></article></div></div></div></section>
 
-    <section class="panel" id="why">
-      <div class="panel-inner">
-        <div class="heading-row"><div><h2>De ce CashFlowLab AI</h2><p>Mai mult decât un set de prompturi. Un avantaj practic în business.</p></div><div class="route"><b>—</b> &nbsp; SAME TOOLS. BIGGER RESULTS.</div></div>
-        <div class="whygrid">
-          <article class="why"><div class="sym">▤</div><div><h3>Mai simplu decât un PDF</h3><p>Sisteme practice și workflow-uri, nu doar teorie.</p></div></article>
-          <article class="why"><div class="sym">⚡</div><div><h3>Mai clar decât 500 de prompturi</h3><p>Primești workflow-ul potrivit pentru obiectivul ales.</p></div></article>
-          <article class="why"><div class="sym">♟</div><div><h3>Mai accesibil decât un AI-employee SaaS</h3><p>Folosești AI-ul pe care îl ai deja și păstrezi controlul.</p></div></article>
-        </div>
-      </div>
-    </section>
+    <section class="scroll-stage" id="why"><div class="wrap"><div class="stage-card reveal"><h2>De ce CashFlowLab AI</h2><p class="section-lead">Mai mult decât un set de prompturi. Un avantaj real în business.</p><div class="why-grid"><article class="why reveal"><div>▤</div><div><h3>Mai simplu decât un PDF</h3><p>Sisteme practice și workflow-uri, nu doar teorie.</p></div></article><article class="why reveal reveal-delay-1"><div>⚡</div><div><h3>Mai clar decât 500 de prompturi</h3><p>Primești exact workflow-ul necesar pentru obiectivul ales.</p></div></article><article class="why reveal reveal-delay-2"><div>♟</div><div><h3>Mai accesibil decât un AI-employee SaaS</h3><p>Folosești AI-ul pe care îl ai deja și păstrezi controlul.</p></div></article></div></div></div></section>
+
+    <section class="scroll-stage" id="faq"><div class="wrap"><div class="stage-card right reveal"><h2>FAQ</h2><p class="section-lead">Răspunsuri rapide înainte să începi.</p><div class="faq-grid"><details><summary>Trebuie să plătesc pentru ChatGPT?</summary><p>Nu neapărat. CashFlowLab este gândit să funcționeze cu instrumentele AI pe care le ai deja.</p></details><details><summary>CashFlowLab este un chatbot?</summary><p>Nu. Este un sistem practic: context, workflow-uri, template-uri și verificare pentru obiective concrete de business.</p></details><details><summary>Primesc rezultate garantate?</summary><p>Nu. Primești procese și materiale care îți pot îmbunătăți execuția, dar rezultatele depind de produs, piață, ofertă și implementare.</p></details><details><summary>Pot începe gratis?</summary><p>Da. FREE Kit este punctul de intrare și nu necesită card de credit.</p></details></div></div></div></section>
   </main>
 
-  <footer id="contact"><div class="footerbar"><div><strong style="color:#ffe29a">CashFlowLab AI 2026</strong> &nbsp; | &nbsp; Opportunity lives here.</div><nav><a href="#top">Home</a><a href="#kits">Kits</a><a href="#how">How it works</a><a href="#why">Reviews</a><a href="/terms.html">Termeni</a><a href="/privacy.html">Confidențialitate</a><a href="/imprint.html">Imprint</a></nav><div>Construim împreună un viitor mai liber. © <span id="year"></span></div></div></footer>
-
-  <dialog id="freeDialog">
-    <form class="modal" action="https://assets.mailerlite.com/jsonp/2002799/forms/176693602287617412/subscribe" method="post" id="freeForm">
-      <h3>Începe Gratuit ✦</h3><p>Introdu emailul și primești acces la FREE Kit. Fără card de credit.</p>
-      <input required type="email" name="fields[email]" placeholder="Emailul tău" autocomplete="email" />
-      <input type="hidden" name="ml-submit" value="1" /><input type="hidden" name="anticsrf" value="true" />
-      <div class="modal-actions"><button type="button" id="closeFree">Închide</button><button class="primary" type="submit">Primește FREE Kit →</button></div>
-    </form>
-  </dialog>
-
-  <dialog id="faqDialog"><div class="modal"><h3>FAQ</h3><p><b>Trebuie să plătesc pentru ChatGPT?</b><br />Nu neapărat. CashFlowLab este gândit să folosească instrumentele AI pe care le ai deja.</p><p><b>CashFlowLab este un chatbot?</b><br />Nu. Este un sistem de context, workflow-uri, template-uri și verificare pentru obiective concrete de business.</p><p><b>Sunt rezultatele garantate?</b><br />Nu. Rezultatele depind de produs, piață, ofertă și implementare.</p><button type="button" id="closeFaq">Închide</button></div></dialog>
+  <footer id="contact"><div class="wrap footer-row"><div><strong style="color:#ffe29a">CashFlowLab AI 2026</strong> &nbsp; | &nbsp; Opportunity lives here.</div><nav><a href="#top">Home</a><a href="#kits">Kits</a><a href="#how">Cum funcționează</a><a href="#faq">FAQ</a><a href="/terms.html">Termeni</a><a href="/privacy.html">Confidențialitate</a><a href="/imprint.html">Imprint</a></nav><div>Construim împreună un viitor mai liber. © <span id="year"></span></div></div></footer>
 
   <div id="consentWrap" class="consent-wrap" role="region" aria-label="Consimțământ cookies" hidden><div class="consent"><p>Folosim cookie-uri pentru analytics și marketing. Poți alege ce accepți.</p><div class="consent-actions"><button data-consent="deny">Respinge</button><button data-consent="analytics">Acceptă analytics</button><button data-consent="all">Acceptă tot</button></div></div></div>
 
   <script>
     document.getElementById('year').textContent=new Date().getFullYear();
-    const navbox=document.getElementById('navbox');
-    document.getElementById('hamb').addEventListener('click',()=>navbox.classList.toggle('open'));
-    document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>navbox.classList.remove('open')));
-
-    const freeDialog=document.getElementById('freeDialog');
-    document.querySelectorAll('.open-free').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();freeDialog.showModal();}));
-    document.getElementById('closeFree').addEventListener('click',()=>freeDialog.close());
-    const freeForm=document.getElementById('freeForm');
-    freeForm.addEventListener('submit',async e=>{e.preventDefault();const fd=new FormData(freeForm);try{await fetch(freeForm.action,{method:'POST',body:fd,mode:'no-cors'});}catch(err){}window.location.href='/free-kit/';});
-
-    const faqDialog=document.getElementById('faqDialog');
-    document.getElementById('faqTrigger').addEventListener('click',e=>{e.preventDefault();faqDialog.showModal();});
-    document.getElementById('closeFaq').addEventListener('click',()=>faqDialog.close());
+    const navbox=document.getElementById('navbox');document.getElementById('hamb').addEventListener('click',()=>navbox.classList.toggle('open'));document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>navbox.classList.remove('open')));
+    const freeForm=document.getElementById('freeForm');if(freeForm){freeForm.addEventListener('submit',async e=>{e.preventDefault();const fd=new FormData(freeForm);try{await fetch(freeForm.action,{method:'POST',body:fd,mode:'no-cors'})}catch(err){}window.location.href='/free-kit/';});}
+    const revealEls=[...document.querySelectorAll('.reveal')];const io=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');io.unobserve(entry.target);}})},{threshold:.16,rootMargin:'0px 0px -8% 0px'});revealEls.forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
