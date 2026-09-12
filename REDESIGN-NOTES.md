@@ -1,5 +1,9 @@
 # Reference-aligned homepage
 
+## Image-quality update
+
+The low-resolution continuous backdrop has been replaced in the active homepage by six individually generated 2172 × 724 panoramas, responsive compact variants, and separate phone compositions. Hero artwork also has desktop/mobile variants. Per-section picture elements preserve aspect ratio and lazy-load; mobile images render at viewport width rather than enlarging a panorama to the section height. See `Images/quality/README.md` for dimensions, prompts and quality limits. Original artwork remains intact for rollback.
+
 Branch: redesign/cinematic-homepage.
 
 ## Design and assets
