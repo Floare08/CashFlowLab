@@ -7,6 +7,7 @@ _Learn about the person you're helping. Update this as you go._
 - **Pronouns:** _(optional)_
 - **Timezone:** CET (GMT+1) — Germania
 - **Notes:**
+  - Homepage redesign: preserve cinematic dark/purple/gold artwork; no production deployment or merge without explicit approval.
 
 ## Context
 

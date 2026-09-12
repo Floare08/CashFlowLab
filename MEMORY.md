@@ -1,5 +1,9 @@
 # MEMORY.md - CashFlowLab Project
 
+## 2026-09-12 local homepage redesign
+
+Cloned Floare08/CashFlowLab into the Codex task workspace and created `redesign/cinematic-homepage`. Rebuilt only the Romanian homepage with the two supplied clean fantasy artworks; retained separate EN/DE routes and existing Free Kit integration. See `REDESIGN-NOTES.md` for architecture, verification and remaining scope. No merge or production deployment authorized. Final copy and evidence-based results remain pending.
+
 ## Proiect: CashFlowLab AI Website
 **URL:** https://cashflowlabai.com
 **Ultima activitate:** 7 Mai 2026
@@ -163,3 +167,6 @@ Floare = Florin, prietenii îi zic așa. E în Germania, pasionat de știință 
 ### Echipament
 - **Telefon:** Samsung Galaxy Z Fold 6 (cu S Pen - esențial pentru lucru, degetele sunt "crenvuști" pentru touch precis 😂)
 - **NU Z Fold 7** - a pierdut suportul S Pen, deci e inutil pentru workflow-ul lui Florin
+
+## Reference correction, 2026-09-12
+User supplied all four references and requested a close English recreation. Root rebuilt to those references using the two clean backgrounds, with neutral proof metrics; original Romanian homepage preserved at /ro/. Independent EN/DE pages and integrations retained. Earlier user authorization to publish to main remains in scope.
