@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cashflowlabai.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cashflowlabai.com/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cashflowlabai.com/de/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://cashflowlabai.com/ro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cashflowlabai.com/" />
+  </url>
+  <url>
+    <loc>https://cashflowlabai.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cashflowlabai.com/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cashflowlabai.com/de/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://cashflowlabai.com/ro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cashflowlabai.com/" />
+  </url>
+  <url>
+    <loc>https://cashflowlabai.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cashflowlabai.com/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cashflowlabai.com/de/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://cashflowlabai.com/ro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cashflowlabai.com/" />
+  </url>
+  <url>
+    <loc>https://cashflowlabai.com/ro/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cashflowlabai.com/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cashflowlabai.com/de/" />
+    <xhtml:link rel="alternate" hreflang="ro" href="https://cashflowlabai.com/ro/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cashflowlabai.com/" />
+  </url>
+</urlset>
