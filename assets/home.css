@@ -48,3 +48,44 @@ html[lang=de] .benefit-card h2,html[lang=ro] .benefit-card h2{font-size:20px}
 @media(max-width:350px){.nav{gap:6px}.brand{font-size:15px}.languages{font-size:9px;gap:4px}.menu{width:30px}html[lang=de] .hero h1,html[lang=ro] .hero h1{font-size:32px}}
 .hero-inscription{overflow-wrap:anywhere}
 @media(min-width:761px) and (max-width:1100px){.hero-inscription{display:none}}
+
+/* Premium mobile hero: keep the artwork behind the offer instead of rendering
+   it as a separate, empty-looking block below the copy. */
+@media(max-width:760px){
+  .hero-scene{background:#050510}
+  .header{position:relative;z-index:10;background:linear-gradient(180deg,#070713f5,#070713cf);border-bottom-color:#d9bd7b38;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  .header-cta{display:none}
+  .hero{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:clamp(690px,110svh,820px);padding:38px 0 28px;overflow:hidden;border-bottom:1px solid #d8b96c33;background:#050510}
+  .mobile-art{display:block;position:absolute;inset:0;z-index:-3;width:100%;height:100%;margin:0;aspect-ratio:auto;overflow:hidden;mask-image:none;-webkit-mask-image:none}
+  .mobile-art img{display:block;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:64% center;filter:saturate(.96) contrast(1.03)}
+  .hero:before{content:'';position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(180deg,#03030c24 0%,#03030c38 34%,#050510c9 76%,#050510 100%),linear-gradient(90deg,#03030ce8 0%,#050510a3 53%,#05051024 100%)}
+  .hero:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 78% 48%,transparent 0 22%,#0505100f 48%,#05051061 100%);box-shadow:inset 0 1px #f4d6851c,inset 0 -55px 70px #050510}
+  .hero-copy{position:relative;z-index:1;padding-top:2px}
+  .hero .eyebrow{display:inline-flex;width:auto;max-width:100%;padding:7px 10px;border:1px solid #e1c17352;border-radius:999px;background:#09071391;box-shadow:0 8px 24px #0005;color:#f4d98f;text-shadow:0 1px 10px #000;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  .hero h1{max-width:100%;margin-top:20px;font-size:clamp(42px,11.6vw,58px);line-height:.98;letter-spacing:-.035em;text-wrap:balance;text-shadow:0 3px 18px #000,0 1px 4px #000}
+  html[lang=de] .hero h1,html[lang=ro] .hero h1{max-width:100%;font-size:clamp(38px,9.6vw,55px);line-height:1}
+  .hero-description{max-width:100%;margin-top:20px;color:#f0edf3;font-size:15px;line-height:1.55;text-shadow:0 2px 10px #000,0 1px 3px #000}
+  .hero .actions{width:100%;max-width:460px;margin-top:27px;gap:12px}
+  .hero .button{min-height:56px;border-radius:8px}
+  .hero .primary{box-shadow:inset 0 2px 9px #fff3c7d6,inset 0 -4px 9px #98580b55,0 10px 34px #0008,0 0 28px #eeba5970}
+  .hero .secondary{background:#080611b8;border-color:#eadfb7a8;box-shadow:0 10px 28px #0007,inset 0 1px #ffffff12;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .hero-trust{position:relative;z-index:1;width:calc(100% - 36px);margin:auto auto 0;padding:13px 15px;justify-content:center;gap:10px 16px;border:1px solid #d8bc7a52;border-radius:10px;background:#080611b5;box-shadow:0 14px 35px #0008,inset 0 1px #ffffff0e;font-size:10px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .benefits{margin-top:18px}
+}
+
+@media(min-width:520px) and (max-width:760px){
+  .mobile-art img{object-position:center}
+  .hero:before{background:linear-gradient(180deg,#03030c1a 0%,#03030c2c 40%,#050510c7 78%,#050510 100%),linear-gradient(90deg,#03030cef 0%,#050510a8 46%,#05051015 78%)}
+  .hero h1{max-width:72%;font-size:clamp(48px,8.2vw,61px)}
+  html[lang=de] .hero h1,html[lang=ro] .hero h1{max-width:76%;font-size:clamp(42px,7.4vw,55px)}
+  .hero-description{max-width:67%}
+  .hero .actions{max-width:430px}
+}
+
+@media(max-width:350px){
+  .hero{min-height:710px;padding-top:30px}
+  .hero h1{font-size:39px}
+  html[lang=de] .hero h1,html[lang=ro] .hero h1{font-size:35px}
+  .hero-description{font-size:14px}
+  .hero-trust{justify-content:flex-start;font-size:9px}
+}
